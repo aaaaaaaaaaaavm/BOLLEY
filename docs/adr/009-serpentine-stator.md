@@ -1,6 +1,6 @@
 # ADR-009: Build Gen1 around the serpentine series-flux stator
 
-**Status:** accepted for Gen1 CAD and field-FEA entry  
+**Status:** superseded for packaging by A5c and ADR-010; retained as a lumped electrical result  
 **Date:** 2026-08-13
 
 ## Context
@@ -34,6 +34,10 @@ All 15 A3e lumped-model bands pass over 441 CG points for both frozen payload ca
 - 36.4% modelled source-to-payload efficiency.
 
 ## Consequences
+
+> **Later evidence:** A5c found 3,987.375 mm³ winding/interface overlap per face and a 66.7:1
+> bare-copper section deficit. Gen1 is rejected for CAD promotion. The numerical A3e result is not
+> withdrawn; its physical disposition is superseded.
 
 - The source energy is materially below VOLLEY's current 2.85 kJ gross shot, but the comparison
   is not yet like-for-like: Bolley excludes housing, control and DC-link losses that do not yet
