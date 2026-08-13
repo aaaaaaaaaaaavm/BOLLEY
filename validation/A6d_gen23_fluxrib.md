@@ -58,3 +58,13 @@ The first command stopped before mesh construction because the parameter loader 
 inheritance level (`Gen2.3 -> Gen2.2`) and therefore never reached the Gen2.1 mesh definition. No
 field value was produced. The loader was corrected to resolve parent files recursively with cycle
 detection. No parameter, geometry, material, mesh or band changed.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 12/13 bands pass; Gen2.3 is rejected.**
+
+The base, fine and expanded meshes contain 210,650, 747,114 and 237,770 triangles. All numerical
+differences are below 0.31%. Worst mean field is 0.7430–0.7453 T, stationary peak is 1.4598 T and
+inductance is 0.8755 times A3g. The thicker rib improves the worst ligament estimate to 1.4766 T,
+but it remains 1.83% above the frozen limit. The [controlled result](../docs/GEN23_FIELD.md) blocks
+promotion.

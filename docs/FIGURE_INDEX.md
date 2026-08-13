@@ -31,11 +31,14 @@
 | A6c-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6c/A6c_field_magnitude.png) | `analysis/figures/a6c/A6c_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.2 ligament evidence |
 | A6c-02 | [Four-blade field balance](../analysis/figures/a6c/A6c_blade_fields.png) | `analysis/figures/a6c/A6c_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.2 ligament evidence |
 | A6c-03 | [Mesh and boundary convergence](../analysis/figures/a6c/A6c_convergence.png) | `analysis/figures/a6c/A6c_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Rejected Gen2.2 ligament evidence |
+| A6d-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6d/A6d_field_magnitude.png) | `analysis/figures/a6d/A6d_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.3 rib evidence |
+| A6d-02 | [Four-blade field balance](../analysis/figures/a6d/A6d_blade_fields.png) | `analysis/figures/a6d/A6d_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.3 rib evidence |
+| A6d-03 | [Mesh and boundary convergence](../analysis/figures/a6d/A6d_convergence.png) | `analysis/figures/a6d/A6d_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Rejected Gen2.3 rib evidence |
 
 ## Evidence count
 
-- Indexed figures: **26**.
-- Parametric/model/schematic figures: **26**.
+- Indexed figures: **29**.
+- Parametric/model/schematic figures: **29**.
 - Physically observed figures: **0**.
 
 A render may explain topology or nominal fit. It cannot close force, field, thermal,

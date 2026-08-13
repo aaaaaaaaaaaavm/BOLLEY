@@ -1,0 +1,31 @@
+{
+  "figure_count": 3,
+  "figures": [
+    {
+      "bytes": 348713,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a6d/A6d_field_magnitude.png",
+      "sha256": "b6199b5044ddba2eb28ef0ed0b883eb5392975cdfebf3e075a9973baa8f99099",
+      "source": "analysis/gen2_field.py",
+      "title": "Fine-mesh nonlinear field magnitude"
+    },
+    {
+      "bytes": 46053,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a6d/A6d_blade_fields.png",
+      "sha256": "66ee144ed84ff073ca9317112f2252634e66e905542d4df8edd309ae81a85458",
+      "source": "analysis/gen2_field.py",
+      "title": "Four-blade field balance"
+    },
+    {
+      "bytes": 50386,
+      "evidence": "NUMERICAL CONVERGENCE",
+      "path": "analysis/figures/a6d/A6d_convergence.png",
+      "sha256": "774ad7018b5528e578daac77d6e81d154f93ad1a11ae6c13304e493bb688fe57",
+      "source": "analysis/gen2_field.py",
+      "title": "Mesh and boundary convergence"
+    }
+  ],
+  "gate": "A6d",
+  "schema_version": 1
+}
