@@ -24,6 +24,10 @@ FIELD_RESULT = RESULTS / "gen25_field.json"
 INPUT = ROOT / "cad" / "gen25_cage_parameters.json"
 OUTPUT = RESULTS / "gen25_cage_circuit.json"
 POINTS_OUTPUT = RESULTS / "gen25_cage_circuit_points.csv.gz"
+GATE_LABEL = "A7a"
+DESIGN_LABEL = "Gen2.5 Fluxweb"
+PROMOTE_DISPOSITION = "PROMOTE_GEN25_TO_DISCRETE_CAD_AND_TRANSIENT_FORCE_MODEL"
+REJECT_DISPOSITION = "DO_NOT_PROMOTE_GEN25_CAGE_CIRCUIT_POINT"
 MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 
@@ -42,10 +46,13 @@ def calculate() -> dict:
     limits = control["bands"]
 
     if not field["screen_pass"] or field["band_pass_count"] != field["band_count"]:
-        raise SystemExit("A7a requires a passing A6f field result")
+        raise SystemExit(f"{GATE_LABEL} requires a passing field result")
 
     base = copy.deepcopy(base)
     base["winding"]["turns_per_cell"] = declared["turns_per_cell"]
+    base["interface"]["fins_per_channel"] = declared.get(
+        "blades_per_face", base["interface"]["fins_per_channel"]
+    )
     base["passive_cage"]["equivalent_copper_sheet_thickness_m"] = declared[
         "equivalent_copper_sheet_thickness_m"
     ]
@@ -71,7 +78,7 @@ def calculate() -> dict:
     ) * declared["cells_per_phase"]
 
     selected = copy.deepcopy(a3g["selected_candidate"]["design"])
-    resistance_ratio = 0.5625
+    resistance_ratio = declared.get("phase_resistance_ratio_to_a3g", 0.5625)
     selected.update(
         {
             "equivalent_field_rms_t": equivalent_field,
@@ -276,7 +283,7 @@ def calculate() -> dict:
         <= preferences["preferred_interface_mass_kg"],
     }
     return {
-        "evidence": "A7a POST-FIELD HOMOGENIZED CAGE + LUMPED CIRCUIT/CENTRE-OF-GRAVITY SHOT MODEL",
+        "evidence": f"{GATE_LABEL} POST-FIELD HOMOGENIZED CAGE + LUMPED CIRCUIT/CENTRE-OF-GRAVITY SHOT MODEL",
         "input_file": str(INPUT.relative_to(ROOT)),
         "source_files": control["source_files"],
         "field_trace": {
@@ -310,9 +317,9 @@ def calculate() -> dict:
         "failed_band_union": failed_union,
         "screen_pass": all(record["pass"] for record in records),
         "disposition": (
-            "PROMOTE_GEN25_TO_DISCRETE_CAD_AND_TRANSIENT_FORCE_MODEL"
+            PROMOTE_DISPOSITION
             if all(record["pass"] for record in records)
-            else "DO_NOT_PROMOTE_GEN25_CAGE_CIRCUIT_POINT"
+            else REJECT_DISPOSITION
         ),
         "limits": [
             "The cage remains an equivalent sheet; discrete rungs, end buses and current crowding are absent.",
@@ -386,7 +393,7 @@ def main() -> None:
         dump_json(OUTPUT, result)
     elif args.check:
         if not POINTS_OUTPUT.exists() or POINTS_OUTPUT.read_bytes() != points:
-            raise SystemExit("stale A7a CG-point artifact")
+            raise SystemExit(f"stale {GATE_LABEL} CG-point artifact")
         compare_json(OUTPUT, result)
     else:
         print(json.dumps(result, indent=2, sort_keys=True))
