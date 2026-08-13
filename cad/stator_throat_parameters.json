@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION topology limits anchored to named EXTERNAL MATERIAL DATA",
+  "geometry_source": "cad/quad_comb_parameters.json",
+  "force_source": "analysis/results/quad_comb_screen.json",
+  "shared_pole_array": {
+    "outer_pole_count": 2,
+    "interior_pole_count": 3,
+    "outer_pole_flux_multiplicity": 1,
+    "interior_pole_flux_multiplicity": 2,
+    "flux_turns_into_radial_back_yoke": true
+  },
+  "material_anchor": {
+    "manufacturer": "thyssenkrupp Steel",
+    "product_family": "powercore A non-grain-oriented electrical steel",
+    "reference_grade": "M270-50A",
+    "preferred_pole_flux_density_t": 1.7,
+    "optimistic_hard_pole_flux_density_t": 2.0,
+    "url": "https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html"
+  },
+  "bands": {
+    "minimum_average_channel_force_n": 255.0,
+    "maximum_projected_usable_face_fraction": 0.25
+  }
+}

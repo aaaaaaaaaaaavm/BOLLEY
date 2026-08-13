@@ -27,6 +27,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P20 | A face-centred comb-fin consumes spacecraft side-panel area and may conflict with solar cells or harness routing. | A5a area screen plus bus-specific panel layout review. | HIGH | OPEN |
 | P21 | The comb-fin root, covers and segmented inserts have no structural load path or debris-containment proof. | Detailed capture design passes stress, vibration and fail-safe retention review. | CRITICAL | OPEN |
 | P22 | A5a's whole-face developed-shear statistic is not the axial force law of a tooth-overlap reluctance machine. | A3b0 edge-force bound passes, followed by a nonlinear 3D flux-linkage/force map. | CRITICAL | OPEN |
+| P23 | The A5b sketch gives each stationary pole only a 2 mm throat, while shared interior poles must return two fin fluxes. | A3b1 flux-conservation bound passes before yoke or winding design. | CRITICAL | OPEN |
 
 ## Register discipline
 

@@ -19,6 +19,7 @@ A3A_RESULTS = {"topology_screen.json"}
 A5A_RESULTS = {"interface_fit_screen.json"}
 A3B0_RESULTS = {"edge_force_bound.json"}
 A5B_RESULTS = {"quad_comb_screen.json"}
+A3B1_RESULTS = {"stator_throat_bound.json"}
 
 
 def run(*parts: str) -> None:
@@ -61,12 +62,13 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
             "partial result set: expected "
             f"a declared stage set through "
-            f"{sorted(CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS)}, "
+            f"{sorted(CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS)}, "
             f"found {sorted(committed)}"
         )
 
@@ -95,8 +97,15 @@ def main() -> None:
         run("tools/make_quad_comb_screen.py", "--check")
     elif (ROOT / "docs" / "QUAD_COMB_SCREEN.md").exists():
         raise SystemExit("docs/QUAD_COMB_SCREEN.md exists before the A5b result")
+    if A3B1_RESULTS <= committed:
+        run("analysis/stator_throat_bound.py", "--check")
+        run("tools/make_stator_throat_bound.py", "--check")
+    elif (ROOT / "docs" / "STATOR_THROAT_BOUND.md").exists():
+        raise SystemExit("docs/STATOR_THROAT_BOUND.md exists before the A3b1 result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1"
+        if A3B1_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b with A3b1 declared"
         if A5B_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0 with A5b declared"
         if A3B0_RESULTS <= committed
