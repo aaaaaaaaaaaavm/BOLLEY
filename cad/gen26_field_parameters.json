@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "extends": "cad/gen25_field_parameters.json",
+  "status": "ASSUMPTION A6g Gen2.6 Quintweb nonlinear field gate; NOT RUN",
+  "controlled_design": "Gen2.6 Quintweb candidate frozen after the failed A7a result",
+  "geometry": {
+    "topology_name": "31 mm Fluxmanifold-R4 with five layered Fluxweb passive blades",
+    "core_face_y_min_m": -0.0155,
+    "core_face_y_max_m": 0.0155,
+    "outer_leg_intervals_y_m": [[-0.0155, -0.00879], [0.00879, 0.0155]],
+    "separator_intervals_y_m": [[-0.00721, -0.00479], [-0.00321, -0.00079], [0.00079, 0.00321], [0.00479, 0.00721]],
+    "back_yoke_y_m": [-0.0155, 0.0155],
+    "fluxbridge_centres_y_m": [-0.008, -0.004, 0.0, 0.004, 0.008],
+    "coil_positive_y_m": [-0.02475, -0.01575],
+    "coil_negative_y_m": [-0.00645, 0.00255]
+  },
+  "excitation": {
+    "turns": 4,
+    "phase_current_rms_a": 375.0,
+    "ampere_turn_rms": 1500.0,
+    "copper_area_per_turn_m2": 0.00002025,
+    "coil_side_copper_area_m2": 0.000081,
+    "source_current_density_rms_a_m2": 18518518.51851852,
+    "positive_and_negative_source_areas_equal": true,
+    "turn_exchange": "four 20.25 mm2 turns; same 81 mm2 slot copper as Gen2.5; 1500 A-turn restores five-lane field"
+  },
+  "interface_accounting": {
+    "architecture": "five layered Fluxweb blades per face; each retains the Gen2.5 1.12 mm magnetic web, 0.20 mm backstrap and 0.92 mm copper rung",
+    "blades_per_face": 5,
+    "total_blade_count": 20,
+    "active_area_ratio_to_gen25": 1.25,
+    "bar_pitch_mm": 2.0,
+    "copper_rung_axial_width_mm": 0.75,
+    "magnetic_ligament_axial_width_mm": 1.25,
+    "magnetic_blade_active_width_mm": 1.12,
+    "magnetic_backstrap_below_rung_mm": 0.2,
+    "copper_rung_active_width_mm": 0.92,
+    "effective_axial_average_magnetic_width_mm": 0.775,
+    "effective_magnetic_fraction_of_active_width": 0.6919642857142857,
+    "equivalent_copper_sheet_thickness_mm": 0.345,
+    "encapsulant_per_side_mm": 0.03,
+    "maximum_finished_blade_width_mm": 1.18,
+    "stationary_slot_width_mm": 1.58,
+    "nominal_blade_clearance_per_side_mm": 0.2,
+    "gen26_magnetic_matrix_mass_kg": 0.18378477957446812,
+    "gen26_retained_cage_copper_mass_kg": 0.14194790400000001,
+    "scaled_capture_encapsulation_allowance_kg": 0.0625,
+    "total_interface_increment_kg": 0.3882326835744681,
+    "increment_from_gen25_interface_kg": 0.07764653671489357,
+    "target_interface_increment_kg": 0.25,
+    "target_interface_margin_kg": -0.1382326835744681,
+    "preferred_interface_increment_kg": 0.3,
+    "preferred_interface_margin_kg": -0.08823268357446812,
+    "preferred_interface_screen_pass": false,
+    "absolute_interface_increment_limit_kg": 0.4,
+    "absolute_interface_margin_kg": 0.011767316425531915,
+    "absolute_interface_limit_pass": true
+  },
+  "design_accounting": {
+    "stationary_core_cross_section_mm2": 594.9632587712816,
+    "stationary_core_density_kg_m3": 7650.0,
+    "stationary_core_mass_four_faces_kg": 8.19264407328055,
+    "primary_copper_mass_four_faces_kg": 7.664025599999997,
+    "active_primary_mass_four_faces_kg": 15.856669673280547,
+    "a3g_active_primary_mass_kg": 11.829450599999998,
+    "gen1_active_primary_mass_kg": 40.96,
+    "cell_resistance_ratio_to_a3g": 1.0
+  },
+  "bands": {
+    "maximum_per_cell_inductance_ratio_to_a3g": 1.4
+  }
+}
