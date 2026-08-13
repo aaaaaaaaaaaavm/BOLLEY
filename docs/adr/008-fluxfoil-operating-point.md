@@ -1,6 +1,6 @@
 # ADR-008: Raise Fluxfoil field instead of relaxing efficiency
 
-**Status:** accepted for A3d screening  
+**Status:** accepted for explicit stator/circuit entry  
 **Date:** 2026-08-13
 
 ## Context
@@ -21,3 +21,6 @@ dimension, material or acceptance band changes.
 - A3d may advance only if it clears the original 70% band and every original A3c band.
 - Further field increases above 0.60 T are not an allowed repair. A failure triggers geometric or
   topological redesign.
+
+A3d subsequently passed all 19 frozen bands. The result promotes the operating point, not the
+assumed field source: A3e must now close an explicit magnetic circuit, winding and pulse model.

@@ -24,7 +24,8 @@ A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. A5b
 four-fin, 6 mm quad-comb passes its interface gate, but A3b1 kills the drawn shared stator: its
 interior pole throats would require 9.57 T. Gen1 therefore pivots to **Fluxfoil**—four continuous
 passive aluminium fins per face inside the same envelope, driven by symmetric travelling fields.
-No candidate has passed field FEA, provider review, structural analysis or test.
+A3d clears all 19 thin-sheet gates at 0.60 T; producing that field with real copper and iron is the
+next gate. No candidate has passed field FEA, provider review, structural analysis or test.
 
 ## The proposed machine
 
@@ -56,7 +57,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
 8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
 9. [`docs/QUAD_COMB_SCREEN.md`](docs/QUAD_COMB_SCREEN.md) — the smallest redesign that recovered ideal force margin.
-10. `docs/BASELINE.md` — generated only after the first declared runs complete.
+10. [`docs/INDUCTION_OPERATING_POINT.md`](docs/INDUCTION_OPERATING_POINT.md) — the current Fluxfoil operating point.
+11. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 

@@ -12,7 +12,7 @@
 | A5b | MODELLED | 15/15 bands pass. Quad-comb mass is 158.9 g; ideal field requirement is 1.595 T with 13.6% ideal margin at 1.7 T. |
 | A3b1 | MODELLED | 0/7 bands pass. Required outer/interior throat fields are 4.78/9.57 T; the shared-pole stator is rejected. |
 | A3c | MODELLED | 17/18 bands pass. The 0.50 T point fails worst-CG secondary-only efficiency at 66.2% versus 70%. |
-| A3d | NOT RUN | Revised 0.60 T operating point declared with every A3c band preserved. |
+| A3d | MODELLED | 19/19 bands pass. At 0.60 T, worst-CG secondary-only efficiency is 73.9%, peak air-gap power 6.84 kW and rated local rise 4.85 K. |
 | A5 | NOT RUN | — |
 
 This file is updated only after the corresponding committed run sheet exists.
