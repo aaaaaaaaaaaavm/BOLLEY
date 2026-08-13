@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A7a Gen2.5 post-field cage/circuit reclosure; NOT RUN",
+  "controlled_design": "A6f-passing Gen2.5 Fluxweb with fixed 30 mm pitch, three-turn winding and 1,200 A-turn point",
+  "source_files": [
+    "cad/fluxbridge_parameters.json",
+    "analysis/results/fluxbridge_optimization.json",
+    "cad/gen25_field_parameters.json",
+    "analysis/results/gen25_field.json"
+  ],
+  "model": {
+    "field_selection": "minimum mean tooth-slice field across the three A6f meshes; convert to equivalent sheet field with sqrt(0.5)",
+    "inductance_selection": "maximum per-cell inductance across the three A6f meshes times ten series cells per phase",
+    "cage_model": "A3g low-slip homogenized sheet model with Gen2.5 copper thickness",
+    "shot_model": "constant 8 g force over 0.90 m with analytical energy integration at every 21 by 21 CG point",
+    "field_current_rule": "400 A RMS is the full-field point; channel current scales with square root of commanded force",
+    "phase_resistance_rule": "A3g 30 mm cell resistance times 0.5625 for three 27 mm2 turns, then apply the declared corner multiplier"
+  },
+  "design": {
+    "phase_count": 3,
+    "turns_per_cell": 3,
+    "cells_per_phase": 10,
+    "total_cells_per_channel": 30,
+    "cell_pitch_m": 0.03,
+    "electrical_wavelength_m": 0.09,
+    "active_stator_length_m": 0.9,
+    "conductor_area_per_turn_m2": 0.000027,
+    "gross_slot_fill_fraction": 0.6,
+    "rated_phase_current_rms_a": 400.0,
+    "rated_mmf_a_turn": 1200.0,
+    "rated_primary_current_density_a_m2": 14814814.814814815,
+    "equivalent_copper_sheet_thickness_m": 0.000345,
+    "nominal_cage_conductance_ratio_to_a3g": 0.92,
+    "interface_increment_kg": 0.31058614685957453,
+    "cage_copper_mass_kg": 0.11355832320000002,
+    "magnetic_matrix_mass_kg": 0.1470278236595745,
+    "primary_copper_mass_kg": 7.664025599999997,
+    "stationary_core_mass_kg": 8.00524814328055,
+    "active_primary_mass_kg": 15.669273743280546
+  },
+  "robustness_corners": {
+    "cage_sheet_conductance_multiplier": [0.9, 1.0],
+    "phase_resistance_multiplier": [1.0, 1.25]
+  },
+  "preferences": {
+    "target_interface_mass_kg": 0.25,
+    "preferred_interface_mass_kg": 0.3
+  },
+  "bands": {
+    "maximum_interface_mass_kg": 0.4,
+    "maximum_active_primary_mass_kg": 16.0,
+    "maximum_rated_phase_current_a": 400.0,
+    "maximum_primary_current_density_a_m2": 40000000.0,
+    "maximum_winding_slot_fill_fraction": 0.6,
+    "maximum_required_dc_link_v": 48.0,
+    "minimum_margin_on_48v_link_fraction": 0.1,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_qualification_source_energy_j": 1500.0,
+    "minimum_source_to_payload_efficiency": 0.3,
+    "maximum_peak_dc_power_w": 15000.0,
+    "maximum_primary_copper_rise_per_shot_k": 3.0,
+    "maximum_cage_copper_rise_per_shot_k": 20.0,
+    "maximum_cage_current_density_a_m2": 180000000.0,
+    "maximum_required_cage_slip_m_s": 8.0,
+    "minimum_secondary_only_efficiency": 0.5,
+    "maximum_terminal_frequency_hz": 350.0,
+    "maximum_unbalanced_normal_force_n": 100.0
+  }
+}
