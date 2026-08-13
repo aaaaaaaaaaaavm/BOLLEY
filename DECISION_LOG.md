@@ -10,4 +10,5 @@ This is the compact index. Full arguments live in `docs/adr/`.
 | D004 | 2026-08-13 | Treat 4 kg as the comparison case and 6 kg as the qualification sizing case. | A current maximum mass is not hidden behind the older reference case. | [ADR-003](docs/adr/003-phase-zero-duty.md) |
 | D005 | 2026-08-13 | Do not include a paper, LaTeX tree or publication figures. | The repository remains an engineering decision record. | This log |
 | D006 | 2026-08-13 | Commit bands before model results. | Git history records what would count as failure before the answer is known. | [Engineering method](docs/ENGINEERING_METHOD.md) |
-
+| D007 | 2026-08-13 | Reject the A5a three-fin comb on an ideal tooth-edge force bound. | A5a remains an interface result; whole-face shear is not used as axial force evidence. | [ADR-006](docs/adr/006-edge-bound-redesign.md) |
+| D008 | 2026-08-13 | Screen a four-fin, 6 mm passive quad-comb. | The smallest clean payload-side rescue must pass A5b before nonlinear analysis. | [ADR-006](docs/adr/006-edge-bound-redesign.md) |

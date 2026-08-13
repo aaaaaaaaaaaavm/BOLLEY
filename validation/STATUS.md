@@ -8,7 +8,8 @@
 | A3 | NOT RUN | — |
 | A4 | NOT RUN | — |
 | A5a | MODELLED | 11/11 executable bands pass. Comb-fin mass is 121.2 g; peak channel load is 229.07 N and developed shear is 22.73 kPa. |
-| A3b0 | NOT RUN | Ideal tooth-edge upper bound declared for the exact three-fin comb. |
+| A3b0 | MODELLED | 0/3 bands pass. The three-fin comb makes only 250.67 N at an optimistic 2.0 T and is rejected before FEA. |
+| A5b | NOT RUN | Four-fin, 6 mm quad-comb bands declared. |
 | A5 | NOT RUN | — |
 
 This file is updated only after the corresponding committed run sheet exists.

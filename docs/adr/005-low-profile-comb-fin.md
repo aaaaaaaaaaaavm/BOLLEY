@@ -1,6 +1,6 @@
 # ADR-005: Low-profile four-face comb-fin
 
-**Status:** accepted for nonlinear-model entry  
+**Status:** superseded by [ADR-006](006-edge-bound-redesign.md)  
 **Date:** 2026-08-13
 
 ## Context
@@ -54,4 +54,3 @@ evidence.
 - The single-sided aluminium induction lane remains the fallback if electromagnetic or provider
   review fails.
 - Passing A5a does not establish novelty. The prior-art search remains open.
-

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "MIXED: ASSUMPTION geometry and named EXTERNAL GUIDANCE/MATERIAL DATA",
+  "interface": {
+    "channel_count": 4,
+    "body_face_span_m": 0.1,
+    "active_length_m": 0.336,
+    "force_line_radius_m": 0.04575,
+    "transverse_cg_limit_m": 0.02,
+    "cg_grid_points_per_axis": 21
+  },
+  "quad_comb": {
+    "fins_per_channel": 4,
+    "active_fin_height_m": 0.006,
+    "radial_tip_cover_m": 0.00025,
+    "steel_thickness_m": 0.0005,
+    "side_cover_per_side_m": 0.00025,
+    "clearance_per_side_m": 0.0005,
+    "stationary_pole_web_width_m": 0.002,
+    "pole_pitch_m": 0.048,
+    "axial_tooth_duty_fraction": 0.5,
+    "axial_fin_phase": "ALIGNED",
+    "root_capture_fastener_allowance_kg": 0.05,
+    "steel_density_kg_m3": 7650.0,
+    "aluminium_density_kg_m3": 2700.0
+  },
+  "external_guidance": {
+    "document": "Cal Poly CubeSat Design Specification Rev. 14.1",
+    "url": "https://static1.squarespace.com/static/5418c831e4b0fa4ecac1bacd/t/62193b7fc9e72e0053f00910/1645820809779/CDS%2BREV14_1%2B2022-02-09.pdf",
+    "maximum_side_protrusion_from_rail_plane_m": 0.0065,
+    "minimum_rail_width_to_first_protrusion_m": 0.0085,
+    "minimum_rail_contact_fraction": 0.75,
+    "contacting_aluminium_hard_anodized_required": true,
+    "launch_provider_supersedes_guidance": true
+  },
+  "material_anchor": {
+    "manufacturer": "thyssenkrupp Steel",
+    "product_family": "powercore A non-grain-oriented electrical steel",
+    "reference_grade": "M270-50A",
+    "design_flux_density_t": 1.7,
+    "url": "https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html"
+  },
+  "bands": {
+    "maximum_projected_usable_face_fraction": 0.25,
+    "preferred_interface_mass_kg": 0.25,
+    "absolute_interface_mass_kg": 0.4,
+    "maximum_channel_force_n": 255.0,
+    "minimum_nominal_clearance_per_side_m": 0.0005,
+    "minimum_nominal_protrusion_margin_m": 0.0002,
+    "minimum_ideal_force_margin_fraction_at_design_field": 0.1,
+    "optimistic_hard_flux_density_ceiling_t": 2.0
+  }
+}

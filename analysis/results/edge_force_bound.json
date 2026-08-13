@@ -1,0 +1,128 @@
+{
+  "band_count": 3,
+  "band_pass_count": 0,
+  "bands": {
+    "force_at_optimistic_hard_ceiling": false,
+    "required_flux_density_hard": false,
+    "required_flux_density_preferred": false
+  },
+  "bound_input_file": "cad/edge_force_bound_parameters.json",
+  "derivation": {
+    "force": "F = 0.5 * i^2 * dL/dx",
+    "inductance": "L = N^2 * mu0 * A / (2 * g)",
+    "substitution": "F_per_edge = B^2 * g * h / mu0",
+    "warning": "This is an optimistic upper bound, not Maxwell-stress FEA or hardware evidence."
+  },
+  "disposition": "REJECT_THREE_FIN_COMB_BEFORE_FEA",
+  "evidence": "ANALYTICAL UPPER BOUND from ASSUMPTION geometry with named EXTERNAL MATERIAL ANCHOR",
+  "force_bound": {
+    "coefficient_n_per_t2": 62.66725884243379,
+    "ideal_force_at_optimistic_hard_ceiling_n": 250.66903536973516,
+    "minimum_fins_at_hard_ceiling": 4,
+    "minimum_fins_at_preferred_field": 5,
+    "optimistic_hard_flux_density_ceiling_t": 2.0,
+    "required_average_channel_force_n": 255.0,
+    "required_ideal_flux_density_t": 2.0172036299416174,
+    "sweep": [
+      {
+        "flux_density_t": 0.5,
+        "ideal_force_n": 15.666814710608447
+      },
+      {
+        "flux_density_t": 0.6,
+        "ideal_force_n": 22.56021318327616
+      },
+      {
+        "flux_density_t": 0.7,
+        "ideal_force_n": 30.706956832792553
+      },
+      {
+        "flux_density_t": 0.8,
+        "ideal_force_n": 40.107045659157635
+      },
+      {
+        "flux_density_t": 0.9,
+        "ideal_force_n": 50.76047966237138
+      },
+      {
+        "flux_density_t": 1.0,
+        "ideal_force_n": 62.66725884243379
+      },
+      {
+        "flux_density_t": 1.1,
+        "ideal_force_n": 75.8273831993449
+      },
+      {
+        "flux_density_t": 1.2,
+        "ideal_force_n": 90.24085273310465
+      },
+      {
+        "flux_density_t": 1.3,
+        "ideal_force_n": 105.90766744371311
+      },
+      {
+        "flux_density_t": 1.4,
+        "ideal_force_n": 122.82782733117021
+      },
+      {
+        "flux_density_t": 1.5,
+        "ideal_force_n": 141.00133239547603
+      },
+      {
+        "flux_density_t": 1.6,
+        "ideal_force_n": 160.42818263663054
+      },
+      {
+        "flux_density_t": 1.7,
+        "ideal_force_n": 181.10837805463362
+      },
+      {
+        "flux_density_t": 1.8,
+        "ideal_force_n": 203.04191864948552
+      },
+      {
+        "flux_density_t": 1.9,
+        "ideal_force_n": 226.22880442118603
+      },
+      {
+        "flux_density_t": 2.0,
+        "ideal_force_n": 250.66903536973516
+      },
+      {
+        "flux_density_t": 2.1,
+        "ideal_force_n": 276.3626114951331
+      },
+      {
+        "flux_density_t": 2.2,
+        "ideal_force_n": 303.3095327973796
+      }
+    ]
+  },
+  "geometry": {
+    "active_fin_height_m": 0.005,
+    "active_tooth_count_per_fin": 7,
+    "effective_gap_per_side_m": 0.00075,
+    "fins_per_channel": 3,
+    "mechanical_clearance_m": 0.0005,
+    "side_cover_m": 0.00025,
+    "simultaneously_active_overlap_edge_count": 21
+  },
+  "geometry_input_file": "cad/comb_fin_parameters.json",
+  "hard_screen_pass": false,
+  "limits": [
+    "All active edges are assumed to reach the stated flux density simultaneously.",
+    "Steel reluctance, saturation shape, leakage, fringing and end effects are ignored.",
+    "No ampere-turn, copper-window, voltage, current, switching, loss or thermal limit is applied.",
+    "The 2.0 T ceiling is deliberately optimistic and is not a supplier guarantee.",
+    "A passing upper bound would only earn a nonlinear 3D model; a failure rejects the geometry."
+  ],
+  "material_anchor": {
+    "manufacturer": "thyssenkrupp Steel",
+    "minimum_polarization_at_10000_a_per_m_t": 1.7,
+    "product_family": "powercore A non-grain-oriented electrical steel",
+    "reference_grade": "M270-50A",
+    "url": "https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html",
+    "warning": "The catalogue value is a reality anchor, not a selected-material B-H curve or a force prediction."
+  },
+  "topology": "two-gap through-flux switched-reluctance overlap comb"
+}

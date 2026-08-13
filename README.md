@@ -19,11 +19,11 @@ the passive translator of a segmented linear electromagnetic machine.
 That small concession removes the launch sled, the post-release brake and the return stroke.
 
 A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
-moving return iron breaks the declared mass logic. The current primary candidate is a thin
-three-fin comb on each broad face between opposed stationary pole webs. A5a screens that moving
-interface at 121.2 g and inside preliminary CubeSat envelope guidance. A single-sided aluminium
-induction lane is the fallback. The comb has not passed provider review, FEA, structural analysis
-or test.
+moving return iron breaks the declared mass logic. A5a then found that a three-fin comb fits, but
+A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. The current redesign
+under test is a passive four-fin, 6 mm **quad-comb** on each broad face. A single-sided aluminium
+induction lane remains the fallback. No comb has passed provider review, nonlinear FEA, structural
+analysis or test.
 
 ## The proposed machine
 
@@ -53,7 +53,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 5. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the work that remains.
 6. [`docs/TOPOLOGY_SCREEN.md`](docs/TOPOLOGY_SCREEN.md) — why the original flux return was rejected.
 7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
-8. `docs/BASELINE.md` — generated only after the first declared runs complete.
+8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
+9. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 
