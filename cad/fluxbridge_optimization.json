@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A3g constrained design-space definition; NOT RUN",
+  "base_input": "cad/fluxbridge_parameters.json",
+  "fixed": {
+    "tooth_duty_fraction": 0.5,
+    "phase_count": 3,
+    "turns_per_cell": 4,
+    "winding_slot_radial_height_m": 0.018,
+    "design_gross_slot_fill_fraction": 0.6,
+    "minimum_active_stator_length_m": 0.9,
+    "maximum_active_stator_length_m": 0.94,
+    "mean_turn_length_rule": "2 * (cell_pitch + 0.014 m)",
+    "objective": "minimum worst-corner qualification source energy; tie-break by lower active primary mass, then lower equivalent field"
+  },
+  "candidate_geometry": [
+    {"cell_pitch_m": 0.016, "total_cells_per_channel": 57},
+    {"cell_pitch_m": 0.018, "total_cells_per_channel": 51},
+    {"cell_pitch_m": 0.02, "total_cells_per_channel": 45},
+    {"cell_pitch_m": 0.022, "total_cells_per_channel": 42},
+    {"cell_pitch_m": 0.024, "total_cells_per_channel": 39},
+    {"cell_pitch_m": 0.026, "total_cells_per_channel": 36},
+    {"cell_pitch_m": 0.028, "total_cells_per_channel": 33},
+    {"cell_pitch_m": 0.03, "total_cells_per_channel": 30}
+  ],
+  "candidate_equivalent_sheet_field_rms_t": [0.44, 0.46, 0.48, 0.5, 0.52, 0.54, 0.56, 0.58, 0.6, 0.62],
+  "robustness_corners": {
+    "clearance_per_side_m": [0.0002, 0.00025],
+    "cage_sheet_conductance_multiplier": [0.9, 1.0],
+    "stationary_core_h_multiplier": [1.0, 1.5]
+  },
+  "bands": {
+    "maximum_magnetic_ligament_field_t": 1.45,
+    "maximum_rated_mmf_a_turn": 1800.0,
+    "maximum_rated_phase_current_a": 450.0,
+    "maximum_primary_current_density_a_m2": 40000000.0,
+    "maximum_winding_slot_fill_fraction": 0.6,
+    "maximum_active_primary_mass_kg": 12.0,
+    "maximum_required_dc_link_v": 48.0,
+    "minimum_margin_on_48v_link_fraction": 0.1,
+    "maximum_reference_source_energy_j": 1000.0,
+    "maximum_qualification_source_energy_j": 1500.0,
+    "minimum_source_to_payload_efficiency": 0.3,
+    "maximum_peak_dc_power_w": 15000.0,
+    "maximum_primary_copper_rise_per_shot_k": 3.0,
+    "maximum_cage_copper_rise_per_shot_k": 20.0,
+    "maximum_cage_current_density_a_m2": 180000000.0,
+    "maximum_required_cage_slip_m_s": 8.0,
+    "minimum_secondary_only_efficiency": 0.5,
+    "maximum_terminal_frequency_hz": 350.0,
+    "maximum_unbalanced_normal_force_n": 100.0
+  }
+}
