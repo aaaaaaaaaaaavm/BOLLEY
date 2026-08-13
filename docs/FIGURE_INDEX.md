@@ -45,11 +45,13 @@
 | A6g-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6g/A6g_field_magnitude.png) | `analysis/figures/a6g/A6g_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing Gen2.6 Quintweb transverse-field screen |
 | A6g-02 | [Four-blade field balance](../analysis/figures/a6g/A6g_blade_fields.png) | `analysis/figures/a6g/A6g_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing Gen2.6 Quintweb transverse-field screen |
 | A6g-03 | [Mesh and boundary convergence](../analysis/figures/a6g/A6g_convergence.png) | `analysis/figures/a6g/A6g_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Passing Gen2.6 Quintweb transverse-field screen |
+| A7b-01 | [Worst-corner qualification cage-temperature CG map](../analysis/figures/a7b/A7b_qualification_cage_rise_map.png) | `analysis/figures/a7b/A7b_qualification_cage_rise_map.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected exact Gen2.6 hot-resistance circuit evidence |
+| A7b-02 | [A7b controlling normalized corner margins](../analysis/figures/a7b/A7b_controlling_margins.png) | `analysis/figures/a7b/A7b_controlling_margins.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected exact Gen2.6 hot-resistance circuit evidence |
 
 ## Evidence count
 
-- Indexed figures: **40**.
-- Parametric/model/schematic figures: **40**.
+- Indexed figures: **42**.
+- Parametric/model/schematic figures: **42**.
 - Physically observed figures: **0**.
 
 A render may explain topology or nominal fit. It cannot close force, field, thermal,

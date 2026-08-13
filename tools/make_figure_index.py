@@ -18,6 +18,7 @@ A6E = ROOT / "analysis" / "figures" / "a6e" / "FIGURES.json"
 A6F = ROOT / "analysis" / "figures" / "a6f" / "FIGURES.json"
 A7A = ROOT / "analysis" / "figures" / "a7a" / "FIGURES.json"
 A6G = ROOT / "analysis" / "figures" / "a6g" / "FIGURES.json"
+A7B = ROOT / "analysis" / "figures" / "a7b" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -55,6 +56,7 @@ def render() -> str:
         ("A6f", A6F, "Passing Gen2.5 transverse-field screen; downstream gates open"),
         ("A7a", A7A, "Rejected exact Gen2.5 cage/circuit evidence"),
         ("A6g", A6G, "Passing Gen2.6 Quintweb transverse-field screen"),
+        ("A7b", A7B, "Rejected exact Gen2.6 hot-resistance circuit evidence"),
     ):
         if not manifest_path.exists():
             continue
