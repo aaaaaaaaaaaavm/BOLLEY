@@ -18,6 +18,11 @@ INPUT = ROOT / "cad" / "gen2_field_parameters.json"
 OUTPUT = RESULTS / "gen2_field.json"
 FIGURE_DIR = ROOT / "analysis" / "figures" / "a6"
 FIGURE_MANIFEST = FIGURE_DIR / "FIGURES.json"
+GATE_LABEL = "A6"
+DESIGN_LABEL = "Gen2"
+FIGURE_PREFIX = "A6"
+PROMOTE_DISPOSITION = "PROMOTE_GEN2_TO_TRANSIENT_DISCRETE_CAGE_FIELD_MODEL"
+REJECT_DISPOSITION = "DO_NOT_PROMOTE_GEN2_FIELD_POINT"
 MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 
@@ -174,6 +179,12 @@ def geometry_boundaries(p: dict) -> tuple[list[float], list[float]]:
         "active_field_sample_z_m",
     ):
         z.extend(g[key])
+    fillet = g.get("inner_corner_fillet_radius_m", 0.0)
+    if fillet > 0.0:
+        left_inner = g["outer_leg_intervals_y_m"][0][1]
+        right_inner = g["outer_leg_intervals_y_m"][-1][0]
+        y.extend((left_inner + fillet, right_inner - fillet))
+        z.append(g["back_yoke_z_m"][0] - fillet)
     return y, z
 
 
@@ -201,6 +212,28 @@ def classify_elements(centres: np.ndarray, p: dict) -> tuple[np.ndarray, np.ndar
     for interval in g["separator_intervals_y_m"]:
         core |= in_rectangle(y, z, interval, g["separator_z_m"])
     core |= in_rectangle(y, z, g["back_yoke_y_m"], g["back_yoke_z_m"])
+    fillet = g.get("inner_corner_fillet_radius_m", 0.0)
+    if fillet > 0.0:
+        yoke_bottom = g["back_yoke_z_m"][0]
+        left_inner = g["outer_leg_intervals_y_m"][0][1]
+        left_centre_y = left_inner + fillet
+        right_inner = g["outer_leg_intervals_y_m"][-1][0]
+        right_centre_y = right_inner - fillet
+        centre_z = yoke_bottom - fillet
+        left_square = in_rectangle(
+            y, z, (left_inner, left_centre_y), (centre_z, yoke_bottom)
+        )
+        right_square = in_rectangle(
+            y, z, (right_centre_y, right_inner), (centre_z, yoke_bottom)
+        )
+        radius_squared = fillet**2
+        left_haunch = left_square & (
+            (y - left_centre_y) ** 2 + (z - centre_z) ** 2 >= radius_squared
+        )
+        right_haunch = right_square & (
+            (y - right_centre_y) ** 2 + (z - centre_z) ** 2 >= radius_squared
+        )
+        core |= left_haunch | right_haunch
     tags[core] = 1
 
     width = g["fluxbridge_magnetic_width_y_m"]
@@ -305,7 +338,7 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
     previous_material_residual = None
     relaxation = settings["initial_relaxation"]
     print(
-        f"A6 {name}: {mesh.nvertices:,} nodes / {mesh.nelements:,} elements",
+        f"{GATE_LABEL} {name}: {mesh.nvertices:,} nodes / {mesh.nelements:,} elements",
         flush=True,
     )
     for iteration in range(1, settings["maximum_iterations"] + 1):
@@ -382,7 +415,7 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
             }
         )
         print(
-            f"A6 {name}: nonlinear {iteration:02d}, "
+            f"{GATE_LABEL} {name}: nonlinear {iteration:02d}, "
             f"dA={relative_change:.3e}, dnu={material_change:.3e}, "
             f"omega={relaxation:.3f}, CG={linear_iterations[0]}, "
             f"r={linear_residual:.3e}, "
@@ -602,7 +635,7 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
     bands = {name: bool(passed) for name, passed in bands.items()}
     failed = [name for name, passed in bands.items() if not passed]
     result = {
-        "evidence": "A6 INDEPENDENTLY MESHED 2D NONLINEAR RMS-EQUIVALENT MAGNETOSTATIC FEA",
+        "evidence": f"{GATE_LABEL} INDEPENDENTLY MESHED 2D NONLINEAR RMS-EQUIVALENT MAGNETOSTATIC FEA",
         "input_file": str(INPUT.relative_to(ROOT)),
         "formulation": p["solver"]["formulation"],
         "mesh_results": {name: solution.metrics for name, solution in solutions.items()},
@@ -615,9 +648,9 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
         "failed_bands": failed,
         "screen_pass": all(bands.values()),
         "disposition": (
-            "PROMOTE_GEN2_TO_TRANSIENT_DISCRETE_CAGE_FIELD_MODEL"
+            PROMOTE_DISPOSITION
             if all(bands.values())
-            else "DO_NOT_PROMOTE_GEN2_FIELD_POINT"
+            else REJECT_DISPOSITION
         ),
         "limits": [
             "This is a 2D RMS-equivalent magnetostatic tooth slice, not transient induction or force FEA.",
@@ -640,7 +673,7 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
     )
     figures = []
 
-    path = FIGURE_DIR / "A6_field_magnitude.png"
+    path = FIGURE_DIR / f"{FIGURE_PREFIX}_field_magnitude.png"
     fig, ax = plt.subplots(figsize=(12, 8), dpi=160)
     image = ax.tripcolor(
         triangulation,
@@ -655,15 +688,15 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
     ax.set_aspect("equal")
     ax.set_xlabel("Across face y [mm]")
     ax.set_ylabel("Radial z [mm]")
-    ax.set_title("A6 fine-mesh field magnitude |B| at A3g RMS current")
+    ax.set_title(f"{GATE_LABEL} fine-mesh field magnitude |B| at controlled RMS current")
     colorbar = fig.colorbar(image, ax=ax, pad=0.02)
     colorbar.set_label("|B| [T]")
     fig.tight_layout()
-    fig.savefig(path, metadata={"Software": "Bolley deterministic A6 renderer"})
+    fig.savefig(path, metadata={"Software": f"Bolley deterministic {GATE_LABEL} renderer"})
     plt.close(fig)
     figures.append((path, "Fine-mesh nonlinear field magnitude", "MODEL OUTPUT"))
 
-    path = FIGURE_DIR / "A6_blade_fields.png"
+    path = FIGURE_DIR / f"{FIGURE_PREFIX}_blade_fields.png"
     fig, ax = plt.subplots(figsize=(10, 6), dpi=160)
     blade = fine.metrics["blade_fields"]
     labels = [f"Blade {record['blade']}" for record in blade]
@@ -680,15 +713,15 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
     )
     ax.set_xticks(x, labels)
     ax.set_ylabel("Field [T RMS-equivalent]")
-    ax.set_title("A6 field distribution across the four Fluxbridge blades")
+    ax.set_title(f"{GATE_LABEL} field distribution across the four Fluxbridge blades")
     ax.legend()
     ax.grid(axis="y", alpha=0.25)
     fig.tight_layout()
-    fig.savefig(path, metadata={"Software": "Bolley deterministic A6 renderer"})
+    fig.savefig(path, metadata={"Software": f"Bolley deterministic {GATE_LABEL} renderer"})
     plt.close(fig)
     figures.append((path, "Four-blade field balance", "MODEL OUTPUT"))
 
-    path = FIGURE_DIR / "A6_convergence.png"
+    path = FIGURE_DIR / f"{FIGURE_PREFIX}_convergence.png"
     fig, axes = plt.subplots(1, 2, figsize=(12, 5), dpi=160)
     names = ["Base", "Fine", "Expanded"]
     metrics = [result["mesh_results"][key] for key in ("base", "fine", "expanded_boundary")]
@@ -701,7 +734,7 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
     for axis in axes:
         axis.grid(axis="y", alpha=0.25)
     fig.tight_layout()
-    fig.savefig(path, metadata={"Software": "Bolley deterministic A6 renderer"})
+    fig.savefig(path, metadata={"Software": f"Bolley deterministic {GATE_LABEL} renderer"})
     plt.close(fig)
     figures.append((path, "Mesh and boundary convergence", "NUMERICAL CONVERGENCE"))
 
@@ -721,7 +754,7 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
         json.dumps(
             {
                 "schema_version": 1,
-                "gate": "A6",
+                "gate": GATE_LABEL,
                 "figure_count": len(records),
                 "figures": records,
             },
@@ -735,7 +768,7 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
 
 def check_figures() -> None:
     if not FIGURE_MANIFEST.exists():
-        raise SystemExit("missing analysis/figures/a6/FIGURES.json")
+        raise SystemExit(f"missing figure manifest for {GATE_LABEL}")
     manifest = json.loads(FIGURE_MANIFEST.read_text(encoding="utf-8"))
     for record in manifest["figures"]:
         path = ROOT / record["path"]
@@ -744,26 +777,26 @@ def check_figures() -> None:
             or path.stat().st_size != record["bytes"]
             or sha256(path) != record["sha256"]
         ):
-            raise SystemExit(f"stale A6 figure: {path.relative_to(ROOT)}")
+            raise SystemExit(f"stale {GATE_LABEL} figure: {path.relative_to(ROOT)}")
 
 
 def artifact_check() -> None:
     if not OUTPUT.exists():
-        raise SystemExit("missing analysis/results/gen2_field.json")
+        raise SystemExit(f"missing result file for {GATE_LABEL}")
     result = json.loads(OUTPUT.read_text(encoding="utf-8"))
     expected_meshes = {"base", "fine", "expanded_boundary"}
     if set(result.get("mesh_results", {})) != expected_meshes:
-        raise SystemExit("A6 result does not contain the three declared meshes")
+        raise SystemExit(f"{GATE_LABEL} result does not contain the three declared meshes")
     bands = result.get("bands", {})
     if result.get("band_count") != len(bands):
-        raise SystemExit("A6 band count is inconsistent")
+        raise SystemExit(f"{GATE_LABEL} band count is inconsistent")
     if result.get("band_pass_count") != sum(bool(value) for value in bands.values()):
-        raise SystemExit("A6 pass count is inconsistent")
+        raise SystemExit(f"{GATE_LABEL} pass count is inconsistent")
     failed = [name for name, passed in bands.items() if not passed]
     if set(result.get("failed_bands", [])) != set(failed):
-        raise SystemExit("A6 failed-band list is inconsistent")
+        raise SystemExit(f"{GATE_LABEL} failed-band list is inconsistent")
     if result.get("screen_pass") != all(bands.values()):
-        raise SystemExit("A6 screen disposition is inconsistent")
+        raise SystemExit(f"{GATE_LABEL} screen disposition is inconsistent")
 
     p = load()
     y_aligned, z_aligned = geometry_boundaries(p)
@@ -788,9 +821,9 @@ def artifact_check() -> None:
         expected_elements = 2 * (len(y) - 1) * (len(z) - 1)
         stored = result["mesh_results"][name]
         if stored["node_count"] != expected_nodes or stored["element_count"] != expected_elements:
-            raise SystemExit(f"A6 {name} mesh counts are stale")
+            raise SystemExit(f"{GATE_LABEL} {name} mesh counts are stale")
     check_figures()
-    print("OK: A6 result structure, mesh counts and figure hashes are current")
+    print(f"OK: {GATE_LABEL} result structure, mesh counts and figure hashes are current")
 
 
 def main() -> None:
@@ -811,7 +844,7 @@ def main() -> None:
     else:
         compare_json(OUTPUT, result)
         check_figures()
-        print("OK: A6 nonlinear field result and figures are current")
+        print(f"OK: {GATE_LABEL} nonlinear field result and figures are current")
 
 
 if __name__ == "__main__":
