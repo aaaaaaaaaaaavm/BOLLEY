@@ -38,6 +38,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P31 | A3g's two coil sides share a 15 × 18 mm slot only as a sectional fill calculation. | A5d routes both alternating layers with positive coil/core/foil clearance and matched copper volume. | CRITICAL | CLOSED |
 | P32 | A6 finds only 0.6568 T mean blade field while the stationary return reaches 3.2346 T peak. | A Gen2.1 return geometry passes the same independent field, saturation and mesh bands. | CRITICAL | OPEN |
 | P33 | A6 per-cell inductance is 1.3945 times A3g, invalidating the selected drive closure. | Recompute voltage, current, energy and loss from the passing Gen2.1 field/inductance result. | CRITICAL | OPEN |
+| P34 | A6b's fine ligament and return-haunch peaks exceed their limits by 2.21% and 0.62%. | A predeclared Gen2.2 correction passes <=1.45 T moving ligament and <=1.55 T stationary peak on all formal checks. | CRITICAL | OPEN |
 
 ## Register discipline
 

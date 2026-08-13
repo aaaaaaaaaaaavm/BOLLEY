@@ -28,6 +28,7 @@ A3F_RESULTS = {"fluxbridge_cage.json"}
 A3G_RESULTS = {"fluxbridge_optimization.json"}
 A5D_RESULTS = {"gen2_cad_fit.json"}
 A6_RESULTS = {"gen2_field.json"}
+A6B_RESULTS = {"gen21_field.json"}
 
 
 def run(*parts: str) -> None:
@@ -79,6 +80,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -180,8 +182,15 @@ def main() -> None:
         run("tools/make_gen2_field.py", "--check")
     elif (ROOT / "docs" / "GEN2_FIELD.md").exists():
         raise SystemExit("docs/GEN2_FIELD.md exists before the A6 result")
+    if A6B_RESULTS <= committed:
+        run("analysis/gen21_field.py", "--artifact-check")
+        run("tools/make_gen21_field.py", "--check")
+    elif (ROOT / "docs" / "GEN21_FIELD.md").exists():
+        raise SystemExit("docs/GEN21_FIELD.md exists before the A6b result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b"
+        if A6B_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6 with A6b declared"
         if A6_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d with A6 declared"
         if A5D_RESULTS <= committed

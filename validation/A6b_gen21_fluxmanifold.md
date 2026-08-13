@@ -73,3 +73,16 @@ Paired lower and upper limits remain executable separately, giving 13 stored Boo
 Commit all mesh counts, nonlinear histories, field/flux per blade, peaks by material, coenergy,
 inductance, convergence differences, every band and three indexed figures. Pass advances only to
 Gen2.1 circuit and CAD closure. Failure changes the manifold again or ends this Fluxbridge branch.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 11/13 bands pass; exact Gen2.1 geometry is rejected.**
+
+The base, fine and expanded meshes contain 209,550, 745,030 and 236,590 triangles. Mean-field,
+coenergy and boundary changes are 0.261%, 0.216% and 0.181%. Fine mean field is 0.7934 T and
+per-cell inductance is 0.8768 times A3g, so the Fluxmanifold and three-turn exchange repair A6's
+main deficits. The fine ligament estimate is 1.4820 T and stationary peak is 1.5595 T, failing
+their frozen limits by 2.21% and 0.62%.
+
+The controlled output is [docs/GEN21_FIELD.md](../docs/GEN21_FIELD.md). The failure action is a
+minimal Gen2.2 MMF/haunch correction under a new predeclared gate; no A6b limit changes.
