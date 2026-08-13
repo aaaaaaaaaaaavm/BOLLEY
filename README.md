@@ -7,6 +7,8 @@ spacecraft to remove kilograms of machinery from the launcher.**
 > Every number in this repository is either an assumption, a first-order model output or
 > external evidence labelled as such.
 
+![Bolley Gen2 nominal assembly](cad/renders/gen2/01_gen2_hero.png)
+
 VOLLEY asked whether an unmodified CubeSat could receive a programmable deployment velocity
 without carrying propulsion. Its answer used a reusable magnetic sled. The model worked, but
 the sled became 9.445 kg: most of the energy accelerated launcher hardware and most of the
@@ -18,16 +20,20 @@ the passive translator of a segmented linear electromagnetic machine.
 
 That small concession removes the launch sled, the post-release brake and the return stroke.
 
-A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
-moving return iron breaks the declared mass logic. A5a then found that a three-fin comb fits, but
-A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. A5b's passive
-four-fin, 6 mm quad-comb passes its interface gate, but A3b1 kills the drawn shared stator: its
-interior pole throats would require 9.57 T. Gen1 therefore pivots to **Fluxfoil**—four continuous
-passive aluminium fins per face inside the same envelope, driven by symmetric travelling fields.
-A3d clears all 19 thin-sheet gates at 0.60 T; producing that field with real copper and iron is the
-next gate. A3e's explicit series-flux stator then clears all 15 lumped circuit gates at 40.96 kg
-active mass, 821 J for the reference shot and 36.4% modelled source-to-payload efficiency. No
-candidate has passed field FEA, provider review, structural analysis or test.
+The repository records the uncomfortable branches as carefully as the promising one. The buried
+corner return, three-fin comb and shared-pole quad-comb were each rejected by a different bound.
+Gen1 Fluxfoil then closed its thin-sheet and lumped-circuit screens, but exact CAD found a 66.7:1
+copper-window deficit. That failure produced **Fluxbridge**: a thin passive perforated magnetic
+matrix with a shorted copper ladder, spending 0.285 kg on a 3U interface so the launcher no longer
+needs a massive moving primary.
+
+A3g found ten robust Fluxbridge candidates and selected a 30 mm-pitch Gen2 point. A5d turned it
+into seven STEP masters, seven STL previews, a discrete cage coupon and an alternating-layer
+winding with zero nominal interference. A6 then did what the earlier lumped model could not: an
+independently meshed nonlinear field solve. It rejected the operating point—0.6568 T mean blade
+field, 3.2346 T stationary-core peak and 1.3945× the predicted inductance. Gen2.1 is therefore a
+stationary-return redesign, not an attempt to hide the failed bands. No candidate has passed
+transient force FEA, provider review, structural analysis or hardware test.
 
 ## The proposed machine
 
@@ -48,6 +54,16 @@ screens that decide which coupon to build. They are not validation of the machin
 
 The exact combination may be unusual. That is not proof of novelty or patentability.
 
+## Current controlled baseline
+
+| Layer | Current evidence | Disposition |
+|---|---|---|
+| Passive spacecraft interface | Four 6.25 mm Fluxbridge blades per face; 0.285 kg total modelled mass | Retained for Gen2.1 |
+| Nominal mechanical package | Seven STEP + seven STL masters; 13/13 A5d CAD bands | Passes nominal fit only |
+| Selected Gen2 operating point | A3g `p30_B0.56` | Rejected by A6 |
+| Independent field solution | 621,180-element fine mesh; 10/13 A6 bands | Return geometry must change |
+| Hardware evidence | None | Central claim remains open |
+
 ## Start here
 
 1. [`REQUIREMENTS.md`](REQUIREMENTS.md) — what the machine must do.
@@ -59,9 +75,26 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
 8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
 9. [`docs/QUAD_COMB_SCREEN.md`](docs/QUAD_COMB_SCREEN.md) — the smallest redesign that recovered ideal force margin.
-10. [`docs/INDUCTION_OPERATING_POINT.md`](docs/INDUCTION_OPERATING_POINT.md) — the current Fluxfoil operating point.
-11. [`docs/STATOR_CIRCUIT.md`](docs/STATOR_CIRCUIT.md) — the explicit iron, copper and source behind it.
-12. `docs/BASELINE.md` — generated only after the first declared runs complete.
+10. [`docs/FLUXBRIDGE_CAGE.md`](docs/FLUXBRIDGE_CAGE.md) — why the passive cage replaced Gen1.
+11. [`docs/FLUXBRIDGE_OPTIMIZATION.md`](docs/FLUXBRIDGE_OPTIMIZATION.md) — the robust Gen2 search.
+12. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — CAD evidence and downloadable STEP/STL packages.
+13. [`docs/GEN2_FIELD.md`](docs/GEN2_FIELD.md) — the independent field result that rejected A3g.
+14. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
+15. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+
+## Reproduce
+
+The algebraic stages require only Python. Gen2 CAD uses the pinned packages in
+`requirements-cad.txt`; A6 field reproduction uses `requirements-field.txt`.
+
+```bash
+python tools/check_repo.py
+python analysis/gen2_field.py --check   # full three-mesh A6 re-solve
+```
+
+`tools/check_repo.py` verifies deterministic outputs, package manifests, local links and the
+declared stage sequence. The complete A6 re-solve is kept explicit because it is materially more
+expensive than an artifact-integrity check.
 
 ## Repository rules
 

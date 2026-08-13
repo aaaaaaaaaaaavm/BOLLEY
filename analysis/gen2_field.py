@@ -599,6 +599,7 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
         "nonlinear_convergence": fine["final_relative_solution_change"]
         <= limits["maximum_nonlinear_relative_solution_change"],
     }
+    bands = {name: bool(passed) for name, passed in bands.items()}
     failed = [name for name, passed in bands.items() if not passed]
     result = {
         "evidence": "A6 INDEPENDENTLY MESHED 2D NONLINEAR RMS-EQUIVALENT MAGNETOSTATIC FEA",
@@ -746,13 +747,63 @@ def check_figures() -> None:
             raise SystemExit(f"stale A6 figure: {path.relative_to(ROOT)}")
 
 
+def artifact_check() -> None:
+    if not OUTPUT.exists():
+        raise SystemExit("missing analysis/results/gen2_field.json")
+    result = json.loads(OUTPUT.read_text(encoding="utf-8"))
+    expected_meshes = {"base", "fine", "expanded_boundary"}
+    if set(result.get("mesh_results", {})) != expected_meshes:
+        raise SystemExit("A6 result does not contain the three declared meshes")
+    bands = result.get("bands", {})
+    if result.get("band_count") != len(bands):
+        raise SystemExit("A6 band count is inconsistent")
+    if result.get("band_pass_count") != sum(bool(value) for value in bands.values()):
+        raise SystemExit("A6 pass count is inconsistent")
+    failed = [name for name, passed in bands.items() if not passed]
+    if set(result.get("failed_bands", [])) != set(failed):
+        raise SystemExit("A6 failed-band list is inconsistent")
+    if result.get("screen_pass") != all(bands.values()):
+        raise SystemExit("A6 screen disposition is inconsistent")
+
+    p = load()
+    y_aligned, z_aligned = geometry_boundaries(p)
+    for name, spec in p["meshes"].items():
+        if not isinstance(spec, dict):
+            continue
+        y = axis_coordinates(
+            spec["domain_y_m"],
+            spec["local_y_m"],
+            spec["local_step_y_m"],
+            spec["far_step_m"],
+            y_aligned,
+        )
+        z = axis_coordinates(
+            spec["domain_z_m"],
+            spec["local_z_m"],
+            spec["local_step_z_m"],
+            spec["far_step_m"],
+            z_aligned,
+        )
+        expected_nodes = len(y) * len(z)
+        expected_elements = 2 * (len(y) - 1) * (len(z) - 1)
+        stored = result["mesh_results"][name]
+        if stored["node_count"] != expected_nodes or stored["element_count"] != expected_elements:
+            raise SystemExit(f"A6 {name} mesh counts are stale")
+    check_figures()
+    print("OK: A6 result structure, mesh counts and figure hashes are current")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--artifact-check", action="store_true")
     args = parser.parse_args()
-    if args.write == args.check:
-        raise SystemExit("choose exactly one of --write or --check")
+    if sum((args.write, args.check, args.artifact_check)) != 1:
+        raise SystemExit("choose exactly one of --write, --check or --artifact-check")
+    if args.artifact_check:
+        artifact_check()
+        return
     result, solutions = calculate()
     if args.write:
         dump_json(OUTPUT, result)

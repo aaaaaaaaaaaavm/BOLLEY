@@ -36,6 +36,8 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P29 | The Fluxbridge perforated magnetic matrix and copper ladder are represented by homogenized permeability and sheet conductance. | Nonlinear transient field/circuit FEA and an instrumented cage coupon agree inside declared bands. | CRITICAL | MODELLED |
 | P30 | The 0.20 mm nominal Fluxbridge gap has no manufacturing, thermal, vibration or runout tolerance stack. | Worst-case tolerance model and measured coupon runout preserve positive clearance. | CRITICAL | OPEN |
 | P31 | A3g's two coil sides share a 15 × 18 mm slot only as a sectional fill calculation. | A5d routes both alternating layers with positive coil/core/foil clearance and matched copper volume. | CRITICAL | CLOSED |
+| P32 | A6 finds only 0.6568 T mean blade field while the stationary return reaches 3.2346 T peak. | A Gen2.1 return geometry passes the same independent field, saturation and mesh bands. | CRITICAL | OPEN |
+| P33 | A6 per-cell inductance is 1.3945 times A3g, invalidating the selected drive closure. | Recompute voltage, current, energy and loss from the passing Gen2.1 field/inductance result. | CRITICAL | OPEN |
 
 ## Register discipline
 

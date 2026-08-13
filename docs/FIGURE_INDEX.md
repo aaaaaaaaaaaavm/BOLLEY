@@ -13,20 +13,23 @@
 | G1-04 | [04 Winding Interference](../cad/renders/gen1/04_winding_interference.png) | `cad/renders/gen1/04_winding_interference.png` | Rendered parametric CAD — rejected nominal fit | Rejected Gen1 package evidence |
 | G1-05 | [05 Retained Assembly](../cad/renders/gen1/05_retained_assembly.png) | `cad/renders/gen1/05_retained_assembly.png` | Rendered parametric CAD — arrangement view | Rejected Gen1 package evidence |
 | G1-06 | [06 Departure Axis](../cad/renders/gen1/06_departure_axis.png) | `cad/renders/gen1/06_departure_axis.png` | Rendered parametric CAD — kinematic arrangement view | Rejected Gen1 package evidence |
-| G2-01 | [01 Gen2 Hero](../cad/renders/gen2/01_gen2_hero.png) | `cad/renders/gen2/01_gen2_hero.png` | Rendered parametric CAD — arrangement view; five master cells per face shown for legibility | Current Gen2 nominal geometry |
-| G2-02 | [02 Fluxbridge Payload](../cad/renders/gen2/02_fluxbridge_payload.png) | `cad/renders/gen2/02_fluxbridge_payload.png` | Rendered parametric CAD — nominal geometry | Current Gen2 nominal geometry |
-| G2-03 | [03 Discrete Fluxbridge Bar](../cad/renders/gen2/03_discrete_fluxbridge_bar.png) | `cad/renders/gen2/03_discrete_fluxbridge_bar.png` | Rendered parametric CAD — bar-resolved coupon geometry | Current Gen2 nominal geometry |
-| G2-04 | [04 Alternating Coil Layers](../cad/renders/gen2/04_alternating_coil_layers.png) | `cad/renders/gen2/04_alternating_coil_layers.png` | Rendered parametric CAD — nominal geometry | Current Gen2 nominal geometry |
-| G2-05 | [05 Full Stator Cassette](../cad/renders/gen2/05_full_stator_cassette.png) | `cad/renders/gen2/05_full_stator_cassette.png` | Rendered parametric CAD — nominal geometry | Current Gen2 nominal geometry |
-| G2-06 | [06 Two Cell Coupon](../cad/renders/gen2/06_two_cell_coupon.png) | `cad/renders/gen2/06_two_cell_coupon.png` | Rendered parametric CAD — test-article arrangement geometry | Current Gen2 nominal geometry |
-| G2-07 | [07 Retained Assembly](../cad/renders/gen2/07_retained_assembly.png) | `cad/renders/gen2/07_retained_assembly.png` | Rendered parametric CAD — arrangement view; four master cells per face shown for legibility | Current Gen2 nominal geometry |
-| G2-08 | [08 Positive X Departure](../cad/renders/gen2/08_positive_x_departure.png) | `cad/renders/gen2/08_positive_x_departure.png` | Rendered parametric CAD — kinematic arrangement view | Current Gen2 nominal geometry |
-| G2-09 | [09 Axial Fit Section](../cad/renders/gen2/09_axial_fit_section.png) | `cad/renders/gen2/09_axial_fit_section.png` | Rendered parametric CAD — nominal fit geometry | Current Gen2 nominal geometry |
+| G2-01 | [01 Gen2 Hero](../cad/renders/gen2/01_gen2_hero.png) | `cad/renders/gen2/01_gen2_hero.png` | Rendered parametric CAD — arrangement view; five master cells per face shown for legibility | A5d nominal geometry; A6 operating point rejected |
+| G2-02 | [02 Fluxbridge Payload](../cad/renders/gen2/02_fluxbridge_payload.png) | `cad/renders/gen2/02_fluxbridge_payload.png` | Rendered parametric CAD — nominal geometry | A5d nominal geometry; A6 operating point rejected |
+| G2-03 | [03 Discrete Fluxbridge Bar](../cad/renders/gen2/03_discrete_fluxbridge_bar.png) | `cad/renders/gen2/03_discrete_fluxbridge_bar.png` | Rendered parametric CAD — bar-resolved coupon geometry | A5d nominal geometry; A6 operating point rejected |
+| G2-04 | [04 Alternating Coil Layers](../cad/renders/gen2/04_alternating_coil_layers.png) | `cad/renders/gen2/04_alternating_coil_layers.png` | Rendered parametric CAD — nominal geometry | A5d nominal geometry; A6 operating point rejected |
+| G2-05 | [05 Full Stator Cassette](../cad/renders/gen2/05_full_stator_cassette.png) | `cad/renders/gen2/05_full_stator_cassette.png` | Rendered parametric CAD — nominal geometry | A5d nominal geometry; A6 operating point rejected |
+| G2-06 | [06 Two Cell Coupon](../cad/renders/gen2/06_two_cell_coupon.png) | `cad/renders/gen2/06_two_cell_coupon.png` | Rendered parametric CAD — test-article arrangement geometry | A5d nominal geometry; A6 operating point rejected |
+| G2-07 | [07 Retained Assembly](../cad/renders/gen2/07_retained_assembly.png) | `cad/renders/gen2/07_retained_assembly.png` | Rendered parametric CAD — arrangement view; four master cells per face shown for legibility | A5d nominal geometry; A6 operating point rejected |
+| G2-08 | [08 Positive X Departure](../cad/renders/gen2/08_positive_x_departure.png) | `cad/renders/gen2/08_positive_x_departure.png` | Rendered parametric CAD — kinematic arrangement view | A5d nominal geometry; A6 operating point rejected |
+| G2-09 | [09 Axial Fit Section](../cad/renders/gen2/09_axial_fit_section.png) | `cad/renders/gen2/09_axial_fit_section.png` | Rendered parametric CAD — nominal fit geometry | A5d nominal geometry; A6 operating point rejected |
+| A6-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6/A6_field_magnitude.png) | `analysis/figures/a6/A6_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2 operating-point evidence |
+| A6-02 | [Four-blade field balance](../analysis/figures/a6/A6_blade_fields.png) | `analysis/figures/a6/A6_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2 operating-point evidence |
+| A6-03 | [Mesh and boundary convergence](../analysis/figures/a6/A6_convergence.png) | `analysis/figures/a6/A6_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Rejected Gen2 operating-point evidence |
 
 ## Evidence count
 
-- Indexed figures: **17**.
-- Parametric/model/schematic figures: **17**.
+- Indexed figures: **20**.
+- Parametric/model/schematic figures: **20**.
 - Physically observed figures: **0**.
 
 A render may explain topology or nominal fit. It cannot close force, field, thermal,

@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GEN1 = ROOT / "cad" / "renders" / "gen1" / "RENDERS.json"
 GEN2 = ROOT / "cad" / "renders" / "gen2" / "RENDERS.json"
+A6 = ROOT / "analysis" / "figures" / "a6" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -25,7 +26,7 @@ def render() -> str:
     ]
     for prefix, manifest_path, disposition in (
         ("G1", GEN1, "Rejected Gen1 package evidence"),
-        ("G2", GEN2, "Current Gen2 nominal geometry"),
+        ("G2", GEN2, "A5d nominal geometry; A6 operating point rejected"),
     ):
         for index, record in enumerate(load(manifest_path)["renders"], start=1):
             name = Path(record["path"]).stem.replace("_", " ").title()
@@ -36,6 +37,17 @@ def render() -> str:
                     record["path"],
                     f"Rendered parametric CAD — {record['evidence']}",
                     disposition,
+                )
+            )
+    if A6.exists():
+        for index, record in enumerate(load(A6)["figures"], start=1):
+            rows.append(
+                (
+                    f"A6-{index:02d}",
+                    record["title"],
+                    record["path"],
+                    f"2D nonlinear field-model output — {record['evidence']}",
+                    "Rejected Gen2 operating-point evidence",
                 )
             )
     lines = [

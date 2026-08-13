@@ -95,3 +95,18 @@ Commit mesh sizes, nonlinear histories, field/flux per blade, peak fields by mat
 inductance, source-current closure, all convergence differences, every band, field maps and a
 disposition. A passing A6 advances to transient discrete-cage analysis; a physics-band failure
 supersedes the A3g operating point.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 10/13 bands pass; A3g `p30_B0.56` is rejected.**
+
+The base, fine and expanded meshes contain 174,048, 621,180 and 196,512 triangles. Mean-field,
+coenergy and boundary differences are 0.786%, 0.295% and 1.637%, so the failure is not a mesh or
+air-domain artifact. The fine solution gives 0.6568 T mean tooth-slice field, 3.2346 T stationary
+core peak and 1.3945 times the A3g per-cell inductance. Those fail the frozen lower-field,
+core-field and upper-inductance bands. Slot balance, height uniformity, ligament field, source
+closure and nonlinear convergence pass.
+
+The controlled output is [docs/GEN2_FIELD.md](../docs/GEN2_FIELD.md); complete values and nonlinear
+histories remain in `analysis/results/gen2_field.json`. The failure action is a Gen2.1 stationary
+return redesign. It is not a threshold change and it does not promote transient force work.
