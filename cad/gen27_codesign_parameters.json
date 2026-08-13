@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A8b Gen2.7 Fluxrelay axial/electrical co-design; NOT RUN",
+  "controlled_design": "Gen2.6 five-lane transverse section with an aft-shortened cage and individually sectional stationary cells",
+  "source_files": [
+    "cad/fluxbridge_parameters.json",
+    "cad/gen26_field_parameters.json",
+    "analysis/results/gen26_field.json",
+    "analysis/results/gen26_cage_circuit.json",
+    "analysis/results/axial_engagement.json"
+  ],
+  "fixed": {
+    "topology_name": "Gen2.7 Fluxrelay",
+    "phase_count": 3,
+    "turns_per_cell": 4,
+    "blades_per_face": 5,
+    "active_cage_height_m": 0.0055,
+    "gen26_active_cage_length_m": 0.336,
+    "payload_length_m": 0.3405,
+    "active_cage_start_x_m": 0.00225,
+    "minimum_end_overlap_guard_m": 0.00225,
+    "powered_travel_m": 0.9,
+    "winding_radial_height_m": 0.018,
+    "tooth_duty_fraction": 0.5,
+    "capture_and_encapsulation_allowance_kg": 0.0625,
+    "mean_turn_transverse_allowance_m": 0.014,
+    "selection_rule": "minimise the worst normalized continuous hard-band demand; then installed active-primary mass; then hot-corner reference energy"
+  },
+  "candidate_grid": {
+    "total_cells_per_face": [24, 27, 30],
+    "cell_pitch_m": [0.04, 0.0425, 0.044, 0.0445, 0.0446, 0.0447, 0.0448, 0.0449, 0.045, 0.0451, 0.0452, 0.0453, 0.0454, 0.0455, 0.0456, 0.0475, 0.05],
+    "rated_phase_current_rms_a": [375.0, 380.0, 383.0, 400.0],
+    "conductor_area_per_turn_mm2": [9.6, 9.8, 10.0, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 11.0, 12.0, 14.0, 16.0]
+  },
+  "robustness_corners": {
+    "cage_sheet_conductance_multiplier": [0.9, 1.0],
+    "phase_resistance_multiplier": [1.0, 1.25]
+  },
+  "preferences": {
+    "target_interface_mass_kg": 0.25,
+    "preferred_interface_mass_kg": 0.3
+  },
+  "bands": {
+    "minimum_active_cage_length_m": 0.2,
+    "maximum_active_cage_length_m": 0.336,
+    "maximum_interface_mass_kg": 0.4,
+    "maximum_installed_active_primary_mass_kg": 16.0,
+    "maximum_rated_phase_current_a": 400.0,
+    "maximum_rated_mmf_a_turn": 1600.0,
+    "maximum_primary_current_density_a_m2": 40000000.0,
+    "maximum_winding_slot_fill_fraction": 0.6,
+    "minimum_predicted_mean_tooth_field_rms_t": 0.72,
+    "maximum_predicted_mean_tooth_field_rms_t": 0.86,
+    "maximum_predicted_moving_material_field_t": 1.45,
+    "maximum_predicted_stationary_core_field_t": 1.55,
+    "maximum_required_dc_link_v": 48.0,
+    "minimum_margin_on_48v_link_fraction": 0.1,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_qualification_source_energy_j": 1500.0,
+    "minimum_source_to_payload_efficiency": 0.3,
+    "maximum_peak_dc_power_w": 15000.0,
+    "maximum_primary_copper_rise_per_shot_k": 3.0,
+    "maximum_cage_copper_rise_per_shot_k": 20.0,
+    "maximum_cage_current_density_a_m2": 180000000.0,
+    "maximum_required_cage_slip_m_s": 8.0,
+    "minimum_secondary_only_efficiency": 0.5,
+    "maximum_terminal_frequency_hz": 350.0,
+    "maximum_unbalanced_normal_force_n": 100.0
+  }
+}
