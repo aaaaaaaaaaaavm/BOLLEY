@@ -1,0 +1,71 @@
+{
+  "evidence": "RENDERED PARAMETRIC CAD; not measurement or manufacturing release",
+  "generation": "Gen2",
+  "render_count": 9,
+  "renders": [
+    {
+      "bytes": 241879,
+      "evidence": "arrangement view; five master cells per face shown for legibility",
+      "path": "cad/renders/gen2/01_gen2_hero.png",
+      "sha256": "556d25a92a91c41e82bab987ef61c23217bf3fba8ff7d58b1bb7f26f1f891ce6",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 122442,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen2/02_fluxbridge_payload.png",
+      "sha256": "78053b41842f66c927e96f7aeebdf5e8e4e650ac5d268e13452879b0a89d1917",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 89379,
+      "evidence": "bar-resolved coupon geometry",
+      "path": "cad/renders/gen2/03_discrete_fluxbridge_bar.png",
+      "sha256": "4135a5c503a81445386967248d6580390a27cc8b2f67612865cbeeede3e49c4a",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 90675,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen2/04_alternating_coil_layers.png",
+      "sha256": "469bc9fd9f5429251b6a63147d960d6b3cbab28398382ae43cc033503350b185",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 75475,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen2/05_full_stator_cassette.png",
+      "sha256": "154f720c5c76b992626e1c98521c5fa3c4ac70558fae35175c9e68ceb21aeec3",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 80404,
+      "evidence": "test-article arrangement geometry",
+      "path": "cad/renders/gen2/06_two_cell_coupon.png",
+      "sha256": "beaae7939b69e33ec18d11691a5534133c05159796118df7b05fc194c26ff5a5",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 242209,
+      "evidence": "arrangement view; four master cells per face shown for legibility",
+      "path": "cad/renders/gen2/07_retained_assembly.png",
+      "sha256": "61663141846fd7e1175f185f02f3fe75246077fd6815d6d167a32dabb4e14e53",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 102589,
+      "evidence": "kinematic arrangement view",
+      "path": "cad/renders/gen2/08_positive_x_departure.png",
+      "sha256": "1cceb9b03807487490823eea7ad205337b3836d83c5806af19c2347e2e406dcf",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    },
+    {
+      "bytes": 75151,
+      "evidence": "nominal fit geometry",
+      "path": "cad/renders/gen2/09_axial_fit_section.png",
+      "sha256": "752ea6ce53f1ad8e31c4d036d1ebfbe6ab4df67596500ca1b0544509922e3ffa",
+      "source": "cad/build_gen2.py + cad/gen2_parameters.json"
+    }
+  ],
+  "schema_version": 1
+}

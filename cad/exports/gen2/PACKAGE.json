@@ -1,0 +1,128 @@
+{
+  "build_manifest": "cad/BUILD_GEN2.json",
+  "build_manifest_sha256": "1109c9ff49d0151dcda6c40dabd0c11de45461b3e3435b3f9176b993aa7b9065",
+  "evidence": "DETERMINISTIC ARCHIVES OF CAD OUTPUT; not a manufacturing release",
+  "fixed_zip_timestamp": "2026-08-13T00:00:00",
+  "generation": "Gen2",
+  "packages": {
+    "step": {
+      "bytes": 4366471,
+      "member_count": 7,
+      "members": [
+        {
+          "archive_member": "Bolley_A3_Fluxbridge_Coupon_Gen2.step",
+          "bytes": 4562776,
+          "part": "Bolley_A3_Fluxbridge_Coupon_Gen2",
+          "sha256": "6458d6ae3ee74f593336e07a56f39e42849811a6e4bfd3c6e6b9e4087f65424f",
+          "source_path": "cad/step/gen2/Bolley_A3_Fluxbridge_Coupon_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Assembly_Gen2.step",
+          "bytes": 18538267,
+          "part": "Bolley_Assembly_Gen2",
+          "sha256": "4deb76ffe9a8679fe02bbe4da62def59a55fe9c85588dc160226f320f163b9ce",
+          "source_path": "cad/step/gen2/Bolley_Assembly_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Fluxbridge_Interface_Gen2.step",
+          "bytes": 605771,
+          "part": "Bolley_Fluxbridge_Interface_Gen2",
+          "sha256": "2285a11da517bff52fec171efc2a0650498ff565d0ac3cfa05a4b198db2490c8",
+          "source_path": "cad/step/gen2/Bolley_Fluxbridge_Interface_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Payload_Proxy_Gen2.step",
+          "bytes": 691562,
+          "part": "Bolley_Payload_Proxy_Gen2",
+          "sha256": "c39194c5ddab638f39490babb333943b53a9f290a6729a2a748c5b2be5ecb3f7",
+          "source_path": "cad/step/gen2/Bolley_Payload_Proxy_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Retention_Gate_Gen2.step",
+          "bytes": 96585,
+          "part": "Bolley_Retention_Gate_Gen2",
+          "sha256": "2f24ffa358d096ca987670ecacc17719738c145a019743af6d193e3b5f9dda39",
+          "source_path": "cad/step/gen2/Bolley_Retention_Gate_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Stator_Cassette_Gen2.step",
+          "bytes": 4062277,
+          "part": "Bolley_Stator_Cassette_Gen2",
+          "sha256": "041168f01bb8ddae13ab17eab0458a29b3a46ba7886c7aa4286fdac33e4d6f0c",
+          "source_path": "cad/step/gen2/Bolley_Stator_Cassette_Gen2.step"
+        },
+        {
+          "archive_member": "Bolley_Track_Gen2.step",
+          "bytes": 664567,
+          "part": "Bolley_Track_Gen2",
+          "sha256": "bc2efc705868a0ef39ccd12ddc407e17656519e0ecc5a1ef452f7eae6f17879d",
+          "source_path": "cad/step/gen2/Bolley_Track_Gen2.step"
+        }
+      ],
+      "path": "cad/exports/gen2/Bolley_Gen2_STEP.zip",
+      "sha256": "1c8b1a7674034614edea46c8a702579ba4b24765f5d8ec3d7b40571b6b5c8955"
+    },
+    "stl": {
+      "bytes": 139985,
+      "member_count": 7,
+      "members": [
+        {
+          "archive_member": "Bolley_A3_Fluxbridge_Coupon_Gen2.stl",
+          "bytes": 161084,
+          "part": "Bolley_A3_Fluxbridge_Coupon_Gen2",
+          "sha256": "2236e5e4bfade4111349df877c1ab85b325d7c862530a68e7d79cf6d7c6d8772",
+          "source_path": "cad/stl/gen2/Bolley_A3_Fluxbridge_Coupon_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Assembly_Gen2.stl",
+          "bytes": 676684,
+          "part": "Bolley_Assembly_Gen2",
+          "sha256": "2a45ced0583b6a6b0e50240950d4f3c3b4d13f3f26bd6cb7b00ac899de5f6528",
+          "source_path": "cad/stl/gen2/Bolley_Assembly_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Fluxbridge_Interface_Gen2.stl",
+          "bytes": 21684,
+          "part": "Bolley_Fluxbridge_Interface_Gen2",
+          "sha256": "1fa33636e4105229dd5a00077086502247dcdd67941ef5b773a8dfb1c4466a17",
+          "source_path": "cad/stl/gen2/Bolley_Fluxbridge_Interface_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Payload_Proxy_Gen2.stl",
+          "bytes": 24684,
+          "part": "Bolley_Payload_Proxy_Gen2",
+          "sha256": "ded2257732253407632a8aa254124a57889b2615aab87b13f0b7740b7f7e6313",
+          "source_path": "cad/stl/gen2/Bolley_Payload_Proxy_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Retention_Gate_Gen2.stl",
+          "bytes": 4084,
+          "part": "Bolley_Retention_Gate_Gen2",
+          "sha256": "c2951c7f2f947ba283faf9e9618e69e90f93e21de69d849e05a2f95fe7f934d8",
+          "source_path": "cad/stl/gen2/Bolley_Retention_Gate_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Stator_Cassette_Gen2.stl",
+          "bytes": 156084,
+          "part": "Bolley_Stator_Cassette_Gen2",
+          "sha256": "031ce804fc4c3de1b701491eacd87d0687a6524d8a5d2d1dff1d69888a3e6209",
+          "source_path": "cad/stl/gen2/Bolley_Stator_Cassette_Gen2.stl"
+        },
+        {
+          "archive_member": "Bolley_Track_Gen2.stl",
+          "bytes": 24084,
+          "part": "Bolley_Track_Gen2",
+          "sha256": "031bfdc7bfa1d99f19fcb36a00c2aeab728be0005589f9f7c1bed85e2ad6240a",
+          "source_path": "cad/stl/gen2/Bolley_Track_Gen2.stl"
+        }
+      ],
+      "path": "cad/exports/gen2/Bolley_Gen2_STL.zip",
+      "sha256": "3843d73299a270483847ef627e61b849da15966f7e6b2bf2309dbeb42ebbdd88"
+    }
+  },
+  "regeneration": [
+    "python cad/build_gen2.py --write",
+    "python tools/package_gen2_cad.py --write"
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,273 @@
+{
+  "a3g_result_file": "analysis/results/fluxbridge_optimization.json",
+  "a3g_result_sha256": "7dcca0a1e4f5645db8373942260b232bce859f544934c190b8bd4fe92a90d28c",
+  "artifacts": {
+    "Bolley_A3_Fluxbridge_Coupon_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          82.00000020000002,
+          65.0000002,
+          41.000000199999995
+        ],
+        "x": [
+          -12.000000100000001,
+          70.00000010000001
+        ],
+        "y": [
+          -32.5000001,
+          32.5000001
+        ],
+        "z": [
+          36.9999999,
+          78.0000001
+        ]
+      },
+      "solid_count": 265,
+      "step": {
+        "bytes": 4562776,
+        "path": "cad/step/gen2/Bolley_A3_Fluxbridge_Coupon_Gen2.step",
+        "sha256": "6458d6ae3ee74f593336e07a56f39e42849811a6e4bfd3c6e6b9e4087f65424f"
+      },
+      "stl": {
+        "bytes": 161084,
+        "path": "cad/stl/gen2/Bolley_A3_Fluxbridge_Coupon_Gen2.stl",
+        "sha256": "2236e5e4bfade4111349df877c1ab85b325d7c862530a68e7d79cf6d7c6d8772"
+      },
+      "volume_mm3": 80900.90000000018
+    },
+    "Bolley_Assembly_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          1055.0000002,
+          160.00000020000002,
+          160.00000020000002
+        ],
+        "x": [
+          -50.0000001,
+          1005.0000001
+        ],
+        "y": [
+          -80.00000010000001,
+          80.00000010000001
+        ],
+        "z": [
+          -80.00000010000001,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 926,
+      "step": {
+        "bytes": 18538267,
+        "path": "cad/step/gen2/Bolley_Assembly_Gen2.step",
+        "sha256": "4deb76ffe9a8679fe02bbe4da62def59a55fe9c85588dc160226f320f163b9ce"
+      },
+      "stl": {
+        "bytes": 676684,
+        "path": "cad/stl/gen2/Bolley_Assembly_Gen2.stl",
+        "sha256": "2a45ced0583b6a6b0e50240950d4f3c3b4d13f3f26bd6cb7b00ac899de5f6528"
+      },
+      "volume_mm3": 4988356.499999978
+    },
+    "Bolley_Fluxbridge_Interface_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          336.00000020000004,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          2.2499998999999993,
+          338.2500001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 36,
+      "step": {
+        "bytes": 605771,
+        "path": "cad/step/gen2/Bolley_Fluxbridge_Interface_Gen2.step",
+        "sha256": "2285a11da517bff52fec171efc2a0650498ff565d0ac3cfa05a4b198db2490c8"
+      },
+      "stl": {
+        "bytes": 21684,
+        "path": "cad/stl/gen2/Bolley_Fluxbridge_Interface_Gen2.stl",
+        "sha256": "1fa33636e4105229dd5a00077086502247dcdd67941ef5b773a8dfb1c4466a17"
+      },
+      "volume_mm3": 60480.00000000003
+    },
+    "Bolley_Payload_Proxy_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          340.50000020000004,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          -1.0000000251214793e-07,
+          340.5000001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 41,
+      "step": {
+        "bytes": 691562,
+        "path": "cad/step/gen2/Bolley_Payload_Proxy_Gen2.step",
+        "sha256": "c39194c5ddab638f39490babb333943b53a9f290a6729a2a748c5b2be5ecb3f7"
+      },
+      "stl": {
+        "bytes": 24684,
+        "path": "cad/stl/gen2/Bolley_Payload_Proxy_Gen2.stl",
+        "sha256": "ded2257732253407632a8aa254124a57889b2615aab87b13f0b7740b7f7e6313"
+      },
+      "volume_mm3": 3167542.5
+    },
+    "Bolley_Retention_Gate_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          8.000000200000017,
+          130.00000020000002,
+          130.00000020000002
+        ],
+        "x": [
+          -12.000000100000008,
+          -3.999999899999992
+        ],
+        "y": [
+          -65.00000010000001,
+          65.00000010000001
+        ],
+        "z": [
+          -65.00000010000001,
+          65.00000010000001
+        ]
+      },
+      "solid_count": 5,
+      "step": {
+        "bytes": 96585,
+        "path": "cad/step/gen2/Bolley_Retention_Gate_Gen2.step",
+        "sha256": "2f24ffa358d096ca987670ecacc17719738c145a019743af6d193e3b5f9dda39"
+      },
+      "stl": {
+        "bytes": 4084,
+        "path": "cad/stl/gen2/Bolley_Retention_Gate_Gen2.stl",
+        "sha256": "c2951c7f2f947ba283faf9e9618e69e90f93e21de69d849e05a2f95fe7f934d8"
+      },
+      "volume_mm3": 44959.999999999985
+    },
+    "Bolley_Stator_Cassette_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          909.0000001999999,
+          29.250000200000002,
+          28.000000200000002
+        ],
+        "x": [
+          -12.000000100000001,
+          897.0000001
+        ],
+        "y": [
+          -19.2500001,
+          10.000000100000001
+        ],
+        "z": [
+          49.99999989999999,
+          78.0000001
+        ]
+      },
+      "solid_count": 210,
+      "step": {
+        "bytes": 4062277,
+        "path": "cad/step/gen2/Bolley_Stator_Cassette_Gen2.step",
+        "sha256": "041168f01bb8ddae13ab17eab0458a29b3a46ba7886c7aa4286fdac33e4d6f0c"
+      },
+      "stl": {
+        "bytes": 156084,
+        "path": "cad/stl/gen2/Bolley_Stator_Cassette_Gen2.stl",
+        "sha256": "031ce804fc4c3de1b701491eacd87d0687a6524d8a5d2d1dff1d69888a3e6209"
+      },
+      "volume_mm3": 369913.4999999999
+    },
+    "Bolley_Track_Gen2": {
+      "bounding_box_mm": {
+        "size": [
+          1055.0000002,
+          160.00000020000002,
+          160.00000020000002
+        ],
+        "x": [
+          -50.0000001,
+          1005.0000001
+        ],
+        "y": [
+          -80.00000010000001,
+          80.00000010000001
+        ],
+        "z": [
+          -80.00000010000001,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 40,
+      "step": {
+        "bytes": 664567,
+        "path": "cad/step/gen2/Bolley_Track_Gen2.step",
+        "sha256": "bc2efc705868a0ef39ccd12ddc407e17656519e0ecc5a1ef452f7eae6f17879d"
+      },
+      "stl": {
+        "bytes": 24084,
+        "path": "cad/stl/gen2/Bolley_Track_Gen2.stl",
+        "sha256": "031bfdc7bfa1d99f19fcb36a00c2aeab728be0005589f9f7c1bed85e2ad6240a"
+      },
+      "volume_mm3": 296199.9999999999
+    }
+  },
+  "coordinate_frame": {
+    "origin": "payload aft face at the retained/breech position",
+    "x": "firing axis, positive toward muzzle",
+    "y": "lateral",
+    "z": "vertical"
+  },
+  "derived_format": "STL",
+  "evidence": "PARAMETRIC CAD OUTPUT from A3g-controlled ASSUMPTION geometry; no manufacturing release",
+  "fit_checks": {
+    "a3g_analytical_copper_volume_all_four_faces_mm3": 855359.9999999997,
+    "adjacent_coil_overlap_per_face_mm3": 0.0,
+    "coil_core_intersection_per_face_mm3": 0.0,
+    "coil_envelope_volume_all_four_faces_mm3": 855360.0,
+    "coil_volume_relative_error": 4.440892098500626e-16,
+    "departure_axis": "+x",
+    "discrete_coupon_bar_period_count": 30,
+    "discrete_coupon_stator_cell_count": 2,
+    "minimum_coil_to_fluxbridge_radial_clearance_mm": 0.75,
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_fin_clearance_per_side_mm": 0.19999999999999996,
+    "payload_coil_intersection_per_face_mm3": 0.0,
+    "payload_core_intersection_per_face_mm3": 0.0,
+    "payload_stator_intersection_all_faces_mm3": 0.0,
+    "stator_face_count": 4
+  },
+  "generation": "Gen2",
+  "limits": [
+    "Full-length Fluxbridge blades are homogenized magnetic/copper layers; the coupon resolves discrete bars.",
+    "Coils are pack envelopes, not individual turns, insulation, impregnation or terminals.",
+    "Fasteners, laminations, cooling, sensors, cabling and gate actuation are absent.",
+    "The payload is an envelope proxy, not a spacecraft design."
+  ],
+  "master_format": "STEP",
+  "parameter_file": "cad/gen2_parameters.json",
+  "parameter_sha256": "140780c31f9e687860fae8f270f070e583d5b65a5a70df8f93fb9dff230ac763",
+  "schema_version": 1
+}

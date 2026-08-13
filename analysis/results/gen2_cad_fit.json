@@ -1,0 +1,66 @@
+{
+  "artifacts": {
+    "render_count": 9,
+    "step_archive": "cad/exports/gen2/Bolley_Gen2_STEP.zip",
+    "step_count": 7,
+    "stl_archive": "cad/exports/gen2/Bolley_Gen2_STL.zip",
+    "stl_count": 7
+  },
+  "band_count": 13,
+  "band_pass_count": 13,
+  "bands": {
+    "alternating_coil_route": true,
+    "artifact_and_render_set": true,
+    "artifact_traceability": true,
+    "copper_volume_consistency": true,
+    "discrete_coupon_content": true,
+    "fin_slot_alignment_and_clearance": true,
+    "fluxbridge_projection": true,
+    "four_faces_and_positive_x_departure": true,
+    "muzzle_and_frame_envelope": true,
+    "payload_envelope_and_rails": true,
+    "payload_stator_non_interference": true,
+    "stator_footprint_length_pitch_count": true,
+    "winding_slot_fill": true
+  },
+  "disposition": "PROMOTE_GEN2_GEOMETRY_TO_FIELD_STRUCTURE_AND_TOLERANCE_ANALYSIS",
+  "evidence": "A5d PARAMETRIC CAD + EXACT NOMINAL SOLID INTERSECTION + ARCHIVE MANIFEST",
+  "failed_bands": [],
+  "geometry": {
+    "active_stator_length_mm": 900.0,
+    "adjacent_coil_overlap_per_face_mm3": 0.0,
+    "analytical_copper_volume_mm3": 855359.9999999997,
+    "assembly_frame_yz_mm": 160.0,
+    "cad_coil_volume_mm3": 855360.0,
+    "cell_count_per_face": 30,
+    "cell_pitch_mm": 30.0,
+    "coil_core_intersection_per_face_mm3": 0.0,
+    "coil_to_fluxbridge_radial_clearance_mm": 0.75,
+    "coil_volume_relative_error": 4.440892098500626e-16,
+    "core_face_footprint_mm": 20.0,
+    "fluxbridge_projection_mm": 6.25,
+    "gross_winding_slot_fill_fraction": 0.6,
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_fin_clearance_per_side_mm": 0.19999999999999996,
+    "payload_envelope_mm": [
+      340.5,
+      100.0,
+      100.0
+    ],
+    "payload_stator_intersection_all_faces_mm3": 0.0
+  },
+  "input_files": [
+    "cad/gen2_parameters.json",
+    "cad/BUILD_GEN2.json",
+    "cad/renders/gen2/RENDERS.json",
+    "cad/exports/gen2/PACKAGE.json",
+    "analysis/results/fluxbridge_optimization.json"
+  ],
+  "limits": [
+    "No tolerance stack, individual turns, insulation, leads, cooling, fasteners or lamination detail is present.",
+    "Full-length Fluxbridge blades are homogenized; the coupon alone resolves cage bars.",
+    "CAD geometry is not launch-provider approval or a manufacturing release."
+  ],
+  "screen_pass": true,
+  "selected_a3g_candidate_id": "p30_B0.56"
+}

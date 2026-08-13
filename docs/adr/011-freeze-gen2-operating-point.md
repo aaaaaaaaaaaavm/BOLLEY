@@ -29,6 +29,10 @@ primary mass is 11.83 kg. All bands remain inside their limits.
 
 ## Consequences
 
+> **A5d result:** the Gen2 CAD package passed all 13 frozen nominal-fit bands. Alternating coil
+> packs, core and payload have zero exact solid overlap; coil volume matches A3g to numerical
+> round-off. The operating point remains frozen for field, structure and tolerance analysis.
+
 - Gen2 becomes 2.46 kg heavier than the first A3f primary but uses 31.3% less nominal
   qualification source energy.
 - The larger pitch halves coil count, widens the real winding slot and reduces terminal frequency.

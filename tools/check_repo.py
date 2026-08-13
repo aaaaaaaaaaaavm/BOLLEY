@@ -26,6 +26,7 @@ A3E_RESULTS = {"stator_circuit.json"}
 A5C_RESULTS = {"cad_fit.json"}
 A3F_RESULTS = {"fluxbridge_cage.json"}
 A3G_RESULTS = {"fluxbridge_optimization.json"}
+A5D_RESULTS = {"gen2_cad_fit.json"}
 
 
 def run(*parts: str) -> None:
@@ -75,6 +76,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -104,6 +106,18 @@ def main() -> None:
         generated_cad_docs = [ROOT / "cad" / "DIMENSIONS.md", ROOT / "cad" / "BOM.md"]
         if any(path.exists() for path in generated_cad_docs):
             raise SystemExit("generated CAD documents exist before cad/BUILD.json")
+    gen2_build = ROOT / "cad" / "BUILD_GEN2.json"
+    if gen2_build.exists():
+        subprocess.run([sys.executable, "cad/build_gen2.py", "--check"], cwd=ROOT, check=True)
+        subprocess.run([sys.executable, "cad/render_gen2.py", "--check"], cwd=ROOT, check=True)
+        run("tools/package_gen2_cad.py", "--check")
+        run("tools/make_gen2_cad_docs.py", "--check")
+        run("tools/make_figure_index.py", "--check")
+    elif any(
+        path.exists()
+        for path in (ROOT / "cad" / "GEN2_DIMENSIONS.md", ROOT / "cad" / "GEN2_BOM.md")
+    ):
+        raise SystemExit("generated Gen2 CAD documents exist before cad/BUILD_GEN2.json")
     if A5A_RESULTS <= committed:
         run("analysis/interface_fit_screen.py", "--check")
         run("tools/make_interface_fit_screen.py", "--check")
@@ -154,8 +168,15 @@ def main() -> None:
         run("tools/make_fluxbridge_optimization.py", "--check")
     elif (ROOT / "docs" / "FLUXBRIDGE_OPTIMIZATION.md").exists():
         raise SystemExit("docs/FLUXBRIDGE_OPTIMIZATION.md exists before the A3g result")
+    if A5D_RESULTS <= committed:
+        run("analysis/gen2_cad_fit.py", "--check")
+        run("tools/make_gen2_cad_fit.py", "--check")
+    elif (ROOT / "docs" / "GEN2_CAD_FIT.md").exists():
+        raise SystemExit("docs/GEN2_CAD_FIT.md exists before the A5d result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d"
+        if A5D_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g with A5d declared"
         if A3G_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f with A3g declared"
         if A3F_RESULTS <= committed
