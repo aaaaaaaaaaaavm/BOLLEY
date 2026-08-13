@@ -12,12 +12,16 @@ without carrying propulsion. Its answer used a reusable magnetic sled. The model
 the sled became 9.445 kg: most of the energy accelerated launcher hardware and most of the
 mechanism existed to stop and return it.
 
-Bolley changes one premise. A compatible CubeSat carries four **passive reaction rails**. The
-rails keep a hard-anodized aluminium dispenser surface and bury segmented soft-magnetic poles
-beneath it. All windings, switches, sensors and stored energy remain on the launcher. The
-spacecraft becomes the passive translator of a segmented long-stator reluctance motor.
+Bolley changes one premise. A compatible CubeSat carries four **passive reaction interfaces**.
+All windings, switches, sensors and stored energy remain on the launcher. The spacecraft becomes
+the passive translator of a segmented linear electromagnetic machine.
 
 That small concession removes the launch sled, the post-release brake and the return stroke.
+
+A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
+moving return iron breaks the declared mass logic. The current primary candidate is a thin
+through-flux fin/tab between opposed stationary stators; a single-sided aluminium induction lane
+is the fallback. Neither has yet passed interface fit, FEA or test.
 
 ## The proposed machine
 
@@ -45,7 +49,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 3. [`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md) — numbers that can end the concept.
 4. [`validation/README.md`](validation/README.md) — why bands are written before runs.
 5. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the work that remains.
-6. `docs/BASELINE.md` — generated only after the first declared runs complete.
+6. [`docs/TOPOLOGY_SCREEN.md`](docs/TOPOLOGY_SCREEN.md) — why the original flux return was rejected.
+7. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 

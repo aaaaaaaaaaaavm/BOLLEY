@@ -1,0 +1,150 @@
+{
+  "band_count": 7,
+  "band_pass_count": 6,
+  "bands": {
+    "at_least_one_candidate_passes_area_and_preferred_mass": true,
+    "corner_active_area": true,
+    "corner_preferred_mass_supports_ideal_equal_component_field": false,
+    "induction_lane_active_area": true,
+    "induction_lane_preferred_mass": true,
+    "opposed_fin_active_area": true,
+    "opposed_fin_preferred_mass": true
+  },
+  "candidates": {
+    "corner_l_return": {
+      "active_area_m2_per_channel": 0.01008,
+      "disposition": "REJECT_GEOMETRY_AS_CONFIGURED",
+      "kill_flux_cap_to_ideal_equal_component_ratio": 0.9697025094490154,
+      "kill_mass_normal_flux_cap_t": 0.24327602870196718,
+      "preferred_flux_cap_to_ideal_equal_component_ratio": 0.5022266047961187,
+      "preferred_mass_normal_flux_cap_t": 0.12599708955346992,
+      "sweep": [
+        {
+          "interface_increment_kg": 0.21506671875,
+          "l_cross_section_m2": 2.7246093749999998e-05,
+          "leg_depth_m": 0.0009375,
+          "normal_gap_flux_t": 0.1,
+          "steel_mass_kg": 0.14006671874999999
+        },
+        {
+          "interface_increment_kg": 0.28171136718749995,
+          "l_cross_section_m2": 4.020996093749999e-05,
+          "leg_depth_m": 0.0014062499999999997,
+          "normal_gap_flux_t": 0.15,
+          "steel_mass_kg": 0.20671136718749997
+        },
+        {
+          "interface_increment_kg": 0.346096875,
+          "l_cross_section_m2": 5.2734375e-05,
+          "leg_depth_m": 0.001875,
+          "normal_gap_flux_t": 0.2,
+          "steel_mass_kg": 0.271096875
+        },
+        {
+          "interface_increment_kg": 0.4082232421875,
+          "l_cross_section_m2": 6.481933593749999e-05,
+          "leg_depth_m": 0.00234375,
+          "normal_gap_flux_t": 0.25,
+          "steel_mass_kg": 0.3332232421875
+        },
+        {
+          "interface_increment_kg": 0.4680904687499999,
+          "l_cross_section_m2": 7.646484374999998e-05,
+          "leg_depth_m": 0.0028124999999999995,
+          "normal_gap_flux_t": 0.3,
+          "steel_mass_kg": 0.39309046874999987
+        },
+        {
+          "interface_increment_kg": 0.5810474999999999,
+          "l_cross_section_m2": 9.84375e-05,
+          "leg_depth_m": 0.00375,
+          "normal_gap_flux_t": 0.4,
+          "steel_mass_kg": 0.5060475
+        },
+        {
+          "interface_increment_kg": 0.7798518749999999,
+          "l_cross_section_m2": 0.00013710937499999997,
+          "leg_depth_m": 0.005624999999999999,
+          "normal_gap_flux_t": 0.6,
+          "steel_mass_kg": 0.7048518749999999
+        },
+        {
+          "interface_increment_kg": 0.94251,
+          "l_cross_section_m2": 0.00016875,
+          "leg_depth_m": 0.0075,
+          "normal_gap_flux_t": 0.8,
+          "steel_mass_kg": 0.86751
+        },
+        {
+          "interface_increment_kg": 1.0690218749999998,
+          "l_cross_section_m2": 0.00019335937499999998,
+          "leg_depth_m": 0.009375,
+          "normal_gap_flux_t": 1.0,
+          "steel_mass_kg": 0.9940218749999998
+        },
+        {
+          "interface_increment_kg": 1.1593874999999998,
+          "l_cross_section_m2": 0.00021093749999999997,
+          "leg_depth_m": 0.011249999999999998,
+          "normal_gap_flux_t": 1.2,
+          "steel_mass_kg": 1.0843874999999998
+        }
+      ],
+      "unresolved": [
+        "actual normal/tangential field ratio",
+        "leakage and corner fringing",
+        "nonlinear B-H saturation",
+        "cover and adhesive gap"
+      ]
+    },
+    "opposed_through_flux_fin": {
+      "active_area_m2_per_channel": 0.01008,
+      "disposition": "PROMOTE_TO_INTERFACE_FIT_THEN_NONLINEAR_FEA",
+      "double_sided_access_proven": false,
+      "interface_increment_kg": 0.11355599999999999,
+      "steel_mass_kg": 0.038556,
+      "unresolved": [
+        "double-sided stator access",
+        "fin buckling and capture",
+        "nonlinear force and normal-force balance"
+      ]
+    },
+    "single_sided_induction_lane": {
+      "active_area_m2_per_channel": 0.01008,
+      "aluminium_skin_depth_m": 0.005370969082848752,
+      "conductor_mass_kg": 0.108864,
+      "disposition": "RETAIN_AS_TRANSIENT_MODEL_FALLBACK",
+      "force_and_thermal_model_complete": false,
+      "interface_increment_kg": 0.183864,
+      "pole_passage_frequency_hz": 247.61361028828767,
+      "thickness_to_skin_depth_ratio": 0.18618613970304254,
+      "unresolved": [
+        "starting and terminal slip",
+        "secondary joule heating",
+        "end and edge effects",
+        "attractive normal force"
+      ]
+    }
+  },
+  "corner_stressed_tooth_area_m2_per_channel": 0.00504,
+  "evidence": "ANALYTICAL MODEL OUTPUT from ASSUMPTION inputs; not FEA or measurement",
+  "force_source": "analysis/results/force_allocation.json",
+  "inputs_file": "cad/topology_candidates.json",
+  "limits": [
+    "No candidate force is predicted.",
+    "The steel flux-density screen is not a material B-H curve.",
+    "Maxwell stress is an optimistic local-field bound, not average motor shear.",
+    "Mechanical access is deliberately left to A5 cross-section fit work."
+  ],
+  "maxwell_stress_screen": {
+    "area_basis": "50% translator tooth duty; local tooth-face area",
+    "interpretation": "lower-bound field component only; not a motor prediction",
+    "optimistic_equal_component_flux_t": 0.25087697137155657,
+    "relation": "tau = Bn * Bt / mu0"
+  },
+  "required_area_at_band_m2_per_channel": 0.00970887524844521,
+  "required_corner_tooth_face_shear_pa": 50085.46755150306,
+  "required_developed_airgap_shear_pa": 25042.73377575153,
+  "screen_survives": true,
+  "worst_channel_force_n": 252.43075645957543
+}

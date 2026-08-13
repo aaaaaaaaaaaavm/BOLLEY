@@ -23,6 +23,18 @@ This is a parameter contract for first-order work, not a released drawing.
 > moving corner return iron, an opposed through-flux fin and an aluminium induction lane before
 > any topology is promoted to nonlinear analysis.
 
+## A3a disposition
+
+The original L-shaped corner return is rejected as configured. Its moving return iron cannot
+carry even the optimistic lower-bound field inside the declared 0.40 kg interface limit at 50%
+tooth duty. The current primary candidate is a 0.50 mm through-flux steel fin/tab with 0.25 mm
+cover per side and 0.50 mm target clearance per stator face. Its screened increment is 0.114 kg,
+including the same 75 g non-active allowance.
+
+Those dimensions are still assumptions. The fin/tab is not accepted until A5a proves legal
+two-sided access, structural capture, envelope compliance and continued aluminium rail contact.
+The 30 mm × 1.00 mm single-sided aluminium lane remains the fallback.
+
 The 15 mm magnetic lane is not a claim that a conventional 8.5 mm contact rail can simply be
 replaced with steel. It may occupy protected structure immediately behind the two faces meeting
 at a corner. The external contact geometry remains aluminium and must pass the selected

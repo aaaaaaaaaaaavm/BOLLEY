@@ -83,8 +83,10 @@ def calculate() -> dict:
     corner_area = active_area(corner, common)
     fin_area = active_area(fin, common)
     induction_area = active_area(induction, common)
-    required_shear = worst_force / corner_area
-    ideal_equal_component_b = math.sqrt(MU_0 * required_shear)
+    developed_shear = worst_force / corner_area
+    corner_stressed_tooth_area = corner_area * corner["tooth_duty_fraction"]
+    required_tooth_face_shear = worst_force / corner_stressed_tooth_area
+    ideal_equal_component_b = math.sqrt(MU_0 * required_tooth_face_shear)
 
     preferred_flux_cap = flux_at_mass_limit(
         common["preferred_interface_mass_kg"], corner, common
@@ -143,10 +145,13 @@ def calculate() -> dict:
         "force_source": "analysis/results/force_allocation.json",
         "worst_channel_force_n": worst_force,
         "required_area_at_band_m2_per_channel": required_area,
-        "required_shear_on_equal_area_pa": required_shear,
+        "required_developed_airgap_shear_pa": developed_shear,
+        "corner_stressed_tooth_area_m2_per_channel": corner_stressed_tooth_area,
+        "required_corner_tooth_face_shear_pa": required_tooth_face_shear,
         "maxwell_stress_screen": {
             "relation": "tau = Bn * Bt / mu0",
             "optimistic_equal_component_flux_t": ideal_equal_component_b,
+            "area_basis": "50% translator tooth duty; local tooth-face area",
             "interpretation": "lower-bound field component only; not a motor prediction",
         },
         "candidates": {
@@ -164,7 +169,11 @@ def calculate() -> dict:
                 "disposition": (
                     "PROMOTE_TO_NONLINEAR_FEA"
                     if bands["corner_preferred_mass_supports_ideal_equal_component_field"]
-                    else "DO_NOT_PROMOTE_AS_PRIMARY"
+                    else (
+                        "RESERVE_ONLY"
+                        if kill_flux_cap >= ideal_equal_component_b
+                        else "REJECT_GEOMETRY_AS_CONFIGURED"
+                    )
                 ),
                 "unresolved": [
                     "actual normal/tangential field ratio",
@@ -231,4 +240,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

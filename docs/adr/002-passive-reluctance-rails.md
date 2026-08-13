@@ -1,6 +1,6 @@
 # ADR-002: active stator, passive reluctance rails
 
-**Status:** accepted for Phase 0  
+**Status:** superseded in part by [ADR-004](004-explicit-flux-path.md)  
 **Date:** 2026-08-13
 
 ## Context
@@ -30,4 +30,3 @@ soft-magnetic poles embedded in four spacecraft rails.
 The passive translator is cheap and unpowered. The costs move into nonlinear commutation,
 attractive normal force, covered-gap force density and possible remanence. Those are now the
 first kill tests.
-

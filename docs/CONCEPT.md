@@ -3,7 +3,8 @@
 ## One change to the premise
 
 VOLLEY accelerated an unmodified payload on a 9.445 kg reusable magnetic sled. Bolley puts a
-small, passive magnetic circuit into the payload rails and eliminates the sled.
+small, passive electromagnetic reaction feature into the payload interface and eliminates the
+sled.
 
 ```mermaid
 flowchart TD
@@ -17,19 +18,21 @@ flowchart TD
 There is no launch-member release event at the end of the stroke. Separation is the transition
 from an energised stator region to free flight.
 
-## Cooperative reaction rail
+## Cooperative reaction interface
 
-Each CubeSat corner carries a hybrid rail:
+Each CubeSat force lane carries a passive reaction feature:
 
-1. A hard-anodized aluminium outer skin remains the dispenser contact surface.
-2. Segmented non-oriented electrical steel or soft-magnetic composite forms buried translator
-   poles.
-3. Two orthogonal magnetic faces per corner expose enough effective air-gap area without replacing
-   the standard wear surface.
-4. The rail remains passive throughout integration and flight.
+1. The normal dispenser contact surface remains hard-anodized aluminium.
+2. The A3a primary candidate is a thin, segmented steel fin/tab between opposed launcher stators.
+3. A continuous aluminium induction lane is retained if two-sided access cannot fit.
+4. The reaction feature remains passive throughout integration and flight.
 
 The launcher carries concentrated windings in independently switched 150 mm tiles. Only tiles
 overlapped by the payload are energised.
+
+The earlier buried L-shaped corner return is rejected as configured by
+[`ADR-004`](adr/004-explicit-flux-path.md). The fin/tab is a candidate, not a released interface;
+its two-sided access must pass A5 before it earns nonlinear FEA.
 
 ## Force-centroid control
 
@@ -53,7 +56,7 @@ remove calibration error, rail compliance or exit fringing; those remain test pr
 | Permanent magnets | Rejected: mass, continuous field and ADCS/integration burden. |
 | Powered coils | Rejected: connectors, heat, inhibits and powered spacecraft hardware. |
 | Conductive induction sheet | Retained as fallback: no remanence, but slip and secondary loss. |
-| Passive reluctance rails | Baseline: inexpensive translator, no electrical spacecraft interface. |
+| Passive through-flux fin/tab | Primary candidate: low moving magnetic mass, but two-sided access is unproven. |
 
 ## Two product modes
 
@@ -62,4 +65,3 @@ remove calibration error, rail compliance or exit fringing; those remain test pr
 
 Bolley-R should be allowed to fail on its own physics before engineering effort returns to
 Bolley-U.
-

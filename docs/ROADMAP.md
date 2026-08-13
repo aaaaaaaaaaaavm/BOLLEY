@@ -4,10 +4,13 @@
 
 - Freeze the cooperative interface and duty.
 - Run first-order mass, force-area and CG allocation screens.
+- Reject incomplete flux paths with A3a and fit-check the surviving moving interface.
 - Build nonlinear 2D and 3D electromagnetic models.
 - Size commutation voltage, phase current and DC link from flux-linkage maps.
 
-**Exit:** every critical input to a one-corner coupon is bounded. No CAD beauty work before this.
+**Exit:** every critical input to a one-channel coupon is bounded. The opposed fin/tab receives
+nonlinear FEA only after a legal two-sided interface cross-section exists; otherwise the induction
+lane is promoted. No CAD beauty work before this.
 
 ## Phase 1 — one corner
 
@@ -41,4 +44,3 @@ bands. Otherwise change topology or stop.
 - Supplier-quoted recurring BOM.
 - Launch-provider interface disposition.
 - Flight demonstration with an inert or technology payload.
-
