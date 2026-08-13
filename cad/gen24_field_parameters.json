@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "extends": "cad/gen23_field_parameters.json",
+  "status": "ASSUMPTION A6e Gen2.4 Fluxrib nonlinear field gate; NOT RUN",
+  "controlled_design": "Gen2.4 Fluxrib candidate frozen after the failed A6d result",
+  "geometry": {
+    "topology_name": "Fluxmanifold-R4 with 1.14 mm active Fluxbridge magnetic ribs",
+    "outer_leg_intervals_y_m": [[-0.014, -0.0068], [0.0068, 0.014]],
+    "separator_intervals_y_m": [[-0.0052, -0.0028], [-0.0012, 0.0012], [0.0028, 0.0052]],
+    "fluxbridge_magnetic_width_y_m": 0.00114
+  },
+  "excitation": {
+    "turns": 3,
+    "phase_current_rms_a": 396.6666666666667,
+    "ampere_turn_rms": 1190.0,
+    "copper_area_per_turn_m2": 0.000027,
+    "coil_side_copper_area_m2": 0.000081,
+    "source_current_density_rms_a_m2": 14691358.024691358,
+    "positive_and_negative_source_areas_equal": true,
+    "turn_exchange": "three 27 mm2 turns; same 81 mm2 slot copper as Gen2.3; MMF reduced 0.833% after A6d"
+  },
+  "interface_accounting": {
+    "copper_rung_axial_width_mm": 0.75,
+    "copper_rung_active_width_mm": 1.0,
+    "magnetic_ligament_axial_width_mm": 1.25,
+    "magnetic_rib_active_width_mm": 1.14,
+    "encapsulant_per_side_mm": 0.03,
+    "maximum_finished_rib_width_mm": 1.2,
+    "stationary_slot_width_mm": 1.6,
+    "nominal_rib_clearance_per_side_mm": 0.2,
+    "nominal_copper_rung_clearance_per_side_mm": 0.3,
+    "a3g_magnetic_matrix_mass_kg": 0.111456576,
+    "gen24_magnetic_matrix_mass_kg": 0.135170741106383,
+    "retained_cage_copper_mass_kg": 0.12343296000000001,
+    "retained_capture_encapsulation_allowance_kg": 0.05,
+    "total_interface_increment_kg": 0.308603701106383,
+    "increment_from_a3g_interface_kg": 0.023714165106383,
+    "preferred_interface_increment_kg": 0.3,
+    "preferred_interface_margin_kg": -0.008603701106383,
+    "preferred_interface_screen_pass": false,
+    "absolute_interface_increment_limit_kg": 0.4,
+    "absolute_interface_margin_kg": 0.091396298893617,
+    "absolute_interface_limit_pass": true
+  },
+  "design_accounting": {
+    "stationary_core_cross_section_mm2": 580.5072587712817,
+    "stationary_core_density_kg_m3": 7650.0,
+    "stationary_core_mass_four_faces_kg": 7.993584953280549,
+    "primary_copper_mass_four_faces_kg": 7.664025599999997,
+    "active_primary_mass_four_faces_kg": 15.657610553280546,
+    "a3g_active_primary_mass_kg": 11.829450599999998,
+    "gen1_active_primary_mass_kg": 40.96,
+    "cell_resistance_ratio_to_a3g": 0.5625,
+    "ideal_inductance_ratio_at_equal_geometry_to_a3g": 0.5625,
+    "ideal_inductive_voltage_ratio_at_equal_ampere_turn_and_rise_time_to_a3g": 0.75
+  }
+}
