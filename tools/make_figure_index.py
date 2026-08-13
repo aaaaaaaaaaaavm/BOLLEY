@@ -14,6 +14,7 @@ A6 = ROOT / "analysis" / "figures" / "a6" / "FIGURES.json"
 A6B = ROOT / "analysis" / "figures" / "a6b" / "FIGURES.json"
 A6C = ROOT / "analysis" / "figures" / "a6c" / "FIGURES.json"
 A6D = ROOT / "analysis" / "figures" / "a6d" / "FIGURES.json"
+A6E = ROOT / "analysis" / "figures" / "a6e" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -47,6 +48,7 @@ def render() -> str:
         ("A6b", A6B, "Rejected exact Gen2.1 geometry evidence"),
         ("A6c", A6C, "Rejected Gen2.2 ligament evidence"),
         ("A6d", A6D, "Rejected Gen2.3 rib evidence"),
+        ("A6e", A6E, "Rejected Gen2.4 local-peak evidence"),
     ):
         if not manifest_path.exists():
             continue

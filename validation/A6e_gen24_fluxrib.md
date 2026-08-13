@@ -57,3 +57,13 @@ closed by frozen geometric accounting.
 
 Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. Pass promotes only to Gen2.4 circuit, transient cage and manufacturing-intent CAD closure.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 12/13 magnetic bands pass; Gen2.4 is rejected.**
+
+The base, fine and expanded meshes contain 209,000, 743,988 and 236,000 triangles. All declared
+bulk numerical differences are below 0.30%. Worst mean field is 0.7376–0.7390 T, stationary peak
+is 1.4449 T and fine inductance is 0.8736 times A3g. The controlling inferred ligament maximum is
+1.5159 T, 4.55% above the unchanged limit. The 0.30860 kg interface also preserves its separate
+8.60 g preferred-mass miss. The [controlled result](../docs/GEN24_FIELD.md) blocks promotion.
