@@ -1,0 +1,35 @@
+{
+  "candidates": {
+    "Bolley_R_baseline": {
+      "launcher_moving_mass_kg": 0.22922399999999998,
+      "nonpayload_mechanical_energy_j": 16.190549568,
+      "payload_mass_fraction": 0.9457999860021601,
+      "source": "first-order screen",
+      "total_mechanical_energy_j": 298.7185495680001,
+      "total_moving_mass_kg": 4.229224
+    },
+    "Bolley_U_target": {
+      "launcher_moving_mass_kg": 0.8,
+      "nonpayload_mechanical_energy_j": 56.505600000000015,
+      "payload_mass_fraction": 0.8333333333333334,
+      "source": "design target",
+      "total_mechanical_energy_j": 339.0336000000001,
+      "total_moving_mass_kg": 4.8
+    },
+    "VOLLEY_sled_at_common_duty": {
+      "launcher_moving_mass_kg": 9.445,
+      "nonpayload_mechanical_energy_j": 667.1192400000002,
+      "payload_mass_fraction": 0.29750836742283376,
+      "source": "VOLLEY model output",
+      "total_mechanical_energy_j": 949.6472400000002,
+      "total_moving_mass_kg": 13.445
+    }
+  },
+  "common_duty_velocity_m_s": 11.88545329383781,
+  "evidence": "MODEL OUTPUT and labelled design targets",
+  "limits": [
+    "This isolates moving-mass burden and does not compare motor electrical efficiency.",
+    "Bolley-U has no completed mechanical or electromagnetic design."
+  ],
+  "payload_mass_kg": 4.0
+}

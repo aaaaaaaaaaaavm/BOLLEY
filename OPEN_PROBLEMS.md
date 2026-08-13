@@ -14,7 +14,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P7 | Rail inserts may delaminate or fret through ascent vibration and repeated shots. | Structural qualification and 100-cycle wear test. | HIGH | OPEN |
 | P8 | Rail heating from hysteresis and eddy current is unknown. | Coupled loss/thermal model checked by instrumented coupon. | HIGH | OPEN |
 | P9 | No independent retention gate has been selected or sized. | Gate design passes ascent, no-fire and commanded-release tests. | HIGH | OPEN |
-| P10 | The four-channel force-allocation law assumes known payload CG and calibrated channel force. | CG declaration error and force-sensor uncertainty close inside the tip-off budget. | HIGH | OPEN |
+| P10 | The four-channel force-allocation law assumes known payload CG and calibrated channel force. | CG declaration error and force-sensor uncertainty close inside the tip-off budget. | HIGH | MODELLED |
 | P11 | No capacitor, inverter, switch or cable has a supplier-backed pulse rating for this duty. | Quoted and datasheet-backed electrical BOM passes the shot. | HIGH | OPEN |
 | P12 | The proposed hybrid rail has not been accepted by a dispenser or launch provider. | Written interface disposition or mission-specific waiver. | HIGH | OPEN |
 | P13 | The recurring-cost advantage is entirely unquoted. | Supplier quotations and integration labour model. | MEDIUM | OPEN |
@@ -30,4 +30,3 @@ measurement, supplier document or decision record. Confidence is not closure.
 - `CORRECTED` means a previous result was wrong and the replacement is traceable.
 - `CLOSED` requires the stated close condition.
 - `DEFERRED` means deliberately outside the active baseline, not solved.
-

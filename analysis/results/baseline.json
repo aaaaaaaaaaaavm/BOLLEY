@@ -1,0 +1,54 @@
+{
+  "bands": {
+    "channel_force": true,
+    "gross_energy_at_40pct": true,
+    "interface_mass_absolute": true,
+    "interface_mass_preferred": true,
+    "mechanical_utilisation": true,
+    "pole_passage": true,
+    "required_shear": true,
+    "velocity_11p8_to_12p0": true
+  },
+  "evidence": "MODEL OUTPUT from ASSUMPTION inputs; not experimentally validated",
+  "inputs": {
+    "acceleration_g": 8.0,
+    "cg_limit_m": 0.02,
+    "powered_length_m": 0.9,
+    "qualification_payload_kg": 6.0,
+    "reference_payload_kg": 4.0
+  },
+  "interface": {
+    "active_face_area_per_corner_m2": 0.01008,
+    "effective_nominal_gap_m": 0.00125,
+    "magnetic_material_mass_kg": 0.154224,
+    "screened_incremental_mass_kg": 0.22922399999999998,
+    "total_active_face_area_m2": 0.04032
+  },
+  "limits": [
+    "No flux-linkage, saturation, normal-force, voltage or thermal model is present.",
+    "The efficiency range is an assumption used only for an energy screen.",
+    "The external shear benchmark is not performance evidence for this geometry."
+  ],
+  "overall_pass": true,
+  "qualification_case": {
+    "benchmark_margin_fraction": 0.40413033616987337,
+    "moving_mass_kg": 6.229224,
+    "published_shear_benchmark_pa": 35163.26219515864,
+    "required_worst_corner_shear_pa": 25042.73377575153,
+    "total_force_n": 488.86949952000003,
+    "worst_corner_force_n": 252.43075645957543
+  },
+  "reference_case": {
+    "acceleration_m_s2": 78.48,
+    "exit_velocity_m_s": 11.88545329383781,
+    "gross_energy_screen_j_at_40pct": 746.7963739200003,
+    "gross_energy_screen_j_at_60pct": 497.86424928000025,
+    "mechanical_utilisation_fraction": 0.9457999860021601,
+    "moving_mass_kg": 4.229224,
+    "payload_ke_j": 282.5280000000001,
+    "peak_mechanical_power_w": 3944.8948543260435,
+    "pole_passage_hz": 247.61361028828767,
+    "total_force_n": 331.90949952000005,
+    "total_moving_ke_j": 298.7185495680001
+  }
+}
