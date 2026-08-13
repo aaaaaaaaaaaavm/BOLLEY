@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A8a axial-engagement audit; NOT RUN",
+  "controlled_design": "A7b-tested Gen2.6 Quintweb geometry and current limits; no field, cage or validation threshold changes",
+  "source_files": [
+    "cad/gen2_parameters.json",
+    "cad/gen26_cage_parameters.json",
+    "analysis/results/gen26_cage_circuit.json"
+  ],
+  "geometry": {
+    "stator_start_x_m": 0.0,
+    "stator_active_length_m": 0.9,
+    "cage_active_start_at_retained_position_x_m": 0.00225,
+    "cage_active_length_m": 0.336,
+    "commanded_travel_m": 0.9,
+    "cell_pitch_m": 0.03,
+    "phase_count": 3,
+    "tile_length_m": 0.15,
+    "cells_per_tile": 5
+  },
+  "drive": {
+    "nominal_acceleration_g": 8.0,
+    "rated_phase_current_rms_a": 375.0,
+    "maximum_phase_current_rms_a": 400.0,
+    "force_field_exponent": 2.0,
+    "profile_point_count": 9001,
+    "placement_candidate_count": 673
+  },
+  "accounting": {
+    "a7b_cells_per_phase": 10,
+    "a7b_active_primary_mass_kg": 15.856669673280547
+  },
+  "bands": {
+    "minimum_reference_exit_velocity_m_s": 11.8,
+    "minimum_qualification_exit_velocity_m_s": 10.0,
+    "maximum_phase_current_rms_a": 400.0,
+    "maximum_installed_active_primary_mass_kg": 16.0,
+    "maximum_phase_resistance_ratio_to_a7b": 0.8201755489242106,
+    "minimum_end_overlap_fraction_for_full_force": 1.0
+  }
+}
