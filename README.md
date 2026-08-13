@@ -25,7 +25,9 @@ four-fin, 6 mm quad-comb passes its interface gate, but A3b1 kills the drawn sha
 interior pole throats would require 9.57 T. Gen1 therefore pivots to **Fluxfoil**—four continuous
 passive aluminium fins per face inside the same envelope, driven by symmetric travelling fields.
 A3d clears all 19 thin-sheet gates at 0.60 T; producing that field with real copper and iron is the
-next gate. No candidate has passed field FEA, provider review, structural analysis or test.
+next gate. A3e's explicit series-flux stator then clears all 15 lumped circuit gates at 40.96 kg
+active mass, 821 J for the reference shot and 36.4% modelled source-to-payload efficiency. No
+candidate has passed field FEA, provider review, structural analysis or test.
 
 ## The proposed machine
 
@@ -58,7 +60,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
 9. [`docs/QUAD_COMB_SCREEN.md`](docs/QUAD_COMB_SCREEN.md) — the smallest redesign that recovered ideal force margin.
 10. [`docs/INDUCTION_OPERATING_POINT.md`](docs/INDUCTION_OPERATING_POINT.md) — the current Fluxfoil operating point.
-11. `docs/BASELINE.md` — generated only after the first declared runs complete.
+11. [`docs/STATOR_CIRCUIT.md`](docs/STATOR_CIRCUIT.md) — the explicit iron, copper and source behind it.
+12. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 

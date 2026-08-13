@@ -15,3 +15,4 @@ This is the compact index. Full arguments live in `docs/adr/`.
 | D009 | 2026-08-13 | Reject the conventional shared-pole quad-comb stator before FEA. | Its 2 mm throats cannot return the required flux; widening them breaks the face-width rule. | [A3b1](validation/A3b1_stator_throat_bound.md) |
 | D010 | 2026-08-13 | Promote four-fin passive aluminium Fluxfoil to the Gen1 analytical lane. | Induction replaces the failed moving/shared magnetic return while preserving four-channel control. | [ADR-007](docs/adr/007-fluxfoil-baseline.md) |
 | D011 | 2026-08-13 | Preserve A3c's 66.2% efficiency failure and screen 0.60 T as A3d. | The band stays fixed; only a launcher-side field input changes. | [ADR-008](docs/adr/008-fluxfoil-operating-point.md) |
+| D012 | 2026-08-13 | Freeze the A3e series-flux loop as Gen1. | A real 20 mm core, 20-turn winding and 120 V pulse model now control CAD. | [ADR-009](docs/adr/009-serpentine-stator.md) |

@@ -13,7 +13,7 @@
 | A3b1 | MODELLED | 0/7 bands pass. Required outer/interior throat fields are 4.78/9.57 T; the shared-pole stator is rejected. |
 | A3c | MODELLED | 17/18 bands pass. The 0.50 T point fails worst-CG secondary-only efficiency at 66.2% versus 70%. |
 | A3d | MODELLED | 19/19 bands pass. At 0.60 T, worst-CG secondary-only efficiency is 73.9%, peak air-gap power 6.84 kW and rated local rise 4.85 K. |
-| A3e | NOT RUN | Explicit serpentine stator, winding and two-shot circuit bands declared. |
+| A3e | MODELLED | 15/15 bands pass over 882 shots. Active electromagnetic mass is 40.96 kg; reference draw 821 J; qualification peak 11.08 kW. |
 | A5 | NOT RUN | — |
 
 This file is updated only after the corresponding committed run sheet exists.
