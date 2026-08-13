@@ -12,3 +12,5 @@ This is the compact index. Full arguments live in `docs/adr/`.
 | D006 | 2026-08-13 | Commit bands before model results. | Git history records what would count as failure before the answer is known. | [Engineering method](docs/ENGINEERING_METHOD.md) |
 | D007 | 2026-08-13 | Reject the A5a three-fin comb on an ideal tooth-edge force bound. | A5a remains an interface result; whole-face shear is not used as axial force evidence. | [ADR-006](docs/adr/006-edge-bound-redesign.md) |
 | D008 | 2026-08-13 | Screen a four-fin, 6 mm passive quad-comb. | The smallest clean payload-side rescue must pass A5b before nonlinear analysis. | [ADR-006](docs/adr/006-edge-bound-redesign.md) |
+| D009 | 2026-08-13 | Reject the conventional shared-pole quad-comb stator before FEA. | Its 2 mm throats cannot return the required flux; widening them breaks the face-width rule. | [A3b1](validation/A3b1_stator_throat_bound.md) |
+| D010 | 2026-08-13 | Promote four-fin passive aluminium Fluxfoil to the Gen1 analytical lane. | Induction replaces the failed moving/shared magnetic return while preserving four-channel control. | [ADR-007](docs/adr/007-fluxfoil-baseline.md) |

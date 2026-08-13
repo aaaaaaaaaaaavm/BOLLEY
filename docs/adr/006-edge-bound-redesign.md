@@ -1,6 +1,6 @@
 # ADR-006: Reject three fins; screen a taller four-fin comb
 
-**Status:** accepted for A3b1 stator-topology screening  
+**Status:** superseded for Gen1 by [ADR-007](007-fluxfoil-baseline.md)  
 **Date:** 2026-08-13
 
 ## Context

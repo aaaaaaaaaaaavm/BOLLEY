@@ -1,0 +1,61 @@
+{
+  "band_count": 7,
+  "band_pass_count": 0,
+  "bands": {
+    "hard_resized_footprint": false,
+    "interior_throat_hard_field": false,
+    "interior_throat_preferred_field": false,
+    "outer_throat_hard_field": false,
+    "outer_throat_preferred_field": false,
+    "preferred_resized_footprint": false,
+    "throat_limited_ideal_force": false
+  },
+  "disposition": "REJECT_SHARED_POLE_QUAD_COMB_STATOR",
+  "evidence": "ANALYTICAL FLUX-CONSERVATION UPPER BOUND from ASSUMPTION topology with named EXTERNAL MATERIAL ANCHOR",
+  "flux_bound": {
+    "ideal_force_at_throat_limited_gap_field_n": 11.140846016432672,
+    "maximum_gap_flux_density_from_hard_interior_throat_t": 0.3333333333333333,
+    "required_ideal_gap_flux_density_t": 1.5947394937437345,
+    "required_interior_throat_flux_density_t": 9.568436962462407,
+    "required_outer_throat_flux_density_t": 4.784218481231203
+  },
+  "force_input_file": "analysis/results/quad_comb_screen.json",
+  "geometry": {
+    "drawn_pole_throat_width_m": 0.002,
+    "fin_count": 4,
+    "fin_height_m": 0.006,
+    "interior_flux_multiplicity": 2,
+    "interior_pole_count": 3,
+    "outer_flux_multiplicity": 1,
+    "outer_pole_count": 2,
+    "slot_width_m": 0.002
+  },
+  "geometry_input_file": "cad/quad_comb_parameters.json",
+  "limits": [
+    "Flux is assumed uniform and leakage-free; a real field solution can only worsen local peaks.",
+    "The bound applies to a conventional shared radial back yoke, not every imaginable stator topology.",
+    "No winding, voltage, current, thermal or force-ripple result is present.",
+    "A failed shared stator rejects that stator topology; it does not erase the A5b moving-interface result."
+  ],
+  "material_anchor": {
+    "manufacturer": "thyssenkrupp Steel",
+    "optimistic_hard_pole_flux_density_t": 2.0,
+    "preferred_pole_flux_density_t": 1.7,
+    "product_family": "powercore A non-grain-oriented electrical steel",
+    "reference_grade": "M270-50A",
+    "url": "https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html"
+  },
+  "resized_shared_pole_array": {
+    "footprint_at_hard_field_m": 0.046273747849849625,
+    "footprint_at_preferred_field_m": 0.053027938646881906,
+    "required_interior_width_at_hard_field_m": 0.009568436962462406,
+    "required_interior_width_at_preferred_field_m": 0.011256984661720478,
+    "required_outer_width_at_hard_field_m": 0.004784218481231203,
+    "required_outer_width_at_preferred_field_m": 0.005628492330860239,
+    "usable_face_fraction_at_hard_field": 0.5575150343355376,
+    "usable_face_fraction_at_preferred_field": 0.6388908270708663
+  },
+  "screen_pass": false,
+  "topology": "five shared alternating-polarity pole webs turning into one radial back yoke",
+  "topology_input_file": "cad/stator_throat_parameters.json"
+}

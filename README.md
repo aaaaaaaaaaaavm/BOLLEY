@@ -21,10 +21,10 @@ That small concession removes the launch sled, the post-release brake and the re
 A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
 moving return iron breaks the declared mass logic. A5a then found that a three-fin comb fits, but
 A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. A5b's passive
-four-fin, 6 mm **quad-comb** passes its 15 interface and ideal-bound gates at 158.9 g. Its next
-question is whether a real stationary return path fits without saturating. A single-sided
-aluminium induction lane remains the fallback. No candidate has passed provider review, nonlinear
-FEA, structural analysis or test.
+four-fin, 6 mm quad-comb passes its interface gate, but A3b1 kills the drawn shared stator: its
+interior pole throats would require 9.57 T. Gen1 therefore pivots to **Fluxfoil**—four continuous
+passive aluminium fins per face inside the same envelope, driven by symmetric travelling fields.
+No candidate has passed field FEA, provider review, structural analysis or test.
 
 ## The proposed machine
 
