@@ -1,6 +1,6 @@
 # ADR-010: Reject the Gen1 winding and screen a passive Fluxbridge cage
 
-**Status:** accepted for A3f screening; not accepted for hardware  
+**Status:** A3f model passed; accepted for optimisation, field FEA and Gen2 CAD—not hardware  
 **Date:** 2026-08-13
 
 ## Context
@@ -35,3 +35,10 @@ current; four faces preserve force-centroid control.
 - A targeted search found adjacent spring ejection, linear-motor launch and electromagnetic
   mechanisms, but it is not a professional patent search and no legal novelty claim is made.
 - A3f must pass its frozen winding-window and energy bands before any Gen2 render is promoted.
+
+## A3f result
+
+A3f passed all 23 declared bands. The interface increment is 0.285 kg, the active primary is
+9.37 kg, the winding slot is 58.3% full, and the reference/qualification shots require
+1.126/1.651 kJ. The first passing point is only 26.9% source-to-payload efficient, so promotion
+means optimisation and independent field closure—not freezing this operating point.

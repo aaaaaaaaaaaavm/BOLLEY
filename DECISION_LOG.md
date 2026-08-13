@@ -18,3 +18,4 @@ This is the compact index. Full arguments live in `docs/adr/`.
 | D012 | 2026-08-13 | Freeze the A3e series-flux loop as Gen1. | A real 20 mm core, 20-turn winding and 120 V pulse model now control CAD. | [ADR-009](docs/adr/009-serpentine-stator.md) |
 | D013 | 2026-08-13 | Reject the Gen1 winding after A5c exact interference and pack checks. | A3e remains evidence, but its CAD-promotion disposition is superseded. | [ADR-010](docs/adr/010-fluxbridge-cage.md) |
 | D014 | 2026-08-13 | Screen a passive magnetic-matrix/copper-ladder Fluxbridge blade. | A small unpowered payload modification is spent to remove the primary copper penalty at its source. | [ADR-010](docs/adr/010-fluxbridge-cage.md) |
+| D015 | 2026-08-13 | Promote the passing A3f package to constrained optimisation, not hardware. | The 9.37 kg primary is buildable in section, but 26.9% source efficiency remains an explicit weakness. | [A3f result](docs/FLUXBRIDGE_CAGE.md) |

@@ -24,6 +24,7 @@ A3C_RESULTS = {"induction_screen.json"}
 A3D_RESULTS = {"induction_operating_point.json"}
 A3E_RESULTS = {"stator_circuit.json"}
 A5C_RESULTS = {"cad_fit.json"}
+A3F_RESULTS = {"fluxbridge_cage.json"}
 
 
 def run(*parts: str) -> None:
@@ -71,6 +72,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -140,8 +142,15 @@ def main() -> None:
         run("tools/make_cad_fit.py", "--check")
     elif (ROOT / "docs" / "CAD_FIT.md").exists():
         raise SystemExit("docs/CAD_FIT.md exists before the A5c result")
+    if A3F_RESULTS <= committed:
+        run("analysis/fluxbridge_cage.py", "--check")
+        run("tools/make_fluxbridge_cage.py", "--check")
+    elif (ROOT / "docs" / "FLUXBRIDGE_CAGE.md").exists():
+        raise SystemExit("docs/FLUXBRIDGE_CAGE.md exists before the A3f result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f"
+        if A3F_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c with A3f declared"
         if A5C_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e with A5c declared"
         if A3E_RESULTS <= committed

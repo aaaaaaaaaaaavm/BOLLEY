@@ -33,7 +33,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P26 | Fluxfoil had no dimensioned series-flux stator, winding or pulse source behind the A3d field. | A3e closes a predeclared lumped circuit; field FEA and hardware remain separate gates. | CRITICAL | MODELLED |
 | P27 | The A3e stator carries about 1.15 kN common-mode normal attraction on each side of a rated fin. | Gen1 structure holds worst gap/runout without contact; coupon measures net and common-mode loads. | CRITICAL | OPEN |
 | P28 | A3e's winding intersects the moving interface and its bare-copper section exceeds the nominal inter-cell window by 66.7:1. | A replacement passes a predeclared winding-window gate and non-interfering CAD. | CRITICAL | OPEN |
-| P29 | The Fluxbridge perforated magnetic matrix and copper ladder are represented by homogenized permeability and sheet conductance. | Nonlinear transient field/circuit FEA and an instrumented cage coupon agree inside declared bands. | CRITICAL | OPEN |
+| P29 | The Fluxbridge perforated magnetic matrix and copper ladder are represented by homogenized permeability and sheet conductance. | Nonlinear transient field/circuit FEA and an instrumented cage coupon agree inside declared bands. | CRITICAL | MODELLED |
 | P30 | The 0.20 mm nominal Fluxbridge gap has no manufacturing, thermal, vibration or runout tolerance stack. | Worst-case tolerance model and measured coupon runout preserve positive clearance. | CRITICAL | OPEN |
 
 ## Register discipline
