@@ -51,3 +51,13 @@ must be reclosed after this solve. All other limits remain:
 
 Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. A pass opens five-lane cage/circuit reclosure and Gen3 CAD only.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 13/13 bands pass; Quintweb advances to A7b and Gen3 CAD.**
+
+The base, fine and expanded meshes contain 212,850, 751,282 and 240,130 triangles. Worst mean
+field is 0.7426–0.7454 T, moving-material peak is 1.2888 T, stationary-core peak is 1.5138 T and
+fine inductance is 1.3062 times A3g. Base-to-fine mean-field and coenergy changes are 0.070% and
+0.266%. Worst nonlinear closure is 9.882e-5, inside but close to the frozen 1e-4 limit. The
+[controlled result](../docs/GEN26_FIELD.md) opens downstream model gates only.
