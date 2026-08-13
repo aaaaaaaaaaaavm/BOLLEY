@@ -11,7 +11,7 @@ those ideas have prior art.
   <https://ieeexplore.ieee.org/document/370283/>.
 - Bae, Lee, Vijayraghavan and Krishnan demonstrated an active-stator, passive-translator linear
   switched-reluctance system with multiphase force sharing:
-  <https://ieeexplore.ieee.org/document/858026/>.
+  <https://ieeexplore.ieee.org/document/871284/>.
 - Long-rail propulsion using dual-sided and segmented-secondary reluctance machines is an
   established research field:
   <https://ieeexplore.ieee.org/document/7835617/>.
@@ -35,4 +35,3 @@ This is a search hypothesis, not a novelty claim. A professional patent search c
 If protection matters, decide that before publishing detailed pole geometry, winding topology or
 control claims. The repository will not pretend that a public README preserves options it may
 have already surrendered.
-
