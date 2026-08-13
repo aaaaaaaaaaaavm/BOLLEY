@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION Gen1 stator geometry, winding and loss model",
+  "fluxfoil_source": "cad/fluxfoil_a3d_parameters.json",
+  "architecture": {
+    "channel_count": 4,
+    "phase_count": 3,
+    "electrical_wavelength_m": 0.048,
+    "phase_cell_axial_length_m": 0.016,
+    "cells_in_series_per_phase": 19,
+    "total_phase_cells_per_channel": 57,
+    "active_stator_length_m": 0.912,
+    "topology": "one transverse serpentine flux loop crosses all four foil slots in series per axial phase cell"
+  },
+  "magnetic_circuit": {
+    "foil_slot_count": 4,
+    "slot_magnetic_length_m": 0.002,
+    "total_low_permeability_length_m": 0.008,
+    "slot_array_width_m": 0.02,
+    "outer_return_leg_width_m": 0.003,
+    "back_yoke_thickness_m": 0.003,
+    "interior_separator_width_m": 0.002,
+    "mean_core_path_length_m": 0.05,
+    "gap_face_height_m": 0.006,
+    "rated_gap_field_rms_t": 0.6,
+    "rated_outer_leg_and_yoke_field_rms_t": 1.2,
+    "conservative_core_h_at_rated_a_m": 2500.0,
+    "equivalent_core_cross_section_m2": 0.000048,
+    "steel_density_kg_m3": 7650.0,
+    "specific_core_loss_at_rated_w_kg": 80.0,
+    "core_loss_flux_exponent": 2.0,
+    "core_loss_frequency_exponent": 1.5,
+    "core_loss_reference_frequency_hz": 300.0,
+    "material_warning": "M270-class steel is a catalogue anchor only; 80 W/kg and H=2500 A/m are conservative model assumptions, not supplier loss/B-H data."
+  },
+  "winding": {
+    "turns_per_cell": 20,
+    "mean_turn_length_m": 0.045,
+    "copper_area_m2": 0.00002,
+    "copper_resistivity_ohm_m": 1.724e-8,
+    "copper_density_kg_m3": 8960.0,
+    "copper_specific_heat_j_kg_k": 385.0,
+    "series_connection": "nineteen identical cells per phase and channel",
+    "parallel_connection": "four channels independently driven"
+  },
+  "drive": {
+    "nominal_dc_link_v": 120.0,
+    "space_vector_modulation_utilisation": 0.95,
+    "inverter_efficiency": 0.97,
+    "field_command_normalization_force_n": 229.0740960865574,
+    "prebias_before_gate_release": true,
+    "integration_steps": 1001
+  },
+  "bands": {
+    "maximum_slot_array_width_m": 0.021,
+    "maximum_rated_outer_leg_field_t": 1.2,
+    "maximum_rated_mmf_a_turn": 4000.0,
+    "maximum_rated_phase_current_a": 250.0,
+    "maximum_rated_copper_current_density_a_m2": 12000000.0,
+    "maximum_active_electromagnetic_mass_kg": 45.0,
+    "maximum_phase_rms_voltage_v": 70.0,
+    "preferred_required_dc_link_v": 200.0,
+    "absolute_required_dc_link_v": 400.0,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_reference_peak_dc_power_w": 15000.0,
+    "maximum_qualification_peak_dc_power_w": 15000.0,
+    "maximum_copper_adiabatic_rise_per_shot_k": 1.0,
+    "maximum_terminal_frequency_hz": 350.0,
+    "minimum_voltage_margin_fraction_on_120v_link": 0.1
+  }
+}

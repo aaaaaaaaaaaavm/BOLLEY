@@ -30,6 +30,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P23 | The A5b sketch gives each stationary pole only a 2 mm throat, while shared interior poles must return two fin fluxes. | A3b1 flux-conservation bound passes before yoke or winding design. | CRITICAL | OPEN |
 | P24 | Fluxfoil's 0.50 T RMS travelling field has no explicit stator, winding, inverter or source behind it. | A3c passes, then a finite stator/circuit model closes field, voltage, current and loss. | CRITICAL | OPEN |
 | P25 | Finite-length and finite-height induction end effects may erase the thin-sheet force margin. | Independent 2D/3D field solution and force coupon meet A3 bands. | CRITICAL | OPEN |
+| P26 | Fluxfoil has no dimensioned series-flux stator, winding or pulse source behind the A3d field. | A3e closes a predeclared lumped circuit; field FEA and hardware remain separate gates. | CRITICAL | OPEN |
 
 ## Register discipline
 
