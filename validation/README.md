@@ -14,6 +14,7 @@ may supersede it while preserving the original and stating that the answer was a
 | [A3](A3_corner_coupon.md) | Can one covered-gap rail channel make the force at speed? | FEA, then measurement | NOT RUN |
 | [A4](A4_magnetic_compatibility.md) | Is the passive rail magnetically tolerable? | Measurement | NOT RUN |
 | [A5a](A5a_comb_fin_envelope.md) | Can a low-profile three-fin face channel fit preliminary CubeSat guidance and preserve control? | Analytical interface screen | NOT RUN |
+| [A3b0](A3b0_edge_force_bound.md) | Can that exact comb meet force even in an ideal tooth-edge energy bound? | Analytical upper bound | NOT RUN |
 | [A5](A5_interface_fit.md) | Can the rail remain a valid mechanical interface? | Drawing review and fit check | NOT RUN |
 
 `MODELLED` is not a synonym for `VALIDATED`. Only hardware evidence can close the central claim.

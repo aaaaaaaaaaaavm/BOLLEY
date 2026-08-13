@@ -26,6 +26,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P19 | The comb-fin requires launcher pole access on both sides of every fin, but no provider-approved 3U dispenser cross-section exists yet. | A5a geometry survives preliminary guidance, then a selected provider accepts stator, containment and rail-contact drawings. | CRITICAL | MODELLED |
 | P20 | A face-centred comb-fin consumes spacecraft side-panel area and may conflict with solar cells or harness routing. | A5a area screen plus bus-specific panel layout review. | HIGH | OPEN |
 | P21 | The comb-fin root, covers and segmented inserts have no structural load path or debris-containment proof. | Detailed capture design passes stress, vibration and fail-safe retention review. | CRITICAL | OPEN |
+| P22 | A5a's whole-face developed-shear statistic is not the axial force law of a tooth-overlap reluctance machine. | A3b0 edge-force bound passes, followed by a nonlinear 3D flux-linkage/force map. | CRITICAL | OPEN |
 
 ## Register discipline
 

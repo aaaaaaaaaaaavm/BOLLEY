@@ -17,6 +17,7 @@ CORE_RESULTS = {
 }
 A3A_RESULTS = {"topology_screen.json"}
 A5A_RESULTS = {"interface_fit_screen.json"}
+A3B0_RESULTS = {"edge_force_bound.json"}
 
 
 def run(*parts: str) -> None:
@@ -57,11 +58,13 @@ def main() -> None:
         CORE_RESULTS,
         CORE_RESULTS | A3A_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
             "partial result set: expected "
-            f"a declared stage set through {sorted(CORE_RESULTS | A3A_RESULTS | A5A_RESULTS)}, "
+            f"a declared stage set through "
+            f"{sorted(CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS)}, "
             f"found {sorted(committed)}"
         )
 
@@ -80,8 +83,15 @@ def main() -> None:
         run("tools/make_interface_fit_screen.py", "--check")
     elif (ROOT / "docs" / "INTERFACE_FIT_SCREEN.md").exists():
         raise SystemExit("docs/INTERFACE_FIT_SCREEN.md exists before the A5a result")
+    if A3B0_RESULTS <= committed:
+        run("analysis/edge_force_bound.py", "--check")
+        run("tools/make_edge_force_bound.py", "--check")
+    elif (ROOT / "docs" / "EDGE_FORCE_BOUND.md").exists():
+        raise SystemExit("docs/EDGE_FORCE_BOUND.md exists before the A3b0 result")
     stage = (
-        "A1/A2/A3a/A5a"
+        "A1/A2/A3a/A5a/A3b0"
+        if A3B0_RESULTS <= committed
+        else "A1/A2/A3a/A5a with A3b0 declared"
         if A5A_RESULTS <= committed
         else "A1/A2/A3a with A5a declared"
         if A3A_RESULTS <= committed

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "MIXED: ASSUMPTION model limits and named EXTERNAL MATERIAL DATA",
+  "geometry_source": "cad/comb_fin_parameters.json",
+  "model": {
+    "active_overlap_edges_per_tooth_and_fin": 1,
+    "minimum_sweep_flux_density_t": 0.5,
+    "maximum_sweep_flux_density_t": 2.2,
+    "sweep_step_flux_density_t": 0.1
+  },
+  "material_anchor": {
+    "manufacturer": "thyssenkrupp Steel",
+    "product_family": "powercore A non-grain-oriented electrical steel",
+    "reference_grade": "M270-50A",
+    "minimum_polarization_at_10000_a_per_m_t": 1.7,
+    "url": "https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html",
+    "warning": "The catalogue value is a reality anchor, not a selected-material B-H curve or a force prediction."
+  },
+  "bands": {
+    "minimum_average_channel_force_n": 255.0,
+    "preferred_maximum_required_flux_density_t": 1.7,
+    "optimistic_hard_flux_density_ceiling_t": 2.0
+  }
+}
