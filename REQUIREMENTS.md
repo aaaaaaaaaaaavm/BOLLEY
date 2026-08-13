@@ -19,7 +19,7 @@ it is an aspiration wearing a unit.
 | BOL-R-012 | An independent, fail-safe retention gate shall carry ascent loads and inhibit firing. | Structural test and fault injection | OPEN |
 | BOL-R-013 | Commanded exit velocity dispersion shall initially be no more than 0.10 m/s at 3 sigma. | At least 30 hardware shots | OPEN |
 | BOL-R-014 | The unpowered cooperative interface shall add no more than 50 microtesla above ambient outside the static payload envelope. | Three-axis magnetometer survey | OPEN |
-| BOL-R-015 | One rail channel shall tolerate the full worst-corner force required by the declared transverse centre-of-gravity envelope. | Pulse-force coupon | OPEN |
+| BOL-R-015 | One electromagnetic face channel shall tolerate the peak force required by the declared transverse centre-of-gravity envelope. | Pulse-force coupon | OPEN |
 | BOL-R-016 | All externally retained parts shall remain attached through ascent, deployment and mission operation. | Structural analysis and qualification test | OPEN |
 
 ## Requirement sources
@@ -33,4 +33,3 @@ it is an aspiration wearing a unit.
 
 Any change to a numbered requirement needs an ADR and a note stating whether the change occurred
 before or after the relevant result was seen.
-

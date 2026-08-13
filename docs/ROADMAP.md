@@ -8,13 +8,13 @@
 - Build nonlinear 2D and 3D electromagnetic models.
 - Size commutation voltage, phase current and DC link from flux-linkage maps.
 
-**Exit:** every critical input to a one-channel coupon is bounded. The opposed fin/tab receives
+**Exit:** every critical input to a one-channel coupon is bounded. The low-profile comb-fin receives
 nonlinear FEA only after a legal two-sided interface cross-section exists; otherwise the induction
 lane is promoted. No CAD beauty work before this.
 
 ## Phase 1 — one corner
 
-- Manufacture one hybrid rail coupon and one stator tile.
+- Manufacture one comb-fin face coupon and one stator tile.
 - Measure static and dynamic force across gap and tolerance.
 - Measure current rise, force ripple, normal force, rail loss and remanence.
 - Regenerate the model from measurements.
@@ -33,7 +33,7 @@ bands. Otherwise change topology or stop.
 
 ## Phase 3 — environment and repeatability
 
-- Ascent vibration of the gate and hybrid rails.
+- Ascent vibration of the gate, comb-fin roots and contact rails.
 - Thermal-vacuum pulse operation.
 - 100-cycle wear and magnetic drift campaign.
 - Payload EMC test with representative avionics.

@@ -16,15 +16,16 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P9 | No independent retention gate has been selected or sized. | Gate design passes ascent, no-fire and commanded-release tests. | HIGH | OPEN |
 | P10 | The four-channel force-allocation law assumes known payload CG and calibrated channel force. | CG declaration error and force-sensor uncertainty close inside the tip-off budget. | HIGH | MODELLED |
 | P11 | No capacitor, inverter, switch or cable has a supplier-backed pulse rating for this duty. | Quoted and datasheet-backed electrical BOM passes the shot. | HIGH | OPEN |
-| P12 | The proposed hybrid rail has not been accepted by a dispenser or launch provider. | Written interface disposition or mission-specific waiver. | HIGH | OPEN |
+| P12 | The proposed comb-fin reaction interface has not been accepted by a dispenser or launch provider. | Written interface disposition or mission-specific waiver. | HIGH | OPEN |
 | P13 | The recurring-cost advantage is entirely unquoted. | Supplier quotations and integration labour model. | MEDIUM | OPEN |
 | P14 | Host recoil and campaign attitude restoration have not been re-derived without the sled return. | Host-specific momentum and cadence assessment. | MEDIUM | OPEN |
 | P15 | Patent and literature searches are incomplete. | Professional search or documented decision not to pursue protection. | MEDIUM | OPEN |
 | P16 | No bus vendor has agreed that 0.15–0.25 kg of passive rail hardware is commercially acceptable. | At least one written customer or bus-vendor response. | MEDIUM | OPEN |
 | P17 | The unmodified-payload four-finger fallback remains only a sketch. | Separate requirements and one-corner actuator screen. | LOW | DEFERRED |
 | P18 | The 0.50 mm equivalent-thickness mass screen does not define a closed moving flux path. | A3a identifies an explicit topology that passes area and interface-mass gates. | CRITICAL | MODELLED |
-| P19 | The opposed fin/tab requires launcher stator access on both sides, but no legal 3U dispenser cross-section exists yet. | A5a dimensioned cross-section passes envelope, contact, clearance, capture and panel-access checks. | CRITICAL | OPEN |
+| P19 | The comb-fin requires launcher pole access on both sides of every fin, but no provider-approved 3U dispenser cross-section exists yet. | A5a geometry survives preliminary guidance, then a selected provider accepts stator, containment and rail-contact drawings. | CRITICAL | MODELLED |
 | P20 | A face-centred comb-fin consumes spacecraft side-panel area and may conflict with solar cells or harness routing. | A5a area screen plus bus-specific panel layout review. | HIGH | OPEN |
+| P21 | The comb-fin root, covers and segmented inserts have no structural load path or debris-containment proof. | Detailed capture design passes stress, vibration and fail-safe retention review. | CRITICAL | OPEN |
 
 ## Register discipline
 

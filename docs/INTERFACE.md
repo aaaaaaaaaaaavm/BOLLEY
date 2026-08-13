@@ -31,9 +31,12 @@ tooth duty. The current primary candidate is a 0.50 mm through-flux steel fin/ta
 cover per side and 0.50 mm target clearance per stator face. Its screened increment is 0.114 kg,
 including the same 75 g non-active allowance.
 
-Those dimensions are still assumptions. The fin/tab is not accepted until A5a proves legal
-two-sided access, structural capture, envelope compliance and continued aluminium rail contact.
-The 30 mm × 1.00 mm single-sided aluminium lane remains the fallback.
+Those dimensions were assumptions. A5a replaces the single 15 mm fin with three 5 mm fins per
+broad face. The resulting 14 mm comb footprint projects 5.5 mm from the rail plane, retains the
+corner rails and screens at 121.2 g including explicit side/tip cover and a 50 g root/capture
+allowance. It passes the preliminary CDS-guidance checks, but still needs provider approval and a
+real structural capture design. The 30 mm × 1.00 mm single-sided aluminium lane remains the
+fallback.
 
 The 15 mm magnetic lane is not a claim that a conventional 8.5 mm contact rail can simply be
 replaced with steel. It may occupy protected structure immediately behind the two faces meeting
@@ -57,7 +60,7 @@ The material selection must close four questions together:
 
 The cooperative payload supplies:
 
-- four qualified hybrid rails;
+- four qualified passive comb-fin face interfaces and conventional corner contact rails;
 - measured mass and centre of gravity;
 - declared magnetic-sensitive equipment locations;
 - structural evidence for rail insert retention;

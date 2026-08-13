@@ -20,12 +20,14 @@ That small concession removes the launch sled, the post-release brake and the re
 
 A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
 moving return iron breaks the declared mass logic. The current primary candidate is a thin
-through-flux fin/tab between opposed stationary stators; a single-sided aluminium induction lane
-is the fallback. Neither has yet passed interface fit, FEA or test.
+three-fin comb on each broad face between opposed stationary pole webs. A5a screens that moving
+interface at 121.2 g and inside preliminary CubeSat envelope guidance. A single-sided aluminium
+induction lane is the fallback. The comb has not passed provider review, FEA, structural analysis
+or test.
 
 ## The proposed machine
 
-- Four independently controlled rail channels apply axial force around the spacecraft.
+- Four independently controlled face channels apply axial force around the spacecraft.
 - Software distributes force so its centroid follows the declared payload centre of gravity.
 - Six 150 mm stator tiles provide a 0.90 m acceleration zone.
 - The Phase 0 reference duty is a 4 kg 3U payload, 8 g and approximately 12 m/s.
@@ -50,7 +52,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 4. [`validation/README.md`](validation/README.md) — why bands are written before runs.
 5. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the work that remains.
 6. [`docs/TOPOLOGY_SCREEN.md`](docs/TOPOLOGY_SCREEN.md) — why the original flux return was rejected.
-7. `docs/BASELINE.md` — generated only after the first declared runs complete.
+7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
+8. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 

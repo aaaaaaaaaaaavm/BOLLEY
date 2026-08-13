@@ -6,6 +6,10 @@
 > placeholder, not a physically closed flux-path rail. Do not quote it as a designed interface
 > mass. See [`TOPOLOGY_SCREEN.md`](TOPOLOGY_SCREEN.md).
 
+> **A5a update:** the explicit comb-fin geometry screens at 0.121 kg, but remains
+> an interface-model candidate until provider, electromagnetic and structural gates pass. See
+> [`INTERFACE_FIT_SCREEN.md`](INTERFACE_FIT_SCREEN.md).
+
 ## Reference shot
 
 | Quantity | Value |
@@ -36,7 +40,7 @@
 | Minimum commanded channel force | 38.7 N |
 
 The published shear number is external evidence from another machine. The margin is a reason to
-run FEA and build a coupon, not evidence that this covered hybrid rail will work.
+run FEA and build a coupon, not evidence that the current comb-fin candidate will work.
 
 ## Common-duty moving-mass comparison
 
@@ -59,5 +63,5 @@ kill tests.
 - No flux-linkage, saturation, voltage, current, thermal or normal-force model exists.
 - The 40–60% efficiency range is an assumption.
 - No supplier component has been selected.
-- No launch provider has accepted the hybrid rail.
+- No launch provider has accepted the comb-fin reaction interface.
 - No hardware has been built.

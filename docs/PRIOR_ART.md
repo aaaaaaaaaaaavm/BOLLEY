@@ -22,8 +22,8 @@ those ideas have prior art.
 
 The potentially distinguishable system combination is:
 
-1. a CubeSat-compatible hard-anodized aluminium rail containing passive reluctance poles;
-2. four independently controlled axial rail channels;
+1. standard-like hard-anodized CubeSat contact rails plus shallow, covered, segmented comb fins;
+2. four independently controlled face-centred axial channels;
 3. force allocation from declared or measured spacecraft CG to null release moments;
 4. segmented stator energisation followed by field-end inertial separation; and
 5. no launcher member requiring post-release capture.
