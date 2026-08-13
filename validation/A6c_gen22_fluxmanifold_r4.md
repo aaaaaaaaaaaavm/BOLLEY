@@ -54,3 +54,15 @@ thermal evidence, tolerance closure, hardware validation or selected-lot materia
 
 Commit full histories and mesh metrics, explicit worst-mesh extrema, all bands and three indexed
 figures. Pass promotes Gen2.2 only to circuit, CAD and transient-force closure—not to hardware.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 12/13 bands pass; Gen2.2 is rejected.**
+
+The base, fine and expanded meshes contain 209,000, 743,988 and 236,000 triangles. All numerical
+differences are below 0.32%. Worst-mesh mean field remains 0.7372–0.7395 T and worst stationary
+core peak falls to 1.4113 T. The only failure is the 1.5306 T inferred ligament peak against the
+1.45 T limit. [The controlled result](../docs/GEN22_FIELD.md) preserves the worst-mesh extrema.
+
+The failure action is a spacecraft-side magnetic-rib cross-section change under a new gate. A6c
+limits remain unchanged and circuit/CAD/transient promotion remains blocked.
