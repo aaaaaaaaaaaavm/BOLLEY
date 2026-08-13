@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "extends": "cad/gen22_field_parameters.json",
+  "status": "ASSUMPTION A6d Gen2.3 Fluxrib nonlinear field gate; NOT RUN",
+  "controlled_design": "Gen2.3 Fluxrib candidate frozen after the failed A6c result",
+  "geometry": {
+    "topology_name": "Fluxmanifold-R4 with locally thickened Fluxbridge magnetic ribs",
+    "outer_leg_intervals_y_m": [[-0.014, -0.00676], [0.00676, 0.014]],
+    "separator_intervals_y_m": [[-0.00524, -0.00276], [-0.00124, 0.00124], [0.00276, 0.00524]],
+    "fluxbridge_magnetic_width_y_m": 0.00106
+  },
+  "interface_accounting": {
+    "copper_rung_axial_width_mm": 0.75,
+    "copper_rung_active_width_mm": 1.0,
+    "magnetic_ligament_axial_width_mm": 1.25,
+    "magnetic_rib_active_width_mm": 1.06,
+    "encapsulant_per_side_mm": 0.03,
+    "maximum_finished_rib_width_mm": 1.12,
+    "stationary_slot_width_mm": 1.52,
+    "nominal_rib_clearance_per_side_mm": 0.2,
+    "nominal_copper_rung_clearance_per_side_mm": 0.26,
+    "a3g_magnetic_matrix_mass_kg": 0.111456576,
+    "gen23_magnetic_matrix_mass_kg": 0.1256850750638298,
+    "retained_cage_copper_mass_kg": 0.12343296000000001,
+    "retained_capture_encapsulation_allowance_kg": 0.05,
+    "total_interface_increment_kg": 0.2991180350638298,
+    "increment_from_a3g_interface_kg": 0.014228499063829808
+  },
+  "design_accounting": {
+    "stationary_core_cross_section_mm2": 583.8952587712816,
+    "stationary_core_density_kg_m3": 7650.0,
+    "stationary_core_mass_four_faces_kg": 8.040237713280549,
+    "primary_copper_mass_four_faces_kg": 7.664025599999997,
+    "active_primary_mass_four_faces_kg": 15.704263313280546,
+    "a3g_active_primary_mass_kg": 11.829450599999998,
+    "gen1_active_primary_mass_kg": 40.96,
+    "cell_resistance_ratio_to_a3g": 0.5625,
+    "ideal_inductance_ratio_at_equal_geometry_to_a3g": 0.5625,
+    "ideal_inductive_voltage_ratio_at_equal_ampere_turn_and_rise_time_to_a3g": 0.75
+  }
+}
