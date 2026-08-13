@@ -35,6 +35,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P28 | A3e's winding intersects the moving interface and its bare-copper section exceeds the nominal inter-cell window by 66.7:1. | A replacement passes a predeclared winding-window gate and non-interfering CAD. | CRITICAL | OPEN |
 | P29 | The Fluxbridge perforated magnetic matrix and copper ladder are represented by homogenized permeability and sheet conductance. | Nonlinear transient field/circuit FEA and an instrumented cage coupon agree inside declared bands. | CRITICAL | MODELLED |
 | P30 | The 0.20 mm nominal Fluxbridge gap has no manufacturing, thermal, vibration or runout tolerance stack. | Worst-case tolerance model and measured coupon runout preserve positive clearance. | CRITICAL | OPEN |
+| P31 | A3g's two coil sides share a 15 × 18 mm slot only as a sectional fill calculation. | A5d routes both alternating layers with positive coil/core/foil clearance and matched copper volume. | CRITICAL | OPEN |
 
 ## Register discipline
 
