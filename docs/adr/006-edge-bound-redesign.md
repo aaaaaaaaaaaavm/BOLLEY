@@ -1,6 +1,6 @@
 # ADR-006: Reject three fins; screen a taller four-fin comb
 
-**Status:** accepted for A5b screening  
+**Status:** accepted for A3b1 stator-topology screening  
 **Date:** 2026-08-13
 
 ## Context
@@ -27,8 +27,9 @@ Screen one minimal cooperative-payload change in A5b:
 - unchanged 0.25 mm side covers and 0.50 mm side clearances; and
 - aligned moving teeth, with continuous electrical phasing assigned to launcher-side stators.
 
-The redesign is called the **Bolley quad-comb**. It is not promoted to A3b1 unless every frozen
-A5b band passes.
+The redesign is called the **Bolley quad-comb**. A5b subsequently passed all 15 frozen bands, so
+the geometry advances to A3b1. That promotion applies to the passive moving interface only; the
+2 mm stationary web sketch has not yet proved it can carry the required flux.
 
 ## Consequences
 

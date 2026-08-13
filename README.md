@@ -20,10 +20,11 @@ That small concession removes the launch sled, the post-release brake and the re
 
 A3a found that the original buried corner-return rail was not an elegant flux path: sizing its
 moving return iron breaks the declared mass logic. A5a then found that a three-fin comb fits, but
-A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. The current redesign
-under test is a passive four-fin, 6 mm **quad-comb** on each broad face. A single-sided aluminium
-induction lane remains the fallback. No comb has passed provider review, nonlinear FEA, structural
-analysis or test.
+A3b0 killed it: even its ideal tooth-edge force bound misses 255 N at 2.0 T. A5b's passive
+four-fin, 6 mm **quad-comb** passes its 15 interface and ideal-bound gates at 158.9 g. Its next
+question is whether a real stationary return path fits without saturating. A single-sided
+aluminium induction lane remains the fallback. No candidate has passed provider review, nonlinear
+FEA, structural analysis or test.
 
 ## The proposed machine
 
@@ -54,7 +55,8 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 6. [`docs/TOPOLOGY_SCREEN.md`](docs/TOPOLOGY_SCREEN.md) — why the original flux return was rejected.
 7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
 8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
-9. `docs/BASELINE.md` — generated only after the first declared runs complete.
+9. [`docs/QUAD_COMB_SCREEN.md`](docs/QUAD_COMB_SCREEN.md) — the smallest redesign that recovered ideal force margin.
+10. `docs/BASELINE.md` — generated only after the first declared runs complete.
 
 ## Repository rules
 
