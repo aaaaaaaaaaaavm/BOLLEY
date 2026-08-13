@@ -46,3 +46,10 @@ The 0.25 kg target and 0.30 kg preference remain separate failed preferences.
 
 Commit all four corners, both payload cases, all 3,528 CG/corner/payload point records, 19 bands
 and both preference failures. A pass opens Gen3 CAD and transient-force work only.
+
+### Execution correction declared before a completed run
+
+The first command stopped before cage or shot calculation because the wrapper loaded only the
+Gen2.6 child field-parameter file and did not resolve its inherited Gen2.5 magnetic fraction. No
+A7b value was produced. The shared loader was corrected to resolve parent files recursively with
+cycle detection. No geometry, field result, corner, model equation or band changed.

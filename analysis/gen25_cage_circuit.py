@@ -36,10 +36,31 @@ def load(path: Path) -> dict:
         return json.load(handle)
 
 
+def load_inherited(path: Path, chain: tuple[Path, ...] = ()) -> dict:
+    resolved = path.resolve()
+    if resolved in chain:
+        raise SystemExit(f"cyclic cage-parameter inheritance at {path}")
+    payload = load(path)
+    parent = payload.pop("extends", None)
+    if parent is None:
+        return payload
+    inherited = load_inherited(ROOT / parent, (*chain, resolved))
+
+    def merge(base: dict, overrides: dict) -> dict:
+        for key, value in overrides.items():
+            if isinstance(value, dict) and isinstance(base.get(key), dict):
+                merge(base[key], value)
+            else:
+                base[key] = value
+        return base
+
+    return merge(inherited, payload)
+
+
 def calculate() -> dict:
     base = load(BASE_INPUT)
     a3g = load(A3G_INPUT)
-    field_parameters = load(FIELD_PARAMETERS)
+    field_parameters = load_inherited(FIELD_PARAMETERS)
     field = load(FIELD_RESULT)
     control = load(INPUT)
     declared = control["design"]
