@@ -33,6 +33,7 @@ A6C_RESULTS = {"gen22_field.json"}
 A6D_RESULTS = {"gen23_field.json"}
 A6E_RESULTS = {"gen24_field.json"}
 A6F_RESULTS = {"gen25_field.json"}
+A7A_RESULTS = {"gen25_cage_circuit.json"}
 
 
 def run(*parts: str) -> None:
@@ -89,6 +90,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -215,8 +217,16 @@ def main() -> None:
         run("tools/make_gen25_field.py", "--check")
     elif (ROOT / "docs" / "GEN25_FIELD.md").exists():
         raise SystemExit("docs/GEN25_FIELD.md exists before the A6f result")
+    if A7A_RESULTS <= committed:
+        run("analysis/gen25_cage_circuit.py", "--check")
+        run("tools/make_gen25_cage_circuit.py", "--check")
+        run("tools/render_gen25_cage.py", "--check")
+    elif (ROOT / "docs" / "GEN25_CAGE_CIRCUIT.md").exists():
+        raise SystemExit("docs/GEN25_CAGE_CIRCUIT.md exists before the A7a result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a"
+        if A7A_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f with A7a declared"
         if A6F_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e with A6f declared"
         if A6E_RESULTS <= committed

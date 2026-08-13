@@ -1,0 +1,23 @@
+{
+  "figure_count": 2,
+  "figures": [
+    {
+      "bytes": 72597,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a7a/A7a_qualification_cage_rise_map.png",
+      "sha256": "d61e3b602cde17ae5d1387db6fa488486ccd7e1a78fbf10a42d0017c1be0477a",
+      "source": "tools/render_gen25_cage.py",
+      "title": "Worst-corner qualification cage-temperature CG map"
+    },
+    {
+      "bytes": 107112,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a7a/A7a_controlling_margins.png",
+      "sha256": "3534d06c1d013ac8f6a9cdb921b502abc719878429735bdac826c7b9f2200035",
+      "source": "tools/render_gen25_cage.py",
+      "title": "A7a controlling normalized corner margins"
+    }
+  ],
+  "gate": "A7a",
+  "schema_version": 1
+}

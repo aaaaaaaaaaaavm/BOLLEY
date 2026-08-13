@@ -4,6 +4,10 @@ from __future__ import annotations
 
 import argparse
 import copy
+import csv
+import gzip
+import hashlib
+import io
 import itertools
 import json
 import math
@@ -19,6 +23,7 @@ FIELD_PARAMETERS = ROOT / "cad" / "gen25_field_parameters.json"
 FIELD_RESULT = RESULTS / "gen25_field.json"
 INPUT = ROOT / "cad" / "gen25_cage_parameters.json"
 OUTPUT = RESULTS / "gen25_cage_circuit.json"
+POINTS_OUTPUT = RESULTS / "gen25_cage_circuit_points.csv.gz"
 MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 
@@ -133,6 +138,7 @@ def calculate() -> dict:
             declared["cage_copper_mass_kg"],
             declared["magnetic_matrix_mass_kg"],
             cg_grid,
+            retain_point_records=True,
         )
         qualification = evaluate_case(
             base,
@@ -144,6 +150,7 @@ def calculate() -> dict:
             declared["cage_copper_mass_kg"],
             declared["magnetic_matrix_mass_kg"],
             cg_grid,
+            retain_point_records=True,
         )
         rated = cage_state(
             base["drive"]["rated_channel_force_n"],
@@ -315,15 +322,71 @@ def calculate() -> dict:
     }
 
 
+def package_points(result: dict) -> tuple[bytes, int]:
+    stream = io.StringIO(newline="")
+    writer = csv.writer(stream, lineterminator="\n")
+    metric_columns = [
+        "y_cg_m",
+        "z_cg_m",
+        "maximum_source_energy_j",
+        "minimum_source_to_payload_efficiency",
+        "maximum_peak_dc_power_w",
+        "maximum_required_dc_link_v",
+        "maximum_primary_copper_rise_k",
+        "maximum_cage_copper_rise_k",
+        "maximum_cage_current_density_a_m2",
+        "maximum_cage_slip_m_s",
+        "minimum_secondary_only_efficiency",
+        "maximum_terminal_frequency_hz",
+    ]
+    writer.writerow(
+        [
+            "corner_index",
+            "cage_sheet_conductance_multiplier",
+            "phase_resistance_multiplier",
+            "payload_case",
+            *metric_columns,
+        ]
+    )
+    record_count = 0
+    for corner_index, corner in enumerate(result["corners"], start=1):
+        for case_name in ("reference", "qualification"):
+            records = corner[case_name].pop("cg_point_records")
+            for record in records:
+                writer.writerow(
+                    [
+                        corner_index,
+                        corner["corner"]["cage_sheet_conductance_multiplier"],
+                        corner["corner"]["phase_resistance_multiplier"],
+                        case_name,
+                        *(record[column] for column in metric_columns),
+                    ]
+                )
+                record_count += 1
+    payload = gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0)
+    return payload, record_count
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     result = calculate()
+    points, point_count = package_points(result)
+    result["cg_point_artifact"] = {
+        "path": str(POINTS_OUTPUT.relative_to(ROOT)),
+        "compression": "deterministic gzip CSV, mtime=0",
+        "record_count": point_count,
+        "bytes": len(points),
+        "sha256": hashlib.sha256(points).hexdigest(),
+    }
     if args.write:
+        POINTS_OUTPUT.write_bytes(points)
         dump_json(OUTPUT, result)
     elif args.check:
+        if not POINTS_OUTPUT.exists() or POINTS_OUTPUT.read_bytes() != points:
+            raise SystemExit("stale A7a CG-point artifact")
         compare_json(OUTPUT, result)
     else:
         print(json.dumps(result, indent=2, sort_keys=True))

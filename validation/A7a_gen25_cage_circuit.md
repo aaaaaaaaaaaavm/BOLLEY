@@ -53,3 +53,13 @@ fail. They are not silently removed, but neither replaces the 0.40 kg hard requi
 Commit all four corners, both payload cases, all 441 CG points per case, every band and the
 preference failures. A pass opens discrete CAD and transient force modelling; a failure changes
 the cage or field point without moving these bands.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: no corner passes all 19 bands; Gen2.5 is rejected at A7a.**
+
+Across 3,528 retained CG/corner/payload records, the failed-band union is cage copper rise, cage
+current density, reference source energy and secondary-only efficiency. Worst values are 22.74 K,
+183.30 A/mm2, 905.1 J and 45.66%. Slip remains 7.073 m/s, required DC link 15.37 V and peak power
+11.84 kW, so the correction belongs on the passive translator rather than in more current or bus
+voltage. The [controlled result](../docs/GEN25_CAGE_CIRCUIT.md) blocks exact Gen2.5 CAD promotion.

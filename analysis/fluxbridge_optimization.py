@@ -599,6 +599,7 @@ def evaluate_case(
     cage_copper_mass: float,
     magnetic_matrix_mass: float,
     cg_grid: list[float],
+    retain_point_records: bool = False,
 ) -> dict:
     architecture = base["architecture"]
     interface = base["interface"]
@@ -639,6 +640,7 @@ def evaluate_case(
         for key, mode in metric_modes.items()
     }
     locations = {}
+    point_records = []
     for y_cg in cg_grid:
         for z_cg in cg_grid:
             forces = cardinal_forces(
@@ -805,6 +807,14 @@ def evaluate_case(
                 "minimum_secondary_only_efficiency": secondary_efficiency,
                 "maximum_terminal_frequency_hz": maximum_frequency,
             }
+            if retain_point_records:
+                point_records.append(
+                    {
+                        "y_cg_m": y_cg,
+                        "z_cg_m": z_cg,
+                        **values,
+                    }
+                )
             for key, value in values.items():
                 mode = metric_modes[key]
                 better = value > metrics[key] if mode == "max" else value < metrics[key]
@@ -812,13 +822,16 @@ def evaluate_case(
                     metrics[key] = value
                     locations[key] = [y_cg, z_cg]
 
-    return {
+    result = {
         "bare_payload_mass_kg": bare_payload_mass,
         "moving_mass_kg": moving_mass,
         "mechanical_energy_j": mechanical_energy,
         **metrics,
         "worst_metric_locations_yz_m": locations,
     }
+    if retain_point_records:
+        result["cg_point_records"] = point_records
+    return result
 
 
 def main() -> None:
