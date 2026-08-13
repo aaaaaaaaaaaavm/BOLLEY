@@ -95,7 +95,8 @@
     "cage_bar_period_count": 30,
     "support_plate_length_x_mm": 80.0,
     "support_plate_width_mm": 65.0,
-    "support_plate_thickness_mm": 8.0
+    "support_plate_thickness_mm": 8.0,
+    "support_plate_z_mm": 37.0
   },
   "bands": {
     "maximum_payload_body_envelope_yz_mm": 100.0,

@@ -5,3 +5,5 @@ __pycache__/
 # Reproducible rejected Gen1 exports; regenerate from cad/build_gen1.py.
 cad/step/gen1/
 cad/stl/gen1/
+cad/step/gen2/
+cad/stl/gen2/
