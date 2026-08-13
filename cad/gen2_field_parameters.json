@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A6 2D nonlinear RMS-equivalent magnetostatic field gate; NOT RUN",
+  "controlled_design": "A3g selected candidate p30_B0.56 and A5d Gen2 CAD",
+  "solver": {
+    "formulation": "2D out-of-plane magnetic vector potential Ax: -div(nu grad Ax)=Jx",
+    "element": "first-order triangular",
+    "nonlinear_method": "relaxed Picard update of secant reluctivity",
+    "relative_solution_tolerance": 0.0001,
+    "maximum_iterations": 50,
+    "relaxation": 0.65,
+    "outer_boundary_condition": "Ax=0",
+    "software": "scikit-fem 12.0.2 + SciPy sparse direct solve"
+  },
+  "coordinate_frame": {
+    "y": "across one payload face, metres",
+    "z": "radially outward from the 100 mm payload rail plane, metres",
+    "x": "out of plane along the firing axis and current direction"
+  },
+  "geometry": {
+    "core_face_y_min_m": -0.01,
+    "core_face_y_max_m": 0.01,
+    "outer_leg_intervals_y_m": [[-0.01, -0.0055], [0.0055, 0.01]],
+    "outer_leg_z_m": [0.0, 0.028],
+    "separator_intervals_y_m": [[-0.0041, -0.0023], [-0.0009, 0.0009], [0.0023, 0.0041]],
+    "separator_z_m": [0.0, 0.00645],
+    "back_yoke_y_m": [-0.01, 0.01],
+    "back_yoke_z_m": [0.025, 0.028],
+    "fluxbridge_centres_y_m": [-0.0048, -0.0016, 0.0016, 0.0048],
+    "fluxbridge_magnetic_width_y_m": 0.00094,
+    "fluxbridge_active_z_m": [0.00025, 0.00575],
+    "magnetic_ligament_axial_fraction": 0.625,
+    "coil_positive_y_m": [-0.01925, -0.01025],
+    "coil_negative_y_m": [-0.00525, 0.00375],
+    "coil_z_m": [0.007, 0.016],
+    "tooth_axial_depth_m": 0.015,
+    "active_field_sample_z_m": [0.001, 0.005]
+  },
+  "excitation": {
+    "turns": 4,
+    "phase_current_rms_a": 321.40185380258816,
+    "ampere_turn_rms": 1285.6074152103527,
+    "copper_area_per_turn_m2": 0.00002025,
+    "coil_side_copper_area_m2": 0.000081,
+    "source_current_density_rms_a_m2": 15871696.484078432,
+    "positive_and_negative_source_areas_equal": true
+  },
+  "materials": {
+    "air_and_copper_relative_permeability": 1.0,
+    "stationary_core_bh_assumption": {
+      "description": "conservative secant/incremental screening curve anchored near the A3g H input; not supplier data",
+      "b_t": [0.0, 0.4, 0.8, 1.2, 1.3, 1.4, 1.5, 1.6],
+      "h_a_m": [0.0, 1061.032953945969, 2122.065907891938, 3183.098861837907, 3448.357100324399, 7427.230677621782, 11406.104254919164, 15384.977832216547]
+    },
+    "metglas_2605sa1_ligament_bh_assumption": {
+      "description": "screening curve: mu_r=2000 to 1.4 T then incremental mu_r=10; supplier saturation induction is 1.56 T",
+      "supplier_url": "https://metglas.com/magnetic-materials/",
+      "supplier_saturation_induction_t": 1.56,
+      "b_t": [0.0, 0.4, 0.8, 1.2, 1.4, 1.45, 1.5, 1.56, 1.65],
+      "h_a_m": [0.0, 159.15494309189535, 318.3098861837907, 477.46482927568604, 557.0423008216337, 4535.915878119013, 8514.78945541639, 13289.437748173246, 20451.41018730853]
+    },
+    "homogenization": "moving-region B is axial-average tooth-slice B; ligament B is inferred as B_average/0.625"
+  },
+  "meshes": {
+    "base": {
+      "domain_y_m": [-0.04, 0.04],
+      "domain_z_m": [-0.015, 0.045],
+      "local_y_m": [-0.022, 0.022],
+      "local_z_m": [-0.003, 0.032],
+      "local_step_y_m": 0.00015,
+      "local_step_z_m": 0.00015,
+      "far_step_m": 0.0015
+    },
+    "fine": {
+      "domain_y_m": [-0.04, 0.04],
+      "domain_z_m": [-0.015, 0.045],
+      "local_y_m": [-0.022, 0.022],
+      "local_z_m": [-0.003, 0.032],
+      "local_step_y_m": 0.000075,
+      "local_step_z_m": 0.000075,
+      "far_step_m": 0.0015
+    },
+    "expanded_boundary": {
+      "domain_y_m": [-0.055, 0.055],
+      "domain_z_m": [-0.025, 0.06],
+      "local_y_m": [-0.022, 0.022],
+      "local_z_m": [-0.003, 0.032],
+      "local_step_y_m": 0.00015,
+      "local_step_z_m": 0.00015,
+      "far_step_m": 0.0015
+    },
+    "required_aligned_coordinates_m": [-0.01925, -0.01025, -0.01, -0.0055, -0.00527, -0.005, -0.00433, -0.0041, -0.0023, -0.00207, -0.00113, -0.0009, 0.0009, 0.00113, 0.00207, 0.0023, 0.00375, 0.0041, 0.00433, 0.005, 0.00527, 0.0055, 0.01, 0.00025, 0.001, 0.005, 0.00575, 0.00645, 0.007, 0.016, 0.025, 0.028]
+  },
+  "targets": {
+    "a3g_equivalent_sheet_field_rms_t": 0.56,
+    "a3g_tooth_field_rms_t": 0.7919595949289332,
+    "a3g_inferred_ligament_field_rms_t": 1.2671353518862931,
+    "a3g_phase_inductance_h": 8.13146107387024e-06,
+    "a3g_per_cell_inductance_h": 8.13146107387024e-07
+  },
+  "bands": {
+    "maximum_base_to_fine_mean_slot_field_change_fraction": 0.02,
+    "maximum_base_to_fine_coenergy_change_fraction": 0.04,
+    "maximum_boundary_expansion_mean_slot_field_change_fraction": 0.02,
+    "minimum_mean_tooth_slice_field_rms_t": 0.72,
+    "maximum_mean_tooth_slice_field_rms_t": 0.86,
+    "maximum_slot_to_slot_flux_imbalance_fraction": 0.05,
+    "maximum_active_height_field_coefficient_of_variation": 0.15,
+    "maximum_inferred_magnetic_ligament_field_t": 1.45,
+    "maximum_stationary_core_field_t": 1.55,
+    "minimum_per_cell_inductance_ratio_to_a3g": 0.7,
+    "maximum_per_cell_inductance_ratio_to_a3g": 1.3,
+    "maximum_source_current_residual_fraction": 1e-10,
+    "maximum_nonlinear_relative_solution_change": 0.0001
+  }
+}
