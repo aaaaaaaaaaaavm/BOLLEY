@@ -10,11 +10,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "analysis" / "results"
-EXPECTED_RESULTS = {
+CORE_RESULTS = {
     "baseline.json",
     "force_allocation.json",
     "architecture_trade.json",
 }
+STAGED_RESULTS = {"topology_screen.json"}
 
 
 def run(*parts: str) -> None:
@@ -51,17 +52,27 @@ def main() -> None:
         check_links()
         print("OK: pre-run repository; bands exist and no model results are committed")
         return
-    if committed != EXPECTED_RESULTS:
-        raise SystemExit(f"partial result set: expected {sorted(EXPECTED_RESULTS)}, found {sorted(committed)}")
+    valid_sets = (CORE_RESULTS, CORE_RESULTS | STAGED_RESULTS)
+    if committed not in valid_sets:
+        raise SystemExit(
+            "partial result set: expected "
+            f"{sorted(CORE_RESULTS)} or {sorted(CORE_RESULTS | STAGED_RESULTS)}, "
+            f"found {sorted(committed)}"
+        )
 
     run("analysis/baseline.py", "--check")
     run("analysis/force_allocation.py", "--check")
     run("analysis/architecture_trade.py", "--check")
     run("tools/make_baseline.py", "--check")
+    if STAGED_RESULTS <= committed:
+        run("analysis/topology_screen.py", "--check")
+        run("tools/make_topology_screen.py", "--check")
+    elif (ROOT / "docs" / "TOPOLOGY_SCREEN.md").exists():
+        raise SystemExit("docs/TOPOLOGY_SCREEN.md exists before the A3a result")
     check_links()
-    print("OK: generated results, baseline and local links are current")
+    stage = "A1/A2/A3a" if STAGED_RESULTS <= committed else "A1/A2 with A3a declared"
+    print(f"OK: {stage} generated results and local links are current")
 
 
 if __name__ == "__main__":
     main()
-

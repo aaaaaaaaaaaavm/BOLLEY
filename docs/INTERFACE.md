@@ -18,6 +18,11 @@ This is a parameter contract for first-order work, not a released drawing.
 | Effective nominal magnetic gap | 1.25 mm target | Derived assumption |
 | Translator pole pitch | 48 mm | Commutation/packaging compromise |
 
+> The 0.50 mm magnetic-equivalent thickness is only an area-times-density placeholder from A1.
+> It does not prove a closed return-flux path or a manufacturable rail. A3a explicitly screens
+> moving corner return iron, an opposed through-flux fin and an aluminium induction lane before
+> any topology is promoted to nonlinear analysis.
+
 The 15 mm magnetic lane is not a claim that a conventional 8.5 mm contact rail can simply be
 replaced with steel. It may occupy protected structure immediately behind the two faces meeting
 at a corner. The external contact geometry remains aluminium and must pass the selected
@@ -47,4 +52,3 @@ The cooperative payload supplies:
 - acceptance of the Bolley-specific dispenser interface.
 
 It supplies no electrical connection or deployment command.
-

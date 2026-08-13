@@ -22,6 +22,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P15 | Patent and literature searches are incomplete. | Professional search or documented decision not to pursue protection. | MEDIUM | OPEN |
 | P16 | No bus vendor has agreed that 0.15–0.25 kg of passive rail hardware is commercially acceptable. | At least one written customer or bus-vendor response. | MEDIUM | OPEN |
 | P17 | The unmodified-payload four-finger fallback remains only a sketch. | Separate requirements and one-corner actuator screen. | LOW | DEFERRED |
+| P18 | The 0.50 mm equivalent-thickness mass screen does not define a closed moving flux path. | A3a identifies an explicit topology that passes area and interface-mass gates. | CRITICAL | OPEN |
 
 ## Register discipline
 

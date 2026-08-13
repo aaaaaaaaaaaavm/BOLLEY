@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Bolley A3a moving-interface topology candidates</title>
+  <desc id="desc">Dimensioned screening cross-sections for a corner L-return rail, an opposed through-flux fin, and a single-sided aluminium induction lane.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#263238"/></marker>
+    <style>
+      .title{font:700 28px sans-serif;fill:#102027}.sub{font:700 20px sans-serif;fill:#102027}.txt{font:15px sans-serif;fill:#263238}.small{font:13px sans-serif;fill:#455a64}.dim{stroke:#263238;stroke-width:1.4;marker-start:url(#arrow);marker-end:url(#arrow)}.ext{stroke:#78909c;stroke-width:1;stroke-dasharray:4 4}.panel{fill:#fafafa;stroke:#b0bec5;stroke-width:2}.steel{fill:#ef6c00;stroke:#8d3b00;stroke-width:2}.stator{fill:#1565c0;stroke:#0d47a1;stroke-width:2}.al{fill:#b0bec5;stroke:#546e7a;stroke-width:2}.gap{fill:#e3f2fd;stroke:#64b5f6;stroke-width:1}.warn{fill:#fff3e0;stroke:#ffb74d;stroke-width:1.5}.flux{fill:none;stroke:#d32f2f;stroke-width:2.5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="50" y="48" class="title">Bolley A3a — explicit moving-interface unit cells</text>
+  <text x="50" y="74" class="small">ASSUMPTION geometry · transverse sections · NOT TO SCALE · 336 mm active length into page</text>
+
+  <rect x="35" y="100" width="360" height="570" rx="12" class="panel"/>
+  <text x="55" y="135" class="sub">A · Corner L-return</text>
+  <text x="55" y="160" class="small">Two active faces; moving steel closes flux</text>
+  <path d="M135 285 H245 V395 H215 V315 H135 Z" class="al"/>
+  <path d="M135 267 H263 V395 H246 V284 H135 Z" class="steel"/>
+  <rect x="82" y="244" width="53" height="48" class="gap"/>
+  <rect x="105" y="192" width="80" height="52" class="stator"/>
+  <rect x="268" y="297" width="48" height="53" class="gap"/>
+  <rect x="316" y="274" width="52" height="80" class="stator"/>
+  <path d="M145 250 C200 210 270 230 285 302" class="flux"/>
+  <line x1="135" y1="430" x2="263" y2="430" class="dim"/><line x1="135" y1="395" x2="135" y2="445" class="ext"/><line x1="263" y1="395" x2="263" y2="445" class="ext"/>
+  <text x="168" y="454" class="txt">15 mm face</text>
+  <line x1="246" y1="480" x2="263" y2="480" class="dim"/><line x1="246" y1="395" x2="246" y2="495" class="ext"/><line x1="263" y1="395" x2="263" y2="495" class="ext"/>
+  <text x="85" y="510" class="txt">leg depth d = (Bn / 1.60 T) × 15 mm</text>
+  <rect x="55" y="545" width="320" height="95" rx="8" class="warn"/>
+  <text x="70" y="572" class="txt">0.50 mm Al cover + 0.75 mm clearance</text>
+  <text x="70" y="598" class="txt">7 teeth × 24 mm per channel</text>
+  <text x="70" y="624" class="txt">Risk: return-yoke saturation drives mass</text>
+
+  <rect x="420" y="100" width="360" height="570" rx="12" class="panel"/>
+  <text x="440" y="135" class="sub">B · Opposed through-flux fin</text>
+  <text x="440" y="160" class="small">Two stators; stationary iron closes flux</text>
+  <rect x="460" y="246" width="86" height="160" class="stator"/>
+  <rect x="654" y="246" width="86" height="160" class="stator"/>
+  <rect x="546" y="270" width="43" height="112" class="gap"/>
+  <rect x="589" y="270" width="6" height="112" class="al"/>
+  <rect x="595" y="258" width="10" height="136" class="steel"/>
+  <rect x="605" y="270" width="6" height="112" class="al"/>
+  <rect x="611" y="270" width="43" height="112" class="gap"/>
+  <path d="M505 315 C545 278 565 278 600 315 C635 352 655 352 697 315" class="flux"/>
+  <line x1="595" y1="438" x2="605" y2="438" class="dim"/><line x1="595" y1="394" x2="595" y2="453" class="ext"/><line x1="605" y1="394" x2="605" y2="453" class="ext"/>
+  <text x="551" y="476" class="txt">0.50 mm steel</text>
+  <text x="490" y="510" class="txt">each side: 0.25 mm cover + 0.50 mm gap</text>
+  <rect x="440" y="545" width="320" height="95" rx="8" class="warn"/>
+  <text x="455" y="572" class="txt">15 mm active fin width; 50% tooth duty</text>
+  <text x="455" y="598" class="txt">Benefit: no moving back iron</text>
+  <text x="455" y="624" class="txt">Risk: two-sided mechanical access unproven</text>
+
+  <rect x="805" y="100" width="360" height="570" rx="12" class="panel"/>
+  <text x="825" y="135" class="sub">C · Aluminium induction lane</text>
+  <text x="825" y="160" class="small">One stator; all magnetic return iron fixed</text>
+  <rect x="860" y="220" width="250" height="92" class="stator"/>
+  <rect x="860" y="312" width="250" height="58" class="gap"/>
+  <rect x="860" y="370" width="250" height="18" class="steel"/>
+  <rect x="850" y="388" width="270" height="68" class="al"/>
+  <path d="M910 282 C930 340 960 350 980 374 C1000 350 1030 340 1050 282" class="flux"/>
+  <line x1="1135" y1="370" x2="1135" y2="388" class="dim"/><line x1="1110" y1="370" x2="1150" y2="370" class="ext"/><line x1="1110" y1="388" x2="1150" y2="388" class="ext"/>
+  <text x="1012" y="420" class="txt">1.00 mm Al</text>
+  <line x1="860" y1="493" x2="1110" y2="493" class="dim"/><line x1="860" y1="456" x2="860" y2="508" class="ext"/><line x1="1110" y1="456" x2="1110" y2="508" class="ext"/>
+  <text x="932" y="520" class="txt">30 mm lane</text>
+  <rect x="825" y="545" width="320" height="95" rx="8" class="warn"/>
+  <text x="840" y="572" class="txt">0.75 mm mechanical gap</text>
+  <text x="840" y="598" class="txt">Benefit: no remanent translator steel</text>
+  <text x="840" y="624" class="txt">Risk: slip loss, heating and normal force</text>
+
+  <rect x="50" y="700" width="18" height="18" class="stator"/><text x="77" y="715" class="small">launcher stator</text>
+  <rect x="215" y="700" width="18" height="18" class="steel"/><text x="242" y="715" class="small">moving magnetic/conductive element</text>
+  <rect x="500" y="700" width="18" height="18" class="al"/><text x="527" y="715" class="small">spacecraft aluminium</text>
+  <rect x="690" y="700" width="18" height="18" class="gap"/><text x="717" y="715" class="small">mechanical gap</text>
+  <path d="M885 709 H925" class="flux"/><text x="938" y="715" class="small">illustrative flux</text>
+</svg>
+

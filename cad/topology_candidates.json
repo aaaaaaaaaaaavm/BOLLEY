@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION",
+  "common": {
+    "channel_count": 4,
+    "active_length_m": 0.336,
+    "moving_nonactive_allowance_kg": 0.075,
+    "preferred_interface_mass_kg": 0.25,
+    "kill_interface_mass_kg": 0.4,
+    "required_shear_band_pa": 26000.0,
+    "steel_density_kg_m3": 7650.0,
+    "aluminium_density_kg_m3": 2700.0
+  },
+  "corner_l_return": {
+    "active_faces_per_channel": 2,
+    "active_width_per_face_m": 0.015,
+    "tooth_count_per_channel": 7,
+    "pole_pitch_m": 0.048,
+    "tooth_duty_fraction": 0.5,
+    "core_flux_density_screen_t": 1.6,
+    "normal_gap_flux_sweep_t": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.4,
+      0.6,
+      0.8,
+      1.0,
+      1.2
+    ]
+  },
+  "opposed_through_flux_fin": {
+    "active_faces_per_channel": 2,
+    "active_width_per_face_m": 0.015,
+    "tooth_duty_fraction": 0.5,
+    "steel_thickness_m": 0.0005,
+    "cover_per_side_m": 0.00025,
+    "clearance_per_side_m": 0.0005,
+    "double_sided_access_proven": false
+  },
+  "single_sided_induction_lane": {
+    "active_faces_per_channel": 1,
+    "active_width_per_face_m": 0.03,
+    "conductor_thickness_m": 0.001,
+    "mechanical_clearance_m": 0.00075,
+    "aluminium_resistivity_ohm_m": 2.82e-08,
+    "relative_permeability": 1.000022,
+    "force_and_thermal_model_complete": false
+  }
+}
+
