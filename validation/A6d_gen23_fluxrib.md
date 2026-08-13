@@ -51,3 +51,10 @@ fine and expanded meshes. In particular:
 
 Commit all three meshes, histories, worst-mesh extrema, 13 bands and three indexed figures. Pass
 promotes only to Gen2.3 circuit, transient cage and manufacturing-intent CAD closure.
+
+### Execution correction declared before a completed solve
+
+The first command stopped before mesh construction because the parameter loader resolved only one
+inheritance level (`Gen2.3 -> Gen2.2`) and therefore never reached the Gen2.1 mesh definition. No
+field value was produced. The loader was corrected to resolve parent files recursively with cycle
+detection. No parameter, geometry, material, mesh or band changed.

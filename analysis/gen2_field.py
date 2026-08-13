@@ -27,15 +27,6 @@ MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 
 def load() -> dict:
-    with INPUT.open(encoding="utf-8") as handle:
-        payload = json.load(handle)
-    parent = payload.pop("extends", None)
-    if parent is None:
-        return payload
-    parent_path = ROOT / parent
-    with parent_path.open(encoding="utf-8") as handle:
-        inherited = json.load(handle)
-
     def merge(base: dict, overrides: dict) -> dict:
         for key, value in overrides.items():
             if isinstance(value, dict) and isinstance(base.get(key), dict):
@@ -44,7 +35,19 @@ def load() -> dict:
                 base[key] = value
         return base
 
-    return merge(inherited, payload)
+    def load_path(path: Path, chain: tuple[Path, ...] = ()) -> dict:
+        resolved = path.resolve()
+        if resolved in chain:
+            raise SystemExit(f"cyclic field-parameter inheritance at {path}")
+        with path.open(encoding="utf-8") as handle:
+            payload = json.load(handle)
+        parent = payload.pop("extends", None)
+        if parent is None:
+            return payload
+        inherited = load_path(ROOT / parent, (*chain, resolved))
+        return merge(inherited, payload)
+
+    return load_path(INPUT)
 
 
 def sha256(path: Path) -> str:
