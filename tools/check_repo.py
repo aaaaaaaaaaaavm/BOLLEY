@@ -23,6 +23,7 @@ A3B1_RESULTS = {"stator_throat_bound.json"}
 A3C_RESULTS = {"induction_screen.json"}
 A3D_RESULTS = {"induction_operating_point.json"}
 A3E_RESULTS = {"stator_circuit.json"}
+A5C_RESULTS = {"cad_fit.json"}
 
 
 def run(*parts: str) -> None:
@@ -69,6 +70,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -91,6 +93,9 @@ def main() -> None:
     cad_build = ROOT / "cad" / "BUILD.json"
     if cad_build.exists():
         subprocess.run([sys.executable, "cad/build_gen1.py", "--check"], cwd=ROOT, check=True)
+        render_manifest = ROOT / "cad" / "renders" / "gen1" / "RENDERS.json"
+        if render_manifest.exists():
+            subprocess.run([sys.executable, "cad/render_gen1.py", "--check"], cwd=ROOT, check=True)
     else:
         generated_cad_docs = [ROOT / "cad" / "DIMENSIONS.md", ROOT / "cad" / "BOM.md"]
         if any(path.exists() for path in generated_cad_docs):
@@ -130,8 +135,15 @@ def main() -> None:
         run("tools/make_stator_circuit.py", "--check")
     elif (ROOT / "docs" / "STATOR_CIRCUIT.md").exists():
         raise SystemExit("docs/STATOR_CIRCUIT.md exists before the A3e result")
+    if A5C_RESULTS <= committed:
+        run("analysis/cad_fit_check.py", "--check")
+        run("tools/make_cad_fit.py", "--check")
+    elif (ROOT / "docs" / "CAD_FIT.md").exists():
+        raise SystemExit("docs/CAD_FIT.md exists before the A5c result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c"
+        if A5C_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e with A5c declared"
         if A3E_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d with A3e declared"
         if A3D_RESULTS <= committed

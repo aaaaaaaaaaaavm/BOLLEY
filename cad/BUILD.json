@@ -1,0 +1,263 @@
+{
+  "artifacts": {
+    "Bolley_A3_Coupon_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          116.00000020000002,
+          112.5000002,
+          131.00000020000002
+        ],
+        "x": [
+          -10.000000100000003,
+          106.00000010000001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -70.00000010000001,
+          61.0000001
+        ]
+      },
+      "solid_count": 64,
+      "step": {
+        "bytes": 1170672,
+        "path": "cad/step/gen1/Bolley_A3_Coupon_Gen1.step",
+        "sha256": "d4c51648386f24f4ebb6f602982e966f84c314a3282e91eb36d20d36eeb620ad"
+      },
+      "stl": {
+        "bytes": 44484,
+        "path": "cad/stl/gen1/Bolley_A3_Coupon_Gen1.stl",
+        "sha256": "7c09d5aca160e1d16938bf11505f2b47e3bb1ee16d2be5ce7167dcaf032404f8"
+      },
+      "volume_mm3": 113085.0
+    },
+    "Bolley_Assembly_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          1055.0000002,
+          160.00000020000002,
+          160.00000020000002
+        ],
+        "x": [
+          -50.0000001,
+          1005.0000001
+        ],
+        "y": [
+          -80.00000010000001,
+          80.00000010000001
+        ],
+        "z": [
+          -80.00000010000001,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 1666,
+      "step": {
+        "bytes": 33732324,
+        "path": "cad/step/gen1/Bolley_Assembly_Gen1.step",
+        "sha256": "d027340711e8eb8753df629070ca65e371932d6a3ed30ab3dfd00f6f80a9904b"
+      },
+      "stl": {
+        "bytes": 1228684,
+        "path": "cad/stl/gen1/Bolley_Assembly_Gen1.stl",
+        "sha256": "96c08529985b7059503a5b3d3891c4e9d2f8c17cf4a6fb86fce570a6c884db10"
+      },
+      "volume_mm3": 4303852.500000079
+    },
+    "Bolley_Fluxfoil_Interface_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          336.00000020000004,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          2.2499998999999997,
+          338.2500001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 20,
+      "step": {
+        "bytes": 327927,
+        "path": "cad/step/gen1/Bolley_Fluxfoil_Interface_Gen1.step",
+        "sha256": "bea173af20e60d9c9f9e97506d0c6cdc4391972724d2fea2c99ee0dcb8a3150b"
+      },
+      "stl": {
+        "bytes": 12084,
+        "path": "cad/stl/gen1/Bolley_Fluxfoil_Interface_Gen1.stl",
+        "sha256": "bc4b2c1c83d85a706a832f488d52e269469a245c4a08ecb1258cb141ea0739b5"
+      },
+      "volume_mm3": 60480.00000000003
+    },
+    "Bolley_Payload_Proxy_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          340.50000020000004,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          -1.0000000251214793e-07,
+          340.5000001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 25,
+      "step": {
+        "bytes": 409898,
+        "path": "cad/step/gen1/Bolley_Payload_Proxy_Gen1.step",
+        "sha256": "5005f3f9dfed3d50ba795041ac57dbd2a62afaae6e53b8711dc06a03a32e890e"
+      },
+      "stl": {
+        "bytes": 15084,
+        "path": "cad/stl/gen1/Bolley_Payload_Proxy_Gen1.stl",
+        "sha256": "f2d520cceced7796202aa70b34921c2e9396cc5352f35e7b439934247ed9b428"
+      },
+      "volume_mm3": 3167542.5
+    },
+    "Bolley_Retention_Gate_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          8.000000200000017,
+          130.00000020000002,
+          130.00000020000002
+        ],
+        "x": [
+          -12.000000100000008,
+          -3.999999899999992
+        ],
+        "y": [
+          -65.00000010000001,
+          65.00000010000001
+        ],
+        "z": [
+          -65.00000010000001,
+          65.00000010000001
+        ]
+      },
+      "solid_count": 5,
+      "step": {
+        "bytes": 96585,
+        "path": "cad/step/gen1/Bolley_Retention_Gate_Gen1.step",
+        "sha256": "e58a7e5506e906a4d3b80535419a541e12cfa120e483f4f07b2478b90ad1f38a"
+      },
+      "stl": {
+        "bytes": 4084,
+        "path": "cad/stl/gen1/Bolley_Retention_Gate_Gen1.stl",
+        "sha256": "c2951c7f2f947ba283faf9e9618e69e90f93e21de69d849e05a2f95fe7f934d8"
+      },
+      "volume_mm3": 44959.999999999985
+    },
+    "Bolley_Stator_Cassette_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          911.5000001999999,
+          23.000000200000006,
+          12.000000200000002
+        ],
+        "x": [
+          -1.0000000177635683e-07,
+          911.5000001
+        ],
+        "y": [
+          -13.000000100000003,
+          10.000000100000003
+        ],
+        "z": [
+          48.9999999,
+          61.0000001
+        ]
+      },
+      "solid_count": 399,
+      "step": {
+        "bytes": 7867416,
+        "path": "cad/step/gen1/Bolley_Stator_Cassette_Gen1.step",
+        "sha256": "3a4409be36c992b44771d11773ff4f0e86ffcbe62d2a575f926805c783a4a4ef"
+      },
+      "stl": {
+        "bytes": 296484,
+        "path": "cad/stl/gen1/Bolley_Stator_Cassette_Gen1.stl",
+        "sha256": "f5d7e9db5ff53b50c938f4cb64905e50f1fe68876adf8030476f5541ee6d7d65"
+      },
+      "volume_mm3": 198787.49999999983
+    },
+    "Bolley_Track_Gen1": {
+      "bounding_box_mm": {
+        "size": [
+          1055.0000002,
+          160.00000020000002,
+          160.00000020000002
+        ],
+        "x": [
+          -50.0000001,
+          1005.0000001
+        ],
+        "y": [
+          -80.00000010000001,
+          80.00000010000001
+        ],
+        "z": [
+          -80.00000010000001,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 40,
+      "step": {
+        "bytes": 664567,
+        "path": "cad/step/gen1/Bolley_Track_Gen1.step",
+        "sha256": "6347652f48b211039684d6d10adcbe387de31137e7b2c3481609f54e6e981231"
+      },
+      "stl": {
+        "bytes": 24084,
+        "path": "cad/stl/gen1/Bolley_Track_Gen1.stl",
+        "sha256": "6a22bdee88b0a6e431e3dfb71a752eac063c4bfbb14292cab9006ea54d4359d7"
+      },
+      "volume_mm3": 296199.99999999977
+    }
+  },
+  "coordinate_frame": {
+    "origin": "payload aft face at the retained/breech position",
+    "x": "firing axis, positive toward muzzle",
+    "y": "lateral",
+    "z": "vertical"
+  },
+  "derived_format": "STL",
+  "evidence": "PARAMETRIC CAD OUTPUT from ASSUMPTION geometry; no manufacturing release",
+  "fit_checks": {
+    "departure_axis": "+x",
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_payload_stator_intersection_all_four_faces_mm3": 15949.5,
+    "nominal_payload_stator_intersection_per_face_mm3": 3987.375,
+    "nominal_slot_clearance_per_side_mm": 0.5,
+    "stator_face_count": 4
+  },
+  "generation": "Gen1",
+  "limits": [
+    "Geometry and fit only; analysis scripts remain authoritative for mass and performance.",
+    "Coils are solid envelopes, not individual turns or insulation stacks.",
+    "Fasteners, laminations, cooling, sensors, cabling and gate actuation are absent.",
+    "The payload is an envelope proxy, not a spacecraft design.",
+    "The Gen1 coil envelope intersects the first foil channel; A5c records this as a rejected packaging result."
+  ],
+  "master_format": "STEP",
+  "parameter_file": "cad/gen1_parameters.json",
+  "parameter_sha256": "ee0c82777aeacc64bd6354ffb601acdebbf87ffffba98e76a5fccb4bb78cf7e3",
+  "schema_version": 1
+}

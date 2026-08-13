@@ -1,0 +1,58 @@
+{
+  "artifact_counts": {
+    "render": 6,
+    "step": 7,
+    "stl": 7
+  },
+  "band_count": 10,
+  "band_pass_count": 9,
+  "bands": {
+    "artifact_traceability": true,
+    "fin_slot_alignment_and_clearance": true,
+    "fluxfoil_projection": true,
+    "four_faces_and_positive_x_departure": true,
+    "muzzle_and_frame_envelope": true,
+    "nominal_payload_stator_non_interference": false,
+    "payload_envelope_and_rails": true,
+    "render_set": true,
+    "stator_footprint_and_length": true,
+    "step_and_stl_set": true
+  },
+  "disposition": "REJECT_GEN1_WINDING_PACKAGE_AND_REVISE_MAGNETIC_INTERFACE",
+  "evidence": "PARAMETRIC CAD MANIFEST AND EXACT NOMINAL SOLID INTERSECTION",
+  "failed_bands": [
+    "nominal_payload_stator_non_interference"
+  ],
+  "geometry": {
+    "active_stator_length_mm": 912.0,
+    "assembly_frame_yz_mm": 160.0,
+    "fluxfoil_projection_mm": 6.25,
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_slot_clearance_per_side_mm": 0.5,
+    "payload_envelope_mm": [
+      340.5,
+      100.0,
+      100.0
+    ],
+    "payload_stator_intersection_all_faces_mm3": 15949.5,
+    "payload_stator_intersection_per_face_mm3": 3987.375,
+    "stator_face_footprint_mm": 20.0
+  },
+  "input_files": [
+    "cad/gen1_parameters.json",
+    "cad/BUILD.json",
+    "cad/renders/gen1/RENDERS.json",
+    "analysis/results/stator_circuit.json"
+  ],
+  "screen_pass": false,
+  "winding_pack_discovery": {
+    "available_intercell_section_before_fill_factor_mm2": 6.0,
+    "conductor_area_per_turn_mm2": 20.0,
+    "gross_copper_section_required_mm2": 400.0,
+    "intercell_axial_gap_mm": 0.5,
+    "modelled_coil_height_mm": 12.0,
+    "note": "This is a packaging finding, not an added A5c band. Insulation and fill factor make the deficit larger.",
+    "required_to_available_section_ratio": 66.66666666666667,
+    "turns_per_cell": 20
+  }
+}

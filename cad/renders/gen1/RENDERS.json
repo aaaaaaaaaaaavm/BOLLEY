@@ -1,0 +1,50 @@
+{
+  "evidence": "RENDERED PARAMETRIC CAD; not measurement or manufacturing release",
+  "generation": "Gen1",
+  "render_count": 6,
+  "renders": [
+    {
+      "bytes": 90064,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen1/01_fluxfoil_payload.png",
+      "sha256": "fffd63bc497beb8ddc14efbc89bf1b41d22f3c16f43b0b1a7da997bec0c8921e",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    },
+    {
+      "bytes": 62577,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen1/02_stator_cassette.png",
+      "sha256": "1730a3c9570b4630c07ad382456506e80aec3bbb7b3e9f47bb4028c4dfbbed40",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    },
+    {
+      "bytes": 140895,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen1/03_six_cell_coupon.png",
+      "sha256": "bed830f55e0833c9723ae2b1021bb321b69e59d9f5f16dfa18d962696e138970",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    },
+    {
+      "bytes": 63373,
+      "evidence": "rejected nominal fit",
+      "path": "cad/renders/gen1/04_winding_interference.png",
+      "sha256": "d3748f912b0ac5c4b0302c8633f6ba76f4196382200ece29e072533a380c7c6e",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    },
+    {
+      "bytes": 198956,
+      "evidence": "arrangement view",
+      "path": "cad/renders/gen1/05_retained_assembly.png",
+      "sha256": "9c1420320b7eb8dbaf8b64c79ea6d39e39be997fa86f32fcdffbd1971290712d",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    },
+    {
+      "bytes": 88649,
+      "evidence": "kinematic arrangement view",
+      "path": "cad/renders/gen1/06_departure_axis.png",
+      "sha256": "9e40f314c2e91010d09e15a21b8bb78aa2a44621a6038e03ad47894c5aef1154",
+      "source": "cad/build_gen1.py + cad/gen1_parameters.json"
+    }
+  ],
+  "schema_version": 1
+}

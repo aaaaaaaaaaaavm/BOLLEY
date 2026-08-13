@@ -262,6 +262,11 @@ def build() -> None:
     STEP_DIR.mkdir(parents=True, exist_ok=True)
     STL_DIR.mkdir(parents=True, exist_ok=True)
     shapes = build_shapes(cq, p)
+    payload = shapes[PART_NAMES[1]]
+    top_core, top_phases = stator_cassette(cq, p, "z+")
+    nominal_intersection_mm3 = payload.intersect(top_core).Volume() + sum(
+        payload.intersect(phase).Volume() for phase in top_phases
+    )
     records = {}
     for name, shape in shapes.items():
         step_path = STEP_DIR / f"{name}.step"
@@ -289,12 +294,26 @@ def build() -> None:
         "master_format": "STEP",
         "derived_format": "STL",
         "coordinate_frame": p["coordinate_frame"],
+        "fit_checks": {
+            "departure_axis": "+x",
+            "nominal_payload_stator_intersection_per_face_mm3": nominal_intersection_mm3,
+            "nominal_payload_stator_intersection_all_four_faces_mm3": 4.0
+            * nominal_intersection_mm3,
+            "nominal_slot_clearance_per_side_mm": (
+                p["stator"]["slot_width_mm"] - p["fluxfoil"]["fin_thickness_mm"]
+            )
+            / 2.0,
+            "muzzle_opening_yz_mm": p["track"]["enclosure_outer_yz_mm"]
+            - 2.0 * p["track"]["enclosure_frame_bar_mm"],
+            "stator_face_count": 4,
+        },
         "artifacts": records,
         "limits": [
             "Geometry and fit only; analysis scripts remain authoritative for mass and performance.",
             "Coils are solid envelopes, not individual turns or insulation stacks.",
             "Fasteners, laminations, cooling, sensors, cabling and gate actuation are absent.",
             "The payload is an envelope proxy, not a spacecraft design.",
+            "The Gen1 coil envelope intersects the first foil channel; A5c records this as a rejected packaging result.",
         ],
     }
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
@@ -311,6 +330,21 @@ def check() -> None:
     found = set(manifest["artifacts"])
     if found != expected:
         raise SystemExit(f"CAD artifact set mismatch: expected {sorted(expected)}, found {sorted(found)}")
+    artifact_paths = [
+        ROOT / record[kind]["path"]
+        for record in manifest["artifacts"].values()
+        for kind in ("step", "stl")
+    ]
+    present_count = sum(path.exists() for path in artifact_paths)
+    if present_count == 0:
+        print(
+            "OK: Gen1 manifest is current; rejected exports are not tracked "
+            "(run cad/build_gen1.py --write to regenerate them)"
+        )
+        return
+    if present_count != len(artifact_paths):
+        missing = [str(path.relative_to(ROOT)) for path in artifact_paths if not path.exists()]
+        raise SystemExit(f"partial Gen1 CAD export set; missing {missing}")
     for record in manifest["artifacts"].values():
         for kind in ("step", "stl"):
             path = ROOT / record[kind]["path"]
