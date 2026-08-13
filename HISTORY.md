@@ -34,10 +34,23 @@ The concept did not travel in a straight line:
 7. A robust search selected Gen2; nominal CAD passed all 13 fit bands.
 8. The first independent nonlinear field solve rejected that Gen2 operating point on field,
    stationary-core peak and inductance.
+9. Gen2.1 through Gen2.4 redistributed the stationary return and passive rib; each failed one or
+   more predeclared local-field bands and remains as rejected evidence.
+10. Gen2.5 Fluxweb layered magnetic continuity beneath its copper rungs and became the first
+    13/13 transverse-field pass.
+11. A7a rejected Fluxweb's four-lane cage on heat, current density, secondary efficiency and
+    reference energy.
+12. Gen2.6 Quintweb spent most of the absolute interface-mass allowance on a fifth lane. A6g
+    passed 13/13 and A7b closed all four translator failures; only hot winding resistance kept the
+    reference shot above 900 J.
+13. A8a checked the finite axial intervals. It rejected the 900 mm stator because the 336 mm cage
+    leaves it during the claimed 900 mm powered travel. A simple full-overlap extension also
+    failed the stationary-primary mass band.
 
 Every rejected branch remains in the repository because it explains why the current geometry
-exists. The active question is now narrower: can Gen2.1 redistribute the stationary return flux
-without surrendering the passive cage, the 6.5 mm interface envelope or the no-sled architecture?
+exists. The active question is now narrower: can a shorter aft-positioned Quintweb cage and a
+sectional primary close engagement, installed mass and the A7b hot-energy corner together, or does
+the existing-rail control in VOLLEY make the cooperative interface unnecessary?
 
 ## Authorship
 

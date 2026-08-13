@@ -1,0 +1,99 @@
+{
+  "as_drawn_limited_boost": {
+    "effective_work_distance_m": 0.7500937502644999,
+    "exit_velocity_m_s": 10.850562890537795,
+    "final_overlap_fraction": 0.0,
+    "initial_cage_start_x_m": 0.00225,
+    "initial_overlap_fraction": 1.0,
+    "maximum_phase_current_rms_a": 400.0,
+    "minimum_overlap_fraction": 0.0
+  },
+  "as_drawn_rated": {
+    "effective_work_distance_m": 0.7297499999999545,
+    "exit_velocity_m_s": 10.70240907459591,
+    "final_overlap_fraction": 0.0,
+    "initial_cage_start_x_m": 0.00225,
+    "initial_overlap_fraction": 1.0,
+    "maximum_phase_current_rms_a": 375.0,
+    "minimum_overlap_fraction": 0.0
+  },
+  "band_count": 10,
+  "band_pass_count": 5,
+  "bands": {
+    "as_drawn_end_overlap": false,
+    "as_drawn_qualification_velocity": true,
+    "as_drawn_reference_velocity": false,
+    "best_placement_reference_velocity": false,
+    "boost_current": true,
+    "cell_quantized_primary_mass": false,
+    "cell_sectional_resistance": true,
+    "three_phase_cell_count": true,
+    "tile_quantized_primary_mass": false,
+    "tile_sectional_resistance": true
+  },
+  "best_placement_limited_boost": {
+    "effective_work_distance_m": 0.8451141629628954,
+    "exit_velocity_m_s": 11.517339928067422,
+    "final_overlap_fraction": 0.5000000000000001,
+    "initial_cage_start_x_m": -0.168,
+    "initial_overlap_fraction": 0.5,
+    "maximum_phase_current_rms_a": 400.0,
+    "minimum_overlap_fraction": 0.5
+  },
+  "disposition": "REJECT_AS_DRAWN_GEN26_AXIAL_PACKAGE_PRESERVE_SECTIONAL_DRIVE",
+  "evidence": "A8a AXIAL OVERLAP + CURRENT-LIMITED KINEMATIC AUDIT",
+  "failed_bands": [
+    "as_drawn_reference_velocity",
+    "best_placement_reference_velocity",
+    "as_drawn_end_overlap",
+    "cell_quantized_primary_mass",
+    "tile_quantized_primary_mass"
+  ],
+  "field_and_cage_inputs_unchanged": {
+    "a7b_active_primary_mass_kg": 15.856669673280548,
+    "a7b_failed_band_union": [
+      "reference_source_energy"
+    ],
+    "a7b_screen_pass": false,
+    "maximum_phase_current_rms_a": 400.0,
+    "rated_phase_current_rms_a": 375.0
+  },
+  "full_overlap_extension": {
+    "cell_quantized_active_primary_mass_kg": 22.199337542592765,
+    "cell_quantized_cell_count": 42,
+    "cell_quantized_stator_length_m": 1.26,
+    "required_continuous_stator_length_m": 1.23825,
+    "tile_quantized_active_primary_mass_kg": 23.78500450992082,
+    "tile_quantized_stator_length_m": 1.3499999999999999,
+    "tile_quantized_tile_count": 9
+  },
+  "input_file": "cad/axial_engagement_parameters.json",
+  "limits": [
+    "Force capacity scales with overlapped cage area and the square of current-derived field; fringing is absent.",
+    "The current-limited boost is an optimistic command bound, not a transient voltage or field re-solve.",
+    "Installed primary mass scales linearly with stator length; structure, power electronics, cooling and containment remain absent.",
+    "Sectional resistance ratios count simultaneously intersected cells or whole tiles and do not yet model switching or end-cell force ripple."
+  ],
+  "profile_artifact": {
+    "bytes": 446945,
+    "compression": "deterministic gzip CSV, mtime=0",
+    "path": "analysis/results/axial_engagement_points.csv.gz",
+    "record_count": 9001,
+    "sha256": "c5abf2e51c0501602b2847db242ff6bb0461c80c0463e9739d89ca9be93a2f4a"
+  },
+  "screen_pass": false,
+  "sectional_excitation": {
+    "a7b_required_phase_resistance_ratio": 0.8201755489242106,
+    "cell_window_phase_resistance_ratio_to_a7b": 0.5,
+    "maximum_cell_window_cells_per_phase": 5,
+    "maximum_simultaneously_intersected_cells": 13,
+    "maximum_simultaneously_intersected_tiles": 4,
+    "maximum_tile_window_cells_per_phase": 7,
+    "tile_window_phase_resistance_ratio_to_a7b": 0.7
+  },
+  "source_files": [
+    "cad/gen2_parameters.json",
+    "cad/gen26_cage_parameters.json",
+    "analysis/results/gen26_cage_circuit.json"
+  ]
+}

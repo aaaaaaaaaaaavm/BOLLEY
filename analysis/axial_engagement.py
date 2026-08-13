@@ -268,6 +268,9 @@ def calculate() -> tuple[dict, dict[str, list[dict]]]:
         "field_and_cage_inputs_unchanged": {
             "a7b_screen_pass": a7b["screen_pass"],
             "a7b_failed_band_union": a7b["failed_band_union"],
+            "a7b_active_primary_mass_kg": accounting[
+                "a7b_active_primary_mass_kg"
+            ],
             "rated_phase_current_rms_a": drive["rated_phase_current_rms_a"],
             "maximum_phase_current_rms_a": drive["maximum_phase_current_rms_a"],
         },

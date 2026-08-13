@@ -19,6 +19,7 @@ A6F = ROOT / "analysis" / "figures" / "a6f" / "FIGURES.json"
 A7A = ROOT / "analysis" / "figures" / "a7a" / "FIGURES.json"
 A6G = ROOT / "analysis" / "figures" / "a6g" / "FIGURES.json"
 A7B = ROOT / "analysis" / "figures" / "a7b" / "FIGURES.json"
+A8A = ROOT / "analysis" / "figures" / "a8a" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -47,16 +48,17 @@ def render() -> str:
                     disposition,
                 )
             )
-    for gate, manifest_path, disposition in (
-        ("A6", A6, "Rejected Gen2 operating-point evidence"),
-        ("A6b", A6B, "Rejected exact Gen2.1 geometry evidence"),
-        ("A6c", A6C, "Rejected Gen2.2 ligament evidence"),
-        ("A6d", A6D, "Rejected Gen2.3 rib evidence"),
-        ("A6e", A6E, "Rejected Gen2.4 local-peak evidence"),
-        ("A6f", A6F, "Passing Gen2.5 transverse-field screen; downstream gates open"),
-        ("A7a", A7A, "Rejected exact Gen2.5 cage/circuit evidence"),
-        ("A6g", A6G, "Passing Gen2.6 Quintweb transverse-field screen"),
-        ("A7b", A7B, "Rejected exact Gen2.6 hot-resistance circuit evidence"),
+    for gate, manifest_path, evidence_prefix, disposition in (
+        ("A6", A6, "2D nonlinear field-model output", "Rejected Gen2 operating-point evidence"),
+        ("A6b", A6B, "2D nonlinear field-model output", "Rejected exact Gen2.1 geometry evidence"),
+        ("A6c", A6C, "2D nonlinear field-model output", "Rejected Gen2.2 ligament evidence"),
+        ("A6d", A6D, "2D nonlinear field-model output", "Rejected Gen2.3 rib evidence"),
+        ("A6e", A6E, "2D nonlinear field-model output", "Rejected Gen2.4 local-peak evidence"),
+        ("A6f", A6F, "2D nonlinear field-model output", "Passing Gen2.5 transverse-field screen; downstream gates open"),
+        ("A7a", A7A, "Post-field cage/circuit model output", "Rejected exact Gen2.5 cage/circuit evidence"),
+        ("A6g", A6G, "2D nonlinear field-model output", "Passing Gen2.6 Quintweb transverse-field screen"),
+        ("A7b", A7B, "Post-field cage/circuit model output", "Rejected exact Gen2.6 hot-resistance circuit evidence"),
+        ("A8a", A8A, "Axial engagement model output", "Rejected exact Gen2.6 axial-package evidence"),
     ):
         if not manifest_path.exists():
             continue
@@ -66,7 +68,7 @@ def render() -> str:
                     f"{gate}-{index:02d}",
                     record["title"],
                     record["path"],
-                    f"2D nonlinear field-model output — {record['evidence']}",
+                    f"{evidence_prefix} — {record['evidence']}",
                     disposition,
                 )
             )

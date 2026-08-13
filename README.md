@@ -7,7 +7,7 @@ spacecraft to remove kilograms of machinery from the launcher.**
 > Every number in this repository is either an assumption, a first-order model output or
 > external evidence labelled as such.
 
-![Bolley Gen2 nominal assembly](cad/renders/gen2/01_gen2_hero.png)
+![A8a separates the stroke failure from the circuit correction](analysis/figures/a8a/A8a_correction_trade.png)
 
 VOLLEY asked whether an unmodified CubeSat could receive a programmable deployment velocity
 without carrying propulsion. Its answer used a reusable magnetic sled. The model worked, but
@@ -20,31 +20,49 @@ the passive translator of a segmented linear electromagnetic machine.
 
 That small concession removes the launch sled, the post-release brake and the return stroke.
 
-The repository records the uncomfortable branches as carefully as the promising one. The buried
-corner return, three-fin comb and shared-pole quad-comb were each rejected by a different bound.
-Gen1 Fluxfoil then closed its thin-sheet and lumped-circuit screens, but exact CAD found a 66.7:1
-copper-window deficit. That failure produced **Fluxbridge**: a thin passive perforated magnetic
-matrix with a shorted copper ladder, spending 0.285 kg on a 3U interface so the launcher no longer
-needs a massive moving primary.
+The repository records the uncomfortable branches as carefully as the promising one. A buried
+return, three-fin comb and shared-pole quad-comb were rejected by different bounds. Gen1 Fluxfoil
+passed its thin-sheet circuit and then exact CAD exposed a 66.7:1 copper-window deficit. That
+failure produced **Fluxbridge**: a passive perforated magnetic matrix with a shorted copper ladder.
 
-A3g found ten robust Fluxbridge candidates and selected a 30 mm-pitch Gen2 point. A5d turned it
-into seven STEP masters, seven STL previews, a discrete cage coupon and an alternating-layer
-winding with zero nominal interference. A6 then did what the earlier lumped model could not: an
-independently meshed nonlinear field solve. It rejected the operating point—0.6568 T mean blade
-field, 3.2346 T stationary-core peak and 1.3945× the predicted inductance. Gen2.1 is therefore a
-stationary-return redesign, not an attempt to hide the failed bands. No candidate has passed
-transient force FEA, provider review, structural analysis or hardware test.
+The design then survived seven field iterations. Gen2.5 Fluxweb was the first 13/13 transverse
+field pass. Its four lanes still overheated, so Gen2.6 Quintweb added a fifth. A6g again passed
+13/13; A7b showed that the fifth lane closed cage temperature, current density, slip and
+secondary efficiency. Only the 125% winding-resistance reference shot remained high, at 959.9 J
+against 900 J.
 
-## The proposed machine
+A8a then found the more important axial contradiction: a 336 mm cage cannot remain fully engaged
+while travelling 900 mm through a 900 mm stator. The as-drawn package produces 10.70 m/s, and a
+full-overlap extension reaches 22.20 kg. Sectional excitation survives—the required resistance
+ratio is 0.8202 and cell/tile windows produce 0.50/0.70—but the axial package does not. That is the
+current correction boundary. No candidate has passed transient force FEA, provider review,
+structural analysis or hardware test.
+
+## The architecture that remains
 
 - Four independently controlled face channels apply axial force around the spacecraft.
 - Software distributes force so its centroid follows the declared payload centre of gravity.
-- Six 150 mm stator tiles provide a 0.90 m acceleration zone.
+- A sectional stationary primary energises only cells overlapped by the passive interface.
 - The Phase 0 reference duty is a 4 kg 3U payload, 8 g and approximately 12 m/s.
 - A 6 kg 3U is the qualification sizing case, not silently treated as a 4 kg satellite.
 - No permanent magnets, powered spacecraft hardware, pyrotechnics or pressure vessels are added.
 - An independent gate carries ascent loads and prevents an uncommanded deployment.
 - When the field ends, the CubeSat coasts out. No moving launcher member follows it.
+
+The original six-tile / 900 mm arrangement is rejected by A8a. Tile count, active cage length and
+conductor area are now co-design variables; they are not quietly inherited by the next CAD model.
+
+## The zero-modification control
+
+The same design programme now records a second sledless branch in
+[VOLLEY Gen6](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/docs/GEN6_RAIL_DRIVE.md): drive
+directly on the CubeSat's existing CDS aluminium corner rails. Its 0.45 T sizing is attractive,
+but its 0.55 transverse edge-effect factor is still an assumption awaiting 3D transient evidence.
+
+That branch is Bolley's control, not a result to ignore. A cooperative interface must earn its
+0.35–0.40 kg by giving a more reliable flux path, lower sensitivity to somebody else's rail alloy
+and anodised geometry, better force-centroid authority or a cheaper launcher. “No sled” alone is
+no longer enough to justify Bolley.
 
 ## What is not claimed
 
@@ -58,29 +76,28 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 
 | Layer | Current evidence | Disposition |
 |---|---|---|
-| Passive spacecraft interface | Four 6.25 mm Fluxbridge blades per face; 0.285 kg total modelled mass | Retained for Gen2.1 |
-| Nominal mechanical package | Seven STEP + seven STL masters; 13/13 A5d CAD bands | Passes nominal fit only |
-| Selected Gen2 operating point | A3g `p30_B0.56` | Rejected by A6 |
-| Independent field solution | 621,180-element fine mesh; 10/13 A6 bands | Return geometry must change |
+| Passive spacecraft interface | Five layered Quintweb blades per face; 0.38823 kg modelled increment | A6g field pass; 11.77 g below absolute limit |
+| Transverse field | 751,282-element fine mesh; 13/13 A6g bands | Retained for the next axial co-design |
+| Cage + circuit | 3,528 A7b CG/corner/payload points; 2/4 corners pass all 19 bands | Translator closes; hot reference energy does not |
+| Axial engagement | 9,001 A8a travel points; 5/10 bands | Exact 900 mm package rejected |
+| Sectional excitation | Cell/tile phase resistance = 0.50/0.70× A7b | Retained as Gen2.7 mechanism, not yet a circuit |
+| CAD | Seven STEP + seven STL Gen2 masters and deterministic packages | Historical nominal geometry; Gen3 blocked on A8b |
 | Hardware evidence | None | Central claim remains open |
 
 ## Start here
 
 1. [`REQUIREMENTS.md`](REQUIREMENTS.md) — what the machine must do.
-2. [`docs/CONCEPT.md`](docs/CONCEPT.md) — architecture and shot sequence.
-3. [`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md) — numbers that can end the concept.
-4. [`validation/README.md`](validation/README.md) — why bands are written before runs.
-5. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the work that remains.
-6. [`docs/TOPOLOGY_SCREEN.md`](docs/TOPOLOGY_SCREEN.md) — why the original flux return was rejected.
-7. [`docs/INTERFACE_FIT_SCREEN.md`](docs/INTERFACE_FIT_SCREEN.md) — the comb-fin envelope and allocation result.
-8. [`docs/EDGE_FORCE_BOUND.md`](docs/EDGE_FORCE_BOUND.md) — why the three-fin comb was rejected before FEA.
-9. [`docs/QUAD_COMB_SCREEN.md`](docs/QUAD_COMB_SCREEN.md) — the smallest redesign that recovered ideal force margin.
-10. [`docs/FLUXBRIDGE_CAGE.md`](docs/FLUXBRIDGE_CAGE.md) — why the passive cage replaced Gen1.
-11. [`docs/FLUXBRIDGE_OPTIMIZATION.md`](docs/FLUXBRIDGE_OPTIMIZATION.md) — the robust Gen2 search.
-12. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — CAD evidence and downloadable STEP/STL packages.
-13. [`docs/GEN2_FIELD.md`](docs/GEN2_FIELD.md) — the independent field result that rejected A3g.
-14. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
-15. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+2. [`HISTORY.md`](HISTORY.md) — real project lineage without backdating Bolley.
+3. [`docs/CONCEPT.md`](docs/CONCEPT.md) — architecture and shot sequence.
+4. [`docs/KILL_CRITERIA.md`](docs/KILL_CRITERIA.md) — numbers that can end the concept.
+5. [`docs/GEN26_FIELD.md`](docs/GEN26_FIELD.md) — the passing five-lane transverse field.
+6. [`docs/GEN26_CAGE_CIRCUIT.md`](docs/GEN26_CAGE_CIRCUIT.md) — the isolated hot-energy miss.
+7. [`docs/AXIAL_ENGAGEMENT.md`](docs/AXIAL_ENGAGEMENT.md) — why the exact axial package is rejected.
+8. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
+9. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
+10. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
+11. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
+12. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
 
 ## Reproduce
 
@@ -89,11 +106,12 @@ The algebraic stages require only Python. Gen2 CAD uses the pinned packages in
 
 ```bash
 python tools/check_repo.py
-python analysis/gen2_field.py --check   # full three-mesh A6 re-solve
+python analysis/axial_engagement.py --check
+python analysis/gen26_field.py --check  # full three-mesh A6g re-solve
 ```
 
 `tools/check_repo.py` verifies deterministic outputs, package manifests, local links and the
-declared stage sequence. The complete A6 re-solve is kept explicit because it is materially more
+declared stage sequence. The complete A6g re-solve is kept explicit because it is materially more
 expensive than an artifact-integrity check.
 
 ## Repository rules

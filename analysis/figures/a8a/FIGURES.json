@@ -1,0 +1,23 @@
+{
+  "figure_count": 2,
+  "figures": [
+    {
+      "bytes": 216268,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a8a/A8a_engagement_profile.png",
+      "sha256": "8286808a333308fae009cf0368a299dd93396e3fde45bee3bc6fd373adb3d22c",
+      "source": "tools/render_axial_engagement.py",
+      "title": "Axial overlap, force and velocity traces"
+    },
+    {
+      "bytes": 74153,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a8a/A8a_correction_trade.png",
+      "sha256": "165c068470c9591981276dfe2158e1e4c73eb07162de845035d6a32bdd50a9c7",
+      "source": "tools/render_axial_engagement.py",
+      "title": "Velocity, installed-mass and sectional-resistance trade"
+    }
+  ],
+  "gate": "A8a",
+  "schema_version": 1
+}

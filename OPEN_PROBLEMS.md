@@ -40,7 +40,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P33 | A6 per-cell inductance is 1.3945 times A3g, invalidating the selected drive closure. | Recompute voltage, current, energy and loss from the passing Gen2.1 field/inductance result. | CRITICAL | OPEN |
 | P34 | A6b's fine ligament and return-haunch peaks exceed their limits by 2.21% and 0.62%. | A predeclared Gen2.2 correction passes <=1.45 T moving ligament and <=1.55 T stationary peak on all formal checks. | CRITICAL | OPEN |
 | P35 | Gen2.3's stepped-thickness magnetic ribs have no structural load path or manufacturable encapsulation detail. | Gen2.3 CAD, coupon drawing and structural test article preserve the 1.12 mm rib and copper continuity. | HIGH | OPEN |
-| P36 | The 336 mm cage leaves the 900 mm stator during a claimed 900 mm full-force stroke, while A7b charges every series cell instead of only overlapped sections. | Axial overlap, sectional circuit and installed-length model close velocity, energy and primary-mass bands together. | CRITICAL | OPEN |
+| P36 | The 336 mm cage leaves the 900 mm stator during a claimed 900 mm full-force stroke, while A7b charges every series cell instead of only overlapped sections. | Axial overlap, sectional circuit and installed-length model close velocity, energy and primary-mass bands together. | CRITICAL | MODELLED |
 
 ## Register discipline
 

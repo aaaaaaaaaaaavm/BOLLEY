@@ -50,3 +50,20 @@ is not refit here.
 Commit all 9,001 profile rows, the three traces, exact full-overlap length, cell/tile-rounded
 lengths and masses, sectional resistance ratios and all ten Boolean bands. A failure rejects the
 as-drawn axial package, not the five-lane transverse field result.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 5/10 bands pass; reject the as-drawn axial package.**
+
+At 375 A the full-force-equivalent work distance is 0.72975 m and exit velocity is 10.702 m/s.
+Clipping an overlap-compensation command at 400 A raises that to only 10.851 m/s. The best
+possible placement begins and ends at 50% overlap and reaches 11.517 m/s, still below 11.8 m/s.
+
+Full engagement requires 1.23825 m continuously. The first complete three-phase lattice is 42
+cells / 1.26 m / 22.199 kg; whole 150 mm modules require nine tiles / 1.35 m / 23.785 kg. Both
+fail 16 kg. Cell and whole-tile sectional windows retain 0.50 and 0.70 times A7b phase resistance,
+so both pass the predeclared 0.820176 circuit diagnostic.
+
+The 9,001-row deterministic trace is retained at
+`analysis/results/axial_engagement_points.csv.gz`, SHA-256
+`c5abf2e51c0501602b2847db242ff6bb0461c80c0463e9739d89ca9be93a2f4a`.
