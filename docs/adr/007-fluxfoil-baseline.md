@@ -1,6 +1,6 @@
 # ADR-007: Promote passive aluminium Fluxfoil to the Gen1 lane
 
-**Status:** accepted for A3c screening  
+**Status:** superseded at 0.50 T by [ADR-008](008-fluxfoil-operating-point.md)  
 **Date:** 2026-08-13
 
 ## Context

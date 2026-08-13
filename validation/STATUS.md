@@ -11,7 +11,8 @@
 | A3b0 | MODELLED | 0/3 bands pass. The three-fin comb makes only 250.67 N at an optimistic 2.0 T and is rejected before FEA. |
 | A5b | MODELLED | 15/15 bands pass. Quad-comb mass is 158.9 g; ideal field requirement is 1.595 T with 13.6% ideal margin at 1.7 T. |
 | A3b1 | MODELLED | 0/7 bands pass. Required outer/interior throat fields are 4.78/9.57 T; the shared-pole stator is rejected. |
-| A3c | NOT RUN | Fluxfoil thin-sheet travelling-field screen declared. |
+| A3c | MODELLED | 17/18 bands pass. The 0.50 T point fails worst-CG secondary-only efficiency at 66.2% versus 70%. |
+| A3d | NOT RUN | Revised 0.60 T operating point declared with every A3c band preserved. |
 | A5 | NOT RUN | — |
 
 This file is updated only after the corresponding committed run sheet exists.

@@ -18,6 +18,7 @@ may supersede it while preserving the original and stating that the answer was a
 | [A5b](A5b_quad_comb_envelope.md) | Does a four-fin, 6 mm redesign recover ideal force margin without breaking the interface? | Analytical interface/force screen | NOT RUN |
 | [A3b1](A3b1_stator_throat_bound.md) | Can the quad-comb's shared stationary poles carry and return its required flux? | Analytical flux-conservation bound | NOT RUN |
 | [A3c](A3c_fluxfoil_induction.md) | Can a passive four-fin aluminium sheet carry the pulse without excessive slip, heating or normal imbalance? | Analytical thin-sheet model | NOT RUN |
+| [A3d](A3d_fluxfoil_operating_point.md) | Does a 0.60 T launcher-side field repair A3c's frozen efficiency miss without breaking another band? | Revised analytical operating point | NOT RUN |
 | [A5](A5_interface_fit.md) | Can the rail remain a valid mechanical interface? | Drawing review and fit check | NOT RUN |
 
 `MODELLED` is not a synonym for `VALIDATED`. Only hardware evidence can close the central claim.

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION geometry and model limits with named EXTERNAL GUIDANCE/MATERIAL DATA",
+  "supersedes_operating_point": "cad/fluxfoil_parameters.json at 0.50 T RMS; geometry is unchanged",
+  "interface": {
+    "channel_count": 4,
+    "body_face_span_m": 0.1,
+    "active_length_m": 0.336,
+    "force_line_radius_m": 0.04575,
+    "transverse_cg_limit_m": 0.02,
+    "cg_grid_points_per_axis": 21
+  },
+  "fluxfoil": {
+    "fins_per_channel": 4,
+    "active_fin_height_m": 0.006,
+    "inactive_tip_radius_allowance_m": 0.00025,
+    "conductor_thickness_m": 0.001,
+    "clearance_per_side_m": 0.0005,
+    "stationary_slot_separator_width_m": 0.002,
+    "electrical_wavelength_m": 0.048,
+    "external_field_rms_t": 0.6,
+    "root_capture_fastener_allowance_kg": 0.05
+  },
+  "conductor": {
+    "material": "Aluminium screening alloy; exact alloy not selected",
+    "resistivity_ohm_m": 2.82e-8,
+    "density_kg_m3": 2700.0,
+    "specific_heat_j_kg_k": 900.0,
+    "relative_permeability": 1.000022,
+    "hard_anodized_external_surface": true,
+    "warning": "Properties are screening values, not a supplier lot or elevated-temperature curve."
+  },
+  "external_guidance": {
+    "document": "Cal Poly CubeSat Design Specification Rev. 14.1",
+    "url": "https://static1.squarespace.com/static/5418c831e4b0fa4ecac1bacd/t/62193b7fc9e72e0053f00910/1645820809779/CDS%2BREV14_1%2B2022-02-09.pdf",
+    "maximum_side_protrusion_from_rail_plane_m": 0.0065,
+    "minimum_rail_width_to_first_protrusion_m": 0.0085,
+    "minimum_rail_contact_fraction": 0.75,
+    "launch_provider_supersedes_guidance": true
+  },
+  "duty": {
+    "rated_channel_force_n": 255.0,
+    "pulse_duration_s": 0.15,
+    "powered_length_m": 0.9,
+    "side_to_side_field_amplitude_mismatch_fraction": 0.01
+  },
+  "bands": {
+    "maximum_external_field_rms_t": 0.6,
+    "maximum_projected_usable_face_fraction": 0.25,
+    "preferred_interface_mass_kg": 0.25,
+    "absolute_interface_mass_kg": 0.4,
+    "minimum_nominal_clearance_per_side_m": 0.0005,
+    "minimum_nominal_protrusion_margin_m": 0.0002,
+    "maximum_force_density_to_sheet_limit_fraction": 0.25,
+    "maximum_required_slip_speed_m_s": 4.0,
+    "maximum_sheet_reaction_number": 0.1,
+    "maximum_rms_current_density_a_m2": 70000000.0,
+    "maximum_local_adiabatic_temperature_rise_k": 10.0,
+    "minimum_skin_depth_to_thickness_ratio": 5.0,
+    "maximum_start_frequency_hz": 100.0,
+    "maximum_terminal_frequency_hz": 350.0,
+    "maximum_unbalanced_normal_force_n": 100.0,
+    "minimum_secondary_only_shot_efficiency": 0.7,
+    "maximum_peak_airgap_power_w": 10000.0
+  }
+}

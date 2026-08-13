@@ -70,8 +70,8 @@ def channel_state(force_n: float, active_area_m2: float, p: dict) -> dict:
     }
 
 
-def calculate() -> dict:
-    p = load(INPUT)
+def calculate(input_path: Path = INPUT) -> dict:
+    p = load(input_path)
     baseline = load(BASELINE)
     interface = p["interface"]
     foil = p["fluxfoil"]
@@ -153,20 +153,31 @@ def calculate() -> dict:
             secondary_only_efficiency = mechanical_energy / (
                 mechanical_energy + secondary_heat
             )
-            record = {
+            channel_order = ["y-", "y+", "z-", "z+"]
+            compact_record = [
+                y_cg,
+                z_cg,
+                *[forces[name] for name in channel_order],
+                secondary_heat,
+                secondary_only_efficiency,
+                peak_airgap_power,
+            ]
+            detail_record = {
                 "y_cg_m": y_cg,
                 "z_cg_m": z_cg,
                 "forces_n": forces,
-                "channel_states": states,
+                "slip_speeds_m_s": {
+                    name: states[name]["slip_speed_m_s"] for name in channel_order
+                },
                 "secondary_power_w": secondary_power,
                 "secondary_heat_j": secondary_heat,
                 "peak_airgap_power_w": peak_airgap_power,
                 "secondary_only_shot_efficiency": secondary_only_efficiency,
             }
-            grid_records.append(record)
+            grid_records.append(compact_record)
             if secondary_heat > worst_heat:
                 worst_heat = secondary_heat
-                worst_record = record
+                worst_record = detail_record
 
     assert worst_record is not None
     start_frequency = rating["slip_speed_m_s"] / foil["electrical_wavelength_m"]
@@ -197,7 +208,7 @@ def calculate() -> dict:
 
     return {
         "evidence": "ANALYTICAL THIN-SHEET MODEL OUTPUT from ASSUMPTION geometry/material inputs",
-        "input_file": "cad/fluxfoil_parameters.json",
+        "input_file": str(input_path.relative_to(ROOT)),
         "topology": "four passive aluminium fins per face between symmetric travelling-field stators",
         "geometry": {
             "channel_count": channels,
@@ -243,6 +254,17 @@ def calculate() -> dict:
             "exit_velocity_m_s": exit_velocity,
             "stroke_time_s": stroke_time,
             "grid_point_count": len(grid_records),
+            "record_columns": [
+                "y_cg_m",
+                "z_cg_m",
+                "force_y_minus_n",
+                "force_y_plus_n",
+                "force_z_minus_n",
+                "force_z_plus_n",
+                "secondary_heat_j",
+                "secondary_only_shot_efficiency",
+                "peak_airgap_power_w",
+            ],
             "worst_secondary_heat_point": worst_record,
             "records": grid_records,
         },
