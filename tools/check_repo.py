@@ -25,6 +25,7 @@ A3D_RESULTS = {"induction_operating_point.json"}
 A3E_RESULTS = {"stator_circuit.json"}
 A5C_RESULTS = {"cad_fit.json"}
 A3F_RESULTS = {"fluxbridge_cage.json"}
+A3G_RESULTS = {"fluxbridge_optimization.json"}
 
 
 def run(*parts: str) -> None:
@@ -73,6 +74,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -147,8 +149,15 @@ def main() -> None:
         run("tools/make_fluxbridge_cage.py", "--check")
     elif (ROOT / "docs" / "FLUXBRIDGE_CAGE.md").exists():
         raise SystemExit("docs/FLUXBRIDGE_CAGE.md exists before the A3f result")
+    if A3G_RESULTS <= committed:
+        run("analysis/fluxbridge_optimization.py", "--check")
+        run("tools/make_fluxbridge_optimization.py", "--check")
+    elif (ROOT / "docs" / "FLUXBRIDGE_OPTIMIZATION.md").exists():
+        raise SystemExit("docs/FLUXBRIDGE_OPTIMIZATION.md exists before the A3g result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g"
+        if A3G_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f with A3g declared"
         if A3F_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c with A3f declared"
         if A5C_RESULTS <= committed
