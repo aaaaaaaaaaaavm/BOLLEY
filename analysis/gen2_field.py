@@ -28,7 +28,23 @@ MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 def load() -> dict:
     with INPUT.open(encoding="utf-8") as handle:
-        return json.load(handle)
+        payload = json.load(handle)
+    parent = payload.pop("extends", None)
+    if parent is None:
+        return payload
+    parent_path = ROOT / parent
+    with parent_path.open(encoding="utf-8") as handle:
+        inherited = json.load(handle)
+
+    def merge(base: dict, overrides: dict) -> dict:
+        for key, value in overrides.items():
+            if isinstance(value, dict) and isinstance(base.get(key), dict):
+                merge(base[key], value)
+            else:
+                base[key] = value
+        return base
+
+    return merge(inherited, payload)
 
 
 def sha256(path: Path) -> str:
@@ -581,6 +597,34 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
     expanded = solutions["expanded_boundary"].metrics
     targets = p["targets"]
     limits = p["bands"]
+    evaluate_all = bool(limits.get("evaluate_physics_on_all_meshes", False))
+    evaluation_meshes = list(solutions.values()) if evaluate_all else [solutions["fine"]]
+    evaluation_metrics = [solution.metrics for solution in evaluation_meshes]
+    minimum_mean_field = min(
+        metrics["mean_tooth_slice_field_rms_t"] for metrics in evaluation_metrics
+    )
+    maximum_mean_field = max(
+        metrics["mean_tooth_slice_field_rms_t"] for metrics in evaluation_metrics
+    )
+    maximum_slot_imbalance = max(
+        metrics["slot_to_slot_flux_imbalance_fraction"] for metrics in evaluation_metrics
+    )
+    maximum_height_cv = max(
+        metrics["active_height_field_coefficient_of_variation"]
+        for metrics in evaluation_metrics
+    )
+    maximum_ligament_field = max(
+        metrics["inferred_maximum_ligament_field_t"] for metrics in evaluation_metrics
+    )
+    maximum_core_field = max(
+        metrics["stationary_core_maximum_field_t"] for metrics in evaluation_metrics
+    )
+    maximum_source_residual = max(
+        metrics["source_current_residual_fraction"] for metrics in evaluation_metrics
+    )
+    maximum_solution_change = max(
+        metrics["final_relative_solution_change"] for metrics in evaluation_metrics
+    )
     convergence = {
         "base_to_fine_mean_slot_field_change_fraction": fractional_change(
             base["mean_tooth_slice_field_rms_t"], fine["mean_tooth_slice_field_rms_t"]
@@ -609,27 +653,25 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
             "base_to_expanded_boundary_mean_slot_field_change_fraction"
         ]
         <= limits["maximum_boundary_expansion_mean_slot_field_change_fraction"],
-        "mean_field_lower": fine["mean_tooth_slice_field_rms_t"]
+        "mean_field_lower": minimum_mean_field
         >= limits["minimum_mean_tooth_slice_field_rms_t"],
-        "mean_field_upper": fine["mean_tooth_slice_field_rms_t"]
+        "mean_field_upper": maximum_mean_field
         <= limits["maximum_mean_tooth_slice_field_rms_t"],
-        "slot_flux_balance": fine["slot_to_slot_flux_imbalance_fraction"]
+        "slot_flux_balance": maximum_slot_imbalance
         <= limits["maximum_slot_to_slot_flux_imbalance_fraction"],
-        "active_height_field_uniformity": fine[
-            "active_height_field_coefficient_of_variation"
-        ]
+        "active_height_field_uniformity": maximum_height_cv
         <= limits["maximum_active_height_field_coefficient_of_variation"],
-        "magnetic_ligament_field": fine["inferred_maximum_ligament_field_t"]
+        "magnetic_ligament_field": maximum_ligament_field
         <= limits["maximum_inferred_magnetic_ligament_field_t"],
-        "stationary_core_field": fine["stationary_core_maximum_field_t"]
+        "stationary_core_field": maximum_core_field
         <= limits["maximum_stationary_core_field_t"],
         "inductance_lower": inductance_ratio
         >= limits["minimum_per_cell_inductance_ratio_to_a3g"],
         "inductance_upper": inductance_ratio
         <= limits["maximum_per_cell_inductance_ratio_to_a3g"],
-        "source_current_closure": fine["source_current_residual_fraction"]
+        "source_current_closure": maximum_source_residual
         <= limits["maximum_source_current_residual_fraction"],
-        "nonlinear_convergence": fine["final_relative_solution_change"]
+        "nonlinear_convergence": maximum_solution_change
         <= limits["maximum_nonlinear_relative_solution_change"],
     }
     bands = {name: bool(passed) for name, passed in bands.items()}
@@ -658,6 +700,18 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
             "Axial tooth duty and cage bars are homogenized; ends, harmonics and current crowding are absent.",
         ],
     }
+    if evaluate_all:
+        result["physics_band_basis"] = "worst of base, fine and expanded-boundary meshes"
+        result["physics_band_extrema"] = {
+            "minimum_mean_tooth_slice_field_rms_t": minimum_mean_field,
+            "maximum_mean_tooth_slice_field_rms_t": maximum_mean_field,
+            "maximum_slot_to_slot_flux_imbalance_fraction": maximum_slot_imbalance,
+            "maximum_active_height_field_coefficient_of_variation": maximum_height_cv,
+            "maximum_inferred_magnetic_ligament_field_t": maximum_ligament_field,
+            "maximum_stationary_core_field_t": maximum_core_field,
+            "maximum_source_current_residual_fraction": maximum_source_residual,
+            "maximum_nonlinear_relative_solution_change": maximum_solution_change,
+        }
     return result, solutions
 
 

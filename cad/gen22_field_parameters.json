@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "extends": "cad/gen21_field_parameters.json",
+  "status": "ASSUMPTION A6c Gen2.2 Fluxmanifold-R4 nonlinear field gate; NOT RUN",
+  "controlled_design": "Gen2.2 Fluxmanifold-R4 correction frozen after the failed A6b result",
+  "geometry": {
+    "topology_name": "Fluxmanifold-R4",
+    "inner_corner_fillet_radius_m": 0.004
+  },
+  "excitation": {
+    "turns": 3,
+    "phase_current_rms_a": 400.0,
+    "ampere_turn_rms": 1200.0,
+    "copper_area_per_turn_m2": 0.000027,
+    "coil_side_copper_area_m2": 0.000081,
+    "source_current_density_rms_a_m2": 14814814.814814815,
+    "positive_and_negative_source_areas_equal": true,
+    "turn_exchange": "three 27 mm2 turns; same 81 mm2 slot copper as Gen2.1; MMF reduced 6.25% after A6b"
+  },
+  "design_accounting": {
+    "stationary_core_cross_section_mm2": 588.9772589304577,
+    "stationary_core_density_kg_m3": 7650.0,
+    "stationary_core_mass_four_faces_kg": 8.110213455073404,
+    "primary_copper_mass_four_faces_kg": 7.664025599999997,
+    "active_primary_mass_four_faces_kg": 15.7742390550734,
+    "a3g_active_primary_mass_kg": 11.829450599999998,
+    "gen1_active_primary_mass_kg": 40.96,
+    "cell_resistance_ratio_to_a3g": 0.5625,
+    "ideal_inductance_ratio_at_equal_geometry_to_a3g": 0.5625,
+    "ideal_inductive_voltage_ratio_at_equal_ampere_turn_and_rise_time_to_a3g": 0.75
+  },
+  "bands": {
+    "evaluate_physics_on_all_meshes": true
+  }
+}
