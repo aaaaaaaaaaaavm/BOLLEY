@@ -61,3 +61,14 @@ hard prerequisite and is closed by frozen geometric accounting.
 
 Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. A pass promotes only to the Gen2.5 cage/circuit, CAD and transient-force gates.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 13/13 magnetic bands pass; Gen2.5 advances conditionally.**
+
+The base, fine and expanded meshes contain 210,650, 747,114 and 237,770 triangles. Worst mean
+field is 0.7383–0.7513 T, inferred magnetic-material peak is 1.4009 T, stationary-core peak is
+1.4652 T and fine inductance is 0.8743 times A3g. Base-to-fine mean-field change is 1.758%, below
+the frozen 2% band but not by enough to treat the model as final. The interface remains 0.31059 kg
+and the 0.30 kg preference remains failed. The [controlled result](../docs/GEN25_FIELD.md) opens
+the cage/circuit, CAD and transient-force gates only.

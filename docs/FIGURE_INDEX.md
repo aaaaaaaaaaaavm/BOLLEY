@@ -37,11 +37,14 @@
 | A6e-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6e/A6e_field_magnitude.png) | `analysis/figures/a6e/A6e_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.4 local-peak evidence |
 | A6e-02 | [Four-blade field balance](../analysis/figures/a6e/A6e_blade_fields.png) | `analysis/figures/a6e/A6e_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2.4 local-peak evidence |
 | A6e-03 | [Mesh and boundary convergence](../analysis/figures/a6e/A6e_convergence.png) | `analysis/figures/a6e/A6e_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Rejected Gen2.4 local-peak evidence |
+| A6f-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6f/A6f_field_magnitude.png) | `analysis/figures/a6f/A6f_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing Gen2.5 transverse-field screen; downstream gates open |
+| A6f-02 | [Four-blade field balance](../analysis/figures/a6f/A6f_blade_fields.png) | `analysis/figures/a6f/A6f_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing Gen2.5 transverse-field screen; downstream gates open |
+| A6f-03 | [Mesh and boundary convergence](../analysis/figures/a6f/A6f_convergence.png) | `analysis/figures/a6f/A6f_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Passing Gen2.5 transverse-field screen; downstream gates open |
 
 ## Evidence count
 
-- Indexed figures: **32**.
-- Parametric/model/schematic figures: **32**.
+- Indexed figures: **35**.
+- Parametric/model/schematic figures: **35**.
 - Physically observed figures: **0**.
 
 A render may explain topology or nominal fit. It cannot close force, field, thermal,

@@ -1,0 +1,521 @@
+{
+  "band_count": 13,
+  "band_pass_count": 13,
+  "bands": {
+    "active_height_field_uniformity": true,
+    "inductance_lower": true,
+    "inductance_upper": true,
+    "magnetic_ligament_field": true,
+    "mean_field_lower": true,
+    "mean_field_upper": true,
+    "mesh_coenergy_convergence": true,
+    "mesh_mean_field_convergence": true,
+    "nonlinear_convergence": true,
+    "outer_boundary_sensitivity": true,
+    "slot_flux_balance": true,
+    "source_current_closure": true,
+    "stationary_core_field": true
+  },
+  "convergence": {
+    "base_to_expanded_boundary_mean_slot_field_change_fraction": 0.004092626995572476,
+    "base_to_fine_coenergy_change_fraction": 0.0034683547142988326,
+    "base_to_fine_mean_slot_field_change_fraction": 0.017578382474471625
+  },
+  "disposition": "PROMOTE_GEN25_FLUXWEB_TO_CAGE_CIRCUIT_CAD_AND_TRANSIENT_FORCE_CLOSURE",
+  "evidence": "A6f INDEPENDENTLY MESHED 2D NONLINEAR RMS-EQUIVALENT MAGNETOSTATIC FEA",
+  "failed_bands": [],
+  "fine_inductance_ratio_to_a3g": 0.8743497496749869,
+  "formulation": "2D out-of-plane magnetic vector potential Ax: -div(nu grad Ax)=Jx",
+  "input_file": "cad/gen25_field_parameters.json",
+  "limits": [
+    "This is a 2D RMS-equivalent magnetostatic tooth slice, not transient induction or force FEA.",
+    "B-H inputs are declared screening assumptions, not selected-lot material data.",
+    "Axial tooth duty and cage bars are homogenized; ends, harmonics and current crowding are absent."
+  ],
+  "mesh_results": {
+    "base": {
+      "active_height_field_coefficient_of_variation": 0.07086441204950987,
+      "air_maximum_field_t": 1.1302849851213324,
+      "blade_fields": [
+        {
+          "blade": 1,
+          "centre_y_m": -0.006,
+          "element_count": 560,
+          "integrated_flux_per_axial_depth_wb_m": 0.003089732166854675,
+          "maximum_b_magnitude_t": 0.9693634288391991,
+          "mean_abs_by_t": 0.772433041713669,
+          "signed_mean_by_t": -0.772433041713669
+        },
+        {
+          "blade": 2,
+          "centre_y_m": -0.002,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.0030586407685575592,
+          "maximum_b_magnitude_t": 0.9632750561014222,
+          "mean_abs_by_t": 0.7646601921393896,
+          "signed_mean_by_t": -0.7646601921393896
+        },
+        {
+          "blade": 3,
+          "centre_y_m": 0.002,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.0029727309016515592,
+          "maximum_b_magnitude_t": 0.951543731029261,
+          "mean_abs_by_t": 0.7431827254128898,
+          "signed_mean_by_t": -0.7431827254128898
+        },
+        {
+          "blade": 4,
+          "centre_y_m": 0.006,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.002899348317655206,
+          "maximum_b_magnitude_t": 0.9474409272379016,
+          "mean_abs_by_t": 0.7248370794138015,
+          "signed_mean_by_t": -0.7248370794138015
+        }
+      ],
+      "cell_magnetic_coenergy_j": 0.05668065480698882,
+      "element_count": 210650,
+      "final_relative_solution_change": 9.944528647140023e-05,
+      "inferred_maximum_ligament_field_t": 1.4008865036127782,
+      "magnetic_coenergy_per_axial_depth_j_m": 3.7787103204659216,
+      "material_element_counts": {
+        "air_or_copper": 151120,
+        "fluxbridge_homogenized": 2960,
+        "stationary_core": 56570
+      },
+      "mean_tooth_slice_field_rms_t": 0.7512782596699374,
+      "mesh": "base",
+      "node_count": 105984,
+      "nonlinear_history": [
+        {
+          "iteration": 1,
+          "linear_iteration_count": 83,
+          "linear_relative_residual": 8.622981779769452e-10,
+          "maximum_field_t": 1.788236576015079,
+          "relative_reluctivity_change": 0.0006755015955820168,
+          "relative_solution_change": 1.0,
+          "relaxation_factor": 0.65
+        },
+        {
+          "iteration": 2,
+          "linear_iteration_count": 61,
+          "linear_relative_residual": 9.066871834212939e-10,
+          "maximum_field_t": 5.843327963817673,
+          "relative_reluctivity_change": 0.0013828942024540596,
+          "relative_solution_change": 0.001933008602362182,
+          "relaxation_factor": 0.13087255020298835
+        },
+        {
+          "iteration": 3,
+          "linear_iteration_count": 60,
+          "linear_relative_residual": 8.44458301818164e-10,
+          "maximum_field_t": 3.124646498576898,
+          "relative_reluctivity_change": 0.0013844031687523272,
+          "relative_solution_change": 0.001534589781525002,
+          "relaxation_factor": 0.06536258224716913
+        },
+        {
+          "iteration": 4,
+          "linear_iteration_count": 59,
+          "linear_relative_residual": 7.415786308988879e-10,
+          "maximum_field_t": 1.8714218355711039,
+          "relative_reluctivity_change": 0.0009623346570491945,
+          "relative_solution_change": 0.0011564008612549382,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 5,
+          "linear_iteration_count": 56,
+          "linear_relative_residual": 7.923544635745954e-10,
+          "maximum_field_t": 1.3953739408196952,
+          "relative_reluctivity_change": 0.0004882252210859167,
+          "relative_solution_change": 0.0006736465012685036,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 6,
+          "linear_iteration_count": 49,
+          "linear_relative_residual": 9.271795080655313e-10,
+          "maximum_field_t": 1.3791323263678676,
+          "relative_reluctivity_change": 0.000313691861951694,
+          "relative_solution_change": 0.0003182928707434668,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 7,
+          "linear_iteration_count": 51,
+          "linear_relative_residual": 8.058042886325494e-10,
+          "maximum_field_t": 1.3758753668851242,
+          "relative_reluctivity_change": 0.0002653357667676908,
+          "relative_solution_change": 0.00016663954644120568,
+          "relaxation_factor": 0.057470970802035316
+        },
+        {
+          "iteration": 8,
+          "linear_iteration_count": 52,
+          "linear_relative_residual": 9.398661819087628e-10,
+          "maximum_field_t": 1.3760840345338528,
+          "relative_reluctivity_change": 0.00024301897526985542,
+          "relative_solution_change": 9.944528647140023e-05,
+          "relaxation_factor": 0.14241851169554098
+        }
+      ],
+      "nonlinear_iteration_count": 8,
+      "per_cell_inductance_h": 7.085081850873602e-07,
+      "slot_to_slot_flux_imbalance_fraction": 0.035194922674526063,
+      "source_current_negative_a": -1200.0000000000002,
+      "source_current_positive_a": 1200.0,
+      "source_current_residual_fraction": 1.8947806286936006e-16,
+      "stationary_core_field_p99_t": 1.1094642688386394,
+      "stationary_core_maximum_field_t": 1.350659309867664
+    },
+    "expanded_boundary": {
+      "active_height_field_coefficient_of_variation": 0.07119145290804155,
+      "air_maximum_field_t": 1.126513060219434,
+      "blade_fields": [
+        {
+          "blade": 1,
+          "centre_y_m": -0.006,
+          "element_count": 560,
+          "integrated_flux_per_axial_depth_wb_m": 0.0030894839950682327,
+          "maximum_b_magnitude_t": 0.9636749780713131,
+          "mean_abs_by_t": 0.7723709987670585,
+          "signed_mean_by_t": -0.7723709987670585
+        },
+        {
+          "blade": 2,
+          "centre_y_m": -0.002,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.003056289505810834,
+          "maximum_b_magnitude_t": 0.966996076942791,
+          "mean_abs_by_t": 0.7640723764527083,
+          "signed_mean_by_t": -0.7640723764527083
+        },
+        {
+          "blade": 3,
+          "centre_y_m": 0.002,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.0029502101310628728,
+          "maximum_b_magnitude_t": 0.9422835827615657,
+          "mean_abs_by_t": 0.7375525327657181,
+          "signed_mean_by_t": -0.7375525327657181
+        },
+        {
+          "blade": 4,
+          "centre_y_m": 0.006,
+          "element_count": 504,
+          "integrated_flux_per_axial_depth_wb_m": 0.0028754738128621087,
+          "maximum_b_magnitude_t": 0.9561801074770367,
+          "mean_abs_by_t": 0.7188684532155272,
+          "signed_mean_by_t": -0.7188684532155272
+        }
+      ],
+      "cell_magnetic_coenergy_j": 0.05810228851434923,
+      "element_count": 237770,
+      "final_relative_solution_change": 8.987815549055069e-05,
+      "inferred_maximum_ligament_field_t": 1.3974652982915174,
+      "magnetic_coenergy_per_axial_depth_j_m": 3.8734859009566156,
+      "material_element_counts": {
+        "air_or_copper": 178240,
+        "fluxbridge_homogenized": 2960,
+        "stationary_core": 56570
+      },
+      "mean_tooth_slice_field_rms_t": 0.7482160903002529,
+      "mesh": "expanded_boundary",
+      "node_count": 119584,
+      "nonlinear_history": [
+        {
+          "iteration": 1,
+          "linear_iteration_count": 88,
+          "linear_relative_residual": 9.609399568733237e-10,
+          "maximum_field_t": 1.8354650942291193,
+          "relative_reluctivity_change": 0.0006191612013213353,
+          "relative_solution_change": 1.0,
+          "relaxation_factor": 0.65
+        },
+        {
+          "iteration": 2,
+          "linear_iteration_count": 62,
+          "linear_relative_residual": 9.70436832344602e-10,
+          "maximum_field_t": 6.019900314853927,
+          "relative_reluctivity_change": 0.001260291759813409,
+          "relative_solution_change": 0.0022327298821839796,
+          "relaxation_factor": 0.13223099644800237
+        },
+        {
+          "iteration": 3,
+          "linear_iteration_count": 59,
+          "linear_relative_residual": 9.294404272792499e-10,
+          "maximum_field_t": 3.220801534382896,
+          "relative_reluctivity_change": 0.0012931909369580245,
+          "relative_solution_change": 0.001468048396971707,
+          "relaxation_factor": 0.06436467024044668
+        },
+        {
+          "iteration": 4,
+          "linear_iteration_count": 57,
+          "linear_relative_residual": 9.221768742348766e-10,
+          "maximum_field_t": 1.851715511942399,
+          "relative_reluctivity_change": 0.0008661794344251958,
+          "relative_solution_change": 0.0010826553657908155,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 5,
+          "linear_iteration_count": 53,
+          "linear_relative_residual": 9.56112684698786e-10,
+          "maximum_field_t": 1.380259537466186,
+          "relative_reluctivity_change": 0.00044326301816473523,
+          "relative_solution_change": 0.0006224248887184394,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 6,
+          "linear_iteration_count": 48,
+          "linear_relative_residual": 9.859857485623768e-10,
+          "maximum_field_t": 1.3789336218197146,
+          "relative_reluctivity_change": 0.00028309169971045355,
+          "relative_solution_change": 0.0002893655243230764,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 7,
+          "linear_iteration_count": 51,
+          "linear_relative_residual": 9.234805957310478e-10,
+          "maximum_field_t": 1.3790252338739655,
+          "relative_reluctivity_change": 0.00024165623644853453,
+          "relative_solution_change": 0.0001314868722209973,
+          "relaxation_factor": 0.0623099073462713
+        },
+        {
+          "iteration": 8,
+          "linear_iteration_count": 53,
+          "linear_relative_residual": 7.901700905043499e-10,
+          "maximum_field_t": 1.3792636075993074,
+          "relative_reluctivity_change": 0.00022183080627709076,
+          "relative_solution_change": 8.987815549055069e-05,
+          "relaxation_factor": 0.2068573497281407
+        }
+      ],
+      "nonlinear_iteration_count": 8,
+      "per_cell_inductance_h": 7.262786064293654e-07,
+      "slot_to_slot_flux_imbalance_fraction": 0.03922347763591788,
+      "source_current_negative_a": -1200.0000000000002,
+      "source_current_positive_a": 1200.0,
+      "source_current_residual_fraction": 1.8947806286936006e-16,
+      "stationary_core_field_p99_t": 1.131745747501993,
+      "stationary_core_maximum_field_t": 1.3516234034363668
+    },
+    "fine": {
+      "active_height_field_coefficient_of_variation": 0.038048914064987595,
+      "air_maximum_field_t": 1.5477833014041003,
+      "blade_fields": [
+        {
+          "blade": 1,
+          "centre_y_m": -0.006,
+          "element_count": 1836,
+          "integrated_flux_per_axial_depth_wb_m": 0.0030297344374273748,
+          "maximum_b_magnitude_t": 0.8713836332882773,
+          "mean_abs_by_t": 0.757433609356844,
+          "signed_mean_by_t": -0.757433609356844
+        },
+        {
+          "blade": 2,
+          "centre_y_m": -0.002,
+          "element_count": 1728,
+          "integrated_flux_per_axial_depth_wb_m": 0.0029966954163707735,
+          "maximum_b_magnitude_t": 0.8647085849127054,
+          "mean_abs_by_t": 0.7491738540926931,
+          "signed_mean_by_t": -0.7491738540926931
+        },
+        {
+          "blade": 3,
+          "centre_y_m": 0.002,
+          "element_count": 1836,
+          "integrated_flux_per_axial_depth_wb_m": 0.00292142118907538,
+          "maximum_b_magnitude_t": 0.8187421020412218,
+          "mean_abs_by_t": 0.7303552972688447,
+          "signed_mean_by_t": -0.7303552972688447
+        },
+        {
+          "blade": 4,
+          "centre_y_m": 0.006,
+          "element_count": 1728,
+          "integrated_flux_per_axial_depth_wb_m": 0.0028649511566863272,
+          "maximum_b_magnitude_t": 0.8248883347190015,
+          "mean_abs_by_t": 0.716237789171582,
+          "signed_mean_by_t": -0.716237789171582
+        }
+      ],
+      "cell_magnetic_coenergy_j": 0.056877927635442756,
+      "element_count": 747114,
+      "final_relative_solution_change": 6.740616631615133e-05,
+      "inferred_maximum_ligament_field_t": 1.2592898958488652,
+      "magnetic_coenergy_per_axial_depth_j_m": 3.7918618423628505,
+      "material_element_counts": {
+        "air_or_copper": 520650,
+        "fluxbridge_homogenized": 10032,
+        "stationary_core": 216432
+      },
+      "mean_tooth_slice_field_rms_t": 0.738300137472491,
+      "mesh": "fine",
+      "node_count": 374796,
+      "nonlinear_history": [
+        {
+          "iteration": 1,
+          "linear_iteration_count": 119,
+          "linear_relative_residual": 7.822973307515704e-10,
+          "maximum_field_t": 2.0137516386997314,
+          "relative_reluctivity_change": 0.0006249903739583494,
+          "relative_solution_change": 1.0,
+          "relaxation_factor": 0.65
+        },
+        {
+          "iteration": 2,
+          "linear_iteration_count": 81,
+          "linear_relative_residual": 8.395264131350313e-10,
+          "maximum_field_t": 5.451325877229802,
+          "relative_reluctivity_change": 0.0014399488376923492,
+          "relative_solution_change": 0.0017834577398654382,
+          "relaxation_factor": 0.11054257717006649
+        },
+        {
+          "iteration": 3,
+          "linear_iteration_count": 79,
+          "linear_relative_residual": 8.902730210737677e-10,
+          "maximum_field_t": 3.1014994443038257,
+          "relative_reluctivity_change": 0.0015110633234446493,
+          "relative_solution_change": 0.001760080759978472,
+          "relaxation_factor": 0.05244190495450996
+        },
+        {
+          "iteration": 4,
+          "linear_iteration_count": 77,
+          "linear_relative_residual": 8.18903632721585e-10,
+          "maximum_field_t": 1.911682952279589,
+          "relative_reluctivity_change": 0.0009876869135735777,
+          "relative_solution_change": 0.001260257679378127,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 5,
+          "linear_iteration_count": 72,
+          "linear_relative_residual": 9.62921028270106e-10,
+          "maximum_field_t": 1.8173132573752844,
+          "relative_reluctivity_change": 0.0005477050583908823,
+          "relative_solution_change": 0.0008009870983608036,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 6,
+          "linear_iteration_count": 65,
+          "linear_relative_residual": 9.614351693899379e-10,
+          "maximum_field_t": 1.8159578257298021,
+          "relative_reluctivity_change": 0.0003189094021852335,
+          "relative_solution_change": 0.0004273161223347074,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 7,
+          "linear_iteration_count": 64,
+          "linear_relative_residual": 8.910572042282086e-10,
+          "maximum_field_t": 1.8151683981064533,
+          "relative_reluctivity_change": 0.0002527625790961489,
+          "relative_solution_change": 0.00019487564099201956,
+          "relaxation_factor": 0.05
+        },
+        {
+          "iteration": 8,
+          "linear_iteration_count": 64,
+          "linear_relative_residual": 9.047452810686727e-10,
+          "maximum_field_t": 1.814568005647806,
+          "relative_reluctivity_change": 0.00022863565014731644,
+          "relative_solution_change": 0.00010325702261609486,
+          "relaxation_factor": 0.07437912514531583
+        },
+        {
+          "iteration": 9,
+          "linear_iteration_count": 66,
+          "linear_relative_residual": 9.904619573577377e-10,
+          "maximum_field_t": 1.8138395213818042,
+          "relative_reluctivity_change": 0.0002083235928871771,
+          "relative_solution_change": 0.00011674000948008524,
+          "relaxation_factor": 0.256876457416425
+        },
+        {
+          "iteration": 10,
+          "linear_iteration_count": 72,
+          "linear_relative_residual": 9.752105884404789e-10,
+          "maximum_field_t": 1.8119276667993438,
+          "relative_reluctivity_change": 0.00015684146740005698,
+          "relative_solution_change": 0.00039763844741124663,
+          "relaxation_factor": 0.41358360688286966
+        },
+        {
+          "iteration": 11,
+          "linear_iteration_count": 74,
+          "linear_relative_residual": 8.476299370746723e-10,
+          "maximum_field_t": 1.8098700898911475,
+          "relative_reluctivity_change": 0.00010887340944129875,
+          "relative_solution_change": 0.0005760400808161618,
+          "relaxation_factor": 0.39678245171573734
+        },
+        {
+          "iteration": 12,
+          "linear_iteration_count": 73,
+          "linear_relative_residual": 8.439542795430931e-10,
+          "maximum_field_t": 1.8084020739962305,
+          "relative_reluctivity_change": 0.0001517344910648938,
+          "relative_solution_change": 0.0003811103053508758,
+          "relaxation_factor": 0.14701235328264942
+        },
+        {
+          "iteration": 13,
+          "linear_iteration_count": 63,
+          "linear_relative_residual": 8.635784221762422e-10,
+          "maximum_field_t": 1.8076092521938674,
+          "relative_reluctivity_change": 9.342958706114196e-05,
+          "relative_solution_change": 0.00010052074381589415,
+          "relaxation_factor": 0.1021348898638375
+        },
+        {
+          "iteration": 14,
+          "linear_iteration_count": 62,
+          "linear_relative_residual": 8.288008376987914e-10,
+          "maximum_field_t": 1.8074635775281902,
+          "relative_reluctivity_change": 6.371742565102606e-05,
+          "relative_solution_change": 6.740616631615133e-05,
+          "relaxation_factor": 0.07467055217831446
+        }
+      ],
+      "nonlinear_iteration_count": 14,
+      "per_cell_inductance_h": 7.109740954430344e-07,
+      "slot_to_slot_flux_imbalance_fraction": 0.02988262791936863,
+      "source_current_negative_a": -1200.0000000000002,
+      "source_current_positive_a": 1200.0,
+      "source_current_residual_fraction": 1.8947806286936006e-16,
+      "stationary_core_field_p99_t": 1.1209333517222737,
+      "stationary_core_maximum_field_t": 1.4652466495330445
+    }
+  },
+  "physics_band_basis": "worst of base, fine and expanded-boundary meshes",
+  "physics_band_extrema": {
+    "maximum_active_height_field_coefficient_of_variation": 0.07119145290804155,
+    "maximum_inferred_magnetic_ligament_field_t": 1.4008865036127782,
+    "maximum_mean_tooth_slice_field_rms_t": 0.7512782596699374,
+    "maximum_nonlinear_relative_solution_change": 9.944528647140023e-05,
+    "maximum_slot_to_slot_flux_imbalance_fraction": 0.03922347763591788,
+    "maximum_source_current_residual_fraction": 1.8947806286936006e-16,
+    "maximum_stationary_core_field_t": 1.4652466495330445,
+    "minimum_mean_tooth_slice_field_rms_t": 0.738300137472491
+  },
+  "screen_pass": true,
+  "targets": {
+    "a3g_equivalent_sheet_field_rms_t": 0.56,
+    "a3g_inferred_ligament_field_rms_t": 1.2671353518862931,
+    "a3g_per_cell_inductance_h": 8.13146107387024e-07,
+    "a3g_phase_inductance_h": 8.13146107387024e-06,
+    "a3g_tooth_field_rms_t": 0.7919595949289332
+  }
+}
