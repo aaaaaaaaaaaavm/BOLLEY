@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION",
+  "payload": {
+    "class": "3U",
+    "reference_mass_kg": 4.0,
+    "qualification_mass_kg": 6.0,
+    "transverse_cg_limit_m": 0.02
+  },
+  "duty": {
+    "acceleration_g": 8.0,
+    "powered_length_m": 0.9,
+    "command_velocity_max_mps": 12.0,
+    "tipoff_limit_deg_s": 2.0
+  },
+  "rail": {
+    "corner_count": 4,
+    "faces_per_corner": 2,
+    "active_width_per_face_m": 0.015,
+    "magnetic_active_length_m": 0.336,
+    "magnetic_equivalent_thickness_m": 0.0005,
+    "magnetic_density_kg_m3": 7650.0,
+    "nonmagnetic_increment_kg": 0.075,
+    "force_line_radius_m": 0.04575,
+    "aluminium_cover_m": 0.0005,
+    "mechanical_clearance_m": 0.00075,
+    "pole_pitch_m": 0.048
+  },
+  "screens": {
+    "published_shear_benchmark_pa": 35163.26219515864,
+    "required_shear_band_pa": 26000.0,
+    "channel_force_band_n": 255.0,
+    "efficiency_low": 0.4,
+    "efficiency_high": 0.6,
+    "gross_energy_limit_j": 900.0,
+    "peak_power_preferred_w": 15000.0,
+    "rail_mass_preferred_kg": 0.25,
+    "rail_mass_kill_kg": 0.4,
+    "pole_passage_band_hz": 300.0
+  },
+  "constants": {
+    "gravity_m_s2": 9.81
+  },
+  "references": {
+    "cubesat_design_specification": "Cal Poly CubeSat Design Specification Rev. 14.1",
+    "shear_benchmark": "Deshpande, Cathey and Richter, IEEE Transactions on Industry Applications 31(2), 1995",
+    "volley_sled_mass_source": "aaaaaaaaaaaavm/VOLLEY analysis/motor_model.py"
+  }
+}
+

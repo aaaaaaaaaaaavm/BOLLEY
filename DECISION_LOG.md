@@ -1,0 +1,13 @@
+# Decision log
+
+This is the compact index. Full arguments live in `docs/adr/`.
+
+| ID | Date | Decision | Consequence | Record |
+|---|---|---|---|---|
+| D001 | 2026-08-13 | Accept a small passive spacecraft modification. | Universal compatibility becomes a fallback instead of the baseline. | [ADR-001](docs/adr/001-cooperative-payload-interface.md) |
+| D002 | 2026-08-13 | Use an active long stator and passive reluctance rails. | No moving magnets, coils or powered spacecraft interface. | [ADR-002](docs/adr/002-passive-reluctance-rails.md) |
+| D003 | 2026-08-13 | Freeze Phase 0 at 0–12 m/s, 8 g and 0.90 m for the 4 kg reference case. | The mission-useful differential is prioritised over VOLLEY's model-derived 16.388 m/s ceiling. | [ADR-003](docs/adr/003-phase-zero-duty.md) |
+| D004 | 2026-08-13 | Treat 4 kg as the comparison case and 6 kg as the qualification sizing case. | A current maximum mass is not hidden behind the older reference case. | [ADR-003](docs/adr/003-phase-zero-duty.md) |
+| D005 | 2026-08-13 | Do not include a paper, LaTeX tree or publication figures. | The repository remains an engineering decision record. | This log |
+| D006 | 2026-08-13 | Commit bands before model results. | Git history records what would count as failure before the answer is known. | [Engineering method](docs/ENGINEERING_METHOD.md) |
+
