@@ -56,8 +56,3 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 5. A failed result changes the design or kills it. It does not change the threshold.
 6. Assumptions, external data, model outputs and measurements are never mixed without labels.
 7. This repository is an engineering record, not a paper-production project.
-
-## Name
-
-The repository is titled **Bolley** even though its current GitHub slug is `Bolley-`.
-
