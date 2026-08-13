@@ -24,6 +24,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P17 | The unmodified-payload four-finger fallback remains only a sketch. | Separate requirements and one-corner actuator screen. | LOW | DEFERRED |
 | P18 | The 0.50 mm equivalent-thickness mass screen does not define a closed moving flux path. | A3a identifies an explicit topology that passes area and interface-mass gates. | CRITICAL | MODELLED |
 | P19 | The opposed fin/tab requires launcher stator access on both sides, but no legal 3U dispenser cross-section exists yet. | A5a dimensioned cross-section passes envelope, contact, clearance, capture and panel-access checks. | CRITICAL | OPEN |
+| P20 | A face-centred comb-fin consumes spacecraft side-panel area and may conflict with solar cells or harness routing. | A5a area screen plus bus-specific panel layout review. | HIGH | OPEN |
 
 ## Register discipline
 

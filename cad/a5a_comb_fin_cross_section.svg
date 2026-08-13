@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Bolley A5a low-profile comb-fin interface</title>
+  <desc id="desc">Transverse spacecraft cross-section with four face-centred three-fin combs and a longitudinal view of seven segmented teeth.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#263238"/></marker>
+    <style>
+      .title{font:700 28px sans-serif;fill:#102027}.sub{font:700 20px sans-serif;fill:#102027}.txt{font:15px sans-serif;fill:#263238}.small{font:13px sans-serif;fill:#455a64}.panel{fill:#fafafa;stroke:#b0bec5;stroke-width:2}.body{fill:#eceff1;stroke:#455a64;stroke-width:2}.rail{fill:#90a4ae;stroke:#37474f;stroke-width:2}.steel{fill:#ef6c00;stroke:#8d3b00;stroke-width:1.5}.cover{fill:#cfd8dc;stroke:#607d8b;stroke-width:1}.stator{fill:#1565c0;stroke:#0d47a1;stroke-width:1.5}.gap{fill:#e3f2fd;stroke:#64b5f6;stroke-width:1}.dim{stroke:#263238;stroke-width:1.3;marker-start:url(#arrow);marker-end:url(#arrow)}.ext{stroke:#78909c;stroke-width:1;stroke-dasharray:4 4}.force{stroke:#2e7d32;stroke-width:3;marker-end:url(#arrow)}.note{fill:#fff8e1;stroke:#ffb300;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1200" height="760" fill="#fff"/>
+  <text x="50" y="48" class="title">Bolley A5a — low-profile four-face comb-fin</text>
+  <text x="50" y="74" class="small">ASSUMPTION geometry · preliminary CDS-guidance screen · NOT RELEASED CAD</text>
+
+  <rect x="35" y="100" width="560" height="580" rx="12" class="panel"/>
+  <text x="55" y="136" class="sub">Transverse section</text>
+  <text x="55" y="160" class="small">Four independent channels; three fins per broad face</text>
+  <rect x="190" y="220" width="250" height="250" class="body"/>
+  <rect x="170" y="200" width="40" height="40" rx="7" class="rail"/>
+  <rect x="420" y="200" width="40" height="40" rx="7" class="rail"/>
+  <rect x="170" y="450" width="40" height="40" rx="7" class="rail"/>
+  <rect x="420" y="450" width="40" height="40" rx="7" class="rail"/>
+
+  <g>
+    <rect x="271" y="183" width="8" height="37" class="cover"/><rect x="274" y="183" width="2" height="34" class="steel"/>
+    <rect x="311" y="183" width="8" height="37" class="cover"/><rect x="314" y="183" width="2" height="34" class="steel"/>
+    <rect x="351" y="183" width="8" height="37" class="cover"/><rect x="354" y="183" width="2" height="34" class="steel"/>
+    <path d="M258 174h34v12h-8v-5h-18v5h-8zM298 174h34v12h-8v-5h-18v5h-8zM338 174h34v12h-8v-5h-18v5h-8z" class="stator"/>
+  </g>
+  <g transform="rotate(90 440 345)">
+    <rect x="386" y="308" width="8" height="37" class="cover"/><rect x="389" y="308" width="2" height="34" class="steel"/>
+    <rect x="426" y="308" width="8" height="37" class="cover"/><rect x="429" y="308" width="2" height="34" class="steel"/>
+    <rect x="466" y="308" width="8" height="37" class="cover"/><rect x="469" y="308" width="2" height="34" class="steel"/>
+  </g>
+  <g transform="rotate(180 315 470)">
+    <rect x="271" y="433" width="8" height="37" class="cover"/><rect x="274" y="436" width="2" height="34" class="steel"/>
+    <rect x="311" y="433" width="8" height="37" class="cover"/><rect x="314" y="436" width="2" height="34" class="steel"/>
+    <rect x="351" y="433" width="8" height="37" class="cover"/><rect x="354" y="436" width="2" height="34" class="steel"/>
+  </g>
+  <g transform="rotate(270 190 345)">
+    <rect x="136" y="308" width="8" height="37" class="cover"/><rect x="139" y="308" width="2" height="34" class="steel"/>
+    <rect x="176" y="308" width="8" height="37" class="cover"/><rect x="179" y="308" width="2" height="34" class="steel"/>
+    <rect x="216" y="308" width="8" height="37" class="cover"/><rect x="219" y="308" width="2" height="34" class="steel"/>
+  </g>
+
+  <line x1="315" y1="198" x2="315" y2="150" class="force"/><text x="325" y="185" class="txt">Fz+</text>
+  <line x1="457" y1="345" x2="505" y2="345" class="force"/><text x="475" y="334" class="txt">Fy+</text>
+  <line x1="315" y1="487" x2="315" y2="535" class="force"/><text x="325" y="520" class="txt">Fz−</text>
+  <line x1="173" y1="345" x2="125" y2="345" class="force"/><text x="130" y="334" class="txt">Fy−</text>
+
+  <line x1="271" y1="560" x2="359" y2="560" class="dim"/><line x1="271" y1="470" x2="271" y2="575" class="ext"/><line x1="359" y1="470" x2="359" y2="575" class="ext"/>
+  <text x="260" y="592" class="txt">14 mm stationary comb footprint</text>
+  <line x1="485" y1="183" x2="485" y2="220" class="dim"/><line x1="440" y1="183" x2="500" y2="183" class="ext"/><line x1="440" y1="220" x2="500" y2="220" class="ext"/>
+  <text x="450" y="250" class="txt">5.5 mm total projection</text>
+  <rect x="65" y="610" width="500" height="48" rx="7" class="note"/>
+  <text x="82" y="639" class="txt">Corner contact rails remain aluminium; stator pole webs never cross them.</text>
+
+  <rect x="620" y="100" width="545" height="580" rx="12" class="panel"/>
+  <text x="640" y="136" class="sub">One-fin longitudinal section</text>
+  <text x="640" y="160" class="small">Seven 48 mm pitches over 336 mm active length</text>
+  <rect x="675" y="250" width="430" height="70" class="cover"/>
+  <g class="steel">
+    <rect x="675" y="260" width="31" height="50"/><rect x="736" y="260" width="31" height="50"/>
+    <rect x="797" y="260" width="31" height="50"/><rect x="858" y="260" width="31" height="50"/>
+    <rect x="919" y="260" width="31" height="50"/><rect x="980" y="260" width="31" height="50"/>
+    <rect x="1041" y="260" width="31" height="50"/>
+  </g>
+  <line x1="675" y1="365" x2="1105" y2="365" class="dim"/><line x1="675" y1="320" x2="675" y2="380" class="ext"/><line x1="1105" y1="320" x2="1105" y2="380" class="ext"/>
+  <text x="823" y="395" class="txt">336 mm active length</text>
+  <line x1="675" y1="430" x2="736" y2="430" class="dim"/><line x1="675" y1="320" x2="675" y2="445" class="ext"/><line x1="736" y1="320" x2="736" y2="445" class="ext"/>
+  <text x="678" y="462" class="txt">48 mm pitch / 24 mm steel tooth</text>
+
+  <rect x="650" y="510" width="485" height="125" rx="8" class="note"/>
+  <text x="670" y="540" class="txt">Moving stack: 0.25 Al + 0.50 steel + 0.25 Al = 1.00 mm</text>
+  <text x="670" y="570" class="txt">Stationary slot: 1.00 mm stack + 2 × 0.50 mm gap = 2.00 mm</text>
+  <text x="670" y="600" class="txt">Three slots + four 2.00 mm webs = 14.00 mm footprint</text>
+  <text x="670" y="626" class="small">Force, saturation, normal-force balance and root strength remain unproven.</text>
+
+  <rect x="50" y="705" width="18" height="18" class="rail"/><text x="77" y="720" class="small">contact rail</text>
+  <rect x="200" y="705" width="18" height="18" class="stator"/><text x="227" y="720" class="small">launcher stator</text>
+  <rect x="365" y="705" width="18" height="18" class="steel"/><text x="392" y="720" class="small">segmented steel</text>
+  <rect x="535" y="705" width="18" height="18" class="cover"/><text x="562" y="720" class="small">aluminium cover/root</text>
+</svg>
+

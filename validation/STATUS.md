@@ -7,6 +7,7 @@
 | A3a | MODELLED | 6/7 declared bands pass. The corner L-return fails its preferred-mass lower bound; fin and induction candidates survive mass/area only. |
 | A3 | NOT RUN | — |
 | A4 | NOT RUN | — |
+| A5a | NOT RUN | Bands and low-profile comb-fin geometry declared; no result committed. |
 | A5 | NOT RUN | — |
 
 This file is updated only after the corresponding committed run sheet exists.

@@ -15,7 +15,8 @@ CORE_RESULTS = {
     "force_allocation.json",
     "architecture_trade.json",
 }
-STAGED_RESULTS = {"topology_screen.json"}
+A3A_RESULTS = {"topology_screen.json"}
+A5A_RESULTS = {"interface_fit_screen.json"}
 
 
 def run(*parts: str) -> None:
@@ -52,11 +53,15 @@ def main() -> None:
         check_links()
         print("OK: pre-run repository; bands exist and no model results are committed")
         return
-    valid_sets = (CORE_RESULTS, CORE_RESULTS | STAGED_RESULTS)
+    valid_sets = (
+        CORE_RESULTS,
+        CORE_RESULTS | A3A_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS,
+    )
     if committed not in valid_sets:
         raise SystemExit(
             "partial result set: expected "
-            f"{sorted(CORE_RESULTS)} or {sorted(CORE_RESULTS | STAGED_RESULTS)}, "
+            f"a declared stage set through {sorted(CORE_RESULTS | A3A_RESULTS | A5A_RESULTS)}, "
             f"found {sorted(committed)}"
         )
 
@@ -64,13 +69,24 @@ def main() -> None:
     run("analysis/force_allocation.py", "--check")
     run("analysis/architecture_trade.py", "--check")
     run("tools/make_baseline.py", "--check")
-    if STAGED_RESULTS <= committed:
+    if A3A_RESULTS <= committed:
         run("analysis/topology_screen.py", "--check")
         run("tools/make_topology_screen.py", "--check")
     elif (ROOT / "docs" / "TOPOLOGY_SCREEN.md").exists():
         raise SystemExit("docs/TOPOLOGY_SCREEN.md exists before the A3a result")
     check_links()
-    stage = "A1/A2/A3a" if STAGED_RESULTS <= committed else "A1/A2 with A3a declared"
+    if A5A_RESULTS <= committed:
+        run("analysis/interface_fit_screen.py", "--check")
+        run("tools/make_interface_fit_screen.py", "--check")
+    elif (ROOT / "docs" / "INTERFACE_FIT_SCREEN.md").exists():
+        raise SystemExit("docs/INTERFACE_FIT_SCREEN.md exists before the A5a result")
+    stage = (
+        "A1/A2/A3a/A5a"
+        if A5A_RESULTS <= committed
+        else "A1/A2/A3a with A5a declared"
+        if A3A_RESULTS <= committed
+        else "A1/A2 with A3a declared"
+    )
     print(f"OK: {stage} generated results and local links are current")
 
 
