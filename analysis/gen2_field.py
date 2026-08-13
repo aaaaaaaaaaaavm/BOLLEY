@@ -302,7 +302,8 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
     nu = material_reluctivity(b_magnitude, tags, p)
     history = []
     settings = p["solver"]
-    multigrid = None
+    previous_material_residual = None
+    relaxation = settings["initial_relaxation"]
     print(
         f"A6 {name}: {mesh.nvertices:,} nodes / {mesh.nelements:,} elements",
         flush=True,
@@ -312,16 +313,15 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
         condensed_matrix, condensed_rhs, updated, free_dofs = condense(
             matrix, rhs, D=boundary_dofs
         )
-        if multigrid is None:
-            try:
-                import pyamg
-            except ImportError as error:
-                raise SystemExit(
-                    "PyAMG is required; install requirements-field.txt"
-                ) from error
-            multigrid = pyamg.smoothed_aggregation_solver(
-                condensed_matrix, symmetry="symmetric"
-            )
+        try:
+            import pyamg
+        except ImportError as error:
+            raise SystemExit(
+                "PyAMG is required; install requirements-field.txt"
+            ) from error
+        multigrid = pyamg.smoothed_aggregation_solver(
+            condensed_matrix, symmetry="symmetric"
+        )
         from scipy.sparse.linalg import cg
 
         linear_iterations = [0]
@@ -352,14 +352,30 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
         b_y, b_z, areas = triangle_fields(mesh, updated)
         b_magnitude = np.hypot(b_y, b_z)
         target_nu = material_reluctivity(b_magnitude, tags, p)
+        material_residual = target_nu - nu
         material_change = np.linalg.norm(target_nu - nu) / max(
             np.linalg.norm(target_nu), 1e-30
         )
+        if previous_material_residual is not None:
+            residual_delta = material_residual - previous_material_residual
+            delta_norm_squared = float(np.dot(residual_delta, residual_delta))
+            if delta_norm_squared > 1e-30:
+                aitken = -relaxation * float(
+                    np.dot(previous_material_residual, residual_delta)
+                ) / delta_norm_squared
+                relaxation = float(
+                    np.clip(
+                        aitken,
+                        settings["minimum_relaxation"],
+                        settings["maximum_relaxation"],
+                    )
+                )
         history.append(
             {
                 "iteration": iteration,
                 "relative_solution_change": relative_change,
                 "relative_reluctivity_change": material_change,
+                "relaxation_factor": relaxation,
                 "linear_iteration_count": linear_iterations[0],
                 "linear_relative_residual": float(linear_residual),
                 "maximum_field_t": float(np.max(b_magnitude)),
@@ -368,15 +384,14 @@ def solve_mesh(name: str, spec: dict, p: dict) -> MeshSolution:
         print(
             f"A6 {name}: nonlinear {iteration:02d}, "
             f"dA={relative_change:.3e}, dnu={material_change:.3e}, "
-            f"CG={linear_iterations[0]}, r={linear_residual:.3e}, "
+            f"omega={relaxation:.3f}, CG={linear_iterations[0]}, "
+            f"r={linear_residual:.3e}, "
             f"Bmax={np.max(b_magnitude):.3f} T",
             flush=True,
         )
         potential = updated
-        nu = (
-            settings["relaxation"] * target_nu
-            + (1.0 - settings["relaxation"]) * nu
-        )
+        nu = nu + relaxation * material_residual
+        previous_material_residual = material_residual
         if iteration > 1 and relative_change <= settings["relative_solution_tolerance"]:
             break
     b_y, b_z, areas = triangle_fields(mesh, potential)

@@ -43,9 +43,13 @@ The first execution attempt was stopped without producing results after the spar
 factorization proved unsuitable for the declared 174,048 / 621,180 / 196,512-element mesh set.
 No geometry, material curve, mesh, excitation, quantity definition or acceptance band changed.
 The linear algebra method alone was replaced before any field result existed: conjugate gradient
-to a relative residual of $10^{-9}$, preconditioned by a frozen first-iteration PyAMG
-smoothed-aggregation hierarchy. Linear iteration counts and residuals are required in the output.
-This is an execution correction, not a physical-model refinement.
+to a relative residual of $10^{-9}$, preconditioned by a PyAMG smoothed-aggregation hierarchy.
+A base-mesh diagnostic then exposed a nonlinear limit cycle at the original fixed 0.65 Picard
+relaxation; that incomplete diagnostic was stopped without a result. Before any completed solve,
+the hierarchy was set to rebuild at each nonlinear update and the fixed relaxation was replaced
+by bounded vector Aitken relaxation (0.05–0.65, initially 0.65), with an 80-iteration ceiling.
+Linear iterations, residuals and relaxation factors are required in the output. These are
+execution corrections, not physical-model refinements.
 
 ## Quantities and definitions
 
