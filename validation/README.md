@@ -21,5 +21,6 @@ may supersede it while preserving the original and stating that the answer was a
 | [A3d](A3d_fluxfoil_operating_point.md) | Does a 0.60 T launcher-side field repair A3c's frozen efficiency miss without breaking another band? | Revised analytical operating point | NOT RUN |
 | [A3e](A3e_serpentine_stator.md) | Can an explicit series-flux stator create A3d's field inside mass, voltage, energy and power limits? | Lumped magnetic/circuit model | NOT RUN |
 | [A5](A5_interface_fit.md) | Can the rail remain a valid mechanical interface? | Drawing review and fit check | NOT RUN |
+| [A5c](A5c_gen1_cad.md) | Does Gen1 exist as traceable, non-interfering STEP/STL geometry rather than a sketch? | Parametric CAD + manifest checks | NOT RUN |
 
 `MODELLED` is not a synonym for `VALIDATED`. Only hardware evidence can close the central claim.

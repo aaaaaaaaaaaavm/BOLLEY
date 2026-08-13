@@ -88,6 +88,13 @@ def main() -> None:
     elif (ROOT / "docs" / "TOPOLOGY_SCREEN.md").exists():
         raise SystemExit("docs/TOPOLOGY_SCREEN.md exists before the A3a result")
     check_links()
+    cad_build = ROOT / "cad" / "BUILD.json"
+    if cad_build.exists():
+        subprocess.run([sys.executable, "cad/build_gen1.py", "--check"], cwd=ROOT, check=True)
+    else:
+        generated_cad_docs = [ROOT / "cad" / "DIMENSIONS.md", ROOT / "cad" / "BOM.md"]
+        if any(path.exists() for path in generated_cad_docs):
+            raise SystemExit("generated CAD documents exist before cad/BUILD.json")
     if A5A_RESULTS <= committed:
         run("analysis/interface_fit_screen.py", "--check")
         run("tools/make_interface_fit_screen.py", "--check")

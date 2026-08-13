@@ -15,6 +15,7 @@
 | A3d | MODELLED | 19/19 bands pass. At 0.60 T, worst-CG secondary-only efficiency is 73.9%, peak air-gap power 6.84 kW and rated local rise 4.85 K. |
 | A3e | MODELLED | 15/15 bands pass over 882 shots. Active electromagnetic mass is 40.96 kg; reference draw 821 J; qualification peak 11.08 kW. |
 | A5 | NOT RUN | — |
+| A5c | NOT RUN | Gen1 CAD objects, fit, exports, renders and manifest bands declared. |
 
 This file is updated only after the corresponding committed run sheet exists.
 

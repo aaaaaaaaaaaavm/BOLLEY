@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "generation": "Gen1",
+  "status": "ASSUMPTION geometry controlled by A3d/A3e and preliminary CDS guidance",
+  "coordinate_frame": {
+    "x": "firing axis, positive toward muzzle",
+    "y": "lateral",
+    "z": "vertical",
+    "origin": "payload aft face at the retained/breech position"
+  },
+  "payload": {
+    "envelope_length_x_mm": 340.5,
+    "envelope_y_mm": 100.0,
+    "envelope_z_mm": 100.0,
+    "proxy_body_yz_mm": 94.0,
+    "corner_rail_width_mm": 8.5,
+    "corner_rail_length_mm": 340.5
+  },
+  "fluxfoil": {
+    "active_length_x_mm": 336.0,
+    "active_length_start_x_mm": 2.25,
+    "fin_centres_across_face_mm": [-6.0, -2.0, 2.0, 6.0],
+    "fin_thickness_mm": 1.0,
+    "active_height_mm": 6.0,
+    "tip_radius_allowance_mm": 0.25,
+    "total_projection_mm": 6.25,
+    "root_strip_width_mm": 20.0,
+    "root_strip_depth_mm": 1.0,
+    "material": "continuous hard-anodized aluminium screening alloy, not selected"
+  },
+  "stator": {
+    "active_start_x_mm": 0.0,
+    "active_length_x_mm": 912.0,
+    "mechanical_tile_count": 6,
+    "mechanical_tile_length_x_mm": 152.0,
+    "phase_cell_pitch_x_mm": 16.0,
+    "phase_cell_core_length_x_mm": 15.5,
+    "phase_cell_axial_gap_mm": 0.5,
+    "electrical_wavelength_mm": 48.0,
+    "cell_count_per_face": 57,
+    "slot_centres_across_face_mm": [-6.0, -2.0, 2.0, 6.0],
+    "slot_width_mm": 2.0,
+    "interior_separator_width_mm": 2.0,
+    "outer_return_leg_width_mm": 3.0,
+    "back_yoke_thickness_mm": 3.0,
+    "core_radial_height_mm": 9.25,
+    "face_footprint_mm": 20.0,
+    "coil_pack_outer_width_mm": 9.0,
+    "coil_pack_outer_height_mm": 12.0,
+    "coil_pack_inner_width_mm": 4.0,
+    "coil_pack_inner_height_mm": 9.0,
+    "coil_pack_side": "negative-across-face outer leg",
+    "core_material": "M270-class laminated electrical steel placeholder",
+    "coil_material": "copper winding envelope, not individual turns"
+  },
+  "track": {
+    "start_x_mm": -50.0,
+    "length_x_mm": 1050.0,
+    "guide_bar_size_mm": 4.0,
+    "guide_bar_centre_offset_yz_mm": 52.0,
+    "enclosure_outer_yz_mm": 160.0,
+    "enclosure_frame_bar_mm": 5.0,
+    "enclosure_longeron_offset_yz_mm": 75.0,
+    "hoop_x_positions_mm": [-50.0, 102.0, 254.0, 406.0, 558.0, 710.0, 862.0, 1000.0],
+    "muzzle_x_mm": 1000.0
+  },
+  "gate": {
+    "station_x_mm": -12.0,
+    "axial_thickness_mm": 8.0,
+    "frame_outer_yz_mm": 130.0,
+    "frame_inner_yz_mm": 108.0,
+    "retractable_pin_size_mm": 8.0,
+    "model_state": "retained; retraction mechanism not modelled"
+  },
+  "coupon": {
+    "active_length_x_mm": 96.0,
+    "phase_cell_count": 6,
+    "support_plate_length_x_mm": 116.0,
+    "support_plate_width_mm": 60.0,
+    "support_plate_thickness_mm": 8.0
+  },
+  "render": {
+    "image_width_px": 1600,
+    "image_height_px": 1000,
+    "background": "#f7f9fc",
+    "payload_position_x_mm": 0.0,
+    "departing_payload_position_x_mm": 850.0
+  },
+  "bands": {
+    "maximum_body_envelope_yz_mm": 100.0,
+    "maximum_fluxfoil_projection_mm": 6.5,
+    "minimum_nominal_slot_clearance_per_side_mm": 0.5,
+    "maximum_stator_face_footprint_mm": 21.0,
+    "required_active_stator_length_mm": 912.0,
+    "minimum_muzzle_opening_yz_mm": 130.0,
+    "maximum_assembly_envelope_yz_mm": 160.0,
+    "minimum_step_artifact_count": 6,
+    "minimum_stl_artifact_count": 6,
+    "minimum_render_count": 5
+  }
+}
