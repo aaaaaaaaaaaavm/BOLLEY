@@ -6,11 +6,14 @@
     "formulation": "2D out-of-plane magnetic vector potential Ax: -div(nu grad Ax)=Jx",
     "element": "first-order triangular",
     "nonlinear_method": "relaxed Picard update of secant reluctivity",
+    "linear_solver": "conjugate gradient with a frozen first-iteration PyAMG smoothed-aggregation preconditioner",
+    "linear_relative_tolerance": 1e-09,
+    "linear_maximum_iterations": 2000,
     "relative_solution_tolerance": 0.0001,
     "maximum_iterations": 50,
     "relaxation": 0.65,
     "outer_boundary_condition": "Ax=0",
-    "software": "scikit-fem 12.0.2 + SciPy sparse direct solve"
+    "software": "scikit-fem 12.0.2 + SciPy CG + PyAMG 5.3.0"
   },
   "coordinate_frame": {
     "y": "across one payload face, metres",

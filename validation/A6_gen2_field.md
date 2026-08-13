@@ -37,6 +37,16 @@ Every material, slot, coil and sample boundary is inserted explicitly into the t
 outer boundary holds $A_x=0$. Reluctivity is updated by relaxed Picard iteration to a relative
 solution change below $10^{-4}$.
 
+### Execution refinement declared before the first completed solve
+
+The first execution attempt was stopped without producing results after the sparse-direct
+factorization proved unsuitable for the declared 174,048 / 621,180 / 196,512-element mesh set.
+No geometry, material curve, mesh, excitation, quantity definition or acceptance band changed.
+The linear algebra method alone was replaced before any field result existed: conjugate gradient
+to a relative residual of $10^{-9}$, preconditioned by a frozen first-iteration PyAMG
+smoothed-aggregation hierarchy. Linear iteration counts and residuals are required in the output.
+This is an execution correction, not a physical-model refinement.
+
 ## Quantities and definitions
 
 - **Mean tooth-slice field:** mean magnitude of $B_y$ in each active Fluxbridge region over
