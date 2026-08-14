@@ -2,7 +2,8 @@
 
 My current completed CAD evidence is **Gen2 Fluxbridge**, which I selected in A3g and passed through
 the A5d nominal-fit gate. I retain Gen1 because its failed winding package is evidence, not clutter.
-My current analytical baseline is Gen2.7 Fluxrelay; I have not yet converted it into Gen3 CAD.
+My current analytical baseline is Gen2.7 Fluxrelay after passing A6h and A7c; I have not yet
+converted it into controlled Gen3 CAD.
 
 ![Gen2 retained assembly](renders/gen2/01_gen2_hero.png)
 

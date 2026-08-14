@@ -1,0 +1,31 @@
+{
+  "figure_count": 3,
+  "figures": [
+    {
+      "bytes": 66891,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a7c/A7c_qualification_cage_rise_map.png",
+      "sha256": "9ffb68d3b7da974f3b9a739d394fa31da2768f482ccced3a1368b0272e16afb6",
+      "source": "tools/render_gen27_cage.py",
+      "title": "A7c hot-corner qualification cage-temperature CG map"
+    },
+    {
+      "bytes": 100577,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a7c/A7c_controlling_margins.png",
+      "sha256": "defebcb7679e25a88f2298baec80dea122f834085ffcdd44f31ca38a25eabdb7",
+      "source": "tools/render_gen27_cage.py",
+      "title": "A7c selected-point normalized corner margins"
+    },
+    {
+      "bytes": 59449,
+      "evidence": "MODEL COMPARISON",
+      "path": "analysis/figures/a7c/A7c_surrogate_reclosure_delta.png",
+      "sha256": "122edd6e72a396043dc7e88d0b791e63d30590e4733ca4eb9dd14bb3a9cfe48d",
+      "source": "tools/render_gen27_cage.py",
+      "title": "A8b-surrogate to A7c fresh-field reclosure deltas"
+    }
+  ],
+  "gate": "A7c",
+  "schema_version": 1
+}

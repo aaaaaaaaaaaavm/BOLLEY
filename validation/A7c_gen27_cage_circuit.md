@@ -56,3 +56,29 @@ The 0.25/0.30 kg interface figures remain failed preferences, not substitute pas
 I require all four corner summaries, both payload cases, every 21 by 21 CG record, all 29 Boolean
 bands, the exact A6h field/inductance trace and a deterministic disposition. I will not change the
 selected geometry, model equations, corners or thresholds after seeing the result.
+
+## What I recorded
+
+I completed A7c on 14 August 2026 without changing the selected point, model, corners or bands.
+Every one of the four robustness corners passes all **29/29** hard bands.
+
+| Controlling quantity | Result | Band | Outcome |
+|---|---:|---:|---:|
+| 90% conductance / 125% resistance reference energy | 893.412 J | <=900 J | PASS |
+| Same-corner qualification energy | 1,302.169 J | <=1,500 J | PASS |
+| Minimum source efficiency | 34.559% | >=30% | PASS |
+| Minimum secondary efficiency | 51.074% | >=50% | PASS |
+| Maximum cage rise | 15.593 K | <=20 K | PASS |
+| Maximum cage current density | 151.777 A/mm2 | <=180 A/mm2 | PASS |
+| Maximum slip | 5.693 m/s | <=8 m/s | PASS |
+| Maximum required DC link | 13.049 V | <=48 V | PASS |
+| Maximum peak DC power | 11.676 kW | <=15 kW | PASS |
+
+The fresh A6h reclosure lowers my controlling A8b reference-energy estimate by 2.054 J. The exact
+point now has 6.588 J, or 0.732%, of model margin on the 900 J reference band. I promote it only to
+provisional A5e Gen3 CAD and A9 transient sectional-drive modelling. I do not use this pass as
+permission to claim hardware force, thermal or release performance.
+
+Artifact: `analysis/results/gen27_cage_circuit_points.csv.gz`  
+Records: 3,528  
+SHA-256: `6ebc692f4dbff50ca04c8d7f1f21ed7929a57febbc44209a0f779253d5d60116`

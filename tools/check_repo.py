@@ -281,6 +281,8 @@ def main() -> None:
         raise SystemExit("docs/GEN27_FIELD.md exists before the A6h result")
     if A7C_RESULTS <= committed:
         run("analysis/gen27_cage_circuit.py", "--check")
+        run("tools/make_gen27_cage_circuit.py", "--check")
+        run("tools/render_gen27_cage.py", "--check")
     elif (ROOT / "docs" / "GEN27_CAGE_CIRCUIT.md").exists():
         raise SystemExit("docs/GEN27_CAGE_CIRCUIT.md exists before the A7c result")
     stage = (

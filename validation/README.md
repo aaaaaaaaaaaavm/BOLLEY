@@ -38,6 +38,7 @@ the answer.
 | [A8a](A8a_axial_engagement.md) | Does the exact Gen2.6 cage remain engaged through the claimed powered travel? | Finite-interval axial model | 900 mm package and simple extension rejected |
 | [A8b](A8b_gen27_codesign.md) | Can I close engagement, installed mass and sectional energy together? | Coupled deterministic design-space search | 77 candidates pass; one Gen2.7 point selected |
 | [A6h](A6h_gen27_fluxrelay.md) | Does the exact selected 380 A point survive a fresh nonlinear field solve? | Three-mesh 2D nonlinear magnetostatic FEA | 13/13 pass; A7c and provisional Gen3 opened |
+| [A7c](A7c_gen27_cage_circuit.md) | Does the exact selected point still close every circuit and cage band from A6h? | Post-field homogenized cage + sectional circuit/CG model | Four corners pass 29/29; A5e and A9 opened |
 
 I do not use `MODELLED` as a synonym for `VALIDATED`. Only hardware evidence can close my central
 claim.

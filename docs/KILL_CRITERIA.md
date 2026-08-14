@@ -41,7 +41,8 @@ propulsion and the unmodified-payload fallback.
 I use this threshold to prevent a lower-force topology from quietly retaining VOLLEY's
 multi-string bank problem through poor efficiency.
 
-**Status:** OPEN. My first-order result uses an assumed 40–60% total efficiency.
+**Status:** MODELLED, hardware open. My A7c controlling reference corner uses 893.412 J, leaving
+only 6.588 J of model margin. I still require transient-drive and measured efficiency evidence.
 
 ## 5. Tip-off
 

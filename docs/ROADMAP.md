@@ -5,12 +5,14 @@
 - I freeze the cooperative interface and duty.
 - I run first-order mass, force-area and CG allocation screens.
 - I reject incomplete flux paths with A3a and fit-check the surviving moving interface.
-- I build nonlinear 2D and 3D electromagnetic models.
-- I size commutation voltage, phase current and DC link from flux-linkage maps.
+- I retain my passing A6h 2D nonlinear transverse-field model and build the missing axial/transient
+  field model.
+- I carry A7c's sectional circuit into explicit cell-handoff, commutation and fault calculations.
+- I convert the exact selected Fluxrelay point into packaged Gen3 CAD before I release a coupon.
 
-**Exit:** I have bounded every critical input to a one-channel coupon. I send the low-profile
-comb-fin to nonlinear FEA only after I have a legal two-sided interface cross-section; otherwise I
-promote the induction lane. I do no CAD beauty work before this.
+**Exit:** I have bounded every critical input to a one-channel Fluxrelay coupon. A5e closes
+packaged geometry and A9 closes the transient sectional drive before I release drawings. I do no
+CAD beauty work in place of those gates.
 
 ## Phase 1 — one corner
 

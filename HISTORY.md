@@ -57,11 +57,17 @@ specified nonlinear meshes. All 13 declared bands pass. I now carry the worst 1.
 peak, 1.34336 T moving peak and 4.81156 uH three-cell phase-window inductance into A7c. I have not
 treated that model result as force, switching or hardware evidence.
 
+I then froze A7c on that exact point and repeated all four cage/circuit corners over both 21 by 21
+CG grids. Every corner passes all 29 hard bands. The controlling reference shot is 893.412 J,
+leaving 6.588 J below my 900 J band. I opened provisional Gen3 CAD and transient sectional-drive
+work, but I did not promote a model result to a hardware claim.
+
 I retain every rejected branch because it explains why I arrived at the current geometry. In
 VOLLEY, my stock-CDS-rail control has now failed its A30 edge-effect calculation, while a wider
 conductive-plate control survives analytically. I have therefore narrowed Bolley's active question:
-does my selected cooperative cage retain its margin in a sectional-circuit model and later
-hardware, and can its four-channel interface justify 0.371 kg against the lighter wide plate?
+does my selected cooperative cage retain its narrow margin in discrete CAD, transient drive work
+and later hardware, and can its four-channel interface justify 0.371 kg against the lighter wide
+plate?
 
 ## Authorship
 

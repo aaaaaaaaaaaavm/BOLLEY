@@ -52,14 +52,17 @@
 | A8b-01 | [A8b feasible axial/electrical design island](../analysis/figures/a8b/A8b_feasible_island.png) | `analysis/figures/a8b/A8b_feasible_island.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; fresh A6h field passed |
 | A8b-02 | [Selected Fluxrelay normalized hard-band margins](../analysis/figures/a8b/A8b_selected_margins.png) | `analysis/figures/a8b/A8b_selected_margins.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; fresh A6h field passed |
 | A8b-03 | [Selected Fluxrelay axial engagement package](../analysis/figures/a8b/A8b_axial_package.png) | `analysis/figures/a8b/A8b_axial_package.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; fresh A6h field passed |
-| A6h-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6h/A6h_field_magnitude.png) | `analysis/figures/a6h/A6h_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c open |
-| A6h-02 | [Four-blade field balance](../analysis/figures/a6h/A6h_blade_fields.png) | `analysis/figures/a6h/A6h_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c open |
-| A6h-03 | [Mesh and boundary convergence](../analysis/figures/a6h/A6h_convergence.png) | `analysis/figures/a6h/A6h_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Passing selected Gen2.7 nonlinear-field evidence; A7c open |
+| A6h-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6h/A6h_field_magnitude.png) | `analysis/figures/a6h/A6h_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
+| A6h-02 | [Four-blade field balance](../analysis/figures/a6h/A6h_blade_fields.png) | `analysis/figures/a6h/A6h_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
+| A6h-03 | [Mesh and boundary convergence](../analysis/figures/a6h/A6h_convergence.png) | `analysis/figures/a6h/A6h_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
+| A7c-01 | [A7c hot-corner qualification cage-temperature CG map](../analysis/figures/a7c/A7c_qualification_cage_rise_map.png) | `analysis/figures/a7c/A7c_qualification_cage_rise_map.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e and A9 open |
+| A7c-02 | [A7c selected-point normalized corner margins](../analysis/figures/a7c/A7c_controlling_margins.png) | `analysis/figures/a7c/A7c_controlling_margins.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e and A9 open |
+| A7c-03 | [A8b-surrogate to A7c fresh-field reclosure deltas](../analysis/figures/a7c/A7c_surrogate_reclosure_delta.png) | `analysis/figures/a7c/A7c_surrogate_reclosure_delta.png` | Post-field cage/circuit model output — MODEL COMPARISON | Passing selected Gen2.7 reclosure; A5e and A9 open |
 
 ## Evidence count
 
-- Indexed figures: **50**.
-- Parametric/model/schematic figures: **50**.
+- Indexed figures: **53**.
+- Parametric/model/schematic figures: **53**.
 - Physically observed figures: **0**.
 
 I use a render to explain topology or nominal fit. I do not use it to close force, field,

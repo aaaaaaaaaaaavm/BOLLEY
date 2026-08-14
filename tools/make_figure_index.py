@@ -22,6 +22,7 @@ A7B = ROOT / "analysis" / "figures" / "a7b" / "FIGURES.json"
 A8A = ROOT / "analysis" / "figures" / "a8a" / "FIGURES.json"
 A8B = ROOT / "analysis" / "figures" / "a8b" / "FIGURES.json"
 A6H = ROOT / "analysis" / "figures" / "a6h" / "FIGURES.json"
+A7C = ROOT / "analysis" / "figures" / "a7c" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -62,7 +63,8 @@ def render() -> str:
         ("A7b", A7B, "Post-field cage/circuit model output", "Rejected exact Gen2.6 hot-resistance circuit evidence"),
         ("A8a", A8A, "Axial engagement model output", "Rejected exact Gen2.6 axial-package evidence"),
         ("A8b", A8B, "Coupled design-space model output", "Selected Gen2.7 analytical point; fresh A6h field passed"),
-        ("A6h", A6H, "2D nonlinear field-model output", "Passing selected Gen2.7 nonlinear-field evidence; A7c open"),
+        ("A6h", A6H, "2D nonlinear field-model output", "Passing selected Gen2.7 nonlinear-field evidence; A7c passed"),
+        ("A7c", A7C, "Post-field cage/circuit model output", "Passing selected Gen2.7 reclosure; A5e and A9 open"),
     ):
         if not manifest_path.exists():
             continue

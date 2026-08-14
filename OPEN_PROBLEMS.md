@@ -44,6 +44,7 @@ measurement, supplier document or decision record. I do not treat confidence as 
 | P37 | A8b initially scaled A6g fields linearly from 375 to 380 A, leaving only 1.04% stationary-core peak margin. | Fresh A6h coarse/fine/alternate nonlinear meshes pass every field, peak and convergence band at the selected point. | CRITICAL | CLOSED |
 | P38 | The nine-cell active window has no switching handoff, force-ripple, fault or end-cell model. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | OPEN |
 | P39 | The 15.908 kg primary leaves 92 g for the active-material band and excludes structure, cooling, wiring and power electronics. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
+| P40 | A7c leaves only 6.588 J (0.732%) of model margin on the hot reference shot, and its 125% resistance corner is not supplier-backed. | A9 transient drive plus measured or supplier-bounded hot winding resistance retain positive margin below 900 J. | CRITICAL | OPEN |
 
 ## How I use the register
 

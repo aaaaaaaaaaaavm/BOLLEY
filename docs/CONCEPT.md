@@ -97,13 +97,14 @@ four-channel force-centroid control, a repeatable magnetic/conductive path, less
 alloy and anodization, simpler launcher guidance or lower lifecycle cost. The comparison remains
 open until I have matched field, structural, integration and cost evidence for both branches.
 
-## What I established in A8b and A6h
+## What I established in A8b, A6h and A7c
 
 In A8b I found 77 analytical points that satisfy my frozen coupled bands and selected one by minimax
 margin. In A6h I replaced its field and inductance surrogates at the exact selected point. Three
 fresh nonlinear meshes pass all 13 frozen bands, and I now carry a 4.81156 uH phase-window
-inductance into A7c.
+inductance into my circuit model. In A7c I reclosed all four robustness corners from that result;
+every corner passes all 29 bands, with a controlling 893.412 J reference shot.
 
 I have not established commutation ripple, end effects, inverter partitioning, structure,
-manufacturing tolerance, provider compatibility or hardware performance. A7c is my next physics
-gate; packaged Gen3 CAD is my next geometry gate.
+manufacturing tolerance, provider compatibility or hardware performance. A9 transient
+sectional-drive work is my next physics gate; A5e packaged Gen3 CAD is my next geometry gate.
