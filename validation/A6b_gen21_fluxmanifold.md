@@ -1,11 +1,11 @@
 # A6b — Gen2.1 Fluxmanifold nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** decide whether a wider, radius-fed stationary return repairs A6 without changing the
+**Purpose:** I wanted to decide whether a wider, radius-fed stationary return repairs A6 without changing the
 passive Fluxbridge principle or hiding the failed Gen2 point.
 
-## Why this candidate exists
+## Why I candidate exists
 
 A6 localised Gen2's failure. The four moving blades were balanced and below their ligament limit,
 but the 3 mm back yoke crowded flux into a sharp inner corner. Mean blade field was low while the
@@ -32,7 +32,7 @@ The calculated four-face active primary is 15.733 kg: 8.069 kg stationary core p
 7.664 kg copper. This adds stationary iron relative to A3g's 11.829 kg package but remains far
 below Gen1's 40.96 kg active primary. CAD and circuit gates must independently confirm it.
 
-## Frozen formal meshes
+## The formal meshes I froze
 
 1. **Base:** 0.15 mm local spacing in a 90 × 65 mm domain.
 2. **Fine:** 0.075 mm local spacing in the same domain.
@@ -41,7 +41,7 @@ below Gen1's 40.96 kg active primary. CAD and circuit gates must independently c
 All material, source, blade, haunch-tangent and sample boundaries are inserted explicitly. The
 nonlinear and linear solver tolerances are identical to the completed A6 method.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -59,24 +59,24 @@ nonlinear and linear solver tolerances are identical to the completed A6 method.
 
 Paired lower and upper limits remain executable separately, giving 13 stored Boolean bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The B-H curves remain screening assumptions, not selected-lot supplier data.
 - The circular haunch is meshed in 2D; it is not a lamination drawing or manufacturing process.
-- This is not transient induction, axial force, end effect, current-crowding or thermal evidence.
+- I do not treat this as transient induction, axial force, end effect, current-crowding or thermal evidence.
 - Three turns are sectional copper accounting, not a routed lead/insulation CAD package.
 - Passing does not restore A3g's source-energy result; circuit closure must use A6b inductance.
 - The primary mass is analytical geometry accounting and excludes structure, cooling and leads.
 
-## Required output
+## Output I required
 
-Commit all mesh counts, nonlinear histories, field/flux per blade, peaks by material, coenergy,
+I required the repository to retain all mesh counts, nonlinear histories, field/flux per blade, peaks by material, coenergy,
 inductance, convergence differences, every band and three indexed figures. Pass advances only to
 Gen2.1 circuit and CAD closure. Failure changes the manifold again or ends this Fluxbridge branch.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 11/13 bands pass; exact Gen2.1 geometry is rejected.**
+**I completed the run on 2026-08-13. I recorded: 11/13 bands pass; exact Gen2.1 geometry is rejected.**
 
 The base, fine and expanded meshes contain 209,550, 745,030 and 236,590 triangles. Mean-field,
 coenergy and boundary changes are 0.261%, 0.216% and 0.181%. Fine mean field is 0.7934 T and

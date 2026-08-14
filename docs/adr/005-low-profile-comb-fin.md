@@ -1,9 +1,9 @@
-# ADR-005: Low-profile four-face comb-fin
+# ADR-005: why I promoted a low-profile four-face comb-fin
 
 **Status:** superseded by [ADR-006](006-edge-bound-redesign.md)  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 ADR-004 promoted an opposed through-flux fin only if two-sided stator access could be made inside
 a credible CubeSat/dispenser cross-section. A single 15 mm fin would either occupy an awkward
@@ -13,9 +13,9 @@ A5a split that magnetic width into three shallow fins per broad face and moved t
 lines from the corners to the centres of the four side faces. Fixed slotted stators surround the
 fin sides; axial motion requires no opening jaw or following launcher member.
 
-## Decision
+## What I decided
 
-Promote the **three-fin, four-face comb** as the exact geometry for A3b nonlinear electromagnetic
+I promoted the **three-fin, four-face comb** as the exact geometry for A3b nonlinear electromagnetic
 analysis and a launch-provider/dispenser drawing review.
 
 - Three covered fins per channel.
@@ -25,9 +25,9 @@ analysis and a launch-provider/dispenser drawing review.
 - Seven 48 mm pitches over 336 mm active length.
 - Four face-centred, independently controlled channels.
 
-The standard corner rails remain mechanically continuous hard-anodized aluminium.
+I retain mechanically continuous hard-anodized aluminium for the standard corner rails.
 
-## Evidence
+## Evidence I used
 
 All 11 A5a executable bands pass against the frozen qualification force and preliminary CDS Rev.
 14.1 guidance:
@@ -43,7 +43,7 @@ All 11 A5a executable bands pass against the frozen qualification force and prel
 These are geometry, mass and allocation outputs. They are not force, strength or compatibility
 evidence.
 
-## Consequences
+## What follows
 
 - The rejected corner L-return does not receive FEA effort.
 - A3b must model the 0.25 mm cover and 0.50 mm mechanical gap on both sides, nonlinear steel,

@@ -1,10 +1,10 @@
 # A3e — explicit serpentine stator and pulse circuit
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** lumped MAGNETIC/CIRCUIT MODEL from ASSUMPTION Gen1 geometry/loss inputs  
-**Purpose:** put real iron, copper, voltage, loss and mass behind A3d's 0.60 T field assumption.
+**Purpose:** I wanted to put real iron, copper, voltage, loss and mass behind A3d's 0.60 T field assumption.
 
-## Topology under test
+## Topology I tested
 
 At every axial phase cell, one transverse flux loop crosses all four Fluxfoil slots in series,
 then turns through two widened outer return legs and a back yoke. The three interior separators
@@ -22,7 +22,7 @@ turn through each 2 mm interior web.
 
 Dimensions and assumptions are frozen in `cad/serpentine_stator_parameters.json`.
 
-## Model
+## The model I used
 
 The slot MMF is $B\ell/\mu_0$. The core contribution uses a deliberately conservative 2500 A/m
 at the rated outer-yoke field over a 50 mm equivalent path. Phase linkage sums nineteen identical
@@ -41,7 +41,7 @@ slip and secondary loss. A 1001-step shot integration adds:
 Phase voltage includes winding resistance, air-gap/core real load and $2\pi fL$. The minimum DC
 link follows the declared modulation utilisation. Current is prebiased before gate release.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -60,7 +60,7 @@ link follows the declared modulation utilisation. Current is prebiased before ga
 
 Paired current, voltage and power limits are stored separately, producing 15 executable bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - This is a one-dimensional magnetic circuit, not 2D/3D FEA.
 - Slot leakage, axial end effects, finite foil height, mutual phase coupling, harmonics and force
@@ -71,8 +71,8 @@ Paired current, voltage and power limits are stored separately, producing 15 exe
 - Prebias is assumed; cold current-rise and fault interruption are not modelled.
 - Provider fit, common-mode normal preload, structure, wear and force remain hardware gates.
 
-## Required output
+## Output I required
 
-The result must report magnetic circuit, winding R/L/current/voltage, active mass, all 441 points
+I required the result to report magnetic circuit, winding R/L/current/voltage, active mass, all 441 points
 for both shots, full energy partitions, efficiency, peak power/frequency, copper rise, every band
 and a disposition.

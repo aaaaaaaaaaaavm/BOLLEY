@@ -1,12 +1,12 @@
 # A5b — four-fin, 6 mm quad-comb screen
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical MODEL OUTPUT from ASSUMPTION geometry checked against named
 EXTERNAL GUIDANCE and MATERIAL DATA  
-**Purpose:** determine whether the smallest clean redesign after A3b0 deserves nonlinear 3D
+**Purpose:** I wanted to determine whether the smallest clean redesign after A3b0 deserves nonlinear 3D
 electromagnetic analysis.
 
-## Geometry under test
+## Geometry I tested
 
 Each face channel gains one fin and 1.0 mm of active height relative to A5a:
 
@@ -21,7 +21,7 @@ The fins remain aligned. Deliberately staggering them would reduce the number on
 overlap slope at once. Continuous commutation is instead assigned to multiple axial stator phases
 on the launcher, which A5b does not yet size.
 
-## Why this is the minimum clean change
+## Why I is the minimum clean change
 
 A3b0 found that 21 ideal active edges require 2.017 T for 255 N. Four fins create 28 edges.
 Increasing active height to 6.0 mm uses most of the preliminary 6.5 mm protrusion allowance without
@@ -30,7 +30,7 @@ aluminium; windings, switches, cooling and stored energy remain on the deployer.
 
 Dimensions are frozen in `cad/quad_comb_parameters.json`.
 
-## External anchors
+## External anchors I used
 
 Envelope values use Cal Poly CubeSat Design Specification Rev. 14.1. Launch-provider requirements
 supersede it:
@@ -40,7 +40,7 @@ The 1.7 T design field is anchored to thyssenkrupp powercore A catalogue polariz
 selected B-H curve:
 <https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html>.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -62,7 +62,7 @@ selected B-H curve:
 The preferred and absolute mass limits are recorded as separate executable bands, so the output
 contains 15 Boolean bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The energy-gradient result is the same optimistic gap-only upper bound used in A3b0. It is not
   nonlinear force evidence.
@@ -74,7 +74,7 @@ contains 15 Boolean bands.
   protrusion reserve.
 - Root capture, strength, vibration, debris and wear remain open.
 
-## Required output
+## Output I required
 
-The result must include derived geometry, moving mass, all 441 force-allocation points, ideal
+I required the result to include derived geometry, moving mass, all 441 force-allocation points, ideal
 edge-force coefficient, force at 1.7 T, required ideal field, every band outcome and a disposition.

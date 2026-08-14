@@ -1,11 +1,11 @@
 # A3c — Fluxfoil travelling-field induction screen
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical THIN-SHEET MODEL OUTPUT from ASSUMPTION geometry/material inputs  
-**Purpose:** decide whether a passive aluminium reaction interface deserves an explicit stator,
+**Purpose:** I wanted to decide whether a passive aluminium reaction interface deserves an explicit stator,
 circuit and field model after the shared-pole reluctance branch failed.
 
-## Geometry under test
+## Geometry I tested
 
 Each broad spacecraft face carries four continuous aluminium fins:
 
@@ -19,7 +19,7 @@ The ordinary corner contact rails remain continuous hard-anodized aluminium. The
 unpowered and hard-anodized externally. The oxide does not interrupt eddy-current loops inside
 each continuous conductor.
 
-## Electromagnetic model
+## The electromagnetic model I used
 
 Two launcher stators apply a symmetric transverse travelling field to both sides of each fin. In
 the conductor frame, the field travels at slip speed $u=v_s-v$. For sheet conductance $G=\sigma t$
@@ -35,7 +35,7 @@ The frozen field input is 0.50 T RMS and the electrical wavelength is 48 mm. Alu
 values are 2.82e-8 ohm m resistivity, 2700 kg/m³ density and 900 J/(kg K) specific heat. No alloy
 or supplier lot has been selected.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -56,7 +56,7 @@ or supplier lot has been selected.
 Preferred/absolute mass and each paired limit are stored as separate Booleans, producing 18
 executable bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The 0.50 T travelling field is an input. No core, winding, air-gap MMF, voltage or DC link has
   produced it.
@@ -68,8 +68,8 @@ executable bands.
 - Provider acceptance, root strength, vibration, debris, wear and repeated-shot temperature are
   open.
 
-## Required output
+## Output I required
 
-The result must include interface dimensions/mass, the rated low-slip root, sheet field/reaction,
+I required the result to include interface dimensions/mass, the rated low-slip root, sheet field/reaction,
 current density, skin depth, local heating, frequency range, normal forces, every frozen CG point,
 worst shot heat/efficiency/power, all band outcomes and a disposition.

@@ -1,11 +1,11 @@
 # A5c — Gen1 parametric CAD package
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** PARAMETRIC CAD geometry and automated manifest checks  
-**Purpose:** turn the A3e architecture into inspectable native geometry without allowing a render
+**Purpose:** I wanted to turn the A3e architecture into inspectable native geometry without allowing a render
 to become a dimensional source.
 
-## Frozen coordinate frame
+## The coordinate frame I froze
 
 - $+x$: firing direction toward the muzzle.
 - $y$: lateral.
@@ -15,7 +15,7 @@ to become a dimensional source.
 The payload leaves in $+x$. Any assembly or figure showing departure through the gate at negative
 $x$ is wrong.
 
-## Objects required
+## Objects I required
 
 1. Fluxfoil interface kit: four continuous fins on each of four faces.
 2. 3U payload envelope proxy with 8.5 mm corner rails.
@@ -28,7 +28,7 @@ $x$ is wrong.
 Each object must be exported as STEP master geometry and derived STL. Source is
 `cad/build_gen1.py`; dimensions are frozen in `cad/gen1_parameters.json`.
 
-## Bands declared before generation
+## Bands I declared before generation
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -43,7 +43,7 @@ Each object must be exported as STEP master geometry and derived STL. Source is
 | A5c-9 | At least five renders are generated from the model, each indexed by source and evidence class. | Reject incomplete repository presentation. |
 | A5c-10 | Every committed CAD artifact has size, SHA-256, solid count, volume and bounding box in `cad/BUILD.json`. | Reject untraceable exports. |
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - CAD volume does not override analytical material mass.
 - Coil packs are envelopes, not individual turns, insulation, potting or terminals.
@@ -52,8 +52,8 @@ Each object must be exported as STEP master geometry and derived STL. Source is
 - The payload proxy is not a spacecraft design and no launch provider has accepted the fins.
 - Interference at nominal dimensions is not a tolerance-stack analysis.
 
-## Required output
+## Output I required
 
-The result must include native and derived files, a machine-readable build manifest, dimension and
+I required the result to include native and derived files, a machine-readable build manifest, dimension and
 BOM documents generated from the same parameter file, render source files, individual band
 outcomes and a list of every detail still needing a modeller or manufacturer.

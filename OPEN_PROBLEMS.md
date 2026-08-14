@@ -1,7 +1,7 @@
 # Open problems
 
-This is the live defect and evidence register. Closing an item requires a linked result,
-measurement, supplier document or decision record. Confidence is not closure.
+I use this as my live defect and evidence register. I close an item only with a linked result,
+measurement, supplier document or decision record. I do not treat confidence as closure.
 
 | ID | Problem | Close condition | Priority | State |
 |---|---|---|---|---|
@@ -45,10 +45,10 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P38 | The nine-cell active window has no switching handoff, force-ripple, fault or end-cell model. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | OPEN |
 | P39 | The 15.908 kg primary leaves 92 g for the active-material band and excludes structure, cooling, wiring and power electronics. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
 
-## Register discipline
+## How I use the register
 
-- `OPEN` means unresolved.
-- `MODELLED` means a model has narrowed the problem but hardware evidence is absent.
-- `CORRECTED` means a previous result was wrong and the replacement is traceable.
-- `CLOSED` requires the stated close condition.
-- `DEFERRED` means deliberately outside the active baseline, not solved.
+- I use `OPEN` for an unresolved problem.
+- I use `MODELLED` when a model has narrowed the problem but hardware evidence is absent.
+- I use `CORRECTED` when a previous result was wrong and I can trace the replacement.
+- I use `CLOSED` only when I have met the stated close condition.
+- I use `DEFERRED` for work I deliberately placed outside the active baseline, not for solved work.

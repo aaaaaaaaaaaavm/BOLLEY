@@ -1,11 +1,11 @@
 # A8a — Gen2.6 axial engagement and sectional-excitation audit
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** exact interval overlap + current-limited kinematic integration  
-**Purpose:** determine whether the 900 mm stator can deliver the 900 mm powered travel claimed by
+**Purpose:** I wanted to determine whether the 900 mm stator can deliver the 900 mm powered travel claimed by
 the post-field shot model when the 336 mm cage actually leaves it.
 
-## Frozen audit
+## The audit I froze
 
 A8a does not change A6g field, A7b cage, current or energy bands. It places the CAD intervals on
 one axis:
@@ -21,7 +21,7 @@ only as needed and clipped at 400 A, and the best axial placement over the same 
 Every trace uses 9,001 travel points. The best-placement search uses 673 declared starting
 positions and cannot change stator or cage length.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 1. As-drawn 375 A reference exit speed is at least 11.8 m/s.
 2. As-drawn 375 A qualification exit speed is at least 10.0 m/s.
@@ -37,7 +37,7 @@ positions and cannot change stator or cage length.
 The 82.0176% resistance limit is the A7b paired-corner diagnostic committed before this gate. It
 is not refit here.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - Overlap force scaling is geometric; no axial transient electromagnetic solve is claimed.
 - Boosting current does not assume the A6g field remains within saturation bands.
@@ -45,15 +45,15 @@ is not refit here.
 - A sectional-window pass is permission to model switches and individual cells, not validation of
   that circuit.
 
-## Required output
+## Output I required
 
-Commit all 9,001 profile rows, the three traces, exact full-overlap length, cell/tile-rounded
+I required the repository to retain all 9,001 profile rows, the three traces, exact full-overlap length, cell/tile-rounded
 lengths and masses, sectional resistance ratios and all ten Boolean bands. A failure rejects the
 as-drawn axial package, not the five-lane transverse field result.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 5/10 bands pass; reject the as-drawn axial package.**
+**I completed the run on 2026-08-13. I recorded: 5/10 bands pass; reject the as-drawn axial package.**
 
 At 375 A the full-force-equivalent work distance is 0.72975 m and exit velocity is 10.702 m/s.
 Clipping an overlap-compensation command at 400 A raises that to only 10.851 m/s. The best

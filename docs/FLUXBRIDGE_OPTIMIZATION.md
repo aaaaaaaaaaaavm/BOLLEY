@@ -4,14 +4,14 @@
 > Evidence class: **ROBUST CONSTRAINED ANALYTICAL DESIGN-SPACE SEARCH**. It inherits A3f's
 > homogenized cage and lumped magnetic assumptions.
 
-## Selection
+## What I selected
 
-The search evaluated **80 nominal candidates**, each at
+I evaluated **80 nominal candidates**, each at
 **8 robustness corners** and 441 CG points for both payload cases:
 640 candidate-corner evaluations. Exactly
 **10 candidates** pass every band at every corner.
 
-The deterministic selection is **p30_B0.56**.
+I selected **p30_B0.56**.
 
 | Frozen Gen2 quantity | Selected value |
 |---|---:|
@@ -41,7 +41,7 @@ core H. It still passes every band. Its reference source energy is
 908.6 J and its qualification source energy is
 1332.7 J.
 
-## What changed from the first A3f pass
+## What I changed after the first A3f pass
 
 | Quantity | A3f first pass | A3g nominal selection |
 |---|---:|---:|
@@ -52,12 +52,12 @@ core H. It still passes every band. Its reference source energy is
 | Qualification source energy | 1650.9 J | 1135.0 J |
 | Source-to-payload efficiency | 26.9% | 39.1% |
 
-The selected primary is 2.46
+My selected primary is 2.46
 kg heavier because the wider slot is deliberately filled with more copper, but nominal qualification
 energy falls by **31.3%** and frequency falls by roughly 40%. The trade is
 physical: fewer, larger cells buy conductor section, lower resistance and a longer wavelength.
 
-## Disposition
+## What I decided next
 
 **FREEZE SELECTED A3G POINT FOR FIELD FEA AND GEN2 CAD.**
 

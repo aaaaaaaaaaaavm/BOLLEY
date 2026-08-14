@@ -1,8 +1,8 @@
 # A3a topology candidates
 
-The initial 0.50 mm magnetic-equivalent thickness was an area-times-density mass screen. It did
-not define where flux returns. A3a replaces that ambiguity with three explicit unit cells before
-nonlinear FEA.
+I used the initial 0.50 mm magnetic-equivalent thickness as an area-times-density mass screen; it
+did not define where flux returns. In A3a I replaced that ambiguity with three explicit unit cells
+before nonlinear FEA.
 
 ## 1. Corner L-return reluctance rail
 
@@ -27,6 +27,5 @@ normal force. A mass-and-area pass only earns a transient electromagnetic/therma
 
 ![Dimensioned A3a unit-cell candidates](../cad/a3a_unit_cells.svg)
 
-The drawing is a topology screen, not released CAD. Dimensions are inputs to the executable
-screen and are intentionally labelled as assumptions.
-
+I use the drawing as a topology screen, not as released CAD. I use its dimensions as executable
+inputs and deliberately label them as assumptions.

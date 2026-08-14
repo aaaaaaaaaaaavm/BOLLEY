@@ -1,11 +1,11 @@
 # A5d — Gen2 Fluxbridge manufacturing-intent CAD gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** parametric CAD, exact nominal solid intersection and analytical volume checks  
-**Purpose:** prove that A3g's selected stator can be represented with a real alternating-layer
+**Purpose:** I wanted to prove that A3g's selected stator can be represented with a real alternating-layer
 winding, a discrete passive cage coupon and an unobstructed positive-x departure.
 
-## Frozen coordinate frame and source
+## The coordinate frame and source I froze
 
 - $+x$: firing direction toward the 1000 mm muzzle station.
 - $y$: lateral.
@@ -14,7 +14,7 @@ winding, a discrete passive cage coupon and an unobstructed positive-x departure
 - Controlled dimensions: `cad/gen2_parameters.json`.
 - Performance source: selected A3g candidate `p30_B0.56`.
 
-## Required CAD objects
+## CAD objects I required
 
 1. Homogenized full-length Fluxbridge interface kit on a 3U payload proxy.
 2. Discrete 60 mm Fluxbridge coupon with 0.75 mm copper rungs at 2 mm pitch and continuous buses.
@@ -28,7 +28,7 @@ The full-length blade may use split-thickness magnetic/copper envelopes because 
 homogenized. The coupon must resolve every copper rung and magnetic ligament. Both representations
 must be labelled; neither may masquerade as the other.
 
-## Bands declared before generation
+## Bands I declared before generation
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -46,7 +46,7 @@ must be labelled; neither may masquerade as the other.
 | A5d-12 | Every export records size, SHA-256, solid count, volume and bounding box in a build manifest. | Reject untraceable exports. |
 | A5d-13 | CAD coil-envelope volume agrees with A3g analytical copper volume within 0.5%. | Reject mass/geometry inconsistency. |
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - A 0.20 mm nominal gap is not a tolerance stack.
 - Coil packs do not resolve four turns, insulation, impregnation, leads or terminals.
@@ -56,9 +56,9 @@ must be labelled; neither may masquerade as the other.
   launch-provider acceptance.
 - No generated export is a manufacturing release.
 
-## Required output
+## Output I required
 
-Commit reproducible source, manifest, STEP/STL exports or an explicit regeneration policy, at
+I required reproducible source, manifest, STEP/STL exports or an explicit regeneration policy, at
 least seven inspected renders, a dimensions sheet, BOM, exact intersection volumes, all band
 outcomes, a figure index and a manual-detail ledger. A5d passing promotes Gen2 geometry to field,
 structure and tolerance analysis only.

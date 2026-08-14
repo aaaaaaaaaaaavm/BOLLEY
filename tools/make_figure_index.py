@@ -77,8 +77,8 @@ def render() -> str:
     lines = [
         "# Figure index",
         "",
-        "> Every figure is indexed by its generating source and evidence class. No figure in this",
-        "> repository is test observation or flight evidence.",
+        "> I index every figure by its generating source and evidence class. I do not present any",
+        "> figure in this repository as test observation or flight evidence.",
         "",
         "| ID | Figure | Source | Evidence class | Disposition |",
         "|---|---|---|---|---|",
@@ -98,8 +98,8 @@ def render() -> str:
             f"- Parametric/model/schematic figures: **{len(rows)}**.",
             "- Physically observed figures: **0**.",
             "",
-            "A render may explain topology or nominal fit. It cannot close force, field, thermal,",
-            "structural, tolerance, wear, vacuum or release evidence without the corresponding result.",
+            "I use a render to explain topology or nominal fit. I do not use it to close force, field,",
+            "thermal, structural, tolerance, wear, vacuum or release evidence without the corresponding result.",
         ]
     )
     return "\n".join(lines) + "\n"

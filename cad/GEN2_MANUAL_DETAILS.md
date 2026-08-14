@@ -1,7 +1,7 @@
 # Gen2 details not yet modelled
 
-This is the CAD handoff ledger. A blank space in the current model is not permission for a
-fabricator to improvise it.
+I use this as my CAD handoff ledger. I do not treat a blank space in the current model as
+permission for a fabricator to improvise it.
 
 | ID | Missing detail | Required input | Close artifact |
 |---|---|---|---|
@@ -22,6 +22,6 @@ fabricator to improvise it.
 | C15 | Tolerance and datum scheme | Manufacturing capability and worst-case gap budget | GD&T drawing set + stack calculation |
 | C16 | Assembly/service sequence | Tool access, replaceable cassettes and inspection points | Exploded assembly + work instruction |
 
-The parametric source can be extended to these parts once their engineering inputs exist. Producing
-ornamental fasteners or arbitrary cooling passages before those inputs would create false detail,
+I can extend the parametric source to these parts once I have their engineering inputs. I will not
+add ornamental fasteners or arbitrary cooling passages before then; that would create false detail,
 not readiness.

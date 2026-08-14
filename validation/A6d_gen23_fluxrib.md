@@ -1,11 +1,11 @@
 # A6d — Gen2.3 Fluxrib nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** decide whether a 14.23 g cooperative-interface change closes A6c without sacrificing
+**Purpose:** I wanted to decide whether a 14.23 g cooperative-interface change closes A6c without sacrificing
 copper rung duty, field floor or stationary-return margin.
 
-## Frozen correction
+## The correction I froze
 
 A6c leaves only the moving magnetic ligament above its band. MMF cannot fall materially without
 crossing the field floor. Gen2.3 therefore thickens only the magnetic portion of each passive
@@ -17,7 +17,7 @@ Fluxbridge blade:
 - stationary slots grow from 1.40 to 1.52 mm, preserving 0.20 mm rib clearance per side;
 - separators become 2.48 mm and outer legs 7.24 mm; the 28 mm face is unchanged.
 
-This is a stepped-thickness passive cage: magnetic ribs are locally thicker than copper rungs.
+I use a stepped-thickness passive cage here: magnetic ribs are locally thicker than copper rungs.
 The active-height copper ladder, buses, 1,200 A-turn primary, R4 manifold and three-turn winding
 are unchanged.
 
@@ -27,7 +27,7 @@ still below the original 0.30 kg preferred screen. Analytical active primary mas
 A non-validation 0.30 mm development mesh was used only to choose the rib width. It cannot pass
 A6d. This run sheet, inherited fine/base/expanded meshes and all bands are frozen before output.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 A6d repeats all 13 A6c Boolean bands unchanged. Field range, slot imbalance, active-height CV,
 ligament peak, stationary-core peak, source closure and nonlinear closure use the worst of base,
@@ -39,7 +39,7 @@ fine and expanded meshes. In particular:
 - fine inductance must be 0.68–1.05 times A3g; and
 - the same 2% field, 4% coenergy and 2% boundary convergence limits apply.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The stepped rib has no structural, fatigue, debris, thermal-expansion or manufacturing proof.
 - Its mass is geometric accounting, not a measured part.
@@ -47,9 +47,9 @@ fine and expanded meshes. In particular:
 - This remains a magnetostatic slice, not transient induction or axial-force evidence.
 - Passing requires new CAD and cage/circuit analysis; Gen2 STEP files do not represent Fluxrib.
 
-## Required output
+## Output I required
 
-Commit all three meshes, histories, worst-mesh extrema, 13 bands and three indexed figures. Pass
+I required the repository to retain all three meshes, histories, worst-mesh extrema, 13 bands and three indexed figures. Pass
 promotes only to Gen2.3 circuit, transient cage and manufacturing-intent CAD closure.
 
 ### Execution correction declared before a completed solve
@@ -59,9 +59,9 @@ inheritance level (`Gen2.3 -> Gen2.2`) and therefore never reached the Gen2.1 me
 field value was produced. The loader was corrected to resolve parent files recursively with cycle
 detection. No parameter, geometry, material, mesh or band changed.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 12/13 bands pass; Gen2.3 is rejected.**
+**I completed the run on 2026-08-13. I recorded: 12/13 bands pass; Gen2.3 is rejected.**
 
 The base, fine and expanded meshes contain 210,650, 747,114 and 237,770 triangles. All numerical
 differences are below 0.31%. Worst mean field is 0.7430–0.7453 T, stationary peak is 1.4598 T and

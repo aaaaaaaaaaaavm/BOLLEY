@@ -1,10 +1,11 @@
-# Validation register
+# My validation register
 
-Validation starts before the result.
+I start validation before I know the result.
 
-Each run sheet states inputs, evidence class, numerical bands and the action following a failure.
-The committed run sheet is not edited to make a completed run pass. If a band was wrong, an ADR
-may supersede it while preserving the original and stating that the answer was already known.
+In each run sheet I state inputs, evidence class, numerical bands and the action following a
+failure. I do not edit a committed run sheet to make a completed run pass. If I decide a band was
+wrong, I supersede it with an ADR while preserving the original and stating that I already knew
+the answer.
 
 | Run | Question | Evidence | Current disposition |
 |---|---|---|---|
@@ -27,4 +28,5 @@ may supersede it while preserving the original and stating that the answer was a
 | [A5d](A5d_gen2_cad.md) | Does the selected Fluxbridge stator and cage fit in manufacturing-intent nominal CAD? | Parametric CAD + exact intersection checks | 13/13 pass; geometry retained |
 | [A6](A6_gen2_field.md) | Does the actual nonlinear cross-section reproduce A3g field and inductance without core saturation? | Three-mesh 2D nonlinear magnetostatic FEA | 10/13 pass; operating point rejected |
 
-`MODELLED` is not a synonym for `VALIDATED`. Only hardware evidence can close the central claim.
+I do not use `MODELLED` as a synonym for `VALIDATED`. Only hardware evidence can close my central
+claim.

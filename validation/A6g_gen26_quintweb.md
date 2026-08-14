@@ -1,11 +1,11 @@
 # A6g — Gen2.6 Quintweb nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** determine whether a fifth layered blade can add the passive active area A7a needs
+**Purpose:** I wanted to determine whether a fifth layered blade can add the passive active area A7a needs
 without losing the transverse field solution or exceeding the absolute payload mass limit.
 
-## Frozen correction
+## The correction I froze
 
 Gen2.6 **Quintweb** retains the Gen2.5 blade section and adds one blade per face:
 
@@ -26,7 +26,7 @@ compared 30, 31 and 32 mm return faces at 1,500 A-turn. The selected 31 mm point
 0.740 T mean field, 1.253 T moving-material peak, 1.447 T core peak and 1.296 times A3g per-cell
 inductance. Those development values chose the point but cannot pass A6g.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 A6g retains the same worst-of-three-mesh physical rules and 13 Boolean bands used by A6f, with
 one predeclared drive-informed change: maximum per-cell inductance becomes 1.40 times A3g instead
@@ -39,7 +39,7 @@ must be reclosed after this solve. All other limits remain:
 - slot imbalance <=5% and active-height CV <=15%; and
 - 2% field, 4% coenergy, 2% boundary, 1e-10 source and 1e-4 nonlinear closure limits.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The five axial cage patterns remain homogenized in a transverse 2D slice.
 - The 31 mm stationary face and five slots have no routed winding or assembly CAD.
@@ -47,14 +47,14 @@ must be reclosed after this solve. All other limits remain:
 - The 11.77 g absolute mass margin is accounting, not a weighed retained assembly.
 - Structure, tolerance, debris, magnetic compatibility, switching and force remain open.
 
-## Required output
+## Output I required
 
-Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
+I required the repository to retain all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. A pass opens five-lane cage/circuit reclosure and Gen3 CAD only.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 13/13 bands pass; Quintweb advances to A7b and Gen3 CAD.**
+**I completed the run on 2026-08-13. I recorded: 13/13 bands pass; Quintweb advances to A7b and Gen3 CAD.**
 
 The base, fine and expanded meshes contain 212,850, 751,282 and 240,130 triangles. Worst mean
 field is 0.7426–0.7454 T, moving-material peak is 1.2888 T, stationary-core peak is 1.5138 T and

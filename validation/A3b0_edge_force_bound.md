@@ -1,23 +1,23 @@
 # A3b0 — ideal tooth-edge force bound
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical UPPER BOUND from ASSUMPTION geometry, anchored to named EXTERNAL
 MATERIAL DATA  
-**Purpose:** kill an impossible comb before nonlinear FEA, winding design or hardware work.
+**Purpose:** I wanted to kill an impossible comb before nonlinear FEA, winding design or hardware work.
 
-## Question
+## The question I asked
 
 Can the exact A5a three-fin channel reach the frozen 255 N average-force gate even in an ideal
 gap-dominated reluctance model?
 
-## Why this run precedes A3b
+## Why I run precedes A3b
 
 The A5a developed-area result divided force by both long fin faces. In a tooth-overlap switched-
 reluctance machine, axial work comes from the change in overlap area at each active tooth edge.
 Whole-face shear is therefore not a force proof. A geometry that fails the ideal energy-gradient
 bound cannot be rescued by a more detailed solver.
 
-## Frozen topology and derivation
+## The topology and derivation I froze
 
 - Three fins per channel and seven 48 mm teeth per fin over 336 mm.
 - One increasing-overlap edge per energized tooth and fin: 21 simultaneous ideal edges.
@@ -36,7 +36,7 @@ Substitution gives the optimistic edge bound
 
 $$F_{edge}=\frac{B^2gh}{\mu_0}.$$
 
-## Material reality anchor
+## The material reality anchor I used
 
 thyssenkrupp Steel lists minimum magnetic polarization of 1.70 T at 10,000 A/m for powercore A
 M270-50A. A3b0 uses 1.7 T as its preferred design field and a deliberately generous 2.0 T as the
@@ -44,7 +44,7 @@ hard upper-bound ceiling. Neither number substitutes for a selected batch's B-H 
 
 Source: <https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html>.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -55,9 +55,9 @@ Source: <https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electri
 The hard disposition uses A3b0-1 and A3b0-3. The preferred band exposes designs that nominally
 clear the mathematical force gate but leave no credible room for steel drop or leakage.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
-- This is not FEA and does not model finite steel permeability, saturation shape, leakage,
+- I do not treat this as FEA and does not model finite steel permeability, saturation shape, leakage,
   fringing, end effects or tooth-to-tooth coupling.
 - It applies no winding window, ampere-turn, voltage, current, inverter, thermal or normal-force
   constraint.
@@ -65,7 +65,7 @@ clear the mathematical force gate but leave no credible room for steel drop or l
 - Passing would only earn nonlinear 3D analysis. Failure is decisive because every omitted effect
   makes useful force lower, not higher.
 
-## Required output
+## Output I required
 
-The result must report the force coefficient, force-versus-field sweep, field required for 255 N,
+I required the result to report the force coefficient, force-versus-field sweep, field required for 255 N,
 ideal force at 2.0 T, band outcomes and the minimum integer fin count at 1.7 T and 2.0 T.

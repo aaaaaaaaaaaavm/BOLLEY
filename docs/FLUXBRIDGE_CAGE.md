@@ -4,7 +4,7 @@
 > Evidence class: **HOMOGENIZED PASSIVE-CAGE + LUMPED MAGNETIC/CIRCUIT MODEL OUTPUT**. This is
 > not field FEA, a winding drawing, supplier qualification or measurement.
 
-## Result
+## What I found
 
 **23/23 declared bands pass.** Failed bands: none.
 
@@ -44,7 +44,7 @@ copper.
 | Peak DC power | 9.56 kW | 14.02 kW |
 | Worst cage / primary copper rise | 7.9 / 0.29 K | 9.1 / 0.42 K |
 
-## What the modification bought
+## What I gained from the modification
 
 Relative to A3e, rated MMF falls from 3,945 to 1423 A-turn and active
 primary mass falls from 40.96 to 9.37 kg. The CAD-discovered winding contradiction
@@ -56,7 +56,7 @@ on the reference shot versus A3e's 821 J because cage slip and a conservative hi
 remain expensive. The pass therefore promotes a pitch/field/copper optimisation—not a claim that
 the first passing point is finished.
 
-## Disposition
+## What I decided next
 
 **PROMOTE FLUXBRIDGE TO FIELD FEA AND GEN2 CAD.**
 

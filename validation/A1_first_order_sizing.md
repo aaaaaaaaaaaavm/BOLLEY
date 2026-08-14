@@ -1,16 +1,16 @@
 # A1 — first-order sizing
 
-## Question
+## The question I asked
 
 Does the proposed rail area and mass clear a first-order screen strongly enough to justify an
 electromagnetic model?
 
-## Inputs
+## Inputs I froze
 
 Inputs come from `cad/parameters.json`. They are assumptions except for the named CubeSat
 geometry/mass guidance and the published 35.16 kPa LSRM shear benchmark.
 
-## Bands declared before the run
+## Bands I declared before the run
 
 | Band | Pass condition | Failure action |
 |---|---|---|
@@ -24,7 +24,7 @@ geometry/mass guidance and the published 35.16 kPa LSRM shear benchmark.
 
 Passing A1 means only that dimensions do not immediately kill the concept.
 
-## Script
+## Script I used
 
 `python analysis/baseline.py --write`
 

@@ -1,17 +1,17 @@
-# ADR-002: active stator, passive reluctance rails
+# ADR-002: why I chose an active stator and passive reluctance rails
 
 **Status:** superseded in part by [ADR-004](004-explicit-flux-path.md)  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 Once a small payload modification is allowed, the secondary can be conductive, magnetic, wound
 or permanently magnetised. The choice decides mass, spacecraft compatibility and launcher
 complexity.
 
-## Decision
+## What I decided
 
-Use a segmented long-primary reluctance machine with the windings on the launcher and passive
+I chose a segmented long-primary reluctance machine with the windings on the launcher and passive
 soft-magnetic poles embedded in four spacecraft rails.
 
 ## Rejected alternatives
@@ -25,7 +25,7 @@ soft-magnetic poles embedded in four spacecraft rails.
 - **Launcher-owned magnetic sled:** already explored by VOLLEY; its mover mass is the problem this
   decision exists to remove.
 
-## Consequences
+## What follows
 
 The passive translator is cheap and unpowered. The costs move into nonlinear commutation,
 attractive normal force, covered-gap force density and possible remanence. Those are now the

@@ -1,9 +1,9 @@
-# ADR-007: Promote passive aluminium Fluxfoil to the Gen1 lane
+# ADR-007: why I promoted passive aluminium Fluxfoil to the Gen1 lane
 
 **Status:** superseded at 0.50 T by [ADR-008](008-fluxfoil-operating-point.md)  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 The cooperative payload premise remains valuable, but two distinct reluctance geometries have now
 failed for different physical reasons:
@@ -17,9 +17,9 @@ The single-sided aluminium induction lane was retained by A3a specifically for t
 Its missing moving flux return is a feature rather than an ambiguity: induced currents react
 directly against a launcher-generated travelling field.
 
-## Decision
+## What I decided
 
-Promote **Fluxfoil** to the Gen1 analytical lane:
+I promoted **Fluxfoil** to the Gen1 analytical lane:
 
 - four continuous 6 mm aluminium fins on each broad face;
 - symmetric launcher stators on both sides of every fin;
@@ -27,11 +27,10 @@ Promote **Fluxfoil** to the Gen1 analytical lane:
 - four independently controlled face channels for force-centroid placement; and
 - no steel, permanent magnets, windings, power or launch-time electronics on the spacecraft.
 
-The former quad-comb envelope is deliberately reused. The moving segmented steel is replaced by
-continuous aluminium, so the cooperative hardware becomes lighter and its remanence problem is
-removed.
+I deliberately reused the former quad-comb envelope. I replaced the moving segmented steel with
+continuous aluminium, making the cooperative hardware lighter and removing its remanence problem.
 
-## Consequences
+## What follows
 
 - The shared-pole reluctance stator does not receive nonlinear FEA or winding design.
 - A3c must first close thin-sheet slip, reaction, current density, heating, frequency, normal-force

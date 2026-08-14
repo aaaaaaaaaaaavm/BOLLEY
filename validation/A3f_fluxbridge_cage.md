@@ -1,11 +1,11 @@
 # A3f — Fluxbridge passive cage and package rescue
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** homogenized PASSIVE-CAGE + LUMPED MAGNETIC/CIRCUIT MODEL from assumptions  
-**Purpose:** determine whether a small passive payload modification can remove the Gen1 winding
+**Purpose:** I wanted to determine whether a small passive payload modification can remove the Gen1 winding
 contradiction without importing a sled, permanent magnets or onboard power.
 
-## Why this gate exists
+## Why I gate exists
 
 A5c found that Gen1's four aluminium fins fit the magnetic slots, but the A3e winding does not.
 The exact CAD overlap is 3,987.375 mm³ per face. More fundamentally, twenty 20 mm² turns require
@@ -20,9 +20,9 @@ Each 1 mm blade becomes a passive **Fluxbridge cage**:
 - the cage is electrically passive and receives no spacecraft power; and
 - four blades per face preserve independent force-centroid control.
 
-This is a concept under test, not a novelty or flight-compatibility claim.
+I treat this as a concept under test, not a novelty or flight-compatibility claim.
 
-## Frozen model
+## The model I froze
 
 - Four faces, four blades per face, 336 mm active length.
 - 1.00 mm gross blade, 5.50 mm active cage height, 6.25 mm total projection.
@@ -36,7 +36,7 @@ This is a concept under test, not a novelty or flight-compatibility claim.
 - 48 V nominal DC link and prebias before release.
 - Bare 4 kg reference and 6 kg qualification payloads; calculated interface mass is added.
 
-The complete input is frozen in `cad/fluxbridge_parameters.json`.
+I froze the complete input in `cad/fluxbridge_parameters.json`.
 
 The cage uses the same low-slip thin-sheet relation as A3d, but substitutes its equivalent copper
 sheet conductance. Tooth duty converts equivalent field to tooth field. The magnetic ligament
@@ -44,7 +44,7 @@ field divides tooth flux by the remaining 0.625 axial magnetic fraction. The sho
 include payload work, cage loss, moving-matrix loss, stationary-core loss, primary copper loss and
 inverter loss at all 441 CG points for both payload cases.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -66,18 +66,18 @@ inverter loss at all 441 CG points for both payload cases.
 
 Paired limits are stored separately and will produce more than fifteen executable bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - Homogenizing discrete copper bars as a sheet is not cage FEA.
 - Supplier ribbon values do not prove properties after perforation, lamination, bonding or vibration.
 - Magnetic attraction, slot harmonics, cogging, bar current crowding, end-bus resistance, fringing
   and six-degree-of-freedom tip-off require independent models.
 - A 0.20 mm nominal gap is not a tolerance stack.
-- This is not launch-provider approval, a manufacturing release or proof of legal novelty.
+- I do not treat this as launch-provider approval, a manufacturing release or proof of legal novelty.
 - Gate, housing, inverter, DC link, cooling, sensors, cabling and structure remain outside active
   electromagnetic mass.
 
-## Required output
+## Output I required
 
 Report moving-interface mass by material, cage conductance/slip/current/heat, magnetic fields/MMF,
 winding window/current/R/L/voltage, primary mass, full energy partition at every CG point, frequency,

@@ -1,12 +1,12 @@
 # A6e — Gen2.4 Fluxrib nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** decide whether one final, bounded cooperative-interface trade closes the A6d
+**Purpose:** I wanted to decide whether one final, bounded cooperative-interface trade closes the A6d
 magnetic-ligament miss without sacrificing copper duty, field floor or the absolute payload mass
 limit.
 
-## Frozen correction
+## The correction I froze
 
 A6d leaves only the moving magnetic ligament above its band. Gen2.4 makes two coupled corrections:
 
@@ -27,7 +27,7 @@ Two non-validation 0.30 mm development meshes compared 1,180 and 1,190 A-turn at
 ligament peaks. These values selected the 1,190 A-turn point but cannot pass A6e. This run sheet,
 all inherited formal meshes and every field band are frozen before formal output.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 A6e repeats all 13 A6d Boolean field bands unchanged. Physical field bands use the worst of base,
 fine and expanded-boundary meshes:
@@ -44,7 +44,7 @@ The known 0.30 kg preference miss is reported alongside the gate. It is not one 
 magnetic bands. The 0.40 kg absolute interface limit remains a hard prerequisite and is already
 closed by frozen geometric accounting.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The stepped rib has no structural, fatigue, debris, thermal-expansion or manufacturing proof.
 - Its mass is geometric accounting, not a measured part.
@@ -53,14 +53,14 @@ closed by frozen geometric accounting.
 - A field pass requires new CAD and cage/circuit analysis; Gen2 STEP files do not represent
   Gen2.4.
 
-## Required output
+## Output I required
 
-Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
+I required the repository to retain all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. Pass promotes only to Gen2.4 circuit, transient cage and manufacturing-intent CAD closure.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 12/13 magnetic bands pass; Gen2.4 is rejected.**
+**I completed the run on 2026-08-13. I recorded: 12/13 magnetic bands pass; Gen2.4 is rejected.**
 
 The base, fine and expanded meshes contain 209,000, 743,988 and 236,000 triangles. All declared
 bulk numerical differences are below 0.30%. Worst mean field is 0.7376–0.7390 T, stationary peak

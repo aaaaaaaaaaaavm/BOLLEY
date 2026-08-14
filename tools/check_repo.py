@@ -58,11 +58,27 @@ def check_links() -> None:
                 raise SystemExit(f"broken local link in {document.relative_to(ROOT)}: {target}")
 
 
+def check_authored_voice() -> None:
+    """Keep the engineering narrative in the author's first-person voice."""
+    first_person = re.compile(r"\b(?:I|my|me|mine)\b")
+    missing = []
+    for document in ROOT.rglob("*.md"):
+        if not first_person.search(document.read_text(encoding="utf-8")):
+            missing.append(document.relative_to(ROOT))
+    if missing:
+        raise SystemExit(
+            "Markdown files missing the authored first-person voice: "
+            + ", ".join(str(path) for path in missing)
+        )
+
+
 def main() -> None:
     banned = [ROOT / "paper", ROOT / "paper.tex", ROOT / "bibliography.bib"]
     present = [path.relative_to(ROOT) for path in banned if path.exists()]
     if present:
         raise SystemExit(f"paper-production paths are outside repository scope: {present}")
+
+    check_authored_voice()
 
     for script in list((ROOT / "analysis").glob("*.py")) + list((ROOT / "tools").glob("*.py")):
         subprocess.run([sys.executable, "-m", "py_compile", str(script)], check=True)

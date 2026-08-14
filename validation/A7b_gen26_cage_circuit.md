@@ -1,12 +1,12 @@
 # A7b — Gen2.6 Quintweb cage/circuit reclosure
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **State after execution:** MODELLED — REJECT EXACT GEN2.6 CIRCUIT POINT  
 **Evidence class:** post-field homogenized cage + lumped circuit/CG shot model  
-**Purpose:** decide whether 25% more passive active area closes every A7a translator failure
+**Purpose:** I wanted to decide whether 25% more passive active area closes every A7a translator failure
 without moving its thresholds.
 
-## Frozen model
+## The model I froze
 
 A7b repeats the A7a model and all its corners with these controlled substitutions only:
 
@@ -21,7 +21,7 @@ Every 21 by 21 CG point is evaluated for 4 kg reference and 6 kg qualification p
 four corners combine 90/100% cage conductance and 100/125% phase resistance. No development
 A7b result was used to select another parameter.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 All 19 A7a hard bands are unchanged, including:
 
@@ -36,16 +36,16 @@ All 19 A7a hard bands are unchanged, including:
 
 The 0.25 kg target and 0.30 kg preference remain separate failed preferences.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - This is the same quasi-steady homogenized cage law that failed A7a, not transient FEA.
 - Discrete rung current crowding, end buses, switching, finite ends and force ripple remain absent.
 - The added blade has field evidence but no structural, tolerance or retained-mass CAD evidence.
 - A pass cannot close P29 or validate the machine.
 
-## Required output
+## Output I required
 
-Commit all four corners, both payload cases, all 3,528 CG/corner/payload point records, 19 bands
+I required the repository to retain all four corners, both payload cases, all 3,528 CG/corner/payload point records, 19 bands
 and both preference failures. A pass opens Gen3 CAD and transient-force work only.
 
 ### Execution correction declared before a completed run
@@ -55,7 +55,7 @@ Gen2.6 child field-parameter file and did not resolve its inherited Gen2.5 magne
 A7b value was produced. The shared loader was corrected to resolve parent files recursively with
 cycle detection. No geometry, field result, corner, model equation or band changed.
 
-## Committed result
+## What I recorded
 
 The corrected run produced all 3,528 declared records. Two nominal-resistance corners pass all
 19 bands. The two 125% phase-resistance corners pass 18/19 and fail only reference source energy.

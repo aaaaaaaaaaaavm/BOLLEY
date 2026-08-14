@@ -1,28 +1,29 @@
-# ADR-030 — reject the as-drawn Gen2.6 axial package
+# ADR-030 — why I rejected the as-drawn Gen2.6 axial package
 
 - **Date:** 2026-08-13
 - **Status:** Accepted
 - **Decider:** Adityavardhan Mishra
 - **Evidence:** A8a exact overlap and current-limited kinematic audit
 
-## Decision
+## What I decided
 
-Reject the 900 mm stator / 336 mm cage package as the geometry behind a 900 mm constant-force
-shot. Preserve the five-lane transverse field evidence and sectional-excitation correction.
+I rejected the 900 mm stator / 336 mm cage package as the geometry behind a 900 mm constant-force
+shot. I preserved the five-lane transverse-field evidence and sectional-excitation correction.
 
-## Why
+## Why I chose it
 
-The cage reaches zero overlap before the commanded travel ends. It produces only 0.72975 m of
-full-force-equivalent work and 10.702 m/s at 375 A. Neither 400 A nor the best axial placement
-reaches the 11.8 m/s band.
+I found that the cage reaches zero overlap before the commanded travel ends. It produces only
+0.72975 m of full-force-equivalent work and 10.702 m/s at 375 A. I could not reach my 11.8 m/s
+band with either 400 A or the best axial placement.
 
-A full-overlap extension reaches 22.199 kg at the first complete three-phase cell count, so simply
-making Gen2.6 longer fails the 16 kg primary bound. In contrast, energising only intersected cells
-or tiles reduces A7b phase resistance enough to close its isolated hot-energy diagnostic.
+I found 22.199 kg at the first complete three-phase cell count for a full-overlap extension, so I
+could not simply make Gen2.6 longer without failing my 16 kg primary bound. In contrast, by
+energising only intersected cells or tiles I reduce A7b phase resistance enough to close its
+isolated hot-energy diagnostic.
 
-## Consequences
+## What follows
 
-- P36 remains open and is now modelled rather than implicit.
-- Gen3 CAD is blocked on a shorter, aft-positioned active cage and sectional stator co-design.
-- A8b must search installed mass and overlap together; it cannot optimise source energy alone.
-- Earlier A7a/A7b results remain conservative circuit evidence, not full-stroke validation.
+- I kept P36 open, but moved it from implicit to modelled.
+- I blocked Gen3 CAD on a shorter, aft-positioned active cage and sectional-stator co-design.
+- I required A8b to search installed mass and overlap together rather than optimise source energy alone.
+- I retained my earlier A7a/A7b results as conservative circuit evidence, not full-stroke validation.

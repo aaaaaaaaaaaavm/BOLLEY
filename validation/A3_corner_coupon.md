@@ -1,11 +1,11 @@
 # A3 — one-corner electromagnetic coupon
 
-## Question
+## The question I asked
 
 Can a covered hybrid rail and one stator channel produce the qualification force for the full
 pulse while current can still commutate at maximum speed?
 
-## Bands declared before FEA or hardware
+## Bands I declared before FEA or hardware
 
 | Quantity | Preferred | Fail / kill |
 |---|---:|---:|
@@ -19,7 +19,7 @@ pulse while current can still commutate at maximum speed?
 The coupon must include the aluminium cover, adhesive/capture geometry, nominal gap and worst
 manufacturing gap. A bare steel result does not answer the question.
 
-## State
+## Where I left it
 
 NOT RUN. A nonlinear flux-linkage map is required before hardware.
 

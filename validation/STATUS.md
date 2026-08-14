@@ -29,8 +29,8 @@
 | A8a | MODELLED | 5/10 bands pass over 9,001 travel points. The 900 mm axial package and simple full-overlap extension are rejected; sectional excitation survives. |
 | A8b | MODELLED | 77/2,856 candidates pass every declared band. `n27_p45.3_I380_A10.4` is selected for fresh field and circuit reclosure. |
 
-This file is updated only after the corresponding committed run sheet exists.
+I update this file only after the corresponding committed run sheet exists.
 
-`MODELLED` never means measured. A8b closes the coupled axial/sectional analytical question for one
-Gen2.7 point. Its field is still an A6g current-scaled surrogate, so A6h and A7c must pass before
-the new package can supersede the rejected Gen2.6 geometry.
+I never use `MODELLED` to mean measured. In A8b I closed the coupled axial/sectional analytical
+question for one Gen2.7 point. Its field is still my A6g current-scaled surrogate, so I require A6h
+and A7c to pass before the new package can supersede the rejected Gen2.6 geometry.

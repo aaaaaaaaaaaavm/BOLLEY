@@ -1,16 +1,16 @@
 # A3b1 — shared-pole stator throat bound
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical FLUX-CONSERVATION UPPER BOUND from ASSUMPTION topology, anchored
 to named EXTERNAL MATERIAL DATA  
-**Purpose:** decide whether the exact A5b five-web stationary sketch deserves nonlinear FEA.
+**Purpose:** I wanted to decide whether the exact A5b five-web stationary sketch deserves nonlinear FEA.
 
-## Question
+## The question I asked
 
 Can the four-fin quad-comb's 2 mm shared stationary pole webs turn the required gap flux into a
 conventional radial back yoke without impossible pole field or an interface-width violation?
 
-## Frozen topology
+## The topology I froze
 
 - Four 2.0 mm moving slots separated by five 2.0 mm stationary pole webs.
 - Alternating pole polarity across the face so every fin sees transverse flux.
@@ -27,14 +27,14 @@ $$B_{pole}\,w_{pole}=m\,B_{gap}\,h_{fin},$$
 where multiplicity $m=1$ at an outer pole and $m=2$ at an interior shared pole. Axial overlap
 cancels from both sides of the area balance.
 
-## Material anchor
+## The material anchor I used
 
 The preferred pole field is 1.7 T and the deliberately optimistic hard ceiling is 2.0 T. The
 1.7 T anchor follows thyssenkrupp powercore A catalogue polarization data; neither value is a
 selected B-H curve:
 <https://www.thyssenkrupp-steel.com/en/products/electrical-steel/electrical-steel-non-grain-oriented/powercore-a/powercore-a.html>.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -46,7 +46,7 @@ selected B-H curve:
 
 Preferred and hard field checks are stored separately, producing seven executable bands.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - This bound assumes uniform, leakage-free flux and no local corner concentration.
 - It does not cover an axially multiplexed, individually returned or superconducting stator.
@@ -54,8 +54,8 @@ Preferred and hard field checks are stored separately, producing seven executabl
 - Failure rejects the exact shared-pole stator, not every possible reluctance launcher and not the
   already-modelled quad-comb payload mass.
 
-## Required output
+## Output I required
 
-The result must report outer/interior throat fields, the throat-limited gap field and force,
+I required the result to report outer/interior throat fields, the throat-limited gap field and force,
 required pole widths at 1.7 T and 2.0 T, resulting footprint fractions, all band outcomes and a
 disposition.

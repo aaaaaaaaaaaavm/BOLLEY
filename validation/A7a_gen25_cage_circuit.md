@@ -1,11 +1,11 @@
 # A7a — Gen2.5 post-field cage/circuit reclosure
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** post-field homogenized cage + lumped circuit/CG shot model  
-**Purpose:** decide whether the A6f field point and Fluxweb's 8% copper-conductance trade still
+**Purpose:** I wanted to decide whether the A6f field point and Fluxweb's 8% copper-conductance trade still
 meet the energy, slip, thermal, voltage and current gates that selected Gen2.
 
-## Frozen model
+## The model I froze
 
 - A6f's minimum three-mesh mean tooth field controls force; its largest three-mesh inductance
   controls voltage.
@@ -18,10 +18,10 @@ meet the energy, slip, thermal, voltage and current gates that selected Gen2.
 - Four robustness corners combine 90/100% nominal cage conductance with 100/125% phase
   resistance. The field already uses the lowest formal A6f mesh result.
 
-This is a quasi-steady reclosure of the existing analytical cage law. It is deliberately cheaper
+I treat this as a quasi-steady reclosure of the existing analytical cage law. It is deliberately cheaper
 than the transient solve it gates.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 Each robustness corner must pass all 19 hard bands:
 
@@ -40,7 +40,7 @@ Each robustness corner must pass all 19 hard bands:
 The 0.25 kg programme target and 0.30 kg interface preference are recorded separately and already
 fail. They are not silently removed, but neither replaces the 0.40 kg hard requirement.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The cage is still a homogenized sheet, not discrete electromagnetic FEA.
 - Prebias is assumed; inverter switching and cold current establishment are absent.
@@ -48,15 +48,15 @@ fail. They are not silently removed, but neither replaces the 0.40 kg hard requi
 - Material loss and hot-resistance corners are model assumptions, not coupon measurements.
 - Passing cannot close P29 or support a hardware claim.
 
-## Required output
+## Output I required
 
-Commit all four corners, both payload cases, all 441 CG points per case, every band and the
+I required the repository to retain all four corners, both payload cases, all 441 CG points per case, every band and the
 preference failures. A pass opens discrete CAD and transient force modelling; a failure changes
 the cage or field point without moving these bands.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: no corner passes all 19 bands; Gen2.5 is rejected at A7a.**
+**I completed the run on 2026-08-13. I recorded: no corner passes all 19 bands; Gen2.5 is rejected at A7a.**
 
 Across 3,528 retained CG/corner/payload records, the failed-band union is cage copper rise, cage
 current density, reference source energy and secondary-only efficiency. Worst values are 22.74 K,

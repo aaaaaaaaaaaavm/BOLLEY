@@ -1,18 +1,18 @@
-# ADR-009: Build Gen1 around the serpentine series-flux stator
+# ADR-009: why I built Gen1 around the serpentine series-flux stator
 
 **Status:** superseded for packaging by A5c and ADR-010; retained as a lumped electrical result  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 A3d proved only that the passive aluminium interface survives an assumed 0.60 T travelling field.
 A3e put an explicit magnetic loop, winding and pulse circuit behind that input. Its transverse
 flux path crosses all four foil slots in series and returns through only two widened outer legs,
 so no interior web must turn the sum of two fin fluxes.
 
-## Decision
+## What I decided
 
-Freeze the A3e serpentine stator as Bolley Gen1:
+I froze the A3e serpentine stator as Bolley Gen1:
 
 - four independently driven face channels;
 - three axial phases over a 48 mm wavelength;
@@ -22,7 +22,7 @@ Freeze the A3e serpentine stator as Bolley Gen1:
 - 0.60 T RMS in the foil slots and 1.20 T RMS in the return legs/yoke; and
 - a 120 V nominal DC link.
 
-## Evidence
+## Evidence I used
 
 All 15 A3e lumped-model bands pass over 441 CG points for both frozen payload cases:
 
@@ -33,7 +33,7 @@ All 15 A3e lumped-model bands pass over 441 CG points for both frozen payload ca
 - 1209.8 J and 11.08 kW worst qualification-shot source draw; and
 - 36.4% modelled source-to-payload efficiency.
 
-## Consequences
+## What follows
 
 > **Later evidence:** A5c found 3,987.375 mm³ winding/interface overlap per face and a 66.7:1
 > bare-copper section deficit. Gen1 is rejected for CAD promotion. The numerical A3e result is not

@@ -1,17 +1,17 @@
-# ADR-011: Freeze the robust 30 mm / 0.56 T Gen2 operating point
+# ADR-011: why I froze the robust 30 mm / 0.56 T Gen2 operating point
 
 **Status:** accepted for field FEA and Gen2 CAD—not manufacturing  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 A3f proved that the Fluxbridge package can pass, but its first 16 mm / 0.62 T point was only 26.9%
 source-to-payload efficient. A3g searched 80 pitch/field combinations at eight declared degradation
 corners each. Ten candidates survive every band.
 
-## Decision
+## What I decided
 
-Freeze the deterministic A3g selection for Gen2:
+I froze the deterministic A3g selection for Gen2:
 
 - 30 mm cell pitch with a 15 mm tooth and 15 mm winding slot;
 - 30 cells per face, ten cells per phase and 0.900 m active length;
@@ -20,14 +20,14 @@ Freeze the deterministic A3g selection for Gen2:
 - four turns of 20.25 mm² copper per cell at 60% two-sided gross slot fill; and
 - 48 V nominal DC link.
 
-## Evidence
+## Evidence I used
 
 At the nominal input, the qualification shot requires 1.135 kJ and reaches 39.1%
 source-to-payload efficiency. At the frozen worst corner—0.25 mm clearance per side, 90% cage
 conductance and 150% stationary-core H—it requires 1.333 kJ and remains 33.3% efficient. Active
 primary mass is 11.83 kg. All bands remain inside their limits.
 
-## Consequences
+## What follows
 
 > **A5d result:** the Gen2 CAD package passed all 13 frozen nominal-fit bands. Alternating coil
 > packs, core and payload have zero exact solid overlap; coil volume matches A3g to numerical

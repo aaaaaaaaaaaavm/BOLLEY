@@ -1,11 +1,11 @@
 # A2 — four-corner force allocation
 
-## Question
+## The question I asked
 
 Across +/-20 mm transverse CG offsets, can four axial rail forces remain positive, sum to the
 commanded thrust and place their force centroid at the payload CG?
 
-## Bands declared before the run
+## Bands I declared before the run
 
 The sweep uses the 6 kg qualification mass plus the screened rail increment and evaluates a
 21 x 21 CG grid.
@@ -21,7 +21,7 @@ The sweep uses the 6 kg qualification mass plus the screened rail increment and 
 This run tests algebra, not sensors, structural compliance, electromagnetic cross-coupling or
 control bandwidth.
 
-## Script
+## Script I used
 
 `python analysis/force_allocation.py --write`
 

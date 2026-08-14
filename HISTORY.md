@@ -1,28 +1,28 @@
 # Project history
 
-Bolley did not begin as a renamed copy of VOLLEY, and its record is not backdated.
+I did not begin Bolley as a renamed copy of VOLLEY, and I have not backdated its record.
 
 ## 22 March 2021 — the question that became VOLLEY
 
-Adityavardhan Mishra began VOLLEY from a direct mission question: could a CubeSat leave a host
-spacecraft at a controlled velocity without carrying its own propulsion? The early architecture
-kept the CubeSat conventional and put the electromagnetic reaction hardware on a reusable moving
-sled. That choice protected payload compatibility, but it also created the mass, braking and
-return mechanisms that later became the design's largest penalties.
+I began VOLLEY with a direct mission question: could a CubeSat leave a host spacecraft at a
+controlled velocity without carrying its own propulsion? In the early architecture I kept the
+CubeSat conventional and put the electromagnetic reaction hardware on a reusable moving sled.
+That choice protected payload compatibility, but it also created the mass, braking and return
+mechanisms that later became my design's largest penalties.
 
 ## 13 August 2026 — the premise changes
 
-Bolley begins when Mishra deliberately reverses one VOLLEY constraint: accept a small, passive
-CubeSat modification if it removes much more hardware from the launcher. The starting thought was
-the project's “small price for salvation”: spend a few hundred grams of passive interface mass
-once, then accelerate the spacecraft directly with all active electronics retained by the host.
+I began Bolley when I deliberately reversed one VOLLEY constraint: I would accept a small, passive
+CubeSat modification if it removed much more hardware from the launcher. My starting thought was
+the “small price for salvation”: spend a few hundred grams of passive interface mass once, then
+accelerate the spacecraft directly while the host retains all active electronics.
 
-The first Bolley commit therefore starts on 13 August 2026. VOLLEY's 2021 origin explains the
-problem lineage; it is not Bolley's creation date.
+I made the first Bolley commit on 13 August 2026. VOLLEY's 2021 origin explains my problem lineage;
+I do not use it as Bolley's creation date.
 
-## The design path on its first day
+## The path I took on the first day
 
-The concept did not travel in a straight line:
+I did not reach the current concept in a straight line:
 
 1. A buried passive reluctance return failed its moving-iron mass screen.
 2. A three-fin comb fit the envelope but failed an ideal force upper bound.
@@ -50,14 +50,14 @@ The concept did not travel in a straight line:
     candidates closed every analytical band; `n27_p45.3_I380_A10.4` became the single Gen2.7
     Fluxrelay point promoted to fresh field and circuit reclosure.
 
-Every rejected branch remains in the repository because it explains why the current geometry
-exists. The stock-CDS-rail control in VOLLEY has now failed its A30 edge-effect calculation, while
-a wider conductive-plate control survives analytically. Bolley's active question is narrower: does
-the selected cooperative cage retain its margin in fresh nonlinear field and sectional-circuit
+I retain every rejected branch because it explains why I arrived at the current geometry. In
+VOLLEY, my stock-CDS-rail control has now failed its A30 edge-effect calculation, while a wider
+conductive-plate control survives analytically. I have therefore narrowed Bolley's active question:
+does my selected cooperative cage retain its margin in fresh nonlinear field and sectional-circuit
 models, and can its four-channel interface justify 0.371 kg against the lighter wide plate?
 
 ## Authorship
 
-Bolley is conceived, directed and maintained by **Adityavardhan Mishra**. The repository records
-his requirements, design decisions, calculations, CAD, failures and future test evidence as one
-continuous engineering project.
+I am **Adityavardhan Mishra**. I conceived Bolley, I direct it, and I maintain it. This repository
+is my continuous engineering record: my requirements, design decisions, calculations, CAD,
+failures and, when I have them, test evidence.

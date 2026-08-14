@@ -1,18 +1,18 @@
 # A6 — independent Gen2 transverse-field solve
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear magnetostatic finite-element model  
-**Purpose:** test whether A3g's lumped MMF and the A5d winding actually produce the required
+**Purpose:** I wanted to test whether A3g's lumped MMF and the A5d winding actually produce the required
 four-slot series flux before transient/3D induction work is attempted.
 
-## Frozen model
+## The model I froze
 
 The solve uses the out-of-plane magnetic vector potential $A_x$ on the Gen2 $y$-$z$ tooth-centre
 cross-section:
 
 $$-\nabla\cdot(\nu\nabla A_x)=J_x.$$
 
-The current source is the A3g nominal 321.402 A RMS in four turns. Two equal 81 mm² coil-side
+I set the current source to the A3g nominal 321.402 A RMS in four turns. Two equal 81 mm² coil-side
 regions carry opposite $J_x$, giving 1,285.607 A-turn with zero net source current. The model
 includes:
 
@@ -24,10 +24,10 @@ includes:
 - the 0.625 axial ligament fraction used to infer local ligament field from the homogenized tooth
   slice.
 
-This is an RMS-equivalent magnetostatic slice. It is not a time-harmonic induction or force solve.
-The complete geometry, curves, meshes and bands are frozen in `cad/gen2_field_parameters.json`.
+I use an RMS-equivalent magnetostatic slice, not a time-harmonic induction or force solve.
+I froze the complete geometry, curves, meshes and bands in `cad/gen2_field_parameters.json`.
 
-## Three meshes declared before execution
+## The three meshes I declared before execution
 
 1. **Base:** 0.15 mm local spacing in a 80 × 60 mm domain.
 2. **Fine:** 0.075 mm local spacing in the same domain.
@@ -51,7 +51,7 @@ by bounded vector Aitken relaxation (0.05–0.65, initially 0.65), with an 80-it
 Linear iterations, residuals and relaxation factors are required in the output. These are
 execution corrections, not physical-model refinements.
 
-## Quantities and definitions
+## Quantities and definitions I used
 
 - **Mean tooth-slice field:** mean magnitude of $B_y$ in each active Fluxbridge region over
   $1\le z\le5$ mm, then mean across four blades.
@@ -62,7 +62,7 @@ execution corrections, not physical-model refinements.
 - **Per-cell inductance:** $2W/I^2$, where nonlinear magnetic coenergy $W$ is integrated over the
   cross-section and multiplied by the 15 mm tooth depth.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -80,7 +80,7 @@ execution corrections, not physical-model refinements.
 
 Paired lower/upper limits are executable separately.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The B-H curves are declared screening assumptions; the stationary steel is not selected and
   perforated/annealed Fluxbridge material has not been measured.
@@ -89,16 +89,16 @@ Paired lower/upper limits are executable separately.
 - Dirichlet outer air is a numerical boundary, not a magnetic shield.
 - Agreement with A3g would not be experimental validation.
 
-## Required output
+## Output I required
 
 Commit mesh sizes, nonlinear histories, field/flux per blade, peak fields by material, coenergy,
 inductance, source-current closure, all convergence differences, every band, field maps and a
 disposition. A passing A6 advances to transient discrete-cage analysis; a physics-band failure
 supersedes the A3g operating point.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 10/13 bands pass; A3g `p30_B0.56` is rejected.**
+**I completed the run on 2026-08-13. I recorded: 10/13 bands pass; A3g `p30_B0.56` is rejected.**
 
 The base, fine and expanded meshes contain 174,048, 621,180 and 196,512 triangles. Mean-field,
 coenergy and boundary differences are 0.786%, 0.295% and 1.637%, so the failure is not a mesh or

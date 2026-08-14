@@ -1,17 +1,17 @@
-# ADR-028 — reject the exact Gen2.6 hot-resistance point
+# ADR-028 — why I rejected the exact Gen2.6 hot-resistance point
 
 - **Date:** 2026-08-13
 - **Status:** Accepted
 - **Decider:** Adityavardhan Mishra
 - **Evidence:** A7b four-corner cage/circuit reclosure
 
-## Decision
+## What I decided
 
-Reject the exact Gen2.6 circuit point while retaining the A6g field solution and five-lane
-Quintweb translator. Move the next correction to the stationary winding rather than adding more
-spacecraft interface mass or changing a validation band.
+I rejected the exact Gen2.6 circuit point while retaining the A6g field solution and five-lane
+Quintweb translator. I moved the next correction to the stationary winding rather than adding
+more spacecraft interface mass or changing a validation band.
 
-## Why
+## Why I chose it
 
 Both nominal-resistance corners pass all 19 A7b bands. Both 125%-resistance corners fail only the
 900 J reference-energy cap, at 929.432 J and 959.923 J. Cage rise, cage current density, slip and
@@ -22,9 +22,9 @@ rest of A7b fixed, phase resistance must fall to at most 82.02% of the current v
 hot corner. That diagnostic is not permission to overfill the slot or exceed the primary-mass
 band; the correction must be frozen and rechecked as a physical winding geometry.
 
-## Consequences
+## What follows
 
-- Preserve five blades per face and the A6g magnetic field evidence.
-- Do not spend the remaining 11.77 g interface margin on a stationary-copper failure.
+- I preserved five blades per face and the A6g magnetic field evidence.
+- I did not spend the remaining 11.77 g interface margin on a stationary-copper failure.
 - Search turn length, slot geometry and conductor allocation before declaring Gen2.7.
 - Gen3 CAD remains blocked until the corrected circuit point is frozen and reclosed.

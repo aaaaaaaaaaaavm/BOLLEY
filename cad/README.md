@@ -1,7 +1,8 @@
 # Bolley CAD
 
-The current controlled geometry is **Gen2 Fluxbridge**, selected by A3g and passed through the A5d
-nominal-fit gate. Gen1 remains here because its failed winding package is evidence, not clutter.
+My current completed CAD evidence is **Gen2 Fluxbridge**, which I selected in A3g and passed through
+the A5d nominal-fit gate. I retain Gen1 because its failed winding package is evidence, not clutter.
+My current analytical baseline is Gen2.7 Fluxrelay; I have not yet converted it into Gen3 CAD.
 
 ![Gen2 retained assembly](renders/gen2/01_gen2_hero.png)
 
@@ -20,7 +21,7 @@ nominal-fit gate. Gen1 remains here because its failed winding package is eviden
 | Details still needing a modeller/manufacturer | [`GEN2_MANUAL_DETAILS.md`](GEN2_MANUAL_DETAILS.md) |
 | A5d result and exact intersections | [`../docs/GEN2_CAD_FIT.md`](../docs/GEN2_CAD_FIT.md) |
 
-## What is actually modelled
+## What I actually modelled
 
 - A 340.5 × 100 × 100 mm 3U envelope proxy with 8.5 mm corner rails.
 - Four passive Fluxbridge blades on each of four faces.
@@ -30,8 +31,8 @@ nominal-fit gate. Gen1 remains here because its failed winding package is eviden
 - A 160 mm track frame, guide bars and an independent retained-state gate envelope.
 - Retained and positive-$x$ departure arrangements.
 
-The full-length Fluxbridge split layers represent the homogenized A3g model. They are not a claim
-that copper and amorphous ribbon can occupy the same material volume. The coupon is the only CAD
+I use the full-length Fluxbridge split layers to represent my homogenized A3g model. I do not claim
+that copper and amorphous ribbon can occupy the same material volume. My coupon is the only CAD
 object that resolves discrete rungs and ligaments.
 
 ## Regenerate
@@ -44,19 +45,19 @@ python tools/package_gen2_cad.py --write
 python tools/check_repo.py
 ```
 
-STEP is the master exchange geometry. STL is a derived preview mesh. The download ZIP timestamps
-are fixed, member order is sorted, and every unpacked member is verified against the package
-manifest.
+I use STEP as the master exchange geometry and STL as a derived preview mesh. I fix the download
+ZIP timestamps, sort member order, and verify every unpacked member against the package manifest.
 
 ## Coordinate frame
 
-$+x$ points from the retained payload toward the muzzle. $y$ is lateral, $z$ is vertical, and the
-origin lies on the aft payload face at the retained position. Any arrangement ejecting in $-x$ is
-wrong.
+I define $+x$ from the retained payload toward the muzzle, $y$ as lateral, and $z$ as vertical. I
+place the origin on the aft payload face at the retained position. I reject any arrangement that
+ejects in $-x$.
 
 ## Evidence boundary
 
-This is parametric model geometry, not a drawing release. It establishes nominal arrangement,
-cross-sectional winding space, exact solid non-interference and traceable exports. It does not
-establish tolerances, structural margins, fatigue, thermal distortion, vacuum materials, debris
-containment, electrical insulation, cooling, gate actuation or launch-provider acceptance.
+I treat this as parametric model geometry, not a drawing release. I use it to establish nominal
+arrangement, cross-sectional winding space, exact solid non-interference and traceable exports. I
+do not use it to establish tolerances, structural margins, fatigue, thermal distortion, vacuum
+materials, debris containment, electrical insulation, cooling, gate actuation or launch-provider
+acceptance.

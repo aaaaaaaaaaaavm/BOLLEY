@@ -1,10 +1,10 @@
 # A3a — moving-interface flux-path screen
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical MODEL OUTPUT from ASSUMPTION inputs  
-**Purpose:** reject physically incomplete translator cross-sections before nonlinear FEA.
+**Purpose:** I wanted to reject physically incomplete translator cross-sections before nonlinear FEA.
 
-## Question
+## The question I asked
 
 Does any passive moving interface preserve the A2 force area while remaining inside the
 spacecraft-side mass gates and providing a physically explicit magnetic or conductive path?
@@ -18,7 +18,7 @@ This run does **not** predict motor force. It screens three unit cells:
 The dimensioned screening geometry is frozen in `cad/topology_candidates.json` and
 `cad/a3a_unit_cells.svg`.
 
-## Fixed inputs
+## Inputs I fixed
 
 - Worst commanded channel force: read from committed A2 output.
 - Active length: 336 mm.
@@ -37,10 +37,10 @@ Maxwell-stress relation
 
 `tau = Bn * Bt / mu0`, with `Bn = Bt = sqrt(mu0 * tau)`.
 
-This is a lower-bound screen, not a reluctance-machine solution. Leakage, fringing, saturation,
+I treat this as a lower-bound screen, not a reluctance-machine solution. Leakage, fringing, saturation,
 cover loss and commutation can only make the real design harder.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -51,14 +51,14 @@ cover loss and commutation can only make the real design harder.
 | A3a-5 | The 1 mm aluminium induction lane remains below 0.25 kg including the 75 g allowance. | Reject the induction fallback. |
 | A3a-6 | At least one candidate passes area and preferred mass. | Stop A3 and revisit payload modification or Bolley-U. |
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - Double-sided stator access around the fin/tab is **not proven** by this screen.
 - Induction thrust, slip, secondary heating and normal force are **not calculated**.
 - The corner return's actual `Bn/Bt` relationship is **not calculated**.
 - A mass pass does not promote a candidate directly to hardware.
 
-## Required output
+## Output I required
 
 The committed JSON must report equations, every assumed dimension, candidate mass, active area,
 required shear, the corner-return field window and a disposition. A generated Markdown summary

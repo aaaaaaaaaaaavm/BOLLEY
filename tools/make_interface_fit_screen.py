@@ -26,7 +26,7 @@ def render() -> str:
 > Evidence class: **ANALYTICAL MODEL OUTPUT checked against named EXTERNAL GUIDANCE**. This is
 > not dispenser acceptance, FEA or measurement.
 
-## Outcome
+## What I found
 
 The three-fin comb preserves **{geometry['active_area_m2_per_channel'] * 1e4:.2f} cm²** developed
 air-gap area per channel while projecting **{geometry['total_projection_from_rail_plane_m'] * 1e3:.2f} mm**
@@ -49,15 +49,15 @@ points. Peak channel force is **{allocation['maximum_channel_force_n']:.2f} N**
 ({100 * allocation['maximum_channel_fraction']:.2f}% of total), and required developed shear is
 **{allocation['required_developed_shear_pa'] / 1000:.2f} kPa**.
 
-## Declared-band result
+## What I found against my declared bands
 
 **{result['band_pass_count']}/{result['band_count']} A5a bands pass.** Failed bands: {failed_text}.
 
 Disposition: **{result['disposition'].replace('_', ' ')}**.
 
-## Interpretation
+## How I interpret it
 
-This result says a low-profile three-fin cross-section can be drawn inside the selected preliminary
+I read this result as evidence that a low-profile three-fin cross-section can be drawn inside the selected preliminary
 guidance while retaining four positive force channels and the A3 force area. It does not say an
 existing dispenser contains the needed stator volume, that the fin roots survive launch, or that
 the machine produces thrust.

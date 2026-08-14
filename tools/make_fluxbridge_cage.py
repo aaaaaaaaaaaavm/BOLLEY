@@ -29,7 +29,7 @@ def render() -> str:
 > Evidence class: **HOMOGENIZED PASSIVE-CAGE + LUMPED MAGNETIC/CIRCUIT MODEL OUTPUT**. This is
 > not field FEA, a winding drawing, supplier qualification or measurement.
 
-## Result
+## What I found
 
 **{result['band_pass_count']}/{result['band_count']} declared bands pass.** Failed bands: {failed}.
 
@@ -69,7 +69,7 @@ copper.
 | Peak DC power | {reference['peak_dc_power_w'] / 1000:.2f} kW | {qualification['peak_dc_power_w'] / 1000:.2f} kW |
 | Worst cage / primary copper rise | {reference['maximum_channel_cage_copper_adiabatic_rise_k']:.1f} / {reference['primary_copper_adiabatic_rise_k']:.2f} K | {qualification['maximum_channel_cage_copper_adiabatic_rise_k']:.1f} / {qualification['primary_copper_adiabatic_rise_k']:.2f} K |
 
-## What the modification bought
+## What I gained from the modification
 
 Relative to A3e, rated MMF falls from 3,945 to {magnetic['total_mmf_a_turn']:.0f} A-turn and active
 primary mass falls from 40.96 to {mass['total_kg']:.2f} kg. The CAD-discovered winding contradiction
@@ -81,7 +81,7 @@ on the reference shot versus A3e's 821 J because cage slip and a conservative hi
 remain expensive. The pass therefore promotes a pitch/field/copper optimisation—not a claim that
 the first passing point is finished.
 
-## Disposition
+## What I decided next
 
 **{result['disposition'].replace('_', ' ')}.**
 

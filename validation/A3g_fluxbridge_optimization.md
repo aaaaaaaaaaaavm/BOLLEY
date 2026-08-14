@@ -1,16 +1,16 @@
 # A3g — robust Fluxbridge pitch, field and copper optimisation
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** constrained analytical design-space search using the A3f model  
-**Purpose:** replace A3f's first passing point with the lowest-energy point that remains physically
+**Purpose:** I wanted to replace A3f's first passing point with the lowest-energy point that remains physically
 wound and passes at deliberately worse clearance, cage conductance and core-H corners.
 
-## Frozen search
+## The search I froze
 
 The payload-side Fluxbridge geometry, passive-cage materials, 8 g duty, 0.90 m powered stroke,
 four-face force allocation and all A3f loss equations remain fixed.
 
-The search varies only:
+I varied only:
 
 - cell pitch from 16 to 30 mm using eight declared pitch/cell-count pairs;
 - 50% tooth duty, so tooth and winding-slot widths each follow half the pitch;
@@ -27,9 +27,9 @@ Every nominal candidate must also survive all eight combinations of:
 - 90% and 100% of nominal cage sheet conductance; and
 - 100% and 150% of the conservative stationary-core H input.
 
-The complete search is frozen in `cad/fluxbridge_optimization.json`.
+I froze the complete search in `cad/fluxbridge_optimization.json`.
 
-## Selection rule declared before execution
+## The selection rule I declared before execution
 
 1. Reject any candidate that fails any band at nominal or at any robustness corner.
 2. Among surviving candidates, minimise the maximum qualification source energy across all CG
@@ -38,7 +38,7 @@ The complete search is frozen in `cad/fluxbridge_optimization.json`.
 
 No weighted score and no post-result preference are permitted.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band at every declared corner | Failure action |
 |---|---|---|
@@ -60,7 +60,7 @@ No weighted score and no post-result preference are permitted.
 Paired limits are executable separately. A candidate that passes nominal but fails one corner is
 not feasible.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - This search cannot cure homogenization error, 3D leakage, cogging, bar current crowding or end
   effects because A3f does not contain them.
@@ -69,7 +69,7 @@ not feasible.
   frame remain unresolved.
 - A numerically optimal candidate is not a manufacturing release or provider-approved interface.
 
-## Required output
+## Output I required
 
 Report every candidate and corner, rejection reasons, selected pitch/cell count/wavelength/field,
 winding area and fill, magnetic circuit, active mass, both shot partitions, worst corner, all

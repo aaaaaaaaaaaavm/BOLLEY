@@ -1,9 +1,9 @@
-# ADR-006: Reject three fins; screen a taller four-fin comb
+# ADR-006: why I rejected three fins and screened a taller four-fin comb
 
 **Status:** superseded for Gen1 by [ADR-007](007-fluxfoil-baseline.md)  
 **Date:** 2026-08-13
 
-## Context
+## What led me here
 
 ADR-005 promoted the A5a three-fin comb because its interface envelope, moving mass and
 four-channel allocation passed. A5a also reported 22.73 kPa by dividing peak channel force by the
@@ -14,12 +14,12 @@ machine, axial force follows the energy gradient at active overlap edges. The id
 for the exact three-fin geometry is 250.67 N at 2.0 T, below the frozen 255 N gate. It needs 2.017 T
 even with zero steel reluctance and no leakage, fringing, end effect or current limit.
 
-## Decision
+## What I decided
 
-Reject the exact three-fin comb before nonlinear FEA. Preserve A5a as an interface result, but do
-not use its whole-face developed-shear statistic as an axial force prediction.
+I rejected the exact three-fin comb before nonlinear FEA. I preserve A5a as an interface result,
+but I do not use its whole-face developed-shear statistic as an axial force prediction.
 
-Screen one minimal cooperative-payload change in A5b:
+I screened one minimal cooperative-payload change in A5b:
 
 - four aligned fins per face instead of three;
 - 6.0 mm active height instead of 5.0 mm;
@@ -27,11 +27,11 @@ Screen one minimal cooperative-payload change in A5b:
 - unchanged 0.25 mm side covers and 0.50 mm side clearances; and
 - aligned moving teeth, with continuous electrical phasing assigned to launcher-side stators.
 
-The redesign is called the **Bolley quad-comb**. A5b subsequently passed all 15 frozen bands, so
-the geometry advances to A3b1. That promotion applies to the passive moving interface only; the
-2 mm stationary web sketch has not yet proved it can carry the required flux.
+I call the redesign the **Bolley quad-comb**. A5b subsequently passed all 15 frozen bands, so I
+advanced the geometry to A3b1. I applied that promotion only to the passive moving interface; I
+had not yet proved that the 2 mm stationary web sketch could carry the required flux.
 
-## Consequences
+## What follows
 
 - ADR-005 is superseded as an electromagnetic-model-entry decision.
 - The CubeSat modification grows slightly, but remains passive and face-centred.

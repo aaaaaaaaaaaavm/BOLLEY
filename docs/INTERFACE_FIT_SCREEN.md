@@ -4,7 +4,7 @@
 > Evidence class: **ANALYTICAL MODEL OUTPUT checked against named EXTERNAL GUIDANCE**. This is
 > not dispenser acceptance, FEA or measurement.
 
-## Outcome
+## What I found
 
 The three-fin comb preserves **100.80 cm²** developed
 air-gap area per channel while projecting **5.50 mm**
@@ -27,15 +27,15 @@ points. Peak channel force is **229.07 N**
 (46.86% of total), and required developed shear is
 **22.73 kPa**.
 
-## Declared-band result
+## What I found against my declared bands
 
 **11/11 A5a bands pass.** Failed bands: none.
 
 Disposition: **PROMOTE COMB FIN TO NONLINEAR FEA AND PROVIDER REVIEW**.
 
-## Interpretation
+## How I interpret it
 
-This result says a low-profile three-fin cross-section can be drawn inside the selected preliminary
+I read this result as evidence that a low-profile three-fin cross-section can be drawn inside the selected preliminary
 guidance while retaining four positive force channels and the A3 force area. It does not say an
 existing dispenser contains the needed stator volume, that the fin roots survive launch, or that
 the machine produces thrust.

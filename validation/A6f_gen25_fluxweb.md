@@ -1,12 +1,12 @@
 # A6f — Gen2.5 Fluxweb nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** decide whether sharing the blade thickness between a continuous magnetic backstrap
+**Purpose:** I wanted to decide whether sharing the blade thickness between a continuous magnetic backstrap
 and the copper ladder removes A6e's local flux concentration without increasing the external
 envelope again.
 
-## Frozen correction
+## The correction I froze
 
 Gen2.5 replaces the uniformly perforated Fluxrib with a layered **Fluxweb**. Along each 2.00 mm
 axial cage period:
@@ -31,7 +31,7 @@ Non-validation 0.30 mm meshes compared 1.10 and 1.12 mm Fluxweb sections and the
 0.739 T mean field and 1.386 T inferred ligament peak. These outputs selected the point but cannot
 pass A6f. This run sheet, inherited formal meshes and every band are frozen first.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 A6f repeats all 13 A6e magnetic bands unchanged. Physical bands use the worst result from base,
 fine and expanded-boundary meshes:
@@ -47,7 +47,7 @@ fine and expanded-boundary meshes:
 The known 0.30 kg preference miss is reported alongside the gate. The 0.40 kg absolute limit is a
 hard prerequisite and is closed by frozen geometric accounting.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - The axial magnetic/copper pattern is homogenized into a 2D transverse slice. The backstrap,
   discrete rung edges, end buses and three-dimensional flux crowding are not resolved.
@@ -57,14 +57,14 @@ hard prerequisite and is closed by frozen geometric accounting.
 - Mass is geometric accounting; B-H curves are screening assumptions; neither is measurement.
 - A field pass requires new discrete CAD, circuit closure and transient force evidence.
 
-## Required output
+## Output I required
 
-Commit all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
+I required the repository to retain all three meshes, nonlinear histories, worst-mesh extrema, 13 bands and three indexed
 figures. A pass promotes only to the Gen2.5 cage/circuit, CAD and transient-force gates.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 13/13 magnetic bands pass; Gen2.5 advances conditionally.**
+**I completed the run on 2026-08-13. I recorded: 13/13 magnetic bands pass; Gen2.5 advances conditionally.**
 
 The base, fine and expanded meshes contain 210,650, 747,114 and 237,770 triangles. Worst mean
 field is 0.7383–0.7513 T, inferred magnetic-material peak is 1.4009 T, stationary-core peak is

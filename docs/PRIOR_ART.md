@@ -1,8 +1,8 @@
 # Prior art and novelty boundary
 
-Bolley is not novel because it uses an electromagnetic launcher, a long stator, a passive
-translator, multiphase force control or a force line near a spacecraft centre of gravity. All of
-those ideas have prior art.
+I do not claim novelty merely because Bolley uses an electromagnetic launcher, a long stator, a
+passive translator, multiphase force control or a force line near a spacecraft centre of gravity.
+I expect all of those ideas to have prior art.
 
 ## Directly relevant work
 
@@ -28,10 +28,11 @@ The potentially distinguishable system combination is:
 4. segmented stator energisation followed by field-end inertial separation; and
 5. no launcher member requiring post-release capture.
 
-This is a search hypothesis, not a novelty claim. A professional patent search can disprove it.
+I treat this as a search hypothesis, not a novelty claim. A professional patent search can
+disprove it.
 
 ## Publication rule
 
-If protection matters, decide that before publishing detailed pole geometry, winding topology or
-control claims. The repository will not pretend that a public README preserves options it may
-have already surrendered.
+If protection matters, I need to decide that before I publish detailed pole geometry, winding
+topology or control claims. I will not pretend that a public README preserves options I may have
+already surrendered.

@@ -1,11 +1,11 @@
 # A6c — Gen2.2 Fluxmanifold-R4 nonlinear field gate
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** independently meshed 2D nonlinear RMS-equivalent magnetostatic FEA  
-**Purpose:** test the smallest explicit correction to A6b while making peak-field disposition
+**Purpose:** I wanted to test the smallest explicit correction to A6b while making peak-field disposition
 conservative across all three formal meshes.
 
-## Frozen correction
+## The correction I froze
 
 A6b misses only the moving-ligament and stationary-haunch peaks. Gen2.2 therefore changes two
 controlled values and nothing else:
@@ -17,7 +17,7 @@ The blade centres, 28 mm face, 7.3 mm legs, 7 mm back yoke, three-turn 81 mm² s
 curves, domains, local spacings and solver tolerances are inherited unchanged from A6b. The larger
 haunch adds 0.041 kg of stationary core; four-face active primary becomes 15.774 kg.
 
-## Stronger band evaluation
+## Why I strengthened the band evaluation
 
 A6 and A6b used base/fine/expanded meshes for numerical convergence but evaluated most physical
 bands on the fine mesh. A6b showed that a point peak can be larger on the expanded coarse mesh.
@@ -27,7 +27,7 @@ meshes. Fine-mesh inductance and the same convergence differences remain the rel
 
 This strengthening is declared before A6c runs. It does not alter either failed A6b band.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -45,24 +45,24 @@ This strengthening is declared before A6c runs. It does not alter either failed 
 
 Paired lower/upper limits produce the same 13 executable Boolean bands as A6b.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 All A6b non-bands remain. In particular this is not transient cage force, a routed winding,
 thermal evidence, tolerance closure, hardware validation or selected-lot material evidence.
 
-## Required output
+## Output I required
 
 Commit full histories and mesh metrics, explicit worst-mesh extrema, all bands and three indexed
 figures. Pass promotes Gen2.2 only to circuit, CAD and transient-force closure—not to hardware.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 12/13 bands pass; Gen2.2 is rejected.**
+**I completed the run on 2026-08-13. I recorded: 12/13 bands pass; Gen2.2 is rejected.**
 
 The base, fine and expanded meshes contain 209,000, 743,988 and 236,000 triangles. All numerical
 differences are below 0.32%. Worst-mesh mean field remains 0.7372–0.7395 T and worst stationary
 core peak falls to 1.4113 T. The only failure is the 1.5306 T inferred ligament peak against the
 1.45 T limit. [The controlled result](../docs/GEN22_FIELD.md) preserves the worst-mesh extrema.
 
-The failure action is a spacecraft-side magnetic-rib cross-section change under a new gate. A6c
-limits remain unchanged and circuit/CAD/transient promotion remains blocked.
+I moved the failure action to a spacecraft-side magnetic-rib cross-section change under a new gate.
+I kept the A6c limits unchanged and blocked circuit, CAD and transient promotion.

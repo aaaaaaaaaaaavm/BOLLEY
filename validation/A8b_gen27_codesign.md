@@ -1,14 +1,14 @@
 # A8b — Gen2.7 Fluxrelay axial/electrical co-design
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** coupled deterministic design-space search using A6g field surrogates and the
 A7b cage/circuit equations  
-**Purpose:** find whether the five-lane interface can close full axial engagement, installed mass
-and the hot-energy corner together.
+**Purpose:** I wanted to find whether the five-lane interface could close full axial engagement,
+installed mass and the hot-energy corner together.
 
-## Frozen correction
+## The correction I froze
 
-Fluxrelay retains the Gen2.6 transverse cross-section and changes only the axial/electrical
+I retained the Gen2.6 transverse cross-section for Fluxrelay and changed only the axial/electrical
 architecture:
 
 - the five active lanes stay anchored 2.25 mm from the aft payload face and may shorten at the
@@ -19,13 +19,14 @@ architecture:
 - active-window resistance, inductance, loss and copper temperature use the conservative maximum
   simultaneous cell count.
 
-The finite grid contains 3 cell counts, 17 pitches, 4 rated currents and 14 conductor areas:
-**2,856 candidates** before geometric rejection. The four A7b conductance/resistance corners and
-both 21 by 21 CG grids are evaluated for every candidate that passes the precheck.
+I froze a finite grid of 3 cell counts, 17 pitches, 4 rated currents and 14 conductor areas:
+**2,856 candidates** before geometric rejection. I evaluated the four A7b
+conductance/resistance corners and both 21 by 21 CG grids for every candidate that passed my
+precheck.
 
-## Bands declared before execution
+## Bands I declared before execution
 
-The search preserves the A7b hard bands and adds the missing axial/installed-field conditions:
+I preserved the A7b hard bands and added the missing axial/installed-field conditions:
 
 - active cage length 0.20–0.336 m, inside 340.5 mm with 2.25 mm guards at both travel ends;
 - total cell count divisible by three;
@@ -40,15 +41,16 @@ The search preserves the A7b hard bands and adds the missing axial/installed-fie
   frequency <=350 Hz; and
 - 1% opposed-field mismatch leaves <=100 N unbalanced normal force.
 
-The 0.25/0.30 kg interface targets remain preferences, never substitutes for 0.40 kg.
+I retained the 0.25/0.30 kg interface targets as preferences, never as substitutes for 0.40 kg.
 
-## Selection rule
+## The selection rule I chose
 
-Among candidates passing every hard band, minimise the largest normalized continuous-band demand.
-Tie-break on lower installed active-primary mass, then lower hot-corner reference energy, then
-candidate ID. Exact geometry Booleans do not create a zero-margin selection artefact.
+Among candidates passing every hard band, I minimised the largest normalized continuous-band
+demand. I broke ties on lower installed active-primary mass, then lower hot-corner reference
+energy, then candidate ID. I did not let exact-geometry Booleans create a zero-margin selection
+artefact.
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - A6g field values are linearly scaled with current. A pass must be followed by a fresh nonlinear
   field gate.
@@ -58,32 +60,32 @@ candidate ID. Exact geometry Booleans do not create a zero-margin selection arte
 - The retained cage remains homogenized and the installed-mass model excludes structure,
   containment, cooling and power electronics.
 
-## Required output
+## Output I required
 
-Commit every candidate, all evaluated corner summaries, CG count, hard-band vector, continuous
-demand vector, feasible set and deterministic selection. A pass freezes one point for A6h field,
-A7c selected-point reclosure and only then Gen3 CAD.
+I required the repository to retain every candidate, all evaluated corner summaries, CG count,
+hard-band vector, continuous-demand vector, feasible set and deterministic selection. A pass would
+let me freeze one point for A6h field, A7c selected-point reclosure and only then Gen3 CAD.
 
-## Recorded result
+## What I recorded
 
-**Run completed 2026-08-13. Result: 77/2,856 candidates pass every declared hard band; promote
-one selected analytical point to A6h and A7c.**
+**I completed the run on 2026-08-13. I found 77/2,856 candidates passing every declared hard band,
+and I promoted one selected analytical point to A6h and A7c.**
 
-The deterministic minimax selection is `n27_p45.3_I380_A10.4`: 27 cells per face channel,
+By my deterministic minimax rule, I selected `n27_p45.3_I380_A10.4`: 27 cells per face channel,
 45.3 mm pitch, 380 A rated phase current and 10.4 mm2 conductor area per turn. It produces a
 1.2231 m installed stator, a 318.6 mm cage, 2.25 mm guards at both travel endpoints and a
 maximum sectional window of nine cells / three cells per phase.
 
-The selected point uses 15.9081 kg installed active primary and adds 0.37136 kg to the payload.
+My selected point uses 15.9081 kg installed active primary and adds 0.37136 kg to the payload.
 Active-window phase resistance is 0.78725 times A7b. The hot 90%-conductance / 125%-resistance
 reference corner uses 895.467 J and the worst qualification corner uses 1,305.163 J. The three
 tightest continuous demands are reference energy 0.99496, installed active-primary mass 0.99426
 and predicted stationary-core peak 0.98965.
 
-The current-scaled stationary peak is 1.53395 T and is not a fresh field result. A8b therefore
-closes its coupled analytical question but does not release hardware or final CAD. A6h nonlinear
-field and A7c selected-point reclosure remain mandatory.
+My current-scaled stationary peak is 1.53395 T; I do not call it a fresh field result. I therefore
+use A8b to close the coupled analytical question, but I do not release hardware or final CAD. I
+still require A6h nonlinear field and A7c selected-point reclosure.
 
-Every candidate is retained in deterministic gzip JSON at
+I retain every candidate in deterministic gzip JSON at
 `analysis/results/gen27_codesign_candidates.json.gz`, SHA-256
 `2ad36b89d32acd9c6fe76b1644d1f53de2f9e4de23c263eed554cb2c0808b378`.

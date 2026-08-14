@@ -47,14 +47,14 @@ def render() -> str:
 > Evidence class: **ROBUST CONSTRAINED ANALYTICAL DESIGN-SPACE SEARCH**. It inherits A3f's
 > homogenized cage and lumped magnetic assumptions.
 
-## Selection
+## What I selected
 
-The search evaluated **{result['candidate_count']} nominal candidates**, each at
+I evaluated **{result['candidate_count']} nominal candidates**, each at
 **{result['corners_per_candidate']} robustness corners** and 441 CG points for both payload cases:
 {result['total_candidate_corner_evaluations']} candidate-corner evaluations. Exactly
 **{result['feasible_candidate_count']} candidates** pass every band at every corner.
 
-The deterministic selection is **{result['selected_candidate_id']}**.
+I selected **{result['selected_candidate_id']}**.
 
 | Frozen Gen2 quantity | Selected value |
 |---|---:|
@@ -84,7 +84,7 @@ core H. It still passes every band. Its reference source energy is
 {worst_ref['maximum_source_energy_j']:.1f} J and its qualification source energy is
 {worst_qual['maximum_source_energy_j']:.1f} J.
 
-## What changed from the first A3f pass
+## What I changed after the first A3f pass
 
 | Quantity | A3f first pass | A3g nominal selection |
 |---|---:|---:|
@@ -95,12 +95,12 @@ core H. It still passes every band. Its reference source energy is
 | Qualification source energy | {a3f_qual['source_energy_j']:.1f} J | {nominal_qual['maximum_source_energy_j']:.1f} J |
 | Source-to-payload efficiency | {100 * a3f_qual['source_to_payload_efficiency']:.1f}% | {100 * nominal_qual['minimum_source_to_payload_efficiency']:.1f}% |
 
-The selected primary is {design['active_primary_mass_kg'] - a3f['active_primary_mass']['total_kg']:.2f}
+My selected primary is {design['active_primary_mass_kg'] - a3f['active_primary_mass']['total_kg']:.2f}
 kg heavier because the wider slot is deliberately filled with more copper, but nominal qualification
 energy falls by **{100 * energy_reduction:.1f}%** and frequency falls by roughly 40%. The trade is
 physical: fewer, larger cells buy conductor section, lower resistance and a longer wavelength.
 
-## Disposition
+## What I decided next
 
 **{result['disposition'].replace('_', ' ')}.**
 

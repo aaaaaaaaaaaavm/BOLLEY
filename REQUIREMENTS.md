@@ -1,7 +1,7 @@
 # System requirements
 
-These are Phase 0 requirements. A number without a verification route is not yet a requirement;
-it is an aspiration wearing a unit.
+These are my Phase 0 requirements. I do not call a number a requirement until I can name its
+verification route; before that, it is only an aspiration wearing a unit.
 
 | ID | Requirement | Verification | Status |
 |---|---|---|---|
@@ -28,8 +28,8 @@ it is an aspiration wearing a unit.
   +/-20 mm transverse centre-of-gravity envelope come from the CubeSat Design Specification
   Rev. 14.1 as preliminary design guidance. Launch-provider requirements supersede it.
 - The 2 deg/s tip-off threshold follows the tighter flown dispenser class used by VOLLEY.
-- The mass, energy and power limits are Bolley programme decisions. They exist to prevent the
-  new design from recreating VOLLEY's mass and bank problems under different names.
+- I chose the mass, energy and power limits for Bolley. I use them to prevent the new design from
+  recreating VOLLEY's mass and bank problems under different names.
 
-Any change to a numbered requirement needs an ADR and a note stating whether the change occurred
-before or after the relevant result was seen.
+If I change a numbered requirement, I add an ADR and state whether I made the change before or
+after I saw the relevant result.

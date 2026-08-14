@@ -1,24 +1,24 @@
-# ADR-022 — promote Gen2.5 beyond the transverse field gate
+# ADR-022 — why I promoted Gen2.5 beyond the transverse field gate
 
 - **Date:** 2026-08-13
 - **Status:** Accepted
 - **Decider:** Adityavardhan Mishra
 - **Evidence:** A6f worst-of-three-mesh nonlinear field result
 
-## Decision
+## What I decided
 
-Accept A6f's 13/13 magnetic-band result and promote Gen2.5 Fluxweb to discrete CAD, cage/circuit
-and transient-force closure. Keep the 0.30 kg preferred interface screen failed and the 0.40 kg
-absolute limit active.
+I accepted A6f's 13/13 magnetic-band result and promoted Gen2.5 Fluxweb to discrete CAD,
+cage/circuit and transient-force closure. I kept the 0.30 kg preferred interface screen failed and
+the 0.40 kg absolute limit active.
 
-## Why
+## Why I chose it
 
 The layered passive blade closes both material peaks while retaining the field floor: worst
 magnetic material is 1.4009 T, stationary core is 1.4652 T and mean blade field is
 0.7383–0.7513 T. This is the first post-A6 cross-section to pass every predeclared transverse
 field band.
 
-## Consequences
+## What follows
 
 - A6f is model evidence, not validation or manufacturing release.
 - The 8% lower cage conductance must pass a new transient cage-current, slip and thermal gate.

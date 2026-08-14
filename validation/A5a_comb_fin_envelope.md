@@ -1,12 +1,12 @@
 # A5a — low-profile comb-fin envelope screen
 
-**State at declaration:** NOT RUN  
+**What I knew at declaration:** NOT RUN  
 **Evidence class:** analytical MODEL OUTPUT from ASSUMPTION inputs checked against EXTERNAL
 GUIDANCE  
-**Purpose:** determine whether the A3a opposed-flux idea can become four mechanically accessible
+**Purpose:** I wanted to determine whether the A3a opposed-flux idea can become four mechanically accessible
 side channels without sacrificing the normal CubeSat contact rails.
 
-## Geometry under test
+## Geometry I tested
 
 Each of the four broad spacecraft faces receives one narrow longitudinal aluminium root strip.
 Three covered, segmented steel fins project from each strip. A stationary slotted stator surrounds
@@ -16,7 +16,7 @@ rails remain continuous, aluminium and mechanically separate from the electromag
 Splitting one 15 mm fin into three 5 mm fins preserves the two-sided developed air-gap area while
 keeping the protrusion low. This is called the **Bolley comb-fin** in this run.
 
-## External guidance used
+## External guidance I used
 
 The screening values come from Cal Poly's CubeSat Design Specification Rev. 14.1, not from a
 selected launch provider:
@@ -31,7 +31,7 @@ Source: <https://static1.squarespace.com/static/5418c831e4b0fa4ecac1bacd/t/62193
 Rev. 14.1 explicitly says launch-provider requirements supersede the CDS. A pass here is therefore
 only permission to approach a dispenser provider and run nonlinear analysis.
 
-## Fixed assumptions
+## Assumptions I fixed
 
 - Four face-centred force channels at the conservative A2 force-line radius of 45.75 mm.
 - Three fins per face, 5.0 mm active height, 0.50 mm radial tip cover.
@@ -48,7 +48,7 @@ only permission to approach a dispenser provider and run nonlinear analysis.
 Dimensions are frozen in `cad/comb_fin_parameters.json` and the drawing
 `cad/a5a_comb_fin_cross_section.svg`.
 
-## Bands declared before execution
+## Bands I declared before execution
 
 | ID | Band | Failure action |
 |---|---|---|
@@ -63,7 +63,7 @@ Dimensions are frozen in `cad/comb_fin_parameters.json` and the drawing
 | A5a-9 | Developed required air-gap shear is <=26 kPa. | Add active area or reject. |
 | A5a-10 | Nominal clearance on both fin sides is >=0.50 mm. | Increase the slot or reject the tolerance stack. |
 
-## Explicit non-bands
+## What I explicitly did not claim
 
 - CDS guidance does not prove compatibility with an existing dispenser.
 - The calculation does not prove fin strength, root fastener strength, vibration life or debris
@@ -73,9 +73,9 @@ Dimensions are frozen in `cad/comb_fin_parameters.json` and the drawing
 - Solar-cell layout and harness routing remain spacecraft-specific even if the projected-width
   screen passes.
 
-## Required output
+## Output I required
 
-The result must include every derived cross-section dimension, component mass, usable-face
+I required the result to include every derived cross-section dimension, component mass, usable-face
 fraction, all 441 force-allocation points, centroid closure error, peak channel load, shear and
 individual band results. The generated summary must distinguish CDS guidance from provider
 acceptance.

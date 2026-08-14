@@ -1,11 +1,11 @@
-# ADR-003: Phase 0 duty
+# ADR-003: the Phase 0 duty I froze
 
 **Status:** accepted  
 **Date:** 2026-08-13
 
-## Decision
+## What I decided
 
-Freeze the first design screen at:
+I froze the first design screen at:
 
 - 4 kg reference payload;
 - 6 kg qualification sizing payload;
@@ -23,9 +23,8 @@ per second reaches that regime while shortening the stator, bank pulse and quali
 The modular track may grow after the first tile and rail coupon work. Velocity is not increased on
 paper to compensate for a force-density failure.
 
-## Consequences
+## What follows
 
 At 8 g over 0.90 m, ideal kinematics give approximately 11.89 m/s independent of mass. The 6 kg
 case changes force, channel sizing and energy, not that velocity, until a lower payload acceleration
 limit is imposed.
-

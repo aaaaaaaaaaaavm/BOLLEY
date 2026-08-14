@@ -52,13 +52,13 @@ run FEA and build a coupon, not evidence that the current comb-fin candidate wil
 
 Electrical efficiency is intentionally absent from this comparison.
 
-## Declared-band result
+## What I found against my declared bands
 
 **13/13 first-order bands pass.** Passing means the architecture survives its initial
 dimensional and algebraic screens. A3 commutation and force production remain the first physical
 kill tests.
 
-## Frozen caveats
+## Caveats I retain
 
 - No flux-linkage, saturation, voltage, current, thermal or normal-force model exists.
 - The 40–60% efficiency range is an assumption.
