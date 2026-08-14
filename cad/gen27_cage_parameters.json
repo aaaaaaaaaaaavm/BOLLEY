@@ -1,0 +1,24 @@
+{
+  "extends": "cad/gen27_codesign_parameters.json",
+  "schema_version": 1,
+  "status": "ASSUMPTION A7c selected Gen2.7 Fluxrelay post-field cage/circuit reclosure; NOT RUN",
+  "controlled_design": "Exact A8b n27_p45.3_I380_A10.4 geometry and winding with fresh A6h field and phase-window inductance",
+  "selected_candidate_id": "n27_p45.3_I380_A10.4",
+  "source_files": [
+    "cad/fluxbridge_parameters.json",
+    "cad/gen27_codesign_parameters.json",
+    "analysis/results/gen27_codesign.json",
+    "cad/gen27_field_parameters.json",
+    "analysis/results/gen27_field.json"
+  ],
+  "model": {
+    "field_selection": "minimum A6h three-mesh mean tooth-slice field; convert to equivalent sheet field with sqrt(0.5); check moving and stationary material on their worst A6h mesh",
+    "inductance_selection": "A6h fine-mesh three-cell active-window phase inductance without pitch or current rescaling",
+    "cage_model": "A8b low-slip homogenized five-lane sheet model at the exact 318.6 mm active length",
+    "shot_model": "constant 8 g force over 0.90 m with analytical energy integration at every 21 by 21 CG point",
+    "field_current_rule": "380 A RMS is the solved full-field point; channel current scales with square root of commanded force",
+    "phase_resistance_rule": "retain A8b three-cell active-window resistance, then apply the frozen 100/125% corner multiplier",
+    "installed_mass_rule": "retain A8b installed mass for all 27 cells while pulse loss uses only the nine-cell active window",
+    "equivalent_copper_sheet_thickness_m": 0.000345
+  }
+}

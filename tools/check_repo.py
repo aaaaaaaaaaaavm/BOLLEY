@@ -39,6 +39,7 @@ A7B_RESULTS = {"gen26_cage_circuit.json"}
 A8A_RESULTS = {"axial_engagement.json"}
 A8B_RESULTS = {"gen27_codesign.json"}
 A6H_RESULTS = {"gen27_field.json"}
+A7C_RESULTS = {"gen27_cage_circuit.json"}
 
 
 def run(*parts: str) -> None:
@@ -117,6 +118,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -277,8 +279,14 @@ def main() -> None:
         run("tools/make_gen27_field.py", "--check")
     elif (ROOT / "docs" / "GEN27_FIELD.md").exists():
         raise SystemExit("docs/GEN27_FIELD.md exists before the A6h result")
+    if A7C_RESULTS <= committed:
+        run("analysis/gen27_cage_circuit.py", "--check")
+    elif (ROOT / "docs" / "GEN27_CAGE_CIRCUIT.md").exists():
+        raise SystemExit("docs/GEN27_CAGE_CIRCUIT.md exists before the A7c result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c"
+        if A7C_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h with A7c declared"
         if A6H_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b with A6h declared"
         if A8B_RESULTS <= committed
