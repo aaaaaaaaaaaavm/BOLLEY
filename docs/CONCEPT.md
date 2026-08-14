@@ -97,9 +97,13 @@ four-channel force-centroid control, a repeatable magnetic/conductive path, less
 alloy and anodization, simpler launcher guidance or lower lifecycle cost. The comparison remains
 open until I have matched field, structural, integration and cost evidence for both branches.
 
-## What I established in A8b
+## What I established in A8b and A6h
 
 In A8b I found 77 analytical points that satisfy my frozen coupled bands and selected one by minimax
-margin. I did not establish nonlinear field behavior at 380 A, commutation ripple, end effects,
-inverter partitioning, structure, manufacturing tolerance, provider compatibility or hardware
-performance. A6h and A7c are my next physics gates; Gen3 CAD is my next geometry gate.
+margin. In A6h I replaced its field and inductance surrogates at the exact selected point. Three
+fresh nonlinear meshes pass all 13 frozen bands, and I now carry a 4.81156 uH phase-window
+inductance into A7c.
+
+I have not established commutation ripple, end effects, inverter partitioning, structure,
+manufacturing tolerance, provider compatibility or hardware performance. A7c is my next physics
+gate; packaged Gen3 CAD is my next geometry gate.

@@ -50,11 +50,18 @@ I did not reach the current concept in a straight line:
     candidates closed every analytical band; `n27_p45.3_I380_A10.4` became the single Gen2.7
     Fluxrelay point promoted to fresh field and circuit reclosure.
 
+## 14 August 2026 — I replace the selected-point field surrogate
+
+I froze A6h before execution, then solved the exact selected 380 A point on three independently
+specified nonlinear meshes. All 13 declared bands pass. I now carry the worst 1.52843 T stationary
+peak, 1.34336 T moving peak and 4.81156 uH three-cell phase-window inductance into A7c. I have not
+treated that model result as force, switching or hardware evidence.
+
 I retain every rejected branch because it explains why I arrived at the current geometry. In
 VOLLEY, my stock-CDS-rail control has now failed its A30 edge-effect calculation, while a wider
 conductive-plate control survives analytically. I have therefore narrowed Bolley's active question:
-does my selected cooperative cage retain its margin in fresh nonlinear field and sectional-circuit
-models, and can its four-channel interface justify 0.371 kg against the lighter wide plate?
+does my selected cooperative cage retain its margin in a sectional-circuit model and later
+hardware, and can its four-channel interface justify 0.371 kg against the lighter wide plate?
 
 ## Authorship
 

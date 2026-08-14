@@ -28,9 +28,10 @@
 | A7b | MODELLED | 2/4 robustness corners pass all 19 bands. Quintweb closes every translator failure; both 125% resistance corners fail only reference energy. |
 | A8a | MODELLED | 5/10 bands pass over 9,001 travel points. The 900 mm axial package and simple full-overlap extension are rejected; sectional excitation survives. |
 | A8b | MODELLED | 77/2,856 candidates pass every declared band. `n27_p45.3_I380_A10.4` is selected for fresh field and circuit reclosure. |
+| A6h | MODELLED | 13/13 fresh nonlinear-field bands pass on 212,850 / 751,282 / 240,130 triangles. The exact Gen2.7 point advances to A7c and provisional Gen3 CAD. |
 
 I update this file only after the corresponding committed run sheet exists.
 
-I never use `MODELLED` to mean measured. In A8b I closed the coupled axial/sectional analytical
-question for one Gen2.7 point. Its field is still my A6g current-scaled surrogate, so I require A6h
-and A7c to pass before the new package can supersede the rejected Gen2.6 geometry.
+I never use `MODELLED` to mean measured. In A6h I replaced A8b's current-scaled field and
+pitch-scaled inductance surrogates for one Gen2.7 point. I still require A7c and packaged Gen3
+geometry before the new package can supersede the rejected Gen2.6 baseline.

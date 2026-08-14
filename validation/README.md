@@ -27,6 +27,17 @@ the answer.
 | [A3g](A3g_fluxbridge_optimization.md) | Is there a robust winding-size/field/pitch point for Gen2 CAD? | Deterministic search with eight robustness corners | 10 robust candidates; selected point later rejected by A6 |
 | [A5d](A5d_gen2_cad.md) | Does the selected Fluxbridge stator and cage fit in manufacturing-intent nominal CAD? | Parametric CAD + exact intersection checks | 13/13 pass; geometry retained |
 | [A6](A6_gen2_field.md) | Does the actual nonlinear cross-section reproduce A3g field and inductance without core saturation? | Three-mesh 2D nonlinear magnetostatic FEA | 10/13 pass; operating point rejected |
+| [A6b](A6b_gen21_fluxmanifold.md) | Does my first radius-fed return repair the A6 saturation failures? | Three-mesh 2D nonlinear magnetostatic FEA | 11/13 pass; exact geometry rejected |
+| [A6c](A6c_gen22_fluxmanifold_r4.md) | Does lower MMF and a deeper return haunch close the remaining peaks? | Three-mesh 2D nonlinear magnetostatic FEA | 12/13 pass; moving ligament rejected |
+| [A6d](A6d_gen23_fluxrib.md) | Does a locally thicker passive rib close the ligament peak? | Three-mesh 2D nonlinear magnetostatic FEA | 12/13 pass; exact rib rejected |
+| [A6e](A6e_gen24_fluxrib.md) | Can I spend more passive mass and slightly less MMF to close that peak? | Three-mesh 2D nonlinear magnetostatic FEA | 12/13 pass; local peak rejected |
+| [A6f](A6f_gen25_fluxweb.md) | Does a layered magnetic web beneath the copper rungs close the transverse field? | Three-mesh 2D nonlinear magnetostatic FEA | 13/13 pass; cage/circuit reclosure opened |
+| [A7a](A7a_gen25_cage_circuit.md) | Does exact Gen2.5 still close energy, thermal, cage and CG bands? | Post-field cage/circuit model | 0/4 robustness corners pass all bands; point rejected |
+| [A6g](A6g_gen26_quintweb.md) | Does a five-lane cage retain the transverse-field pass? | Three-mesh 2D nonlinear magnetostatic FEA | 13/13 pass; cage/circuit reclosure opened |
+| [A7b](A7b_gen26_cage_circuit.md) | Does the fifth lane close A7a without moving my bands? | Post-field cage/circuit model | Translator failures close; hot reference energy remains high |
+| [A8a](A8a_axial_engagement.md) | Does the exact Gen2.6 cage remain engaged through the claimed powered travel? | Finite-interval axial model | 900 mm package and simple extension rejected |
+| [A8b](A8b_gen27_codesign.md) | Can I close engagement, installed mass and sectional energy together? | Coupled deterministic design-space search | 77 candidates pass; one Gen2.7 point selected |
+| [A6h](A6h_gen27_fluxrelay.md) | Does the exact selected 380 A point survive a fresh nonlinear field solve? | Three-mesh 2D nonlinear magnetostatic FEA | 13/13 pass; A7c and provisional Gen3 opened |
 
 I do not use `MODELLED` as a synonym for `VALIDATED`. Only hardware evidence can close my central
 claim.

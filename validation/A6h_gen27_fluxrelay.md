@@ -47,3 +47,21 @@ heat for A7c.
 I required the repository to retain all three meshes, nonlinear histories, worst-mesh extrema,
 the fine active-window phase inductance, all 13 Boolean bands and three indexed figures. A pass
 opens only A7c and provisional Gen3 geometry.
+
+## What I recorded
+
+I completed A6h on 14 August 2026 without changing the frozen point, meshes, material model or
+bands. All **13/13** bands pass:
+
+- the three mesh means span 0.75503–0.75764 T;
+- worst moving magnetic material reaches 1.34336 T;
+- worst stationary core reaches 1.52843 T;
+- slot imbalance and active-height variation remain at 4.302% and 4.676%;
+- base-to-fine mean field and coenergy change by 0.221% and 0.279%;
+- the expanded boundary changes mean field by 0.345%; and
+- the fine three-cell phase-window inductance is 4.81156 uH, or 0.97145 times my A8b surrogate.
+
+I therefore replaced A8b's current-scaled peaks and pitch-scaled inductance with this fresh A6h
+result. I promoted only the exact selected point to A7c and provisional Gen3 geometry. I still
+require A7c to reclose the sectional cage/circuit model from 4.81156 uH without refitting the
+geometry or its energy bands.

@@ -41,8 +41,10 @@ copper instead of correcting them one at a time. Of my 2,856 declared candidates
 hard band. I selected **Gen2.7 Fluxrelay** by minimax margin: 27 cells at 45.3 mm pitch, 380 A and
 10.4 mm2 per turn; a 318.6 mm passive cage traverses a 1.2231 m sectional primary with 2.25 mm
 engagement guards. I calculate a 895.47 J hot reference shot and 15.91 kg installed primary mass.
-Those margins are model outputs, not hardware evidence, and my 1.534 T stationary peak is still a
-current-scaled A6g surrogate. Fresh A6h field and A7c circuit reclosure are my next kill gates.
+Those margins are model outputs, not hardware evidence. In A6h I replaced the scaled field with
+three fresh nonlinear meshes: all 13 frozen bands pass, with 1.5284 T worst stationary peak,
+1.3434 T worst moving peak and 4.81156 uH fine three-cell phase-window inductance. A7c circuit
+reclosure is my next physics kill gate.
 
 ## The architecture I am carrying forward
 
@@ -89,9 +91,9 @@ patentability.
 |---|---|---|
 | Selected payload interface | 318.6 mm five-lane Fluxrelay cage; 0.37136 kg modelled increment | 28.64 g below absolute limit; both preferences missed |
 | Selected primary | 27 cells/channel, 45.3 mm pitch, 380 A, 10.4 mm2/turn | 1.2231 m and 15.908 kg installed |
-| A8b coupled closure | 77/2,856 candidates pass; selected worst demand 0.99496 | Analytical point promoted to A6h/A7c |
-| Transverse field | A6g 751,282-element fine mesh passed 13/13 at 375 A | A8b's 380 A point still needs fresh A6h meshes |
-| Cage + circuit | Selected hot reference 895.47 J; qualification 1,305.16 J | Must be reclosed from A6h field/inductance |
+| A8b coupled closure | 77/2,856 candidates pass; selected worst demand 0.99496 | I promoted one analytical point to A6h/A7c |
+| Transverse field | A6h passed 13/13 on 212,850 / 751,282 / 240,130 elements at 380 A | I replace the surrogate with 1.5284 T stationary, 1.3434 T moving and 4.81156 uH phase-window results |
+| Cage + circuit | Selected hot reference 895.47 J; qualification 1,305.16 J | I must reclose A7c from the solved 4.81156 uH and fresh field |
 | Axial engagement | 318.6 mm cage inside 1.2231 m stator over 900 mm travel | 2.25 mm modelled guard at both endpoints |
 | CAD | Seven STEP + seven STL historical Gen2 masters | Gen3 Fluxrelay geometry is next, not yet evidence |
 | Hardware evidence | None | Central claim remains open |
@@ -106,11 +108,12 @@ patentability.
 6. [`docs/GEN26_CAGE_CIRCUIT.md`](docs/GEN26_CAGE_CIRCUIT.md) — the isolated hot-energy miss.
 7. [`docs/AXIAL_ENGAGEMENT.md`](docs/AXIAL_ENGAGEMENT.md) — why the exact axial package is rejected.
 8. [`docs/GEN27_CODESIGN.md`](docs/GEN27_CODESIGN.md) — the selected Fluxrelay package and margins.
-9. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
-10. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
-11. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
-12. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
-13. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+9. [`docs/GEN27_FIELD.md`](docs/GEN27_FIELD.md) — my fresh selected-point nonlinear-field result.
+10. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
+11. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
+12. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
+13. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
+14. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
 
 ## Reproduce
 
@@ -120,11 +123,12 @@ The algebraic stages require only Python. Gen2 CAD uses the pinned packages in
 ```bash
 python tools/check_repo.py
 python analysis/gen27_codesign.py --check
-python analysis/gen26_field.py --check  # full three-mesh A6g re-solve
+python analysis/gen27_field.py --artifact-check
+python analysis/gen27_field.py --check  # full three-mesh A6h re-solve
 ```
 
 `tools/check_repo.py` verifies deterministic outputs, package manifests, local links and the
-declared stage sequence. The complete A6g re-solve is kept explicit because it is materially more
+declared stage sequence. I keep the complete A6h re-solve explicit because it is materially more
 expensive than an artifact-integrity check.
 
 ## Rules I use for this repository
