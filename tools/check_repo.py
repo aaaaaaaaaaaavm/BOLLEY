@@ -40,6 +40,7 @@ A8A_RESULTS = {"axial_engagement.json"}
 A8B_RESULTS = {"gen27_codesign.json"}
 A6H_RESULTS = {"gen27_field.json"}
 A7C_RESULTS = {"gen27_cage_circuit.json"}
+A5E_RESULTS = {"gen3_cad_fit.json"}
 
 
 def run(*parts: str) -> None:
@@ -119,6 +120,7 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -160,6 +162,18 @@ def main() -> None:
         for path in (ROOT / "cad" / "GEN2_DIMENSIONS.md", ROOT / "cad" / "GEN2_BOM.md")
     ):
         raise SystemExit("generated Gen2 CAD documents exist before cad/BUILD_GEN2.json")
+    gen3_build = ROOT / "cad" / "BUILD_GEN3.json"
+    if gen3_build.exists():
+        subprocess.run([sys.executable, "cad/build_gen3.py", "--check"], cwd=ROOT, check=True)
+        subprocess.run([sys.executable, "cad/render_gen3.py", "--check"], cwd=ROOT, check=True)
+        run("tools/package_gen3_cad.py", "--check")
+        run("tools/make_gen3_cad_docs.py", "--check")
+        run("tools/make_figure_index.py", "--check")
+    elif any(
+        path.exists()
+        for path in (ROOT / "cad" / "GEN3_DIMENSIONS.md", ROOT / "cad" / "GEN3_BOM.md")
+    ):
+        raise SystemExit("generated Gen3 CAD documents exist before cad/BUILD_GEN3.json")
     if A5A_RESULTS <= committed:
         run("analysis/interface_fit_screen.py", "--check")
         run("tools/make_interface_fit_screen.py", "--check")
@@ -285,8 +299,14 @@ def main() -> None:
         run("tools/render_gen27_cage.py", "--check")
     elif (ROOT / "docs" / "GEN27_CAGE_CIRCUIT.md").exists():
         raise SystemExit("docs/GEN27_CAGE_CIRCUIT.md exists before the A7c result")
+    if A5E_RESULTS <= committed:
+        run("analysis/gen3_cad_fit.py", "--check")
+    elif (ROOT / "docs" / "GEN3_CAD_FIT.md").exists():
+        raise SystemExit("docs/GEN3_CAD_FIT.md exists before the A5e result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e"
+        if A5E_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c with A5e declared"
         if A7C_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h with A7c declared"
         if A6H_RESULTS <= committed
