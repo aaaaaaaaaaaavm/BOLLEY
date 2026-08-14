@@ -27,9 +27,10 @@
 | A6g | MODELLED | 13/13 field bands pass on 212,850 / 751,282 / 240,130 triangles. Gen2.6 Quintweb advances. |
 | A7b | MODELLED | 2/4 robustness corners pass all 19 bands. Quintweb closes every translator failure; both 125% resistance corners fail only reference energy. |
 | A8a | MODELLED | 5/10 bands pass over 9,001 travel points. The 900 mm axial package and simple full-overlap extension are rejected; sectional excitation survives. |
+| A8b | MODELLED | 77/2,856 candidates pass every declared band. `n27_p45.3_I380_A10.4` is selected for fresh field and circuit reclosure. |
 
 This file is updated only after the corresponding committed run sheet exists.
 
-`MODELLED` never means measured. The current evidence retains Gen2.6's transverse topology and
-sectional-excitation idea, but rejects its exact circuit and axial package. A8b must close those
-coupled defects before new CAD can be promoted.
+`MODELLED` never means measured. A8b closes the coupled axial/sectional analytical question for one
+Gen2.7 point. Its field is still an A6g current-scaled surrogate, so A6h and A7c must pass before
+the new package can supersede the rejected Gen2.6 geometry.

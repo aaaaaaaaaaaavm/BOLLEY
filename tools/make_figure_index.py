@@ -20,6 +20,7 @@ A7A = ROOT / "analysis" / "figures" / "a7a" / "FIGURES.json"
 A6G = ROOT / "analysis" / "figures" / "a6g" / "FIGURES.json"
 A7B = ROOT / "analysis" / "figures" / "a7b" / "FIGURES.json"
 A8A = ROOT / "analysis" / "figures" / "a8a" / "FIGURES.json"
+A8B = ROOT / "analysis" / "figures" / "a8b" / "FIGURES.json"
 OUTPUT = ROOT / "docs" / "FIGURE_INDEX.md"
 
 
@@ -59,6 +60,7 @@ def render() -> str:
         ("A6g", A6G, "2D nonlinear field-model output", "Passing Gen2.6 Quintweb transverse-field screen"),
         ("A7b", A7B, "Post-field cage/circuit model output", "Rejected exact Gen2.6 hot-resistance circuit evidence"),
         ("A8a", A8A, "Axial engagement model output", "Rejected exact Gen2.6 axial-package evidence"),
+        ("A8b", A8B, "Coupled design-space model output", "Selected Gen2.7 analytical point; field reclosure open"),
     ):
         if not manifest_path.exists():
             continue

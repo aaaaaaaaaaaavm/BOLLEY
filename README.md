@@ -7,7 +7,7 @@ spacecraft to remove kilograms of machinery from the launcher.**
 > Every number in this repository is either an assumption, a first-order model output or
 > external evidence labelled as such.
 
-![A8a separates the stroke failure from the circuit correction](analysis/figures/a8a/A8a_correction_trade.png)
+![A8b Fluxrelay feasible design island](analysis/figures/a8b/A8b_feasible_island.png)
 
 VOLLEY asked whether an unmodified CubeSat could receive a programmable deployment velocity
 without carrying propulsion. Its answer used a reusable magnetic sled. The model worked, but
@@ -33,36 +33,45 @@ against 900 J.
 
 A8a then found the more important axial contradiction: a 336 mm cage cannot remain fully engaged
 while travelling 900 mm through a 900 mm stator. The as-drawn package produces 10.70 m/s, and a
-full-overlap extension reaches 22.20 kg. Sectional excitation survives—the required resistance
-ratio is 0.8202 and cell/tile windows produce 0.50/0.70—but the axial package does not. That is the
-current correction boundary. No candidate has passed transient force FEA, provider review,
-structural analysis or hardware test.
+simple full-overlap extension reaches 22.20 kg.
+
+A8b closed that analytical contradiction by co-designing cage length, cell pitch, current and
+copper instead of correcting them one at a time. Of 2,856 declared candidates, 77 pass every hard
+band. The minimax point is **Gen2.7 Fluxrelay**: 27 cells at 45.3 mm pitch, 380 A and 10.4 mm2 per
+turn; a 318.6 mm passive cage traverses a 1.2231 m sectional primary with 2.25 mm engagement guards.
+The hot reference shot is 895.47 J and installed primary mass is 15.91 kg. Those margins are model
+outputs, not hardware evidence, and the 1.534 T stationary peak is still a current-scaled A6g
+surrogate. Fresh A6h field and A7c circuit reclosure are the next kill gates.
 
 ## The architecture that remains
 
 - Four independently controlled face channels apply axial force around the spacecraft.
 - Software distributes force so its centroid follows the declared payload centre of gravity.
-- A sectional stationary primary energises only cells overlapped by the passive interface.
+- Each face channel contains a 27-cell, 1.2231 m sectional stationary primary.
+- A 318.6 mm five-lane passive cage energises at most three cells per phase in each channel.
 - The Phase 0 reference duty is a 4 kg 3U payload, 8 g and approximately 12 m/s.
 - A 6 kg 3U is the qualification sizing case, not silently treated as a 4 kg satellite.
 - No permanent magnets, powered spacecraft hardware, pyrotechnics or pressure vessels are added.
 - An independent gate carries ascent loads and prevents an uncommanded deployment.
 - When the field ends, the CubeSat coasts out. No moving launcher member follows it.
 
-The original six-tile / 900 mm arrangement is rejected by A8a. Tile count, active cage length and
-conductor area are now co-design variables; they are not quietly inherited by the next CAD model.
+The original six-tile / 900 mm arrangement remains rejected. Fluxrelay counts every installed
+cell against the launcher mass band but charges only the conservative active window with pulse
+loss. That distinction is the design correction; unused copper does not disappear from the mass.
 
 ## The zero-modification control
 
-The same design programme now records a second sledless branch in
-[VOLLEY Gen6](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/docs/GEN6_RAIL_DRIVE.md): drive
-directly on the CubeSat's existing CDS aluminium corner rails. Its 0.45 T sizing is attractive,
-but its 0.55 transverse edge-effect factor is still an assumption awaiting 3D transient evidence.
+VOLLEY tested the strongest zero-modification control: drive directly on the existing CDS
+aluminium corner rails. [A30](https://github.com/aaaaaaaaaaaavm/VOLLEY/commit/acce22e04f3ba81e8d44d5318f78949a0518fb7a)
+rejected it. The solved transverse edge factor is 0.0253 rather than 0.55, leaving only 41.9 N even
+at a generous 0.60 T. Pole pitch cannot simultaneously rescue the narrow conductor and large
+rail-to-stator gap.
 
-That branch is Bolley's control, not a result to ignore. A cooperative interface must earn its
-0.35–0.40 kg by giving a more reliable flux path, lower sensitivity to somebody else's rail alloy
-and anodised geometry, better force-centroid authority or a cheaper launcher. “No sled” alone is
-no longer enough to justify Bolley.
+VOLLEY's surviving direction is now a roughly 90 mm conductive plate: 0.248 kg in its analytical
+example, with much better edge utilization. That is the honest control for Bolley. Fluxrelay must
+earn its 0.371 kg interface through four-channel force-centroid authority, a controlled magnetic
+path, tolerance to rail alloy/anodization, lower launcher complexity or lower cost. “No sled” alone
+is not enough.
 
 ## What is not claimed
 
@@ -76,12 +85,13 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 
 | Layer | Current evidence | Disposition |
 |---|---|---|
-| Passive spacecraft interface | Five layered Quintweb blades per face; 0.38823 kg modelled increment | A6g field pass; 11.77 g below absolute limit |
-| Transverse field | 751,282-element fine mesh; 13/13 A6g bands | Retained for the next axial co-design |
-| Cage + circuit | 3,528 A7b CG/corner/payload points; 2/4 corners pass all 19 bands | Translator closes; hot reference energy does not |
-| Axial engagement | 9,001 A8a travel points; 5/10 bands | Exact 900 mm package rejected |
-| Sectional excitation | Cell/tile phase resistance = 0.50/0.70× A7b | Retained as Gen2.7 mechanism, not yet a circuit |
-| CAD | Seven STEP + seven STL Gen2 masters and deterministic packages | Historical nominal geometry; Gen3 blocked on A8b |
+| Selected payload interface | 318.6 mm five-lane Fluxrelay cage; 0.37136 kg modelled increment | 28.64 g below absolute limit; both preferences missed |
+| Selected primary | 27 cells/channel, 45.3 mm pitch, 380 A, 10.4 mm2/turn | 1.2231 m and 15.908 kg installed |
+| A8b coupled closure | 77/2,856 candidates pass; selected worst demand 0.99496 | Analytical point promoted to A6h/A7c |
+| Transverse field | A6g 751,282-element fine mesh passed 13/13 at 375 A | A8b's 380 A point still needs fresh A6h meshes |
+| Cage + circuit | Selected hot reference 895.47 J; qualification 1,305.16 J | Must be reclosed from A6h field/inductance |
+| Axial engagement | 318.6 mm cage inside 1.2231 m stator over 900 mm travel | 2.25 mm modelled guard at both endpoints |
+| CAD | Seven STEP + seven STL historical Gen2 masters | Gen3 Fluxrelay geometry is next, not yet evidence |
 | Hardware evidence | None | Central claim remains open |
 
 ## Start here
@@ -93,11 +103,12 @@ The exact combination may be unusual. That is not proof of novelty or patentabil
 5. [`docs/GEN26_FIELD.md`](docs/GEN26_FIELD.md) — the passing five-lane transverse field.
 6. [`docs/GEN26_CAGE_CIRCUIT.md`](docs/GEN26_CAGE_CIRCUIT.md) — the isolated hot-energy miss.
 7. [`docs/AXIAL_ENGAGEMENT.md`](docs/AXIAL_ENGAGEMENT.md) — why the exact axial package is rejected.
-8. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
-9. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
-10. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
-11. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
-12. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+8. [`docs/GEN27_CODESIGN.md`](docs/GEN27_CODESIGN.md) — the selected Fluxrelay package and margins.
+9. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
+10. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
+11. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
+12. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
+13. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
 
 ## Reproduce
 
@@ -106,7 +117,7 @@ The algebraic stages require only Python. Gen2 CAD uses the pinned packages in
 
 ```bash
 python tools/check_repo.py
-python analysis/axial_engagement.py --check
+python analysis/gen27_codesign.py --check
 python analysis/gen26_field.py --check  # full three-mesh A6g re-solve
 ```
 

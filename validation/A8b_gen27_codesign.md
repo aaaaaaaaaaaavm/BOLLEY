@@ -63,3 +63,27 @@ candidate ID. Exact geometry Booleans do not create a zero-margin selection arte
 Commit every candidate, all evaluated corner summaries, CG count, hard-band vector, continuous
 demand vector, feasible set and deterministic selection. A pass freezes one point for A6h field,
 A7c selected-point reclosure and only then Gen3 CAD.
+
+## Recorded result
+
+**Run completed 2026-08-13. Result: 77/2,856 candidates pass every declared hard band; promote
+one selected analytical point to A6h and A7c.**
+
+The deterministic minimax selection is `n27_p45.3_I380_A10.4`: 27 cells per face channel,
+45.3 mm pitch, 380 A rated phase current and 10.4 mm2 conductor area per turn. It produces a
+1.2231 m installed stator, a 318.6 mm cage, 2.25 mm guards at both travel endpoints and a
+maximum sectional window of nine cells / three cells per phase.
+
+The selected point uses 15.9081 kg installed active primary and adds 0.37136 kg to the payload.
+Active-window phase resistance is 0.78725 times A7b. The hot 90%-conductance / 125%-resistance
+reference corner uses 895.467 J and the worst qualification corner uses 1,305.163 J. The three
+tightest continuous demands are reference energy 0.99496, installed active-primary mass 0.99426
+and predicted stationary-core peak 0.98965.
+
+The current-scaled stationary peak is 1.53395 T and is not a fresh field result. A8b therefore
+closes its coupled analytical question but does not release hardware or final CAD. A6h nonlinear
+field and A7c selected-point reclosure remain mandatory.
+
+Every candidate is retained in deterministic gzip JSON at
+`analysis/results/gen27_codesign_candidates.json.gz`, SHA-256
+`2ad36b89d32acd9c6fe76b1644d1f53de2f9e4de23c263eed554cb2c0808b378`.

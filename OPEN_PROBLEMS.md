@@ -20,7 +20,7 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P13 | The recurring-cost advantage is entirely unquoted. | Supplier quotations and integration labour model. | MEDIUM | OPEN |
 | P14 | Host recoil and campaign attitude restoration have not been re-derived without the sled return. | Host-specific momentum and cadence assessment. | MEDIUM | OPEN |
 | P15 | Patent and literature searches are incomplete. | Professional search or documented decision not to pursue protection. | MEDIUM | OPEN |
-| P16 | No bus vendor has agreed that 0.15–0.25 kg of passive rail hardware is commercially acceptable. | At least one written customer or bus-vendor response. | MEDIUM | OPEN |
+| P16 | No bus vendor has agreed that 0.35–0.40 kg of passive interface hardware is commercially acceptable. | At least one written customer or bus-vendor response on the selected 0.371 kg interface. | MEDIUM | OPEN |
 | P17 | The unmodified-payload four-finger fallback remains only a sketch. | Separate requirements and one-corner actuator screen. | LOW | DEFERRED |
 | P18 | The 0.50 mm equivalent-thickness mass screen does not define a closed moving flux path. | A3a identifies an explicit topology that passes area and interface-mass gates. | CRITICAL | MODELLED |
 | P19 | The comb-fin requires launcher pole access on both sides of every fin, but no provider-approved 3U dispenser cross-section exists yet. | A5a geometry survives preliminary guidance, then a selected provider accepts stator, containment and rail-contact drawings. | CRITICAL | MODELLED |
@@ -40,7 +40,10 @@ measurement, supplier document or decision record. Confidence is not closure.
 | P33 | A6 per-cell inductance is 1.3945 times A3g, invalidating the selected drive closure. | Recompute voltage, current, energy and loss from the passing Gen2.1 field/inductance result. | CRITICAL | OPEN |
 | P34 | A6b's fine ligament and return-haunch peaks exceed their limits by 2.21% and 0.62%. | A predeclared Gen2.2 correction passes <=1.45 T moving ligament and <=1.55 T stationary peak on all formal checks. | CRITICAL | OPEN |
 | P35 | Gen2.3's stepped-thickness magnetic ribs have no structural load path or manufacturable encapsulation detail. | Gen2.3 CAD, coupon drawing and structural test article preserve the 1.12 mm rib and copper continuity. | HIGH | OPEN |
-| P36 | The 336 mm cage leaves the 900 mm stator during a claimed 900 mm full-force stroke, while A7b charges every series cell instead of only overlapped sections. | Axial overlap, sectional circuit and installed-length model close velocity, energy and primary-mass bands together. | CRITICAL | MODELLED |
+| P36 | The 336 mm cage leaves the 900 mm stator during a claimed 900 mm full-force stroke, while A7b charges every series cell instead of only overlapped sections. | Axial overlap, sectional circuit and installed-length model close velocity, energy and primary-mass bands together. | CRITICAL | CLOSED |
+| P37 | A8b scales A6g fields linearly from 375 to 380 A, leaving only 1.04% stationary-core peak margin. | Fresh A6h coarse/fine/alternate nonlinear meshes pass every field, peak and convergence band at the selected point. | CRITICAL | OPEN |
+| P38 | The nine-cell active window has no switching handoff, force-ripple, fault or end-cell model. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | OPEN |
+| P39 | The 15.908 kg primary leaves 92 g for the active-material band and excludes structure, cooling, wiring and power electronics. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
 
 ## Register discipline
 

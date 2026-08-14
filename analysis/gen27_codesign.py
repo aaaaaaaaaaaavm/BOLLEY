@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import copy
+import gzip
+import hashlib
 import itertools
 import json
 import math
@@ -20,6 +22,7 @@ FIELD_RESULT = RESULTS / "gen26_field.json"
 A7B_RESULT = RESULTS / "gen26_cage_circuit.json"
 INPUT = ROOT / "cad" / "gen27_codesign_parameters.json"
 OUTPUT = RESULTS / "gen27_codesign.json"
+CANDIDATES_OUTPUT = RESULTS / "gen27_codesign_candidates.json.gz"
 MU_0_H_PER_M = 4.0 * math.pi * 1e-7
 
 
@@ -630,6 +633,24 @@ def calculate() -> dict:
     }
 
 
+def package(result: dict) -> tuple[dict, bytes]:
+    summary = copy.deepcopy(result)
+    candidates = summary.pop("candidate_records")
+    raw = (
+        json.dumps(candidates, separators=(",", ":"), sort_keys=True) + "\n"
+    ).encode("utf-8")
+    compressed = gzip.compress(raw, compresslevel=9, mtime=0)
+    summary["candidate_artifact"] = {
+        "path": str(CANDIDATES_OUTPUT.relative_to(ROOT)),
+        "compression": "deterministic gzip JSON, mtime=0",
+        "record_count": len(candidates),
+        "uncompressed_bytes": len(raw),
+        "bytes": len(compressed),
+        "sha256": hashlib.sha256(compressed).hexdigest(),
+    }
+    return summary, compressed
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
@@ -637,9 +658,16 @@ def main() -> None:
     args = parser.parse_args()
     result = calculate()
     if args.write:
-        dump_json(OUTPUT, result)
+        summary, candidates = package(result)
+        dump_json(OUTPUT, summary)
+        CANDIDATES_OUTPUT.write_bytes(candidates)
     elif args.check:
-        compare_json(OUTPUT, result)
+        summary, candidates = package(result)
+        compare_json(OUTPUT, summary)
+        if not CANDIDATES_OUTPUT.exists() or CANDIDATES_OUTPUT.read_bytes() != candidates:
+            raise SystemExit(
+                "stale generated file: analysis/results/gen27_codesign_candidates.json.gz"
+            )
     else:
         print(json.dumps(result, indent=2, sort_keys=True))
 

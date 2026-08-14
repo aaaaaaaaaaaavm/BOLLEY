@@ -49,11 +49,14 @@
 | A7b-02 | [A7b controlling normalized corner margins](../analysis/figures/a7b/A7b_controlling_margins.png) | `analysis/figures/a7b/A7b_controlling_margins.png` | Post-field cage/circuit model output — MODEL OUTPUT | Rejected exact Gen2.6 hot-resistance circuit evidence |
 | A8a-01 | [Axial overlap, force and velocity traces](../analysis/figures/a8a/A8a_engagement_profile.png) | `analysis/figures/a8a/A8a_engagement_profile.png` | Axial engagement model output — MODEL OUTPUT | Rejected exact Gen2.6 axial-package evidence |
 | A8a-02 | [Velocity, installed-mass and sectional-resistance trade](../analysis/figures/a8a/A8a_correction_trade.png) | `analysis/figures/a8a/A8a_correction_trade.png` | Axial engagement model output — MODEL OUTPUT | Rejected exact Gen2.6 axial-package evidence |
+| A8b-01 | [A8b feasible axial/electrical design island](../analysis/figures/a8b/A8b_feasible_island.png) | `analysis/figures/a8b/A8b_feasible_island.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; field reclosure open |
+| A8b-02 | [Selected Fluxrelay normalized hard-band margins](../analysis/figures/a8b/A8b_selected_margins.png) | `analysis/figures/a8b/A8b_selected_margins.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; field reclosure open |
+| A8b-03 | [Selected Fluxrelay axial engagement package](../analysis/figures/a8b/A8b_axial_package.png) | `analysis/figures/a8b/A8b_axial_package.png` | Coupled design-space model output — MODEL OUTPUT | Selected Gen2.7 analytical point; field reclosure open |
 
 ## Evidence count
 
-- Indexed figures: **44**.
-- Parametric/model/schematic figures: **44**.
+- Indexed figures: **47**.
+- Parametric/model/schematic figures: **47**.
 - Physically observed figures: **0**.
 
 A render may explain topology or nominal fit. It cannot close force, field, thermal,

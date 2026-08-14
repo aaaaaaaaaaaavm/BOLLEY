@@ -46,11 +46,15 @@ The concept did not travel in a straight line:
 13. A8a checked the finite axial intervals. It rejected the 900 mm stator because the 336 mm cage
     leaves it during the claimed 900 mm powered travel. A simple full-overlap extension also
     failed the stationary-primary mass band.
+14. A8b searched cage length, cell pitch, current and conductor area together. Seventy-seven
+    candidates closed every analytical band; `n27_p45.3_I380_A10.4` became the single Gen2.7
+    Fluxrelay point promoted to fresh field and circuit reclosure.
 
 Every rejected branch remains in the repository because it explains why the current geometry
-exists. The active question is now narrower: can a shorter aft-positioned Quintweb cage and a
-sectional primary close engagement, installed mass and the A7b hot-energy corner together, or does
-the existing-rail control in VOLLEY make the cooperative interface unnecessary?
+exists. The stock-CDS-rail control in VOLLEY has now failed its A30 edge-effect calculation, while
+a wider conductive-plate control survives analytically. Bolley's active question is narrower: does
+the selected cooperative cage retain its margin in fresh nonlinear field and sectional-circuit
+models, and can its four-channel interface justify 0.371 kg against the lighter wide plate?
 
 ## Authorship
 

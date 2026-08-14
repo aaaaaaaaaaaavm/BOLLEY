@@ -1,0 +1,31 @@
+{
+  "figure_count": 3,
+  "figures": [
+    {
+      "bytes": 259545,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a8b/A8b_feasible_island.png",
+      "sha256": "36b30a553818aa9e4b4585dd89ba4e9af07ea44124c498ab7568949a55cc7301",
+      "source": "tools/render_gen27_codesign.py",
+      "title": "A8b feasible axial/electrical design island"
+    },
+    {
+      "bytes": 145338,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a8b/A8b_selected_margins.png",
+      "sha256": "50d91c812ae4ec8e3ab47ad5bc26eb04124181bcb2903480fb513832cf13a1ba",
+      "source": "tools/render_gen27_codesign.py",
+      "title": "Selected Fluxrelay normalized hard-band margins"
+    },
+    {
+      "bytes": 80976,
+      "evidence": "MODEL OUTPUT",
+      "path": "analysis/figures/a8b/A8b_axial_package.png",
+      "sha256": "279dad74782497228a17ac50770f027c646ada6c0664dab1bbb1771a030e406d",
+      "source": "tools/render_gen27_codesign.py",
+      "title": "Selected Fluxrelay axial engagement package"
+    }
+  ],
+  "gate": "A8b",
+  "schema_version": 1
+}

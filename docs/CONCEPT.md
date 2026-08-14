@@ -2,43 +2,65 @@
 
 ## One change to the premise
 
-VOLLEY accelerated an unmodified payload on a 9.445 kg reusable magnetic sled. Bolley puts a
-small, passive electromagnetic reaction feature into the payload interface and eliminates the
-sled.
+VOLLEY accelerated an unmodified payload on a 9.445 kg reusable magnetic sled. Bolley accepts a
+small passive CubeSat modification so the spacecraft itself becomes the translator. All windings,
+switches, sensors and stored energy stay on the launcher.
+
+The present architecture is **Gen2.7 Fluxrelay**, not the early reluctance comb and not the rejected
+900 mm Quintweb package.
 
 ```mermaid
 flowchart TD
     A["Retention gate carries ascent load"] --> B["Four face channels self-test"]
-    B --> C["Segmented stator accelerates CubeSat"]
-    C --> D["Force centroid follows declared CG"]
-    D --> E["Field ramps to zero"]
+    B --> C["Sectional cells accelerate passive cage"]
+    C --> D["Active window follows the CubeSat"]
+    D --> E["Field and force ramp to zero"]
     E --> F["CubeSat coasts out"]
 ```
 
-There is no launch-member release event at the end of the stroke. Separation is the transition
-from an energised stator region to free flight.
+There is no launcher-owned mover to release, brake or return. Separation is the transition from
+the final energized cell window to free flight.
 
 ## Cooperative reaction interface
 
-Each CubeSat force lane carries a passive reaction feature:
+Each CubeSat face carries five thin passive Fluxrelay lanes. A lane combines a copper ladder for
+induction current with a magnetic web that provides a controlled local flux path. The interface:
 
-1. The normal dispenser contact surface remains hard-anodized aluminium.
-2. The A5a primary candidate is a three-fin segmented steel comb between opposed launcher pole webs.
-3. A continuous aluminium induction lane is retained if two-sided access cannot fit.
-4. The reaction feature remains passive throughout integration and flight.
+- is 318.6 mm active length inside the 340.5 mm payload envelope;
+- begins 2.25 mm from the aft face;
+- adds 0.37136 kg in the current homogenized material model;
+- contains no permanent magnets, coils, connectors, switches or stored energy; and
+- remains part of the departing spacecraft.
 
-The launcher carries concentrated windings in independently switched 150 mm tiles. Only tiles
-overlapped by the payload are energised.
+The ordinary dispenser contact surfaces and independent ascent-load gate remain separate design
+items. The passive cage does not carry launch retention by assumption.
 
-The earlier buried L-shaped corner return is rejected as configured by
-[`ADR-004`](adr/004-explicit-flux-path.md). [`ADR-005`](adr/005-low-profile-comb-fin.md)
-promotes the shallow comb-fin to nonlinear analysis after its preliminary envelope screen. It is
-still a candidate, not a released interface or provider-approved dispenser.
+The aluminium Fluxfoil, perforated Fluxbridge, four-lane Fluxweb and five-lane Quintweb are retained
+as traceable ancestors. Their failures explain the layered cage; they are not alternative current
+baselines.
+
+## Sectional stationary primary
+
+Each of four launcher face channels contains 27 cells at 45.3 mm pitch, giving 1.2231 m installed
+active length. Four turns per cell operate at a selected 380 A RMS with 10.4 mm2 copper per turn.
+The three-phase lattice repeats nine times.
+
+The cage intersects no more than nine cells during travel. The drive therefore energizes at most
+three cells per phase in each face channel. Every installed cell still counts against the 16 kg
+active-primary band; only the active window contributes pulse loss and temperature in A8b.
+
+That distinction is the mechanism that closes both earlier failures:
+
+| Failure | Fluxrelay correction |
+|---|---|
+| A7b hot winding-resistance energy | Active-window phase resistance falls to 0.78725x A7b. |
+| A8a cage leaves 900 mm stator | Primary length becomes 1.2231 m with 2.25 mm endpoint guards. |
+| Full-overlap extension exceeds 16 kg | Cell pitch and conductor area are co-selected; installed active material is 15.908 kg. |
 
 ## Force-centroid control
 
-Let the four rail force lines sit at `(y,z) = (+/-r,+/-r)`. For a declared transverse payload
-centre of gravity `(yc,zc)`, command
+Let the four face-channel force lines sit at `(y,z) = (+/-r,+/-r)`. For a declared transverse
+payload centre of gravity `(yc,zc)`, command
 
 ```text
 F(sy,sz) = Ftotal/4 * (1 + sy*yc/r) * (1 + sz*zc/r)
@@ -46,23 +68,38 @@ F(sy,sz) = Ftotal/4 * (1 + sy*yc/r) * (1 + sz*zc/r)
 
 where `sy` and `sz` are `-1` or `+1`.
 
-The four commands sum to total thrust and place its centroid at `(yc,zc)`. This removes the
-single off-axis thrust line that drives VOLLEY's current clearance-impact problem. It does not
-remove calibration error, rail compliance or exit fringing; those remain test problems.
+The commands sum to total thrust and place its centroid at `(yc,zc)`. This is one reason to accept
+four cooperative face interfaces instead of one broad passive plate. It does not remove calibration
+error, guide compliance, field mismatch or exit fringing.
 
-## Why reluctance is the baseline
+## Shot sequence
 
-| Spacecraft-side option | Decision |
-|---|---|
-| Permanent magnets | Rejected: mass, continuous field and ADCS/integration burden. |
-| Powered coils | Rejected: connectors, heat, inhibits and powered spacecraft hardware. |
-| Conductive induction sheet | Retained as fallback: no remanence, but slip and secondary loss. |
-| Passive through-flux comb-fin | Primary candidate: low moving magnetic mass and credible slotted access; force and provider fit remain unproven. |
+1. The mechanical gate retains the CubeSat through ascent and while the electromagnetic system is
+   unpowered.
+2. Four face channels perform continuity, insulation, position and current-sensor checks.
+3. The gate releases independently of electromagnetic thrust.
+4. A moving nine-cell window commands four channel forces around the declared CG.
+5. Cell handoff advances with position while inactive primary cells remain unenergized.
+6. The final window ramps current and force to zero before the cage loses its 2.25 mm engagement
+   guard.
+7. The CubeSat coasts away; no launcher member follows it.
 
-## Two product modes
+Steps 4–6 are control intent, not yet a switching-transient result.
 
-- **Bolley-R** is the active baseline: cooperative reaction rails, no returning pusher.
-- **Bolley-U** is deferred: four lightweight launcher-owned fingers for an unmodified payload.
+## The control architecture must beat
 
-Bolley-R should be allowed to fail on its own physics before engineering effort returns to
-Bolley-U.
+VOLLEY A30 rejected driving on the narrow stock CDS corner rails after solving a 0.0253 transverse
+edge factor. Its surviving sledless direction is a roughly 90 mm conductive plate at about 0.248 kg
+in the analytical example.
+
+Fluxrelay is heavier on the spacecraft. Its case must therefore rest on measurable system benefits:
+four-channel force-centroid control, a repeatable magnetic/conductive path, less sensitivity to rail
+alloy and anodization, simpler launcher guidance or lower lifecycle cost. The comparison remains
+open until both branches have matched field, structural, integration and cost evidence.
+
+## What A8b does and does not establish
+
+A8b finds 77 analytical points that satisfy its frozen coupled bands and selects one by minimax
+margin. It does not establish nonlinear field behavior at 380 A, commutation ripple, end effects,
+inverter partitioning, structure, manufacturing tolerance, provider compatibility or hardware
+performance. A6h and A7c are the next physics gates; Gen3 CAD is the next geometry gate.
