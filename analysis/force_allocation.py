@@ -7,6 +7,7 @@ import argparse
 from common import (
     RESULTS,
     compare_json,
+    snap_residual,
     dump_json,
     force_centroid,
     load_parameters,
@@ -66,8 +67,8 @@ def calculate() -> dict:
         "minimum_channel_force_n": min_force,
         "maximum_channel_force_n": max_force,
         "maximum_channel_fraction": max_fraction,
-        "maximum_force_sum_error_n": max_sum_error,
-        "maximum_centroid_error_m": max_centroid_error,
+        "maximum_force_sum_error_n": snap_residual(max_sum_error),
+        "maximum_centroid_error_m": snap_residual(max_centroid_error),
         "worst_point": worst_point,
         "bands": bands,
         "overall_pass": all(bands.values()),

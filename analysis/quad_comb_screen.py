@@ -11,7 +11,7 @@ import json
 import math
 from pathlib import Path
 
-from common import RESULTS, ROOT, compare_json, dump_json
+from common import RESULTS, ROOT, compare_json, dump_json, snap_residual
 from edge_force_bound import ideal_force_n
 from interface_fit_screen import cardinal_centroid, cardinal_forces
 
@@ -184,8 +184,8 @@ def calculate() -> dict:
             "minimum_channel_force_n": minimum_force,
             "maximum_channel_force_n": maximum_force,
             "maximum_channel_fraction": maximum_fraction,
-            "maximum_force_sum_error_n": maximum_sum_error,
-            "maximum_centroid_error_m": maximum_centroid_error,
+            "maximum_force_sum_error_n": snap_residual(maximum_sum_error),
+            "maximum_centroid_error_m": snap_residual(maximum_centroid_error),
             "records": records,
         },
         "ideal_edge_force_bound": {

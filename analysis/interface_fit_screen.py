@@ -11,7 +11,7 @@ import argparse
 import json
 from pathlib import Path
 
-from common import RESULTS, ROOT, compare_json, dump_json, force_centroid
+from common import RESULTS, ROOT, compare_json, dump_json, force_centroid, snap_residual
 
 
 INPUT = ROOT / "cad" / "comb_fin_parameters.json"
@@ -190,8 +190,8 @@ def calculate() -> dict:
             "minimum_channel_force_n": minimum_force,
             "maximum_channel_force_n": maximum_force,
             "maximum_channel_fraction": maximum_fraction,
-            "maximum_force_sum_error_n": maximum_sum_error,
-            "maximum_centroid_error_m": maximum_centroid_error,
+            "maximum_force_sum_error_n": snap_residual(maximum_sum_error),
+            "maximum_centroid_error_m": snap_residual(maximum_centroid_error),
             "required_developed_shear_pa": developed_shear,
             "records": records,
         },
