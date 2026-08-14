@@ -643,6 +643,17 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
     inductance_ratio = fine["per_cell_inductance_h"] / targets[
         "a3g_per_cell_inductance_h"
     ]
+    sectional_drive = p.get("sectional_drive")
+    if sectional_drive:
+        active_cells_per_phase = sectional_drive[
+            "simultaneously_energized_cells_per_phase"
+        ]
+        active_window_phase_inductance = (
+            active_cells_per_phase * fine["per_cell_inductance_h"]
+        )
+        active_window_inductance_ratio = active_window_phase_inductance / targets[
+            "a8b_active_window_phase_inductance_h"
+        ]
     bands = {
         "mesh_mean_field_convergence": convergence[
             "base_to_fine_mean_slot_field_change_fraction"
@@ -668,15 +679,33 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
         <= limits["maximum_inferred_magnetic_ligament_field_t"],
         "stationary_core_field": maximum_core_field
         <= limits["maximum_stationary_core_field_t"],
-        "inductance_lower": inductance_ratio
-        >= limits["minimum_per_cell_inductance_ratio_to_a3g"],
-        "inductance_upper": inductance_ratio
-        <= limits["maximum_per_cell_inductance_ratio_to_a3g"],
         "source_current_closure": maximum_source_residual
         <= limits["maximum_source_current_residual_fraction"],
         "nonlinear_convergence": maximum_solution_change
         <= limits["maximum_nonlinear_relative_solution_change"],
     }
+    if sectional_drive:
+        bands.update(
+            {
+                "active_window_inductance_lower": active_window_inductance_ratio
+                >= limits[
+                    "minimum_active_window_phase_inductance_ratio_to_a8b"
+                ],
+                "active_window_inductance_upper": active_window_inductance_ratio
+                <= limits[
+                    "maximum_active_window_phase_inductance_ratio_to_a8b"
+                ],
+            }
+        )
+    else:
+        bands.update(
+            {
+                "inductance_lower": inductance_ratio
+                >= limits["minimum_per_cell_inductance_ratio_to_a3g"],
+                "inductance_upper": inductance_ratio
+                <= limits["maximum_per_cell_inductance_ratio_to_a3g"],
+            }
+        )
     bands = {name: bool(passed) for name, passed in bands.items()}
     failed = [name for name, passed in bands.items() if not passed]
     result = {
@@ -703,6 +732,12 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
             "Axial tooth duty and cage bars are homogenized; ends, harmonics and current crowding are absent.",
         ],
     }
+    if sectional_drive:
+        result["sectional_drive"] = {
+            **sectional_drive,
+            "fine_active_window_phase_inductance_h": active_window_phase_inductance,
+            "fine_active_window_phase_inductance_ratio_to_a8b": active_window_inductance_ratio,
+        }
     if evaluate_all:
         result["physics_band_basis"] = "worst of base, fine and expanded-boundary meshes"
         result["physics_band_extrema"] = {

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "extends": "cad/gen26_field_parameters.json",
+  "status": "ASSUMPTION A6h selected Gen2.7 Fluxrelay nonlinear field gate; NOT RUN",
+  "controlled_design": "A8b selected candidate n27_p45.3_I380_A10.4",
+  "source_files": [
+    "cad/gen27_codesign_parameters.json",
+    "analysis/results/gen27_codesign.json",
+    "cad/gen26_field_parameters.json"
+  ],
+  "geometry": {
+    "topology_name": "Gen2.7 Fluxrelay: Gen2.6 five-lane transverse section at 45.3 mm axial cell pitch",
+    "tooth_axial_depth_m": 0.02265
+  },
+  "excitation": {
+    "turns": 4,
+    "phase_current_rms_a": 380.0,
+    "ampere_turn_rms": 1520.0,
+    "copper_area_per_turn_m2": 0.0000104,
+    "coil_side_copper_area_m2": 0.0000416,
+    "field_source_window_area_m2": 0.000081,
+    "source_current_density_rms_a_m2": 18765432.098765433,
+    "positive_and_negative_source_areas_equal": true,
+    "turn_exchange": "four 10.4 mm2 conductors occupy 41.6 mm2 inside the retained 81 mm2 field-source window; 380 A gives 1520 A-turn"
+  },
+  "sectional_drive": {
+    "total_cells_per_face_channel": 27,
+    "cell_pitch_m": 0.0453,
+    "active_cage_length_m": 0.3186,
+    "maximum_intersected_cells": 9,
+    "simultaneously_energized_cells_per_phase": 3,
+    "selection_source": "A8b n27_p45.3_I380_A10.4"
+  },
+  "interface_accounting": {
+    "architecture": "318.6 mm five-lane Fluxrelay cage selected by A8b",
+    "active_length_m": 0.3186,
+    "gen27_magnetic_matrix_mass_kg": 0.1742673534893618,
+    "gen27_retained_cage_copper_mass_kg": 0.13459703040000007,
+    "retained_capture_encapsulation_allowance_kg": 0.0625,
+    "total_interface_increment_kg": 0.3713643838893619,
+    "absolute_interface_margin_kg": 0.02863561611063814
+  },
+  "design_accounting": {
+    "installed_stator_length_m": 1.2231,
+    "stationary_core_mass_four_faces_kg": 11.133803295588267,
+    "primary_copper_mass_four_faces_kg": 4.7743008768,
+    "active_primary_mass_four_faces_kg": 15.908104172388267,
+    "energized_stationary_core_mass_four_faces_kg": 3.711267765196089,
+    "energized_primary_copper_mass_four_faces_kg": 1.5914336256,
+    "energized_active_primary_mass_four_faces_kg": 5.302701390796089,
+    "cell_resistance_ratio_to_gen26": 2.624180506993006,
+    "active_window_phase_resistance_ratio_to_gen26": 0.7872541520979018
+  },
+  "targets": {
+    "a8b_active_window_phase_inductance_h": 0.000004952970102565766
+  },
+  "bands": {
+    "minimum_active_window_phase_inductance_ratio_to_a8b": 0.85,
+    "maximum_active_window_phase_inductance_ratio_to_a8b": 1.15
+  }
+}
