@@ -1,7 +1,15 @@
 # Bolley
 
-**A cooperative electromagnetic CubeSat deployer that spends a few hundred grams on the
-spacecraft to remove kilograms of machinery from the launcher.**
+**The other answer to the same question: let the satellite help.**
+
+A CubeSat deployer normally carries every moving part itself. Bolley asks what happens if the
+spacecraft accepts a few hundred grams of passive hardware — no power, no electronics, nothing to
+command — and the launcher sheds kilograms of machinery in exchange.
+
+**It is the sibling study to [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY)**, which refuses
+that trade and keeps the satellite untouched. The two are developed to the same standard, and
+neither is a fallback for the other: they test opposite premises, and this repository records
+what its premise actually bought.
 
 > **Status:** This is my Phase 0 design study. I have not built, measured, qualified or flown
 > Bolley. I label every number here as an assumption, model output, external datum or measurement
