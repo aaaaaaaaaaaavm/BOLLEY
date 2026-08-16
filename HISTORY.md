@@ -69,6 +69,47 @@ does my selected cooperative cage retain its narrow margin in discrete CAD, tran
 and later hardware, and can its four-channel interface justify 0.371 kg against the lighter wide
 plate?
 
+## 14 August 2026 — VOLLEY measures the premise both projects share, and the answer is a negative
+
+I started Bolley because VOLLEY's sled was 9.445 kg and most of the shot energy accelerated
+launcher hardware. My answer was to delete the sled by moving the reaction interface onto the
+spacecraft. **That answer has now been tested from the other side, and it holds — but not for the
+reason either project assumed.**
+
+VOLLEY's A35 attributed every kilogram of its 84.53 kg rollup to the requirement that causes it,
+then deleted requirements one at a time across all 64 corners. Three results bear directly on this
+repository:
+
+| | |
+|---|---|
+| **The mover is 11 % of dry mass** | Deleting it entirely — which is what I do here — saves a ninth. **49.23 kg survives every deletion of every requirement.** |
+| **The mover is 70 % of *accelerated* mass** | Which is the number both projects read, and it is why the sled looked like the problem. Both figures are true and they say different things. |
+| **An unmodified satellite costs *nothing*** | No item in VOLLEY's ledger exists *because* the satellite is unmodified. The sled is caused by the choice that a **reusable mover carries the magnets**, and the unmodified requirement only implies that choice when nothing else can carry them. |
+
+**Bolley is the corroboration, and it is the stronger evidence of the two.** VOLLEY computed the
+result; here I *built* the deletion — seven field iterations, twenty-five run sheets, a co-design
+search over 2,856 candidates — and the mass came back as a **15.91 kg primary**. It came back
+because I kept the requirement neither project questioned: **that the energy arrives during
+the shot.** A35 measures that requirement at **28.1 %**, the largest single driver in the machine,
+against the mover's 13.6 %.
+
+**What VOLLEY did with that.** ADR-032, 2026-08-14: the payload is accelerated directly by cold gas
+along a rail a spent upper stage provides. No mover, no stator, no bank — 25 to 131 W of charging
+over the sixty seconds already spent indexing, and a 1.71 litre bottle for twelve shots.
+
+**What it means here.** My Fluxrelay is a **pulse machine**: 380 A, 27 cells, a 1.2231 m
+sectional primary, and P11 still records that no capacitor, inverter, switch or cable has a
+supplier-backed pulse rating for the duty. **The premise I reversed was not the expensive
+one.** Whether a cooperative interface is worth 0.371 kg of spacecraft mass is a live question;
+whether it is worth it *while keeping the pulse* is a question A35 has now answered for the
+sibling design.
+
+**I retract nothing.** A8b's selected point stands, its bands stand, and
+A6h and A7c remain my next kill gates. What changes is the comparison: the sibling design is no
+longer a heavier version of the same idea, and the honest reading of my own P39 — *the
+15.908 kg primary leaves 92 g for the active-material band and excludes structure, cooling, wiring
+and power electronics* — is that it is the same finding arriving by a different route.
+
 ## Authorship
 
 I am **Adityavardhan Mishra**. I conceived Bolley, I direct it, and I maintain it. This repository

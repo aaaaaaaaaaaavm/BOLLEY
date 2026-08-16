@@ -45,6 +45,14 @@ measurement, supplier document or decision record. I do not treat confidence as 
 | P38 | The nine-cell active window has no switching handoff, force-ripple, fault or end-cell model. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | OPEN |
 | P39 | The 15.908 kg primary leaves 92 g for the active-material band and excludes structure, cooling, wiring and power electronics. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
 | P40 | A7c leaves only 6.588 J (0.732%) of model margin on the hot reference shot, and its 125% resistance corner is not supplier-backed. | A9 transient drive plus measured or supplier-bounded hot winding resistance retain positive margin below 900 J. | CRITICAL | OPEN |
+| P41 | The premise I reversed is not the one that costs, and the pulse I retained is. | A sectional-drive energy architecture that either removes the shot-time pulse or shows a supplier-backed chain that survives it (P11, P38), priced against the 0.371 kg the interface asks of the spacecraft. | HIGH | OPEN |
+
+> **I added P41 on 2026-08-14, from the sibling repository.** VOLLEY's A35 attributed every kilogram of
+> its rollup to the requirement causing it: **the mover is 11 % of dry mass and the pulse is
+> 28.1 %.** I delete the mover and keep the pulse. VOLLEY has since deleted the pulse
+> instead — cold gas, 25–131 W, one bottle for twelve shots — and my own **P39**
+> already records that my 15.908 kg primary excludes structure, cooling, wiring and power
+> electronics. **P41 is that comparison written down as a defect rather than left as a note.**
 
 ## How I use the register
 

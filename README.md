@@ -47,6 +47,25 @@ three fresh nonlinear meshes: all 13 frozen bands pass, with 1.5284 T worst stat
 selected-point robustness corners pass all 29 bands. My controlling reference shot is 893.412 J,
 only 6.588 J below my unchanged 900 J cap.
 
+> ## The sibling design moved on 2026-08-14, and it measured something that applies here
+>
+> VOLLEY's A35 attributed every kilogram to the requirement causing it. **The mover is 11 % of dry
+> mass** — so deleting the sled, which is what I do here, saves a ninth. **The
+> requirement that costs is the pulse, at 28.1 %**, and I keep it: 380 A, 27 cells, a
+> 1.2231 m sectional primary, and **P11** still open on supplier-backed pulse ratings.
+>
+> **Bolley is the corroboration and it is the stronger evidence.** VOLLEY computed the result;
+> here I built the deletion across seven field iterations and 2,856 candidates, and the mass came
+> back as a **15.91 kg primary**. My own **P39** says that figure excludes structure, cooling,
+> wiring and power electronics.
+>
+> VOLLEY's answer — ADR-032 — deletes the pulse instead: cold gas along a rail a spent stage
+> provides, **25–131 W** of charging, one 1.71 L bottle for twelve shots.
+>
+> **I retract nothing.** A8b's point stands, its bands stand, A6h and A7c remain my next
+> kill gates. What changes is the comparison, and the open question I should now
+> carry: **is a cooperative interface worth 0.371 kg of spacecraft mass while the pulse remains?**
+
 ## The architecture I am carrying forward
 
 - Four independently controlled face channels apply axial force around the spacecraft.
