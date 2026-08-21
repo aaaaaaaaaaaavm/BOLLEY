@@ -55,20 +55,23 @@ three fresh nonlinear meshes: all 13 frozen bands pass, with 1.5284 T worst stat
 selected-point robustness corners pass all 29 bands. My controlling reference shot is 893.412 J,
 only 6.588 J below my unchanged 900 J cap.
 
-> ## The sibling design moved on 2026-08-14, and it measured something that applies here
+> ## The sibling design moved on 2026-08-14, and it computed something that applies here
 >
 > VOLLEY's A35 attributed every kilogram to the requirement causing it. **The mover is 11 % of dry
 > mass** — so deleting the sled, which is what I do here, saves a ninth. **The
 > requirement that costs is the pulse, at 28.1 %**, and I keep it: 380 A, 27 cells, a
 > 1.2231 m sectional primary, and **P11** still open on supplier-backed pulse ratings.
 >
-> **Bolley is the corroboration and it is the stronger evidence.** VOLLEY computed the result;
-> here I built the deletion across seven field iterations and 2,856 candidates, and the mass came
-> back as a **15.91 kg primary**. My own **P39** says that figure excludes structure, cooling,
+> **Bolley is the corroboration and it is the stronger evidence.** VOLLEY computed the result as an
+> attribution; here I **carried the deletion through a design**, across seven field iterations and
+> 2,856 declared candidates, and the mass came back as a **15.91 kg primary**. *Modelled, not
+> built — nothing in either project exists as hardware.* My own **P39** says that figure excludes structure, cooling,
 > wiring and power electronics.
 >
 > VOLLEY's answer — ADR-032 — deletes the pulse instead: cold gas along a rail a spent stage
-> provides, **25–131 W** of charging, one 1.71 L bottle for twelve shots.
+> provides, at a charging draw two orders of magnitude below a pulse chain's, from a single sized
+> gas store for twelve shots. *(VOLLEY's store has been resized since; that repository holds the
+> current figure and this one deliberately does not restate it.)*
 >
 > **I retract nothing.** A8b's point stands, its bands stand, A6h and A7c remain my next
 > kill gates. What changes is the comparison, and the open question I should now
@@ -98,8 +101,11 @@ I rejected it. My solved transverse edge factor is 0.0253 rather than 0.55, leav
 at a generous 0.60 T. Pole pitch cannot simultaneously rescue the narrow conductor and large
 rail-to-stator gap.
 
-My surviving VOLLEY direction is now a roughly 90 mm conductive plate: 0.248 kg in the analytical
-example, with much better edge utilization. I use that as Bolley's honest control. Fluxrelay must
+My surviving VOLLEY direction at the time was a roughly 90 mm conductive plate: 0.248 kg in the
+analytical example, with much better edge utilization. **I use that as Bolley's honest control, and
+it is deliberately frozen as a control** — VOLLEY's own architecture has since moved to a
+gas-driven stage-integrated design that carries no plate at all, which changes VOLLEY and changes
+nothing about whether Fluxrelay earns its interface. Fluxrelay must
 earn its 0.371 kg interface through four-channel force-centroid authority, a controlled magnetic
 path, tolerance to rail alloy/anodization, lower launcher complexity or lower cost. I do not accept
 “no sled” alone as enough.
