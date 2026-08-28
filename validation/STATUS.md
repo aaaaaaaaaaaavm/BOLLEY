@@ -2,6 +2,9 @@
 
 | Run | State | Result |
 |---|---|---|
+| A10 | MODELLED | 7 PASS, 2 FAIL, 1 OPEN and 2 REPORT bands. I correct the inconsistent reference velocity and open finite Gen5/Gen6 gates; I do not select hardware. |
+| A11 | MODELLED | 8/8 executable flow bands pass over 30 points; band 9 remains OPEN. Worst gas use is 6.009 g/shot and no seal, contact or plume is validated. |
+| A12 | MODELLED | 5/5 executable sourced mass bands pass; 3 integration bands remain OPEN. The 121.36 g target is 30.80–42.58% of the public envelope and I grant zero credit. |
 | A1 | MODELLED | 8/8 declared bands pass. Required worst-corner shear is 25.04 kPa; screened interface mass is 0.229 kg. |
 | A2 | MODELLED | 5/5 declared bands pass over 441 CG points. Peak channel force is 252.43 N. |
 | A3a | MODELLED | 6/7 declared bands pass. The corner L-return fails its preferred-mass lower bound; fin and induction candidates survive mass/area only. |

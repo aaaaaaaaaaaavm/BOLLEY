@@ -1,0 +1,198 @@
+{
+  "bands": [
+    {
+      "id": 1,
+      "limit": 12.0,
+      "name": "12 m/s, 0.90 m and 8 g are mutually consistent",
+      "note": "Architecture-independent constant-acceleration ceiling from rest.",
+      "status": "FAIL",
+      "value": 11.88545329383781
+    },
+    {
+      "id": 2,
+      "limit": "REPORT",
+      "name": "Fluxframe displaced mass needed for the preference",
+      "note": "I award no credit until a selected bus identifies removed parts.",
+      "status": "REPORT",
+      "value": 0.12136000000000002
+    },
+    {
+      "id": 3,
+      "limit": 50000.0,
+      "name": "Fluxpiston reference mean pressure",
+      "note": "Ideal constant-pressure work at the requirement-consistent 11.8 m/s screen point.",
+      "status": "PASS",
+      "value": 30942.222222222223
+    },
+    {
+      "id": 4,
+      "limit": 50000.0,
+      "name": "Fluxpiston qualification mean pressure",
+      "note": "Ideal constant-pressure work for 6 kg at 10 m/s.",
+      "status": "PASS",
+      "value": 33333.33333333333
+    },
+    {
+      "id": 5,
+      "limit": 8.0,
+      "name": "Both ideal pressure cases remain at or below 8 g",
+      "note": "This is a mean-force screen; valve and pressure transients remain open.",
+      "status": "PASS",
+      "value": 7.885377732472533
+    },
+    {
+      "id": 6,
+      "limit": 25.0,
+      "name": "Short electromagnetic trim energy",
+      "note": "Largest kinetic-energy correction for +/-0.25 m/s.",
+      "status": "PASS",
+      "value": 15.1875
+    },
+    {
+      "id": 7,
+      "limit": 0.25,
+      "name": "First Gen6 interface mass allocation",
+      "note": "Assumptions only; this excludes seal, capture, fasteners and structure.",
+      "status": "PASS",
+      "value": 0.2
+    },
+    {
+      "id": 8,
+      "limit": true,
+      "name": "Spacecraft-side hardware remains passive",
+      "note": "The concept adds no power, software, permanent magnet, pyro or pressure vessel.",
+      "status": "PASS",
+      "value": true
+    },
+    {
+      "id": 9,
+      "limit": true,
+      "name": "No launcher propulsion member follows the payload",
+      "note": "The payload interface is the piston; the stage tube and trim stator remain.",
+      "status": "PASS",
+      "value": true
+    },
+    {
+      "id": 10,
+      "limit": "MEASUREMENT REQUIRED",
+      "name": "Seal leakage, friction and contamination evidence",
+      "note": "I do not convert ideal pressure work into seal evidence.",
+      "status": "OPEN",
+      "value": null
+    },
+    {
+      "id": 11,
+      "limit": "REPORT",
+      "name": "Burn-and-drop thrust-arc timing",
+      "note": "Every case spends 12 m/s of host delta-v; time is not the only cost.",
+      "status": "REPORT",
+      "value": [
+        {
+          "stage_acceleration_m_s2": 0.1,
+          "stage_delta_v_m_s": 12.0,
+          "time_s": 120.0
+        },
+        {
+          "stage_acceleration_m_s2": 0.25,
+          "stage_delta_v_m_s": 12.0,
+          "time_s": 48.0
+        },
+        {
+          "stage_acceleration_m_s2": 0.5,
+          "stage_delta_v_m_s": 12.0,
+          "time_s": 24.0
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "limit": 350.0,
+      "name": "Strainrail required specific energy",
+      "note": "I reject material-limit optimism at the current interface mass.",
+      "status": "FAIL",
+      "value": 749.8922878069798
+    }
+  ],
+  "burn_and_drop": [
+    {
+      "stage_acceleration_m_s2": 0.1,
+      "stage_delta_v_m_s": 12.0,
+      "time_s": 120.0
+    },
+    {
+      "stage_acceleration_m_s2": 0.25,
+      "stage_delta_v_m_s": 12.0,
+      "time_s": 48.0
+    },
+    {
+      "stage_acceleration_m_s2": 0.5,
+      "stage_delta_v_m_s": 12.0,
+      "time_s": 24.0
+    }
+  ],
+  "controlled_input": "analysis/gen456_parameters.json",
+  "disposition": {
+    "burn_and_drop": "RETAIN_AS_MISSION_LEVEL_COMPARATOR",
+    "gen4": "RETAIN_FOR_A9_AND_PACKAGED_CLOSURE",
+    "gen5": "PROMOTE_ONLY_TO_BUS_SPECIFIC_NET_MASS_GATE",
+    "gen6": "PROMOTE_ONLY_TO_SEAL_PRESSURE_TRANSIENT_AND_TRIM_AUTHORITY_GATES",
+    "requirements": "REJECT_INCONSISTENT_TRIPLET_AND_CORRECT_BY_ADR",
+    "strainrail": "REJECT_AT_CURRENT_MASS_AND_SPECIFIC_ENERGY_BAND"
+  },
+  "evidence_class": "FIRST_ORDER_ARCHITECTURE_SCREEN",
+  "fluxframe": {
+    "credit_status": "WITHHELD_PENDING_BUS_LEDGER",
+    "displaced_fraction_of_interface": 0.3267987936234382,
+    "displaced_mass_needed_for_0p25kg_net_kg": 0.12136000000000002,
+    "gross_interface_mass_kg": 0.37136
+  },
+  "fluxpiston": {
+    "first_interface_mass_allocation_kg": 0.2,
+    "mass_allocation_status": "ASSUMPTION_NOT_CAD",
+    "maximum_trim_energy_j": 15.1875,
+    "pressure_cases": {
+      "qualification": {
+        "average_acceleration_g": 5.663155510250311,
+        "average_acceleration_m_s2": 55.55555555555555,
+        "average_force_n": 333.3333333333333,
+        "kinetic_energy_j": 300.0,
+        "mean_pressure_pa": 33333.33333333333,
+        "payload_mass_kg": 6.0,
+        "swept_volume_l": 9.0,
+        "target_velocity_m_s": 10.0
+      },
+      "reference": {
+        "average_acceleration_g": 7.885377732472533,
+        "average_acceleration_m_s2": 77.35555555555555,
+        "average_force_n": 309.4222222222222,
+        "kinetic_energy_j": 278.48,
+        "mean_pressure_pa": 30942.222222222223,
+        "payload_mass_kg": 4.0,
+        "swept_volume_l": 9.0,
+        "target_velocity_m_s": 11.8
+      }
+    },
+    "seal_status": "OPEN",
+    "trim_energy_cases_j": {
+      "qualification": 15.1875,
+      "reference": 11.925000000000011
+    }
+  },
+  "kinematic_consistency": {
+    "acceleration_required_for_12m_s_g": 8.154943934760448,
+    "maximum_velocity_at_8g_over_0p9m_m_s": 11.88545329383781,
+    "stroke_required_for_12m_s_at_8g_m": 0.9174311926605504
+  },
+  "schema": "bolley.gen456.architecture-screen.result/1",
+  "status_counts": {
+    "FAIL": 2,
+    "OPEN": 1,
+    "PASS": 7,
+    "REPORT": 2
+  },
+  "strainrail": {
+    "available_interface_mass_kg": 0.37136,
+    "required_energy_j": 278.48,
+    "required_specific_energy_j_kg": 749.8922878069798
+  }
+}

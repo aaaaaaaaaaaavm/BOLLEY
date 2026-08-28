@@ -1,6 +1,6 @@
 # My development roadmap
 
-## Phase 0 — decide whether the coupon deserves to exist
+## Gen4 workstream — decide whether my Fluxrelay coupon deserves to exist
 
 - I freeze the cooperative interface and duty.
 - I run first-order mass, force-area and CG allocation screens.
@@ -15,6 +15,32 @@
 nominal geometry; my tolerance/structure package and A9 must close before I release drawings. I do
 no CAD beauty work in place of those gates.
 
+## Gen5 workstream — make the interface earn net spacecraft mass
+
+- I select one real CubeSat bus configuration rather than a generic 3U box.
+- I build a before/after parts ledger for structure, rails, heat spreading, grounding and shielding.
+- I require Fluxframe to displace at least 121.36 g before it meets my 0.25 kg net preference.
+- I run stiffness, vibration, thermal-gradient, electrical-continuity and magnetic-cleanliness
+  checks on the same integrated part.
+
+**Exit:** one bus-specific Fluxframe closes net mass and does not degrade any function it claims to
+replace. Until then Gen5 is a threshold, not a machine.
+
+## Gen6 workstream — delete the pulse before I draw the machine
+
+- I model a 0.01 m2 full-face pressure interface, reservoir/valve transient and 9 L swept tube.
+- I model leakage and contact around the roughly 400 mm moving perimeter across tolerance and
+  temperature.
+- I carry A11's passing gas-quantity screen into a dynamic regulator/chamber/blowdown model rather
+  than treating its equivalent orifice as valve evidence.
+- I close the aft-face structural load path and gas-release contamination/plume boundary.
+- I size a short passive trim secondary only after the gas dispersion is known.
+- I compare differential/null-flux centring against ordinary guide contact.
+- I run six-degree-of-freedom exit dynamics before any full Gen6 CAD.
+
+**Exit:** a predeclared pressure/seal/trim point meets 11.8 m/s and 10 m/s cases without a payload
+pressure vessel or a launcher member leaving with the satellite. A seal coupon remains mandatory.
+
 ## Phase 1 — one corner
 
 - I manufacture one comb-fin face coupon and one stator tile.
@@ -28,7 +54,7 @@ bands. Otherwise I change topology or stop.
 ## Phase 2 — four channels and a dummy payload
 
 - I build instrumented 4 kg and 6 kg dummies with adjustable CG.
-- I run 0–12 m/s shots over 0.90 m.
+- I run 0–11.8 m/s shots over 0.90 m.
 - I inject channel faults, shape the field end and measure velocity independently.
 - I measure tip-off in six degrees of freedom.
 

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you reference this work, cite it as below and state that it is a model-only design study with no hardware validation."
+title: "BOLLEY: A Cooperative-Interface CubeSat Deployment Study"
+abstract: "BOLLEY examines whether a CubeSat carrying passive reaction hardware can remove the moving launcher sled, brake and return stroke from a programmable deployment system. The repository preserves rejected architectures, controlled calculations, nonlinear field models, parametric CAD and an explicit computational-closure queue. Nothing has been built, fired, measured, qualified or flown."
+type: software
+authors:
+  - family-names: Mishra
+    given-names: Adityavardhan
+    affiliation: "Department of Mechanical Engineering, Symbiosis Institute of Technology, Symbiosis International (Deemed University), Pune, India"
+    email: adityavardhanmishr@gmail.com
+repository-code: "https://github.com/aaaaaaaaaaaavm/BOLLEY"
+date-released: "2026-08-13"
+keywords:
+  - CubeSat deployment
+  - linear induction motor
+  - cooperative interface
+  - electromagnetic launch
+  - space systems
+  - reproducible engineering
+license: CC-BY-4.0

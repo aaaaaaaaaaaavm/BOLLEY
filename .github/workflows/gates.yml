@@ -1,0 +1,33 @@
+# I keep this workflow self-contained because this account has previously rejected workflows that
+# call third-party actions before a job starts. The runner fetches the exact commit with git.
+name: gates
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  repository:
+    name: full reproducibility gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: fetch the exact commit
+        run: |
+          git init -q .
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git fetch -q --prune origin +refs/heads/*:refs/remotes/origin/*
+          git checkout -q --detach "${{ github.sha }}"
+          git log --oneline -1
+
+      - name: install pinned model and CAD runtimes
+        run: |
+          python3 -m pip install --upgrade -q pip
+          python3 -m pip install -q -r requirements-field.txt -r requirements-cad.txt
+
+      - name: reproduce every committed gate and artifact
+        run: python3 tools/check_repo.py
+
+      - name: confirm the checker changed nothing
+        run: git diff --exit-code

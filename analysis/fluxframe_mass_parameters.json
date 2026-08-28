@@ -1,0 +1,27 @@
+{
+  "schema": "bolley.fluxframe-mass/1",
+  "fluxrelay_interface_mass_kg": 0.37136,
+  "net_mass_preference_kg": 0.25,
+  "gross_mass_absolute_kg": 0.4,
+  "maximum_required_replacement_fraction": 0.5,
+  "structure_comparators": [
+    {
+      "id": "endurosat_3u_2018",
+      "mass_kg": 0.285,
+      "mass_semantics": "PUBLISHED_UPPER_BOUND",
+      "source": "https://satcatalog.s3.amazonaws.com/components/476/SatCatalog_-_EnduroSat_-_3U_CubeSat_Structure_II_-_Datasheet.pdf?lastmod=20210715031938"
+    },
+    {
+      "id": "nasa_smallspacecraft_3u_2026",
+      "mass_kg": 0.352,
+      "mass_semantics": "SURVEY_VALUE",
+      "source": "https://www.nasa.gov/smallsat-institute/sst-soa/structures-materials-and-mechanisms/"
+    },
+    {
+      "id": "aac_clyde_3u_nasa_2021",
+      "mass_kg": 0.394,
+      "mass_semantics": "SURVEY_VALUE",
+      "source": "https://www.nasa.gov/wp-content/uploads/2021/10/6.soa_structures_2021.pdf"
+    }
+  ]
+}

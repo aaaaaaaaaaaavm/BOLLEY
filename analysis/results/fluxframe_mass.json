@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "id": 1,
+      "limit": 0.285,
+      "name": "required credit below every public mass comparator",
+      "status": "PASS",
+      "value": 0.12136000000000002
+    },
+    {
+      "id": 2,
+      "limit": 0.5,
+      "name": "maximum required replacement fraction",
+      "status": "PASS",
+      "value": 0.4258245614035089
+    },
+    {
+      "id": 3,
+      "limit": 0.25,
+      "name": "worst hypothetical full-replacement net addition",
+      "status": "PASS",
+      "value": 0.08636000000000005
+    },
+    {
+      "id": 4,
+      "limit": 0.4,
+      "name": "current gross interface below absolute limit",
+      "status": "PASS",
+      "value": 0.37136
+    },
+    {
+      "id": 5,
+      "limit": true,
+      "name": "source mass semantics preserved",
+      "status": "PASS",
+      "value": true
+    },
+    {
+      "id": 6,
+      "limit": "SELECTED_BUS_LEDGER_REQUIRED",
+      "name": "bus-specific removed-part credit",
+      "status": "OPEN",
+      "value": null
+    },
+    {
+      "id": 7,
+      "limit": "COUPLED_MODEL_AND_TEST_REQUIRED",
+      "name": "structural thermal electrical and magnetic equivalence",
+      "status": "OPEN",
+      "value": null
+    },
+    {
+      "id": 8,
+      "limit": "DRAWING_REVIEW_AND_PROVIDER_DISPOSITION_REQUIRED",
+      "name": "rail and provider compatibility",
+      "status": "OPEN",
+      "value": null
+    }
+  ],
+  "comparators": [
+    {
+      "credit_granted_kg": 0.0,
+      "hypothetical_full_replacement_net_added_mass_kg": 0.08636000000000005,
+      "id": "endurosat_3u_2018",
+      "mass_kg": 0.285,
+      "mass_semantics": "PUBLISHED_UPPER_BOUND",
+      "required_replacement_fraction": 0.4258245614035089,
+      "source": "https://satcatalog.s3.amazonaws.com/components/476/SatCatalog_-_EnduroSat_-_3U_CubeSat_Structure_II_-_Datasheet.pdf?lastmod=20210715031938"
+    },
+    {
+      "credit_granted_kg": 0.0,
+      "hypothetical_full_replacement_net_added_mass_kg": 0.019360000000000044,
+      "id": "nasa_smallspacecraft_3u_2026",
+      "mass_kg": 0.352,
+      "mass_semantics": "SURVEY_VALUE",
+      "required_replacement_fraction": 0.34477272727272734,
+      "source": "https://www.nasa.gov/smallsat-institute/sst-soa/structures-materials-and-mechanisms/"
+    },
+    {
+      "credit_granted_kg": 0.0,
+      "hypothetical_full_replacement_net_added_mass_kg": -0.022639999999999993,
+      "id": "aac_clyde_3u_nasa_2021",
+      "mass_kg": 0.394,
+      "mass_semantics": "SURVEY_VALUE",
+      "required_replacement_fraction": 0.30802030456852797,
+      "source": "https://www.nasa.gov/wp-content/uploads/2021/10/6.soa_structures_2021.pdf"
+    }
+  ],
+  "controlled_input": "analysis/fluxframe_mass_parameters.json",
+  "disposition": "PROMOTE_TO_SELECTED_BUS_LEDGER_NOT_NET_MASS_CLOSURE",
+  "evidence_class": "SOURCED_PUBLIC_MASS_ENVELOPE",
+  "open_count": 3,
+  "pass_count": 5,
+  "required_displaced_mass_kg": 0.12136000000000002,
+  "schema": "bolley.fluxframe-mass.result/1"
+}

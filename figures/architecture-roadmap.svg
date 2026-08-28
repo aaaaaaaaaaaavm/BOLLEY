@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#07111b"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3f718c"/></marker></defs>
+<text x="72" y="78" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="24" font-weight="700" text-anchor="start">BOLLEY · ONE PREMISE, THREE DIRECTIONS</text>
+<text x="72" y="124" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="29" font-weight="600" text-anchor="start">Let the spacecraft carry passive hardware. Then price what that concession buys.</text>
+<text x="72" y="162" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="400" text-anchor="start">Phase 0 design study · model and nominal CAD output · no hardware evidence</text>
+<rect x="72" y="218" width="380" height="430" rx="18" fill="#0c1d2a" stroke="#38d6e8"/>
+<text x="104" y="264" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="17" font-weight="700" text-anchor="start">GEN3 FLUXRELAY</text>
+<text x="104" y="306" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="24" font-weight="650" text-anchor="start">Selected analytical point</text>
+<text x="104" y="346" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="400" text-anchor="start">built as parametric CAD</text>
+<text x="104" y="420" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="58" font-weight="750" text-anchor="start">17/17</text>
+<text x="104" y="452" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="15" font-weight="400" text-anchor="start">frozen nominal-fit bands pass</text>
+<text x="104" y="524" fill="#61d6a3" font-family="Inter,Segoe UI,sans-serif" font-size="46" font-weight="750" text-anchor="start">0</text>
+<text x="104" y="554" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="400" text-anchor="start">nominal payload / core / coil intersections</text>
+<text x="104" y="610" fill="#ffb454" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="700" text-anchor="start">TOLERANCE · STRUCTURE · COOLING OPEN</text>
+<line x1="452" y1="430" x2="520" y2="430" stroke="#3f718c" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="548" y="218" width="976" height="148" rx="18" fill="#0c1d2a" stroke="#38d6e8"/>
+<text x="576" y="258" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" text-anchor="start">GEN4 · CLOSE THE MACHINE</text>
+<text x="576" y="298" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="23" font-weight="650" text-anchor="start">Keep Fluxrelay</text>
+<text x="934" y="298" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="18" font-weight="550" text-anchor="start">sectional switching · failed cells · packaged mass</text>
+<text x="576" y="336" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="650" text-anchor="start">A9 AND PACKAGED CLOSURE REMAIN OPEN</text>
+<rect x="548" y="398" width="976" height="148" rx="18" fill="#0c1d2a" stroke="#9b8cff"/>
+<text x="576" y="438" fill="#9b8cff" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" text-anchor="start">GEN5 · FLUXFRAME</text>
+<text x="576" y="478" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="23" font-weight="650" text-anchor="start">Make interface do bus work</text>
+<text x="934" y="478" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="18" font-weight="550" text-anchor="start">needs 0.12136 kg displaced mass</text>
+<text x="576" y="516" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="650" text-anchor="start">CREDIT WITHHELD UNTIL A SELECTED-BUS LEDGER</text>
+<rect x="548" y="578" width="976" height="148" rx="18" fill="#0c1d2a" stroke="#ffb454"/>
+<text x="576" y="618" fill="#ffb454" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" text-anchor="start">GEN6 · FLUXPISTON</text>
+<text x="576" y="658" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="23" font-weight="650" text-anchor="start">Move the pulse into gas</text>
+<text x="934" y="658" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="18" font-weight="550" text-anchor="start">30.94 kPa ideal reference mean pressure</text>
+<text x="576" y="696" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="650" text-anchor="start">SEAL LEAKAGE, FRICTION AND TRANSIENTS OPEN</text>
+<rect x="72" y="700" width="1452" height="118" rx="18" fill="#091720" stroke="#21465b"/>
+<text x="104" y="744" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="700" text-anchor="start">A10 ARCHITECTURE SCREEN</text>
+<text x="104" y="784" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="27" font-weight="650" text-anchor="start">7 pass   ·   2 fail   ·   1 open   ·   2 report-only</text>
+<text x="1494" y="862" fill="#ff6b6b" font-family="Inter,Segoe UI,sans-serif" font-size="15" font-weight="650" text-anchor="end">ALL NUMBERS ARE MODEL OR NOMINAL-CAD OUTPUT</text>
+</svg>

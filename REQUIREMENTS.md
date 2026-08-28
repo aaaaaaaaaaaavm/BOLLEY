@@ -6,7 +6,7 @@ verification route; before that, it is only an aspiration wearing a unit.
 | ID | Requirement | Verification | Status |
 |---|---|---|---|
 | BOL-R-001 | Accept a rail-guided 3U CubeSat with **4 kg reference mass** and **6 kg qualification mass**. | Fit check, mass-property inspection | OPEN |
-| BOL-R-002 | Command 0–12 m/s for the 4 kg reference payload over no more than 0.90 m powered length. | Instrumented full-stroke test | OPEN |
+| BOL-R-002 | Command 0–11.8 m/s for the 4 kg reference payload over no more than 0.90 m powered length. | Instrumented full-stroke test | OPEN |
 | BOL-R-003 | Deliver at least 10 m/s to the 6 kg qualification payload without exceeding its agreed acceleration limit. | Instrumented full-stroke test | OPEN |
 | BOL-R-004 | Nominal longitudinal acceleration shall not exceed 8 g in the Phase 0 baseline. | Model, then accelerometer | OPEN |
 | BOL-R-005 | Release tip-off shall be no more than 2 deg/s per axis. | Six-degree-of-freedom separation test | OPEN |
@@ -33,3 +33,8 @@ verification route; before that, it is only an aspiration wearing a unit.
 
 If I change a numbered requirement, I add an ADR and state whether I made the change before or
 after I saw the relevant result.
+
+I changed BOL-R-002 from 12.0 to 11.8 m/s after A10 exposed that 12.0 m/s from rest over 0.90 m
+requires 8.1549 g. I kept the 8 g load limit and 0.90 m package because those constrain the
+hardware; 11.8 m/s preserves the intended approximately-12 m/s duty with explicit margin. The
+post-result correction is recorded in ADR-040.

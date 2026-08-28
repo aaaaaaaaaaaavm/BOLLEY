@@ -36,6 +36,7 @@ def render() -> str:
     rows = [
         ("F01", "A3a unit-cell candidates", "cad/a3a_unit_cells.svg", "Hand-authored parametric schematic", "Historical topology screen"),
         ("F02", "A5a comb-fin cross-section", "cad/a5a_comb_fin_cross_section.svg", "Hand-authored dimensional schematic", "Rejected architecture evidence"),
+        ("F03", "Bolley architecture roadmap", "figures/architecture-roadmap.svg", "Generated summary of committed A5e, A10 and A12 results — MODEL / NOMINAL CAD OUTPUT", "Current repository overview; open gates shown in figure"),
     ]
     for prefix, manifest_path, disposition in (
         ("G1", GEN1, "Rejected Gen1 package evidence"),

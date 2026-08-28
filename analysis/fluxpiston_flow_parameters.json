@@ -1,0 +1,42 @@
+{
+  "schema": "bolley.fluxpiston-flow/1",
+  "gravity_m_s2": 9.81,
+  "acceleration_limit_g": 8.0,
+  "stroke_m": 0.9,
+  "effective_face_area_m2": 0.01,
+  "moving_perimeter_m": 0.4,
+  "dead_volume_m3": 0.00025,
+  "fluid": {
+    "name": "nitrogen",
+    "specific_gas_constant_j_kg_k": 296.8,
+    "heat_capacity_ratio": 1.4,
+    "discharge_coefficient": 0.7
+  },
+  "cases": {
+    "reference": {
+      "payload_mass_kg": 4.0,
+      "command_velocity_m_s": 11.8,
+      "gas_velocity_m_s": 11.55
+    },
+    "qualification": {
+      "payload_mass_kg": 6.0,
+      "command_velocity_m_s": 10.0,
+      "gas_velocity_m_s": 9.75
+    }
+  },
+  "clearance_m": [0.00005, 0.0001, 0.0002, 0.0003, 0.0005],
+  "temperature_k": [250.0, 300.0, 330.0],
+  "reservoir_pressure_pa": 2000000.0,
+  "reservoir_discharge_coefficient": 0.8,
+  "shot_count": 12,
+  "pressure_control_fraction": 0.02,
+  "bands": {
+    "maximum_gas_acceleration_g": 7.8,
+    "minimum_pressure_headroom_fraction": 0.04,
+    "maximum_gas_mass_per_shot_kg": 0.01,
+    "maximum_campaign_gas_mass_kg": 0.15,
+    "maximum_equivalent_reservoir_volume_m3": 0.005,
+    "maximum_supply_orifice_diameter_m": 0.006,
+    "maximum_trim_energy_j": 25.0
+  }
+}
