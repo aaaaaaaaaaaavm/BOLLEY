@@ -37,6 +37,8 @@ def render() -> str:
         ("F01", "A3a unit-cell candidates", "cad/a3a_unit_cells.svg", "Hand-authored parametric schematic", "Historical topology screen"),
         ("F02", "A5a comb-fin cross-section", "cad/a5a_comb_fin_cross_section.svg", "Hand-authored dimensional schematic", "Rejected architecture evidence"),
         ("F03", "Bolley architecture roadmap", "figures/architecture-roadmap.svg", "Generated summary of committed A5e, A10 and A12 results — MODEL / NOMINAL CAD OUTPUT", "Current repository overview; open gates shown in figure"),
+        ("F04", "Promotion-gate scorecard", "figures/gate-scorecard.svg", "Generated status composition from committed A10, A11 and A12 result ledgers — MODEL OUTPUT", "Passed numerical screens remain distinct from open evidence gates"),
+        ("F05", "Fluxpiston clearance envelope", "figures/fluxpiston-envelope.svg", "Generated A11 ideal-gas and continuum choked-flow sweep — MODEL OUTPUT", "Promoted to dynamic regulator, blowdown and contact gate; not CAD closure"),
     ]
     for prefix, manifest_path, disposition in (
         ("G1", GEN1, "Rejected Gen1 package evidence"),
