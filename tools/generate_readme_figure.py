@@ -1,4 +1,4 @@
-"""Generate the README architecture roadmap from committed Bolley results."""
+"""Generate the README visual set from committed Bolley results."""
 
 from __future__ import annotations
 
@@ -81,11 +81,103 @@ def render() -> str:
     return "\n".join(out) + "\n"
 
 
+def gate_scorecard() -> str:
+    architecture = load("gen456_architecture_screen.json")
+    flow = load("fluxpiston_flow.json")
+    frame = load("fluxframe_mass.json")
+    rows = [
+        ("A10 · ARCHITECTURE", architecture["status_counts"], 12),
+        ("A11 · FLUXPISTON", {"PASS": flow["pass_count"], "FAIL": 0, "OPEN": flow["check_count"] - flow["pass_count"], "REPORT": 0}, flow["check_count"]),
+        ("A12 · FLUXFRAME", {"PASS": sum(c["status"] == "PASS" for c in frame["checks"]), "FAIL": sum(c["status"] == "FAIL" for c in frame["checks"]), "OPEN": sum(c["status"] == "OPEN" for c in frame["checks"]), "REPORT": 0}, len(frame["checks"])),
+    ]
+    colours = {"PASS": GREEN, "FAIL": RED, "OPEN": AMBER, "REPORT": VIOLET}
+    out = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720">',
+        f'<rect width="1600" height="720" fill="{BG}"/>',
+        txt(72, 78, "PROMOTION-GATE SCORECARD", 24, CYAN, 700),
+        txt(72, 124, "Passing a screen promotes the question—not the hardware.", 34, INK, 600),
+        txt(72, 162, "Three committed result ledgers, kept separate because their gates are different.", 19, MUTED),
+        box(72, 220, 1452, 348, stroke="#21465b"),
+    ]
+    for row_index, (label, counts, total) in enumerate(rows):
+        y = 276 + row_index * 92
+        out.append(txt(104, y + 20, label, 16, INK, 650))
+        x = 430
+        for status in ("PASS", "FAIL", "OPEN", "REPORT"):
+            value = int(counts.get(status, 0))
+            if not value:
+                continue
+            width = 850 * value / total
+            out.append(f'<rect x="{x:.1f}" y="{y}" width="{width:.1f}" height="34" fill="{colours[status]}"/>')
+            if width > 60:
+                out.append(txt(x + width / 2, y + 23, str(value), 14, BG, 800, "middle"))
+            x += width
+        out.append(txt(1460, y + 23, f"{total} checks", 14, MUTED, 600, "end"))
+    legend_x = 430
+    for status in ("PASS", "FAIL", "OPEN", "REPORT"):
+        out += [f'<rect x="{legend_x}" y="522" width="18" height="18" rx="4" fill="{colours[status]}"/>', txt(legend_x + 28, 537, status, 13, MUTED, 650)]
+        legend_x += 190
+    out += [
+        box(72, 602, 1452, 58, fill="#1b1116", stroke=RED, radius=12),
+        txt(100, 638, "OPEN means evidence still required. REPORT means the screen records a comparison without selecting hardware.", 17, INK, 550),
+        "</svg>",
+    ]
+    return "\n".join(out) + "\n"
+
+
+def fluxpiston_envelope() -> str:
+    result = load("fluxpiston_flow.json")
+    grid = result["grid"]
+    temperatures = sorted({int(row["temperature_k"]) for row in grid})
+    clearances = sorted({row["clearance_m"] for row in grid})
+    palette = {temperatures[0]: AMBER, temperatures[1]: CYAN, temperatures[2]: VIOLET}
+    ymax = max(row["total_gas_mass_kg"] for row in grid) * 1000.0 * 1.12
+    out = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800">',
+        f'<rect width="1600" height="800" fill="{BG}"/>',
+        txt(72, 78, "FLUXPISTON CLEARANCE ENVELOPE", 24, CYAN, 700),
+        txt(72, 124, "Leakage prices clearance directly into gas mass per shot.", 34, INK, 600),
+        txt(72, 162, "Ideal-gas and continuum choked-flow screen; seal contact and rarefaction remain open.", 19, MUTED),
+    ]
+    for panel_index, case_name in enumerate(("reference", "qualification")):
+        x, y, w, h = 72 + panel_index * 744, 218, 704, 450
+        left, top, plot_w, plot_h = x + 86, y + 72, 570, 286
+        out += [box(x, y, w, h), txt(x + 28, y + 42, case_name.upper(), 16, CYAN, 700)]
+        for tick in range(5):
+            yy = top + plot_h * tick / 4
+            value = ymax * (1 - tick / 4)
+            out += [f'<line x1="{left}" y1="{yy:.1f}" x2="{left + plot_w}" y2="{yy:.1f}" stroke="#17384b"/>', txt(left - 12, yy + 5, f"{value:.1f}", 12, MUTED, 400, "end")]
+        min_c, max_c = min(clearances), max(clearances)
+        for clearance in clearances:
+            xx = left + plot_w * (clearance - min_c) / (max_c - min_c)
+            out.append(txt(xx, top + plot_h + 26, f"{clearance * 1000:.2f}", 11, MUTED, 400, "middle"))
+        for temperature in temperatures:
+            rows = sorted((row for row in grid if row["case"] == case_name and int(row["temperature_k"]) == temperature), key=lambda row: row["clearance_m"])
+            points = []
+            for row in rows:
+                xx = left + plot_w * (row["clearance_m"] - min_c) / (max_c - min_c)
+                yy = top + plot_h * (1 - row["total_gas_mass_kg"] * 1000.0 / ymax)
+                points.append(f"{xx:.1f},{yy:.1f}")
+            out.append(f'<polyline points="{" ".join(points)}" fill="none" stroke="{palette[temperature]}" stroke-width="4"/>')
+        out += [txt(left, top - 14, "total gas mass [g]", 13, MUTED), txt(left + plot_w, top + plot_h + 54, "radial clearance [mm]", 13, MUTED, 500, "end")]
+    legend_x = 538
+    for temperature in temperatures:
+        out += [f'<line x1="{legend_x}" y1="716" x2="{legend_x + 38}" y2="716" stroke="{palette[temperature]}" stroke-width="4"/>', txt(legend_x + 50, 722, f"{temperature} K", 14, INK, 600)]
+        legend_x += 190
+    out += [txt(1494, 766, "MODEL OUTPUT · CONTACT, FRICTION AND PLUME NOT SOLVED", 15, RED, 650, "end"), "</svg>"]
+    return "\n".join(out) + "\n"
+
+
 def main() -> None:
-    output = ROOT / "figures" / "architecture-roadmap.svg"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(render(), encoding="utf-8")
-    print(output.relative_to(ROOT))
+    outputs = {
+        ROOT / "figures" / "architecture-roadmap.svg": render(),
+        ROOT / "figures" / "gate-scorecard.svg": gate_scorecard(),
+        ROOT / "figures" / "fluxpiston-envelope.svg": fluxpiston_envelope(),
+    }
+    for output, body in outputs.items():
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(body, encoding="utf-8")
+        print(output.relative_to(ROOT))
 
 
 if __name__ == "__main__":

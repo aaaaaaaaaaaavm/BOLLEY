@@ -22,6 +22,15 @@ what its premise actually bought.
 
 ![My current Bolley architecture roadmap](figures/architecture-roadmap.svg)
 
+<p align="center">
+  <img src="figures/gate-scorecard.svg" alt="BOLLEY promotion-gate status across the A10, A11 and A12 result ledgers" width="49%">
+  <img src="figures/fluxpiston-envelope.svg" alt="Fluxpiston gas mass per shot across seal clearance and temperature" width="49%">
+</p>
+
+<p align="center"><sub>The scorecard distinguishes a passed numerical screen from an open
+hardware gate. The clearance envelope is regenerated from all 30 A11 grid points; its flow model
+does not include seal contact, friction, rarefaction or plume behaviour.</sub></p>
+
 <p align="center"><sub>I regenerate this roadmap from my committed A5e, A10 and A12 results with
 <code>tools/generate_readme_figure.py</code>. It separates the exact Gen3 nominal CAD from three
 forward directions and keeps every open gate attached. It is model and nominal-CAD output, not

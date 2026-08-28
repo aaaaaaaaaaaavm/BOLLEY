@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="800" viewBox="0 0 1600 800">
+<rect width="1600" height="800" fill="#07111b"/>
+<text x="72" y="78" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="24" font-weight="700" text-anchor="start">FLUXPISTON CLEARANCE ENVELOPE</text>
+<text x="72" y="124" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="34" font-weight="600" text-anchor="start">Leakage prices clearance directly into gas mass per shot.</text>
+<text x="72" y="162" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="400" text-anchor="start">Ideal-gas and continuum choked-flow screen; seal contact and rarefaction remain open.</text>
+<rect x="72" y="218" width="704" height="450" rx="18" fill="#0c1d2a" stroke="#17384b"/>
+<text x="100" y="260" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" text-anchor="start">REFERENCE</text>
+<line x1="158" y1="290.0" x2="728" y2="290.0" stroke="#17384b"/>
+<text x="146" y="295.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">6.7</text>
+<line x1="158" y1="361.5" x2="728" y2="361.5" stroke="#17384b"/>
+<text x="146" y="366.5" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">5.0</text>
+<line x1="158" y1="433.0" x2="728" y2="433.0" stroke="#17384b"/>
+<text x="146" y="438.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">3.4</text>
+<line x1="158" y1="504.5" x2="728" y2="504.5" stroke="#17384b"/>
+<text x="146" y="509.5" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">1.7</text>
+<line x1="158" y1="576.0" x2="728" y2="576.0" stroke="#17384b"/>
+<text x="146" y="581.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">0.0</text>
+<text x="158.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.05</text>
+<text x="221.33333333333334" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.10</text>
+<text x="348.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.20</text>
+<text x="474.6666666666666" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.30</text>
+<text x="728.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.50</text>
+<polyline points="158.0,412.0 221.3,405.1 348.0,391.3 474.7,377.5 728.0,349.9" fill="none" stroke="#ffb454" stroke-width="4"/>
+<polyline points="158.0,438.8 221.3,432.5 348.0,419.9 474.7,407.3 728.0,382.1" fill="none" stroke="#38d6e8" stroke-width="4"/>
+<polyline points="158.0,451.0 221.3,445.0 348.0,433.0 474.7,420.9 728.0,396.9" fill="none" stroke="#9b8cff" stroke-width="4"/>
+<text x="158" y="276" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="400" text-anchor="start">total gas mass [g]</text>
+<text x="728" y="630" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="500" text-anchor="end">radial clearance [mm]</text>
+<rect x="816" y="218" width="704" height="450" rx="18" fill="#0c1d2a" stroke="#17384b"/>
+<text x="844" y="260" fill="#38d6e8" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="700" text-anchor="start">QUALIFICATION</text>
+<line x1="902" y1="290.0" x2="1472" y2="290.0" stroke="#17384b"/>
+<text x="890" y="295.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">6.7</text>
+<line x1="902" y1="361.5" x2="1472" y2="361.5" stroke="#17384b"/>
+<text x="890" y="366.5" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">5.0</text>
+<line x1="902" y1="433.0" x2="1472" y2="433.0" stroke="#17384b"/>
+<text x="890" y="438.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">3.4</text>
+<line x1="902" y1="504.5" x2="1472" y2="504.5" stroke="#17384b"/>
+<text x="890" y="509.5" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">1.7</text>
+<line x1="902" y1="576.0" x2="1472" y2="576.0" stroke="#17384b"/>
+<text x="890" y="581.0" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="12" font-weight="400" text-anchor="end">0.0</text>
+<text x="902.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.05</text>
+<text x="965.3333333333334" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.10</text>
+<text x="1092.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.20</text>
+<text x="1218.6666666666665" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.30</text>
+<text x="1472.0" y="602" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.50</text>
+<polyline points="902.0,399.4 965.3,390.6 1092.0,373.1 1218.7,355.6 1472.0,320.6" fill="none" stroke="#ffb454" stroke-width="4"/>
+<polyline points="902.0,428.1 965.3,420.1 1092.0,404.2 1218.7,388.2 1472.0,356.2" fill="none" stroke="#38d6e8" stroke-width="4"/>
+<polyline points="902.0,441.2 965.3,433.6 1092.0,418.4 1218.7,403.1 1472.0,372.7" fill="none" stroke="#9b8cff" stroke-width="4"/>
+<text x="902" y="276" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="400" text-anchor="start">total gas mass [g]</text>
+<text x="1472" y="630" fill="#8fa7ba" font-family="Inter,Segoe UI,sans-serif" font-size="13" font-weight="500" text-anchor="end">radial clearance [mm]</text>
+<line x1="538" y1="716" x2="576" y2="716" stroke="#ffb454" stroke-width="4"/>
+<text x="588" y="722" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="600" text-anchor="start">250 K</text>
+<line x1="728" y1="716" x2="766" y2="716" stroke="#38d6e8" stroke-width="4"/>
+<text x="778" y="722" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="600" text-anchor="start">300 K</text>
+<line x1="918" y1="716" x2="956" y2="716" stroke="#9b8cff" stroke-width="4"/>
+<text x="968" y="722" fill="#e8f0f7" font-family="Inter,Segoe UI,sans-serif" font-size="14" font-weight="600" text-anchor="start">330 K</text>
+<text x="1494" y="766" fill="#ff6b6b" font-family="Inter,Segoe UI,sans-serif" font-size="15" font-weight="650" text-anchor="end">MODEL OUTPUT · CONTACT, FRICTION AND PLUME NOT SOLVED</text>
+</svg>

@@ -8,6 +8,8 @@
 | F01 | [A3a unit-cell candidates](../cad/a3a_unit_cells.svg) | `cad/a3a_unit_cells.svg` | Hand-authored parametric schematic | Historical topology screen |
 | F02 | [A5a comb-fin cross-section](../cad/a5a_comb_fin_cross_section.svg) | `cad/a5a_comb_fin_cross_section.svg` | Hand-authored dimensional schematic | Rejected architecture evidence |
 | F03 | [Bolley architecture roadmap](../figures/architecture-roadmap.svg) | `figures/architecture-roadmap.svg` | Generated summary of committed A5e, A10 and A12 results — MODEL / NOMINAL CAD OUTPUT | Current repository overview; open gates shown in figure |
+| F04 | [Promotion-gate scorecard](../figures/gate-scorecard.svg) | `figures/gate-scorecard.svg` | Generated status composition from committed A10, A11 and A12 result ledgers — MODEL OUTPUT | Passed numerical screens remain distinct from open evidence gates |
+| F05 | [Fluxpiston clearance envelope](../figures/fluxpiston-envelope.svg) | `figures/fluxpiston-envelope.svg` | Generated A11 ideal-gas and continuum choked-flow sweep — MODEL OUTPUT | Promoted to dynamic regulator, blowdown and contact gate; not CAD closure |
 | G1-01 | [01 Fluxfoil Payload](../cad/renders/gen1/01_fluxfoil_payload.png) | `cad/renders/gen1/01_fluxfoil_payload.png` | Rendered parametric CAD — nominal geometry | Rejected Gen1 package evidence |
 | G1-02 | [02 Stator Cassette](../cad/renders/gen1/02_stator_cassette.png) | `cad/renders/gen1/02_stator_cassette.png` | Rendered parametric CAD — nominal geometry | Rejected Gen1 package evidence |
 | G1-03 | [03 Six Cell Coupon](../cad/renders/gen1/03_six_cell_coupon.png) | `cad/renders/gen1/03_six_cell_coupon.png` | Rendered parametric CAD — nominal geometry | Rejected Gen1 package evidence |
@@ -72,8 +74,8 @@
 
 ## Evidence count
 
-- Indexed figures: **64**.
-- Parametric/model/schematic figures: **64**.
+- Indexed figures: **66**.
+- Parametric/model/schematic figures: **66**.
 - Physically observed figures: **0**.
 
 I use a render to explain topology or nominal fit. I do not use it to close force, field,
