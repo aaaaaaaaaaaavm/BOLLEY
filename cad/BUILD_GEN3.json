@@ -1,0 +1,314 @@
+{
+  "artifacts": {
+    "Bolley_A3_Fluxrelay_Coupon_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          123.9250002,
+          75.0000002,
+          43.00000020000001
+        ],
+        "x": [
+          -13.925000100000009,
+          110.0000001
+        ],
+        "y": [
+          -37.5000001,
+          37.5000001
+        ],
+        "z": [
+          36.9999999,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 789,
+      "step": {
+        "bytes": 13983882,
+        "path": "cad/step/gen3/Bolley_A3_Fluxrelay_Coupon_Gen3.step",
+        "sha256": "a543bb7d02a0273056c61b43523402fee06c364d0f6e89a71e5f4dab69238bf8"
+      },
+      "stl": {
+        "bytes": 475484,
+        "path": "cad/stl/gen3/Bolley_A3_Fluxrelay_Coupon_Gen3.stl",
+        "sha256": "a3b915a8b1f06ed70e6726cad09709bd4314fee0ddc86c1711261e1e1499f2c2"
+      },
+      "volume_mm3": 142711.25079999986
+    },
+    "Bolley_Assembly_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          1355.0000002000002,
+          160.00000020000044,
+          160.00000020000044
+        ],
+        "x": [
+          -50.0000001,
+          1305.0000001
+        ],
+        "y": [
+          -80.00000010000022,
+          80.00000010000022
+        ],
+        "z": [
+          -80.00000010000022,
+          80.00000010000022
+        ]
+      },
+      "solid_count": 998,
+      "step": {
+        "bytes": 19757403,
+        "path": "cad/step/gen3/Bolley_Assembly_Gen3.step",
+        "sha256": "45342c5766e29c06dd467629c779c92bb0194f9c479793000f786f5338693770"
+      },
+      "stl": {
+        "bytes": 707884,
+        "path": "cad/stl/gen3/Bolley_Assembly_Gen3.stl",
+        "sha256": "45e31768229192d5c715e78071cd788c399deb12a3f147392cba69f2d1861685"
+      },
+      "volume_mm3": 5776244.143199845
+    },
+    "Bolley_Fluxrelay_Interface_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          318.60000020000007,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          2.2499998999999984,
+          320.85000010000005
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 84,
+      "step": {
+        "bytes": 1445730,
+        "path": "cad/step/gen3/Bolley_Fluxrelay_Interface_Gen3.step",
+        "sha256": "067631ce6e38d15ce04740628b53d3e4298029239a12daa7a2421938bd43c28b"
+      },
+      "stl": {
+        "bytes": 50484,
+        "path": "cad/stl/gen3/Bolley_Fluxrelay_Interface_Gen3.stl",
+        "sha256": "f1680425b24d3ea768f927318b33ea6ef5d1288083709d724478b53c0a9d221f"
+      },
+      "volume_mm3": 77579.10000000024
+    },
+    "Bolley_Payload_Proxy_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          340.50000020000004,
+          112.5000002,
+          112.5000002
+        ],
+        "x": [
+          -1.0000000251214793e-07,
+          340.5000001
+        ],
+        "y": [
+          -56.2500001,
+          56.2500001
+        ],
+        "z": [
+          -56.2500001,
+          56.2500001
+        ]
+      },
+      "solid_count": 89,
+      "step": {
+        "bytes": 1531582,
+        "path": "cad/step/gen3/Bolley_Payload_Proxy_Gen3.step",
+        "sha256": "c5d59a656275b1200bed6b86b0d4ca96a206e7251c47e289dcb0901bf5ed475b"
+      },
+      "stl": {
+        "bytes": 53484,
+        "path": "cad/stl/gen3/Bolley_Payload_Proxy_Gen3.stl",
+        "sha256": "c4d6bc65e4b17fa32117e839ba8da3a64a05e53d357a3e867dc3c1b94f798cb4"
+      },
+      "volume_mm3": 3184641.599999994
+    },
+    "Bolley_Retention_Gate_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          8.000000200000017,
+          130.00000020000002,
+          130.00000020000002
+        ],
+        "x": [
+          -12.000000100000008,
+          -3.999999899999992
+        ],
+        "y": [
+          -65.00000010000001,
+          65.00000010000001
+        ],
+        "z": [
+          -65.00000010000001,
+          65.00000010000001
+        ]
+      },
+      "solid_count": 5,
+      "step": {
+        "bytes": 96585,
+        "path": "cad/step/gen3/Bolley_Retention_Gate_Gen3.step",
+        "sha256": "862daaedc023cf53a9c333f17a1f3117d0196c54e08251ca4b2b6190da3fb9ab"
+      },
+      "stl": {
+        "bytes": 4084,
+        "path": "cad/stl/gen3/Bolley_Retention_Gate_Gen3.stl",
+        "sha256": "c2951c7f2f947ba283faf9e9618e69e90f93e21de69d849e05a2f95fe7f934d8"
+      },
+      "volume_mm3": 44959.999999999985
+    },
+    "Bolley_Sectional_Window_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          412.9000002000001,
+          37.24500020000011,
+          30.00000020000011
+        ],
+        "x": [
+          -13.925000100000009,
+          398.97500010000005
+        ],
+        "y": [
+          -21.745000100000055,
+          15.500000100000056
+        ],
+        "z": [
+          49.99999989999994,
+          80.00000010000005
+        ]
+      },
+      "solid_count": 72,
+      "step": {
+        "bytes": 1363714,
+        "path": "cad/step/gen3/Bolley_Sectional_Window_Gen3.step",
+        "sha256": "59bee46342369cc77e33e0473dd0aaaa23bff14f6461a22b6f1b866b7ad8b0f3"
+      },
+      "stl": {
+        "bytes": 52284,
+        "path": "cad/stl/gen3/Bolley_Sectional_Window_Gen3.stl",
+        "sha256": "fc0ab0f71b6217495671b7515f2b42d952eee194db52f8cc1385349546411a8b"
+      },
+      "volume_mm3": 183436.87859999953
+    },
+    "Bolley_Stator_Cassette_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          1228.3000002000003,
+          37.245000200000455,
+          30.00000020000045
+        ],
+        "x": [
+          -13.925000100000009,
+          1214.3750001000003
+        ],
+        "y": [
+          -21.745000100000226,
+          15.500000100000227
+        ],
+        "z": [
+          49.99999989999977,
+          80.00000010000022
+        ]
+      },
+      "solid_count": 216,
+      "step": {
+        "bytes": 4142381,
+        "path": "cad/step/gen3/Bolley_Stator_Cassette_Gen3.step",
+        "sha256": "c0eaa3168b79f72a8d8464404e945fb096da8b58ddbf30c72e05d342dcb5f05d"
+      },
+      "stl": {
+        "bytes": 156684,
+        "path": "cad/stl/gen3/Bolley_Stator_Cassette_Gen3.stl",
+        "sha256": "933ce5b4a54a2eff9646b6adf7df228f1ef102984aa05efdb2ca7bc753a3b1eb"
+      },
+      "volume_mm3": 550310.6358000026
+    },
+    "Bolley_Track_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          1355.0000002000002,
+          160.00000020000002,
+          160.00000020000002
+        ],
+        "x": [
+          -50.0000001,
+          1305.0000001
+        ],
+        "y": [
+          -80.00000010000001,
+          80.00000010000001
+        ],
+        "z": [
+          -80.00000010000001,
+          80.00000010000001
+        ]
+      },
+      "solid_count": 40,
+      "step": {
+        "bytes": 665159,
+        "path": "cad/step/gen3/Bolley_Track_Gen3.step",
+        "sha256": "5efcf11b46762520a73164d8c2c8a476bae363244cc4781ba2de28109ac22af2"
+      },
+      "stl": {
+        "bytes": 24084,
+        "path": "cad/stl/gen3/Bolley_Track_Gen3.stl",
+        "sha256": "2582ee7afeb99d9fbb2cbf745d2577dfa11cdfc0033381b2782ad8c0c9a715fc"
+      },
+      "volume_mm3": 345400.0000000002
+    }
+  },
+  "coordinate_frame": {
+    "origin": "payload aft face at the retained/breech position",
+    "x": "firing axis, positive toward muzzle",
+    "y": "lateral",
+    "z": "vertical"
+  },
+  "derived_format": "STL",
+  "evidence": "PARAMETRIC CAD OUTPUT from the A6h/A7c-passing selected point; no manufacturing release",
+  "fit_checks": {
+    "a8b_installed_copper_volume_all_four_faces_mm3": 532846.0800000001,
+    "active_window_cell_count": 9,
+    "active_window_cells_per_phase": 3,
+    "adjacent_coil_overlap_per_face_mm3": 0.0,
+    "coil_core_intersection_per_face_mm3": 0.0,
+    "coil_envelope_volume_all_four_faces_mm3": 532846.0800000003,
+    "coil_volume_relative_error": 4.440892098500626e-16,
+    "departure_axis": "+x",
+    "discrete_coupon_bar_period_count": 50,
+    "discrete_coupon_stator_cell_count": 2,
+    "endpoint_overlap_guard_mm": 2.2499999999998863,
+    "minimum_coil_to_fluxbridge_radial_clearance_mm": 0.75,
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_fin_clearance_per_side_mm": 0.20000000000000007,
+    "payload_coil_intersection_per_face_mm3": 0.0,
+    "payload_core_intersection_per_face_mm3": 0.0,
+    "payload_stator_intersection_all_faces_mm3": 0.0,
+    "stator_face_count": 4
+  },
+  "generation": "Gen3",
+  "limits": [
+    "Full-length Fluxrelay blades remain homogenized; the coupon resolves magnetic webs, copper rungs and side encapsulant.",
+    "Coils are volume-matched copper solids, not individual turns, insulation, impregnation, leads or terminals.",
+    "Fasteners, lamination plies, cooling, sensors, cabling and gate actuation are absent.",
+    "The 16 kg active-material band is not a packaged launcher-mass allowance.",
+    "The payload is an envelope proxy, not a spacecraft design."
+  ],
+  "master_format": "STEP",
+  "parameter_file": "cad/gen3_parameters.json",
+  "parameter_sha256": "b91988026d05c5ad44d11ffb0c0a76261c14865329ce2baf6950563504407b99",
+  "schema_version": 1,
+  "selected_candidate_id": "n27_p45.3_I380_A10.4",
+  "source_results": {
+    "analysis/results/gen27_cage_circuit.json": "5de5b8b0df35d3092765eeb0ae0cba6a172c116f91fab76da935ee18040a7bb4",
+    "analysis/results/gen27_codesign.json": "1b6dab32a970e9ad67b9c116ef7147224603ebf5827a8380d7ec8deee31f511a",
+    "analysis/results/gen27_field.json": "069e5ffbfe7a7da96fd37406b77abe8a731933031d30259b022bee5a71a01841"
+  }
+}

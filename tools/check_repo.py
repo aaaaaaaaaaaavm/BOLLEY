@@ -301,6 +301,7 @@ def main() -> None:
         raise SystemExit("docs/GEN27_CAGE_CIRCUIT.md exists before the A7c result")
     if A5E_RESULTS <= committed:
         run("analysis/gen3_cad_fit.py", "--check")
+        run("tools/make_gen3_cad_fit.py", "--check")
     elif (ROOT / "docs" / "GEN3_CAD_FIT.md").exists():
         raise SystemExit("docs/GEN3_CAD_FIT.md exists before the A5e result")
     stage = (

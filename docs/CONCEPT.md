@@ -6,7 +6,7 @@ In VOLLEY I accelerated an unmodified payload on a 9.445 kg reusable magnetic sl
 accept a small passive CubeSat modification so the spacecraft itself becomes the translator. I
 keep all windings, switches, sensors and stored energy on the launcher.
 
-My present architecture is **Gen2.7 Fluxrelay**, not the early reluctance comb and not the rejected
+My present architecture is the **Gen3 nominal package of Gen2.7 Fluxrelay**, not the early reluctance comb and not the rejected
 900 mm Quintweb package.
 
 ```mermaid
@@ -105,6 +105,10 @@ fresh nonlinear meshes pass all 13 frozen bands, and I now carry a 4.81156 uH ph
 inductance into my circuit model. In A7c I reclosed all four robustness corners from that result;
 every corner passes all 29 bands, with a controlling 893.412 J reference shot.
 
+In A5e I converted that exact point into a controlled Gen3 nominal assembly. All 17 frozen bands
+pass, with zero nominal solid interference, volume-matched windings and 2.25 mm endpoint guard.
+
 I have not established commutation ripple, end effects, inverter partitioning, structure,
 manufacturing tolerance, provider compatibility or hardware performance. A9 transient
-sectional-drive work is my next physics gate; A5e packaged Gen3 CAD is my next geometry gate.
+sectional-drive work is my next physics gate; toleranced structure and packaged mass are my next
+geometry and integration gates.

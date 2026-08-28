@@ -15,7 +15,7 @@ what its premise actually bought.
 > Bolley. I label every number here as an assumption, model output, external datum or measurement
 > so I cannot quietly turn a calculation into evidence.
 
-![A8b Fluxrelay feasible design island](analysis/figures/a8b/A8b_feasible_island.png)
+![My Gen3 Fluxrelay retained assembly](cad/renders/gen3/01_gen3_hero.png)
 
 I began with VOLLEY by asking whether I could give an unmodified CubeSat a programmable deployment
 velocity without making it carry propulsion. I answered that question with a reusable magnetic
@@ -54,6 +54,13 @@ three fresh nonlinear meshes: all 13 frozen bands pass, with 1.5284 T worst stat
 1.3434 T worst moving peak and 4.81156 uH fine three-cell phase-window inductance. In A7c all four
 selected-point robustness corners pass all 29 bands. My controlling reference shot is 893.412 J,
 only 6.588 J below my unchanged 900 J cap.
+
+In A5e I then built that exact point as a new Gen3 parametric assembly rather than stretching my
+historical Gen2 CAD. All 17 frozen nominal-fit bands pass. I generated eight STEP masters, eight
+STL previews and ten inspected views; exact nominal payload/core/coil intersections are zero, the
+winding volume matches A8b to numerical round-off, and the cage retains its 2.25 mm engagement
+guard after 900 mm travel. This closes nominal geometry only. It does not create tolerances,
+structure, cooling, electronics or hardware evidence.
 
 > ## The sibling design moved on 2026-08-14, and it computed something that applies here
 >
@@ -127,9 +134,9 @@ patentability.
 | Selected primary | 27 cells/channel, 45.3 mm pitch, 380 A, 10.4 mm2/turn | 1.2231 m and 15.908 kg installed |
 | A8b coupled closure | 77/2,856 candidates pass; selected worst demand 0.99496 | I promoted one analytical point through A6h and A7c |
 | Transverse field | A6h passed 13/13 on 212,850 / 751,282 / 240,130 elements at 380 A | I replace the surrogate with 1.5284 T stationary, 1.3434 T moving and 4.81156 uH phase-window results |
-| Cage + circuit | A7c passes 4/4 corners and 29/29 bands; hot reference 893.412 J | I preserve the 6.588 J model margin as narrow and open A5e/A9 only |
+| Cage + circuit | A7c passes 4/4 corners and 29/29 bands; hot reference 893.412 J | I preserve the 6.588 J model margin as narrow and keep A9 open |
 | Axial engagement | 318.6 mm cage inside 1.2231 m stator over 900 mm travel | 2.25 mm modelled guard at both endpoints |
-| CAD | Seven STEP + seven STL historical Gen2 masters | Gen3 Fluxrelay geometry is next, not yet evidence |
+| CAD | A5e passes 17/17; eight STEP + eight STL Gen3 masters and ten inspected renders | Nominal fit is closed; tolerances, structure and packaged mass remain open |
 | Hardware evidence | None | Central claim remains open |
 
 ## Start here
@@ -144,22 +151,28 @@ patentability.
 8. [`docs/GEN27_CODESIGN.md`](docs/GEN27_CODESIGN.md) — the selected Fluxrelay package and margins.
 9. [`docs/GEN27_FIELD.md`](docs/GEN27_FIELD.md) — my fresh selected-point nonlinear-field result.
 10. [`docs/GEN27_CAGE_CIRCUIT.md`](docs/GEN27_CAGE_CIRCUIT.md) — my selected-point sectional circuit reclosure.
-11. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — historical CAD evidence and STEP/STL packages.
-12. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
-13. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — the live defect register.
-14. [`DECISION_LOG.md`](DECISION_LOG.md) — compact decision chain with full ADRs.
-15. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+11. [`docs/GEN3_CAD_FIT.md`](docs/GEN3_CAD_FIT.md) — my exact nominal fit, renders and STEP/STL package.
+12. [`cad/GEN3_MANUAL_DETAILS.md`](cad/GEN3_MANUAL_DETAILS.md) — every detail I still refuse to hide.
+13. [`docs/GEN2_CAD_FIT.md`](docs/GEN2_CAD_FIT.md) — my historical CAD evidence and failed/superseded path.
+14. [`validation/STATUS.md`](validation/STATUS.md) — every declared run and its disposition.
+15. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — my live defect register.
+16. [`DECISION_LOG.md`](DECISION_LOG.md) — my compact decision chain with full ADRs.
+17. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
 
 ## Reproduce
 
-The algebraic stages require only Python. Gen2 CAD uses the pinned packages in
-`requirements-cad.txt`; A6 field reproduction uses `requirements-field.txt`.
+The algebraic stages require only Python. My Gen3 CAD uses the pinned packages in
+`requirements-cad.txt`; field reproduction uses `requirements-field.txt`.
 
 ```bash
 python tools/check_repo.py
 python analysis/gen27_codesign.py --check
 python analysis/gen27_field.py --artifact-check
 python analysis/gen27_cage_circuit.py --check
+python cad/build_gen3.py --check
+python cad/render_gen3.py --check
+python tools/package_gen3_cad.py --check
+python analysis/gen3_cad_fit.py --check
 python analysis/gen27_field.py --check  # full three-mesh A6h re-solve
 ```
 

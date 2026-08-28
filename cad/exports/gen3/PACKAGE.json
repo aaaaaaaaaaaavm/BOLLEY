@@ -1,0 +1,142 @@
+{
+  "build_manifest": "cad/BUILD_GEN3.json",
+  "build_manifest_sha256": "f409156524e33ae7e9ce359cc3321bf3bf6135adedb20a0f8f2fc5b06720c899",
+  "evidence": "DETERMINISTIC ARCHIVES OF CAD OUTPUT; not a manufacturing release",
+  "fixed_zip_timestamp": "2026-08-14T00:00:00",
+  "generation": "Gen3",
+  "packages": {
+    "step": {
+      "bytes": 6327501,
+      "member_count": 8,
+      "members": [
+        {
+          "archive_member": "Bolley_A3_Fluxrelay_Coupon_Gen3.step",
+          "bytes": 13983882,
+          "part": "Bolley_A3_Fluxrelay_Coupon_Gen3",
+          "sha256": "a543bb7d02a0273056c61b43523402fee06c364d0f6e89a71e5f4dab69238bf8",
+          "source_path": "cad/step/gen3/Bolley_A3_Fluxrelay_Coupon_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Assembly_Gen3.step",
+          "bytes": 19757403,
+          "part": "Bolley_Assembly_Gen3",
+          "sha256": "45342c5766e29c06dd467629c779c92bb0194f9c479793000f786f5338693770",
+          "source_path": "cad/step/gen3/Bolley_Assembly_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Fluxrelay_Interface_Gen3.step",
+          "bytes": 1445730,
+          "part": "Bolley_Fluxrelay_Interface_Gen3",
+          "sha256": "067631ce6e38d15ce04740628b53d3e4298029239a12daa7a2421938bd43c28b",
+          "source_path": "cad/step/gen3/Bolley_Fluxrelay_Interface_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Payload_Proxy_Gen3.step",
+          "bytes": 1531582,
+          "part": "Bolley_Payload_Proxy_Gen3",
+          "sha256": "c5d59a656275b1200bed6b86b0d4ca96a206e7251c47e289dcb0901bf5ed475b",
+          "source_path": "cad/step/gen3/Bolley_Payload_Proxy_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Retention_Gate_Gen3.step",
+          "bytes": 96585,
+          "part": "Bolley_Retention_Gate_Gen3",
+          "sha256": "862daaedc023cf53a9c333f17a1f3117d0196c54e08251ca4b2b6190da3fb9ab",
+          "source_path": "cad/step/gen3/Bolley_Retention_Gate_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Sectional_Window_Gen3.step",
+          "bytes": 1363714,
+          "part": "Bolley_Sectional_Window_Gen3",
+          "sha256": "59bee46342369cc77e33e0473dd0aaaa23bff14f6461a22b6f1b866b7ad8b0f3",
+          "source_path": "cad/step/gen3/Bolley_Sectional_Window_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Stator_Cassette_Gen3.step",
+          "bytes": 4142381,
+          "part": "Bolley_Stator_Cassette_Gen3",
+          "sha256": "c0eaa3168b79f72a8d8464404e945fb096da8b58ddbf30c72e05d342dcb5f05d",
+          "source_path": "cad/step/gen3/Bolley_Stator_Cassette_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_Track_Gen3.step",
+          "bytes": 665159,
+          "part": "Bolley_Track_Gen3",
+          "sha256": "5efcf11b46762520a73164d8c2c8a476bae363244cc4781ba2de28109ac22af2",
+          "source_path": "cad/step/gen3/Bolley_Track_Gen3.step"
+        }
+      ],
+      "path": "cad/exports/gen3/Bolley_Gen3_STEP.zip",
+      "sha256": "c6fb03d124407eaed3f5c7cfd4623ddc9c52e08a4ef559f86a984cfdad54f3c1"
+    },
+    "stl": {
+      "bytes": 199150,
+      "member_count": 8,
+      "members": [
+        {
+          "archive_member": "Bolley_A3_Fluxrelay_Coupon_Gen3.stl",
+          "bytes": 475484,
+          "part": "Bolley_A3_Fluxrelay_Coupon_Gen3",
+          "sha256": "a3b915a8b1f06ed70e6726cad09709bd4314fee0ddc86c1711261e1e1499f2c2",
+          "source_path": "cad/stl/gen3/Bolley_A3_Fluxrelay_Coupon_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Assembly_Gen3.stl",
+          "bytes": 707884,
+          "part": "Bolley_Assembly_Gen3",
+          "sha256": "45e31768229192d5c715e78071cd788c399deb12a3f147392cba69f2d1861685",
+          "source_path": "cad/stl/gen3/Bolley_Assembly_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Fluxrelay_Interface_Gen3.stl",
+          "bytes": 50484,
+          "part": "Bolley_Fluxrelay_Interface_Gen3",
+          "sha256": "f1680425b24d3ea768f927318b33ea6ef5d1288083709d724478b53c0a9d221f",
+          "source_path": "cad/stl/gen3/Bolley_Fluxrelay_Interface_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Payload_Proxy_Gen3.stl",
+          "bytes": 53484,
+          "part": "Bolley_Payload_Proxy_Gen3",
+          "sha256": "c4d6bc65e4b17fa32117e839ba8da3a64a05e53d357a3e867dc3c1b94f798cb4",
+          "source_path": "cad/stl/gen3/Bolley_Payload_Proxy_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Retention_Gate_Gen3.stl",
+          "bytes": 4084,
+          "part": "Bolley_Retention_Gate_Gen3",
+          "sha256": "c2951c7f2f947ba283faf9e9618e69e90f93e21de69d849e05a2f95fe7f934d8",
+          "source_path": "cad/stl/gen3/Bolley_Retention_Gate_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Sectional_Window_Gen3.stl",
+          "bytes": 52284,
+          "part": "Bolley_Sectional_Window_Gen3",
+          "sha256": "fc0ab0f71b6217495671b7515f2b42d952eee194db52f8cc1385349546411a8b",
+          "source_path": "cad/stl/gen3/Bolley_Sectional_Window_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Stator_Cassette_Gen3.stl",
+          "bytes": 156684,
+          "part": "Bolley_Stator_Cassette_Gen3",
+          "sha256": "933ce5b4a54a2eff9646b6adf7df228f1ef102984aa05efdb2ca7bc753a3b1eb",
+          "source_path": "cad/stl/gen3/Bolley_Stator_Cassette_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_Track_Gen3.stl",
+          "bytes": 24084,
+          "part": "Bolley_Track_Gen3",
+          "sha256": "2582ee7afeb99d9fbb2cbf745d2577dfa11cdfc0033381b2782ad8c0c9a715fc",
+          "source_path": "cad/stl/gen3/Bolley_Track_Gen3.stl"
+        }
+      ],
+      "path": "cad/exports/gen3/Bolley_Gen3_STL.zip",
+      "sha256": "de7758a1f7f937fb10c3c513b3017123f3fc225e2fd7b0ead1239d42cede793d"
+    }
+  },
+  "regeneration": [
+    "python cad/build_gen3.py --write",
+    "python tools/package_gen3_cad.py --write"
+  ],
+  "schema_version": 1
+}
