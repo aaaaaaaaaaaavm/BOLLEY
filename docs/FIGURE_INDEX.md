@@ -22,6 +22,16 @@
 | G2-07 | [07 Retained Assembly](../cad/renders/gen2/07_retained_assembly.png) | `cad/renders/gen2/07_retained_assembly.png` | Rendered parametric CAD — arrangement view; four master cells per face shown for legibility | A5d nominal geometry; A6 operating point rejected |
 | G2-08 | [08 Positive X Departure](../cad/renders/gen2/08_positive_x_departure.png) | `cad/renders/gen2/08_positive_x_departure.png` | Rendered parametric CAD — kinematic arrangement view | A5d nominal geometry; A6 operating point rejected |
 | G2-09 | [09 Axial Fit Section](../cad/renders/gen2/09_axial_fit_section.png) | `cad/renders/gen2/09_axial_fit_section.png` | Rendered parametric CAD — nominal fit geometry | A5d nominal geometry; A6 operating point rejected |
+| G3-01 | [01 Gen3 Hero](../cad/renders/gen3/01_gen3_hero.png) | `cad/renders/gen3/01_gen3_hero.png` | Rendered parametric CAD — arrangement view; four master cells per face shown for legibility | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-02 | [02 Fluxrelay Payload](../cad/renders/gen3/02_fluxrelay_payload.png) | `cad/renders/gen3/02_fluxrelay_payload.png` | Rendered parametric CAD — nominal geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-03 | [03 Discrete Fluxrelay Lane](../cad/renders/gen3/03_discrete_fluxrelay_lane.png) | `cad/renders/gen3/03_discrete_fluxrelay_lane.png` | Rendered parametric CAD — bar-resolved coupon geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-04 | [04 Alternating Coil Layers](../cad/renders/gen3/04_alternating_coil_layers.png) | `cad/renders/gen3/04_alternating_coil_layers.png` | Rendered parametric CAD — nominal geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-05 | [05 Full Stator Cassette](../cad/renders/gen3/05_full_stator_cassette.png) | `cad/renders/gen3/05_full_stator_cassette.png` | Rendered parametric CAD — nominal geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-06 | [06 Sectional Active Window](../cad/renders/gen3/06_sectional_active_window.png) | `cad/renders/gen3/06_sectional_active_window.png` | Rendered parametric CAD — sectional-drive arrangement geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-07 | [07 Two Cell Coupon](../cad/renders/gen3/07_two_cell_coupon.png) | `cad/renders/gen3/07_two_cell_coupon.png` | Rendered parametric CAD — test-article arrangement geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-08 | [08 Retained Assembly](../cad/renders/gen3/08_retained_assembly.png) | `cad/renders/gen3/08_retained_assembly.png` | Rendered parametric CAD — arrangement view; four master cells per face shown for legibility | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-09 | [09 Endpoint Engagement](../cad/renders/gen3/09_endpoint_engagement.png) | `cad/renders/gen3/09_endpoint_engagement.png` | Rendered parametric CAD — kinematic arrangement view; one stator face | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
+| G3-10 | [10 Axial Fit Section](../cad/renders/gen3/10_axial_fit_section.png) | `cad/renders/gen3/10_axial_fit_section.png` | Rendered parametric CAD — nominal fit geometry | Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open |
 | A6-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6/A6_field_magnitude.png) | `analysis/figures/a6/A6_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2 operating-point evidence |
 | A6-02 | [Four-blade field balance](../analysis/figures/a6/A6_blade_fields.png) | `analysis/figures/a6/A6_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Rejected Gen2 operating-point evidence |
 | A6-03 | [Mesh and boundary convergence](../analysis/figures/a6/A6_convergence.png) | `analysis/figures/a6/A6_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Rejected Gen2 operating-point evidence |
@@ -55,14 +65,14 @@
 | A6h-01 | [Fine-mesh nonlinear field magnitude](../analysis/figures/a6h/A6h_field_magnitude.png) | `analysis/figures/a6h/A6h_field_magnitude.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
 | A6h-02 | [Four-blade field balance](../analysis/figures/a6h/A6h_blade_fields.png) | `analysis/figures/a6h/A6h_blade_fields.png` | 2D nonlinear field-model output — MODEL OUTPUT | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
 | A6h-03 | [Mesh and boundary convergence](../analysis/figures/a6h/A6h_convergence.png) | `analysis/figures/a6h/A6h_convergence.png` | 2D nonlinear field-model output — NUMERICAL CONVERGENCE | Passing selected Gen2.7 nonlinear-field evidence; A7c passed |
-| A7c-01 | [A7c hot-corner qualification cage-temperature CG map](../analysis/figures/a7c/A7c_qualification_cage_rise_map.png) | `analysis/figures/a7c/A7c_qualification_cage_rise_map.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e and A9 open |
-| A7c-02 | [A7c selected-point normalized corner margins](../analysis/figures/a7c/A7c_controlling_margins.png) | `analysis/figures/a7c/A7c_controlling_margins.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e and A9 open |
-| A7c-03 | [A8b-surrogate to A7c fresh-field reclosure deltas](../analysis/figures/a7c/A7c_surrogate_reclosure_delta.png) | `analysis/figures/a7c/A7c_surrogate_reclosure_delta.png` | Post-field cage/circuit model output — MODEL COMPARISON | Passing selected Gen2.7 reclosure; A5e and A9 open |
+| A7c-01 | [A7c hot-corner qualification cage-temperature CG map](../analysis/figures/a7c/A7c_qualification_cage_rise_map.png) | `analysis/figures/a7c/A7c_qualification_cage_rise_map.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e passed and A9 remains open |
+| A7c-02 | [A7c selected-point normalized corner margins](../analysis/figures/a7c/A7c_controlling_margins.png) | `analysis/figures/a7c/A7c_controlling_margins.png` | Post-field cage/circuit model output — MODEL OUTPUT | Passing selected Gen2.7 reclosure; A5e passed and A9 remains open |
+| A7c-03 | [A8b-surrogate to A7c fresh-field reclosure deltas](../analysis/figures/a7c/A7c_surrogate_reclosure_delta.png) | `analysis/figures/a7c/A7c_surrogate_reclosure_delta.png` | Post-field cage/circuit model output — MODEL COMPARISON | Passing selected Gen2.7 reclosure; A5e passed and A9 remains open |
 
 ## Evidence count
 
-- Indexed figures: **53**.
-- Parametric/model/schematic figures: **53**.
+- Indexed figures: **63**.
+- Parametric/model/schematic figures: **63**.
 - Physically observed figures: **0**.
 
 I use a render to explain topology or nominal fit. I do not use it to close force, field,

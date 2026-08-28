@@ -8,11 +8,12 @@
 - I retain my passing A6h 2D nonlinear transverse-field model and build the missing axial/transient
   field model.
 - I carry A7c's sectional circuit into explicit cell-handoff, commutation and fault calculations.
-- I convert the exact selected Fluxrelay point into packaged Gen3 CAD before I release a coupon.
+- I have converted the exact selected Fluxrelay point into controlled Gen3 nominal CAD; I now add
+  the missing tolerance, structural and packaged-mass evidence before I release a coupon.
 
-**Exit:** I have bounded every critical input to a one-channel Fluxrelay coupon. A5e closes
-packaged geometry and A9 closes the transient sectional drive before I release drawings. I do no
-CAD beauty work in place of those gates.
+**Exit:** I have bounded every critical input to a one-channel Fluxrelay coupon. A5e has closed
+nominal geometry; my tolerance/structure package and A9 must close before I release drawings. I do
+no CAD beauty work in place of those gates.
 
 ## Phase 1 — one corner
 

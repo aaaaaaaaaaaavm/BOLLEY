@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 GEN1 = ROOT / "cad" / "renders" / "gen1" / "RENDERS.json"
 GEN2 = ROOT / "cad" / "renders" / "gen2" / "RENDERS.json"
+GEN3 = ROOT / "cad" / "renders" / "gen3" / "RENDERS.json"
 A6 = ROOT / "analysis" / "figures" / "a6" / "FIGURES.json"
 A6B = ROOT / "analysis" / "figures" / "a6b" / "FIGURES.json"
 A6C = ROOT / "analysis" / "figures" / "a6c" / "FIGURES.json"
@@ -39,7 +40,10 @@ def render() -> str:
     for prefix, manifest_path, disposition in (
         ("G1", GEN1, "Rejected Gen1 package evidence"),
         ("G2", GEN2, "A5d nominal geometry; A6 operating point rejected"),
+        ("G3", GEN3, "Passing A5e selected Fluxrelay nominal geometry; tolerance, structure and A9 open"),
     ):
+        if not manifest_path.exists():
+            continue
         for index, record in enumerate(load(manifest_path)["renders"], start=1):
             name = Path(record["path"]).stem.replace("_", " ").title()
             rows.append(
@@ -64,7 +68,7 @@ def render() -> str:
         ("A8a", A8A, "Axial engagement model output", "Rejected exact Gen2.6 axial-package evidence"),
         ("A8b", A8B, "Coupled design-space model output", "Selected Gen2.7 analytical point; fresh A6h field passed"),
         ("A6h", A6H, "2D nonlinear field-model output", "Passing selected Gen2.7 nonlinear-field evidence; A7c passed"),
-        ("A7c", A7C, "Post-field cage/circuit model output", "Passing selected Gen2.7 reclosure; A5e and A9 open"),
+        ("A7c", A7C, "Post-field cage/circuit model output", "Passing selected Gen2.7 reclosure; A5e passed and A9 remains open"),
     ):
         if not manifest_path.exists():
             continue

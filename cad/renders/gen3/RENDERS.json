@@ -1,0 +1,78 @@
+{
+  "evidence": "RENDERED PARAMETRIC CAD; not measurement or manufacturing release",
+  "generation": "Gen3",
+  "render_count": 10,
+  "renders": [
+    {
+      "bytes": 234996,
+      "evidence": "arrangement view; four master cells per face shown for legibility",
+      "path": "cad/renders/gen3/01_gen3_hero.png",
+      "sha256": "3a1f8102ffa6d9beb802cf0741b095714a7ffddaa95c845da1e23b55c4dfe44a",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 122893,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen3/02_fluxrelay_payload.png",
+      "sha256": "797ce97fc970896c7f746dbdc0ee1dd70a43b6333e620cc5ba67521552116767",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 61495,
+      "evidence": "bar-resolved coupon geometry",
+      "path": "cad/renders/gen3/03_discrete_fluxrelay_lane.png",
+      "sha256": "e4a0db7bded5e80ba0817c536caf3bea4743cc93d7034fd99223189ffe653c28",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 78686,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen3/04_alternating_coil_layers.png",
+      "sha256": "b0dc3333e9dc6730b344eb03cff49f17a67e5338a105c11ae49b5c38e9e4d59a",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 63718,
+      "evidence": "nominal geometry",
+      "path": "cad/renders/gen3/05_full_stator_cassette.png",
+      "sha256": "039506790c98b31ca025ab35f16a43d2102aaa16570ac1029fd38bf296cb296c",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 68633,
+      "evidence": "sectional-drive arrangement geometry",
+      "path": "cad/renders/gen3/06_sectional_active_window.png",
+      "sha256": "8878c83ab561f533b46092a58224a06b4d7c3671934ad97542529a3ea65e10fd",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 79056,
+      "evidence": "test-article arrangement geometry",
+      "path": "cad/renders/gen3/07_two_cell_coupon.png",
+      "sha256": "4a5390e6dbf1a2e03fb1da455ef37b8c63ccab23f9a5c01f1168980c47f410f7",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 238888,
+      "evidence": "arrangement view; four master cells per face shown for legibility",
+      "path": "cad/renders/gen3/08_retained_assembly.png",
+      "sha256": "4b4a2ab006b09c81a9dbedde9f2fbd1d85c90b4995f11854387f3b48a099970c",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 70114,
+      "evidence": "kinematic arrangement view; one stator face",
+      "path": "cad/renders/gen3/09_endpoint_engagement.png",
+      "sha256": "2321b332b5a7047eaa21e626ab0c7c62e29e2c631a1426122e38b22fa959709e",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    },
+    {
+      "bytes": 61549,
+      "evidence": "nominal fit geometry",
+      "path": "cad/renders/gen3/10_axial_fit_section.png",
+      "sha256": "d87cce492a04a98a9ffcda319d64df9aee54af65e87a350044f3e6366dd939b2",
+      "source": "cad/build_gen3.py + cad/gen3_parameters.json"
+    }
+  ],
+  "schema_version": 1
+}

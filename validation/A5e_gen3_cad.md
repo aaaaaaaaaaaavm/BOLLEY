@@ -63,3 +63,19 @@ before I spend effort on tolerance, structure or transient drive detail.
 I require reproducible source, STEP/STL masters and archives, a build manifest, exact intersections,
 ten inspected views, dimensions, BOM, all 17 Boolean bands and my manual-detail ledger. A pass may
 open tolerance, structure and A9 work only.
+
+## My recorded result — 14 August 2026
+
+I ran the frozen source and bands without changing the selected point. **All 17 bands pass.** I
+generated eight STEP masters, eight STL previews and ten inspected renders. Exact nominal
+payload/stator, coil/core and adjacent-coil intersection volumes are all 0.000000 mm³. I retain
+0.20 mm lane clearance per side, 0.75 mm coil-to-lane clearance and the full 2.25 mm endpoint
+engagement guard.
+
+My CAD winding-envelope volume is 532,846.0800000003 mm³ against A8b's
+532,846.0800000001 mm³. Installed active-primary mass remains 15.908104 kg, leaving 0.091896 kg
+inside the active-material band. I do not assign that margin to my missing structure, containment,
+cooling, wiring or electronics.
+
+**Disposition:** I promote the nominal Gen3 geometry to tolerance, structure and A9 transient
+sectional-drive work. I do not promote it to manufacture or hardware validation.

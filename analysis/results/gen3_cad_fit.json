@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "render_count": 10,
+    "step_archive": "cad/exports/gen3/Bolley_Gen3_STEP.zip",
+    "step_count": 8,
+    "stl_archive": "cad/exports/gen3/Bolley_Gen3_STL.zip",
+    "stl_count": 8
+  },
+  "band_count": 17,
+  "band_pass_count": 17,
+  "bands": {
+    "active_material_mass": true,
+    "alternating_coil_route": true,
+    "artifact_and_render_set": true,
+    "artifact_traceability": true,
+    "cage_length_start_and_endpoint_guard": true,
+    "discrete_coupon_content": true,
+    "five_lane_slot_alignment_and_clearance": true,
+    "fluxrelay_projection": true,
+    "four_faces_and_positive_x_departure": true,
+    "installed_copper_volume_consistency": true,
+    "muzzle_and_frame_envelope": true,
+    "payload_envelope_and_rails": true,
+    "payload_stator_non_interference": true,
+    "sectional_active_window": true,
+    "stator_length_pitch_count": true,
+    "upstream_a6h_a7c_pass": true,
+    "winding_slot_fill": true
+  },
+  "disposition": "PROMOTE_GEN3_NOMINAL_GEOMETRY_TO_TOLERANCE_STRUCTURE_AND_A9",
+  "evidence": "A5e PARAMETRIC GEN3 CAD + EXACT NOMINAL SOLID INTERSECTION + ARCHIVE MANIFEST",
+  "failed_bands": [],
+  "geometry": {
+    "a8b_installed_copper_volume_mm3": 532846.0800000001,
+    "active_cage_length_mm": 318.6,
+    "active_cage_start_mm": 2.25,
+    "active_stator_length_mm": 1223.1,
+    "active_window_cell_count": 9,
+    "adjacent_coil_overlap_per_face_mm3": 0.0,
+    "assembly_frame_yz_mm": 160.0,
+    "cad_coil_volume_mm3": 532846.0800000003,
+    "cell_count_per_face": 27,
+    "cell_pitch_mm": 45.3,
+    "coil_core_intersection_per_face_mm3": 0.0,
+    "coil_to_lane_radial_clearance_mm": 0.75,
+    "coil_volume_relative_error": 4.440892098500626e-16,
+    "core_face_footprint_mm": 31.0,
+    "endpoint_overlap_guard_mm": 2.2499999999998863,
+    "finished_lane_count_per_face": 5,
+    "finished_lane_width_mm": 1.18,
+    "gross_winding_slot_fill_fraction": 0.20407162129016435,
+    "muzzle_opening_yz_mm": 150.0,
+    "nominal_lane_clearance_per_side_mm": 0.20000000000000007,
+    "payload_envelope_mm": [
+      340.5,
+      100.0,
+      100.0
+    ],
+    "payload_stator_intersection_all_faces_mm3": 0.0
+  },
+  "input_files": [
+    "cad/gen3_parameters.json",
+    "cad/BUILD_GEN3.json",
+    "cad/renders/gen3/RENDERS.json",
+    "cad/exports/gen3/PACKAGE.json",
+    "analysis/results/gen27_codesign.json",
+    "analysis/results/gen27_field.json",
+    "analysis/results/gen27_cage_circuit.json"
+  ],
+  "limits": [
+    "No tolerance stack, individual turns, insulation, leads, cooling, fasteners or lamination detail is present.",
+    "Full-length Fluxrelay lanes are homogenized; the coupon alone resolves webs and rungs.",
+    "The 92 g active-material margin is not a structure or packaged-system allocation.",
+    "CAD geometry is not launch-provider approval or a manufacturing release."
+  ],
+  "mass_trace": {
+    "excluded_from_active_material_band": [
+      "structure",
+      "containment",
+      "insulation",
+      "cooling",
+      "wiring",
+      "sensors",
+      "power electronics"
+    ],
+    "installed_active_primary_kg": 15.908104172388267,
+    "interface_increment_kg": 0.3713643838893619,
+    "unallocated_active_material_margin_kg": 0.09189582761173298
+  },
+  "screen_pass": true,
+  "selected_candidate_id": "n27_p45.3_I380_A10.4"
+}

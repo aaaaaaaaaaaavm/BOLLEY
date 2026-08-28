@@ -62,12 +62,18 @@ CG grids. Every corner passes all 29 hard bands. The controlling reference shot 
 leaving 6.588 J below my 900 J band. I opened provisional Gen3 CAD and transient sectional-drive
 work, but I did not promote a model result to a hardware claim.
 
+I next froze A5e and built a new Gen3 assembly around that exact point. I did not stretch or rename
+the old 900 mm Gen2 geometry. All 17 nominal CAD bands pass: eight STEP masters, eight STL previews
+and ten inspected renders preserve the five-lane cage, 27-cell sectional primary, exact winding
+volume, zero nominal solid interference and the 2.25 mm endpoint guard. I promoted the geometry to
+tolerance, structure and A9 work, not to manufacturing or flight evidence.
+
 I retain every rejected branch because it explains why I arrived at the current geometry. In
 VOLLEY, my stock-CDS-rail control has now failed its A30 edge-effect calculation, while a wider
 conductive-plate control survives analytically. I have therefore narrowed Bolley's active question:
-does my selected cooperative cage retain its narrow margin in discrete CAD, transient drive work
-and later hardware, and can its four-channel interface justify 0.371 kg against the lighter wide
-plate?
+does my selected cooperative cage retain its narrow margin through transient drive work,
+toleranced structure and later hardware, and can its four-channel interface justify 0.371 kg
+against the lighter wide plate?
 
 ## 14 August 2026 — VOLLEY measures the premise both projects share, and the answer is a negative
 
