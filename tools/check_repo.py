@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import re
 import subprocess
 import sys
@@ -41,6 +42,9 @@ A8B_RESULTS = {"gen27_codesign.json"}
 A6H_RESULTS = {"gen27_field.json"}
 A7C_RESULTS = {"gen27_cage_circuit.json"}
 A5E_RESULTS = {"gen3_cad_fit.json"}
+A10_RESULTS = {"gen456_architecture_screen.json"}
+A11_RESULTS = {"fluxpiston_flow.json"}
+A12_RESULTS = {"fluxframe_mass.json"}
 
 
 def run(*parts: str) -> None:
@@ -75,6 +79,43 @@ def check_authored_voice() -> None:
         )
 
 
+def check_repository_surfaces() -> None:
+    required = [
+        "LICENSE",
+        "NOTICE",
+        "LICENSING.md",
+        "CITATION.cff",
+        "CHANGELOG.md",
+        "SUMMARY.md",
+        "docs/CONTRIBUTING.md",
+        "docs/COMPLETION_STANDARD.md",
+        "docs/PROVENANCE.md",
+        "docs/REPO_METADATA.md",
+        "docs/HUMAN_ACTIONS.md",
+        ".github/workflows/gates.yml",
+        ".github/ISSUE_TEMPLATE/reproduction_discrepancy.md",
+        ".github/ISSUE_TEMPLATE/config.yml",
+    ]
+    missing = [path for path in required if not (ROOT / path).exists()]
+    if missing:
+        raise SystemExit(f"missing repository surfaces: {missing}")
+    licence_digest = hashlib.sha256((ROOT / "LICENSE").read_bytes()).hexdigest()
+    expected_cc_by_40 = "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    if licence_digest != expected_cc_by_40:
+        raise SystemExit("LICENSE is not the frozen CC BY 4.0 legal text")
+    if (ROOT / "LICENSE-MIT-superseded").exists():
+        raise SystemExit("Bolley never carried MIT; a superseded-MIT file would invent history")
+    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    if (
+        "license: CC-BY-4.0" not in citation
+        or "repository-code: \"https://github.com/aaaaaaaaaaaavm/BOLLEY\"" not in citation
+    ):
+        raise SystemExit("CITATION.cff licence or repository identity drifted")
+    notice = (ROOT / "NOTICE").read_text(encoding="utf-8")
+    if "Copyright (c) 2026 Adityavardhan Mishra" not in notice or "CC BY 4.0" not in notice:
+        raise SystemExit("NOTICE attribution or licence drifted")
+
+
 def main() -> None:
     banned = [ROOT / "paper", ROOT / "paper.tex", ROOT / "bibliography.bib"]
     present = [path.relative_to(ROOT) for path in banned if path.exists()]
@@ -82,6 +123,7 @@ def main() -> None:
         raise SystemExit(f"paper-production paths are outside repository scope: {present}")
 
     check_authored_voice()
+    check_repository_surfaces()
 
     for script in list((ROOT / "analysis").glob("*.py")) + list((ROOT / "tools").glob("*.py")):
         subprocess.run([sys.executable, "-m", "py_compile", str(script)], check=True)
@@ -121,6 +163,9 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS | A10_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS | A10_RESULTS | A11_RESULTS,
+        CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS | A10_RESULTS | A11_RESULTS | A12_RESULTS,
     )
     if committed not in valid_sets:
         raise SystemExit(
@@ -304,8 +349,29 @@ def main() -> None:
         run("tools/make_gen3_cad_fit.py", "--check")
     elif (ROOT / "docs" / "GEN3_CAD_FIT.md").exists():
         raise SystemExit("docs/GEN3_CAD_FIT.md exists before the A5e result")
+    if A10_RESULTS <= committed:
+        run("analysis/gen456_architecture_screen.py", "--check")
+        run("tools/make_gen456_architecture_screen.py", "--check")
+    elif (ROOT / "docs" / "GEN456_ARCHITECTURE_SCREEN.md").exists():
+        raise SystemExit("docs/GEN456_ARCHITECTURE_SCREEN.md exists before the A10 result")
+    if A11_RESULTS <= committed:
+        run("analysis/fluxpiston_flow.py", "--check")
+        run("tools/make_fluxpiston_flow.py", "--check")
+    elif (ROOT / "docs" / "FLUXPISTON_FLOW.md").exists():
+        raise SystemExit("docs/FLUXPISTON_FLOW.md exists before the A11 result")
+    if A12_RESULTS <= committed:
+        run("analysis/fluxframe_mass.py", "--check")
+        run("tools/make_fluxframe_mass.py", "--check")
+    elif (ROOT / "docs" / "FLUXFRAME_MASS.md").exists():
+        raise SystemExit("docs/FLUXFRAME_MASS.md exists before the A12 result")
     stage = (
-        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e"
+        "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e/A10/A11/A12"
+        if A12_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e/A10/A11 with A12 declared"
+        if A11_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e/A10 with A11 declared"
+        if A10_RESULTS <= committed
+        else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e with A10 declared"
         if A5E_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c with A5e declared"
         if A7C_RESULTS <= committed

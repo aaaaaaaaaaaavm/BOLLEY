@@ -1,5 +1,8 @@
 # Bolley
 
+[![Licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-blue.svg)](LICENSE)
+[![Reproducibility gates](https://github.com/aaaaaaaaaaaavm/BOLLEY/actions/workflows/gates.yml/badge.svg)](https://github.com/aaaaaaaaaaaavm/BOLLEY/actions/workflows/gates.yml)
+
 **The other answer to the same question: let the satellite help.**
 
 A CubeSat deployer normally carries every moving part itself. Bolley asks what happens if the
@@ -16,6 +19,13 @@ what its premise actually bought.
 > so I cannot quietly turn a calculation into evidence.
 
 ![My Gen3 Fluxrelay retained assembly](cad/renders/gen3/01_gen3_hero.png)
+
+![My current Bolley architecture roadmap](figures/architecture-roadmap.svg)
+
+<p align="center"><sub>I regenerate this roadmap from my committed A5e, A10 and A12 results with
+<code>tools/generate_readme_figure.py</code>. It separates the exact Gen3 nominal CAD from three
+forward directions and keeps every open gate attached. It is model and nominal-CAD output, not
+hardware evidence.</sub></p>
 
 I began with VOLLEY by asking whether I could give an unmodified CubeSat a programmable deployment
 velocity without making it carry propulsion. I answered that question with a reusable magnetic
@@ -90,11 +100,50 @@ structure, cooling, electronics or hardware evidence.
 - Software distributes force so its centroid follows the declared payload centre of gravity.
 - Each face channel contains a 27-cell, 1.2231 m sectional stationary primary.
 - A 318.6 mm five-lane passive cage energises at most three cells per phase in each channel.
-- The Phase 0 reference duty is a 4 kg 3U payload, 8 g and approximately 12 m/s.
+- The corrected Phase 0 reference duty is a 4 kg 3U payload, at most 8 g and 11.8 m/s.
 - A 6 kg 3U is the qualification sizing case, not silently treated as a 4 kg satellite.
 - No permanent magnets, powered spacecraft hardware, pyrotechnics or pressure vessels are added.
 - An independent gate carries ascent loads and prevents an uncommanded deployment.
 - When the field ends, the CubeSat coasts out. No moving launcher member follows it.
+
+## What I mean by Gen4, Gen5 and Gen6
+
+I now reserve generation numbers for a changed controlling claim:
+
+- **Gen4** closes the selected Fluxrelay machine: sectional switching, failed-cell behaviour,
+  tolerance, structure, thermal control, electronics and packaged mass.
+- **Gen5 Fluxframe** asks the 0.37136 kg passive interface to replace bus structure, heat spreading,
+  grounding and guidance hardware. It must displace at least 121.36 g on a selected bus before it
+  meets my 0.25 kg net preference.
+- **Gen6 Fluxpiston** deletes the bulk pulse. The spacecraft's passive aft interface becomes a
+  low-pressure piston over the full face; a short electromagnetic section is retained only for
+  trim, centring and exit shaping.
+
+My first frozen A10 screen found that Fluxpiston needs 30.942 kPa ideal mean pressure for 4 kg at
+11.8 m/s and 33.333 kPa for 6 kg at 10 m/s over 0.90 m. A +/-0.25 m/s trim changes payload kinetic
+energy by at most 15.188 J. Those are architecture screens, not a valve, seal or gas-system design.
+The approximately 400 mm moving seal perimeter is now the controlling Gen6 defect.
+
+In A12 I compared Gen5's 121.36 g target with three sourced public 3U chassis masses. It is
+30.80–42.58% of that envelope. A hypothetical full replacement would range from a 22.64 g net
+saving to an 86.36 g net addition, but I award zero credit: no Fluxframe yet carries a selected
+bus's loads or replaces one named part. Gen5 advances only to bus selection, a removed-parts ledger
+and coupled structural/thermal/electrical/magnetic work.
+
+In A11 I tested whether intentional clearance leakage kills that direction before seal design. All
+eight executable frozen bands pass across 0.05–0.50 mm clearance and 250–330 K. The worst declared
+point uses 6.009 g nitrogen per shot; twelve shots use 72.11 g, an ideal-gas equivalent 3.531 L at
+20 bar and 330 K before tank hardware and margin. A 4.232 mm equivalent feed diameter carries the
+peak calculated flow. I retain those as first-order flow numbers only: pressure dynamics, contact,
+rarefied flow, lateral bypass force, contamination and plume impulse remain open and block CAD.
+
+I also found and corrected a contradiction: 8 g over 0.90 m reaches 11.8855 m/s, so I changed the
+reference requirement from 12.0 to **11.8 m/s** rather than asking every later model to violate one
+of three numbers.
+
+See my [generation definitions](docs/GENERATIONS.md), [A10 result](docs/GEN456_ARCHITECTURE_SCREEN.md),
+[A11 flow screen](docs/FLUXPISTON_FLOW.md) and [unknown-unknown search](docs/UNKNOWN_UNKNOWNS.md).
+My [A12 Fluxframe mass envelope](docs/FLUXFRAME_MASS.md) defines the Gen5 entry point.
 
 I continue to reject the original six-tile / 900 mm arrangement. In Fluxrelay I count every
 installed cell against the launcher mass band, but I charge only the conservative active window
@@ -158,6 +207,8 @@ patentability.
 15. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — my live defect register.
 16. [`DECISION_LOG.md`](DECISION_LOG.md) — my compact decision chain with full ADRs.
 17. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
+18. [`docs/PROVENANCE.md`](docs/PROVENANCE.md) — what is simulated, cross-checked and still absent.
+19. [`docs/HUMAN_ACTIONS.md`](docs/HUMAN_ACTIONS.md) — hardware, supplier and provider actions code cannot close.
 
 ## Reproduce
 
@@ -189,3 +240,10 @@ expensive than an artifact-integrity check.
 5. I let a failed result change the design or kill it; I do not change the threshold.
 6. I never mix assumptions, external data, model outputs and measurements without labels.
 7. I keep this repository as my engineering record, not a paper-production project.
+
+## Licence and citation
+
+I release the complete repository under [CC BY 4.0](LICENSE). The scope and patent boundary are in
+[`LICENSING.md`](LICENSING.md), requested attribution is in [`NOTICE`](NOTICE), and machine-readable
+citation metadata is in [`CITATION.cff`](CITATION.cff). Bolley had no earlier explicit licence, so
+I do not claim that it was ever MIT-licensed.

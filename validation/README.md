@@ -2,6 +2,10 @@
 
 I start validation before I know the result.
 
+My newest system-level branch is [A10](A10_architecture_screen.md): a frozen Gen4-Gen6 premise
+screen. It does not replace the Gen3 field, circuit or CAD evidence and it does not promote Gen5 or
+Gen6 to hardware baselines.
+
 In each run sheet I state inputs, evidence class, numerical bands and the action following a
 failure. I do not edit a committed run sheet to make a completed run pass. If I decide a band was
 wrong, I supersede it with an ADR while preserving the original and stating that I already knew
@@ -40,6 +44,9 @@ the answer.
 | [A6h](A6h_gen27_fluxrelay.md) | Does the exact selected 380 A point survive a fresh nonlinear field solve? | Three-mesh 2D nonlinear magnetostatic FEA | 13/13 pass; A7c and A5e later passed |
 | [A7c](A7c_gen27_cage_circuit.md) | Does the exact selected point still close every circuit and cage band from A6h? | Post-field homogenized cage + sectional circuit/CG model | Four corners pass 29/29; A5e passed and A9 remains open |
 | [A5e](A5e_gen3_cad.md) | Does that exact selected point exist as traceable, non-interfering Gen3 nominal geometry? | Parametric CAD + exact solid intersections + deterministic archives | 17/17 pass; tolerance, structure and A9 opened |
+| [A10](A10_architecture_screen.md) | Which changed premise deserves Gen5/Gen6 work after the pulse became the controlling term? | First-order architecture and requirement screen | 7 pass, 2 fail, 1 open, 2 report; requirement corrected and finite next gates opened |
+| [A11](A11_fluxpiston_flow.md) | Can a deliberately leaking full-face pressure interface stay inside gas, store and feed screens? | Ideal gas + continuum choked clearance flow | 8/8 executable bands pass; contact, plume and seal evidence remain open |
+| [A12](A12_fluxframe_mass.md) | Is Gen5's 121.36 g credit material relative to sourced public 3U chassis masses? | Sourced public mass-envelope arithmetic | 5/5 executable bands pass; 3 integration bands open and zero credit granted |
 
 I do not use `MODELLED` as a synonym for `VALIDATED`. Only hardware evidence can close my central
 claim.

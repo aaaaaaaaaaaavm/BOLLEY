@@ -2,6 +2,20 @@
 
 I did not begin Bolley as a renamed copy of VOLLEY, and I have not backdated its record.
 
+## 28 August 2026 — I made the next generations change the premise
+
+I reconstructed and promoted the completed A5e nominal CAD result, then used VOLLEY's
+requirement-attribution result to question the term Bolley actually removes. I froze A10 before its
+calculator existed. It exposed an inconsistent 12 m/s / 0.90 m / 8 g triplet, quantified the
+121.36 g Gen5 displaced-mass target and identified a low-pressure full-face piston plus short trim
+stage as the Gen6 direction. I corrected the reference duty to 11.8 m/s and promoted only the next
+gates, not unbuilt machines.
+
+I then froze A11 before its calculator. One missing 8 g control value stopped the first execution
+before results; I recorded and corrected it. The completed 30-point screen found that even the
+0.50 mm, 250 K control uses 6.009 g nitrogen per shot. I promoted gas quantity to a dynamic model
+while keeping seal/contact and plume evidence open.
+
 ## 22 March 2021 — the question that became VOLLEY
 
 I began VOLLEY with a direct mission question: could a CubeSat leave a host spacecraft at a
