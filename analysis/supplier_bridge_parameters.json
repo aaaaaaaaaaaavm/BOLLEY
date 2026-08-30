@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A9d supplier-backed bridge lower-bound screen; NOT RUN",
+  "source_result": "analysis/results/sectional_drive_a9b.json",
+  "model_inputs": {
+    "inverter_efficiency_assumed_by_a7c_a9": 0.97,
+    "reference_source_energy_j": 897.74844054099,
+    "qualification_source_energy_j": 1308.4890522592157,
+    "reference_sum_face_channel_current_squared_a2": 194268.78171293653,
+    "qualification_sum_face_channel_current_squared_a2": 283151.22877176007,
+    "maximum_failed_cell_phase_current_a": 386.34652118192486,
+    "acceleration_g": 8.0,
+    "gravity_m_s2": 9.81,
+    "powered_travel_m": 0.9,
+    "face_channels": 4,
+    "phases_per_face": 3
+  },
+  "bands": {
+    "nominal_bus_voltage_v": 48.0,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_qualification_source_energy_j": 1500.0
+  },
+  "supplier_candidates": {
+    "onsemi_nxv08h400xt1": {
+      "source_url": "https://www.onsemi.com/download/data-sheet/pdf/nxv08h400xt1-d.pdf",
+      "supplier_description": "80 V APM17-MDC two-phase MOSFET module; supplier permits combining both phase outputs as one half bridge for 48 V inverter/traction use",
+      "voltage_rating_v": 80.0,
+      "rds_module_high_path_max_ohm_at_25c_160a": 0.00132,
+      "rds_module_low_path_max_ohm_at_25c_160a": 0.00125,
+      "rds_characterization_current_a": 160.0,
+      "switching_characterization_voltage_v": 48.0,
+      "switching_characterization_current_a": 400.0,
+      "turn_on_time_typ_s": 7.10e-7,
+      "rise_time_typ_s": 4.75e-7,
+      "turn_off_time_typ_s": 8.98e-7,
+      "fall_time_typ_s": 2.90e-7,
+      "module_mass_kg": 0.0236,
+      "parallel_modules_per_phase_candidates": [1, 2, 3, 4],
+      "sharing_assumption": "Within each module I assume the supplier-described combined half bridge shares phase current equally between its two parallel phase paths. Parallel modules also share equally. This makes a necessary lower-bound screen, not a current-sharing design."
+    },
+    "infineon_ipt015n10n5": {
+      "source_url": "https://www.infineon.com/part/IPT015N10N5",
+      "supplier_description": "100 V OptiMOS 5 TOLL MOSFET for 48-72 V systems",
+      "voltage_rating_v": 100.0,
+      "continuous_current_max_a_at_25c": 300.0,
+      "pulse_current_max_a": 1200.0,
+      "rds_on_max_ohm_at_10v_25c": 0.0015,
+      "parallel_devices_per_switch_candidates": [1, 2, 3, 4, 5, 6, 7, 8],
+      "sharing_assumption": "Parallel discrete devices share equally and only the published 25 C maximum Rds(on) is used. Package, busbar and contact resistance are absent, so this is a lower bound."
+    }
+  },
+  "rules": {
+    "electronics_loss_budget": "Undo the 0.97 generic inverter-efficiency factor in A9b. Real bridge conduction plus every omitted electrical loss must fit between that non-inverter energy and the unchanged 900/1500 J system caps.",
+    "three_phase_conduction": "At each face, three phase RMS currents contribute I_rms^2*Rpath. Sum over four face channels using the committed A9 current-squared invariant and multiply by shot time.",
+    "onsemi_combined_path": "For one supplier-described combined half bridge, use half the maximum high path and half the maximum low path, then average them over phase-current polarity. Divide again by the number of parallel modules per phase.",
+    "infineon_path": "Use published maximum 25 C Rds(on) divided by equal-sharing device count per switch.",
+    "no_switching_loss_credit": "Switching, gate-drive, selector, capacitor ESR, busbar, cable, connector and cooling losses are reported as the remaining budget; they are not guessed."
+  }
+}
