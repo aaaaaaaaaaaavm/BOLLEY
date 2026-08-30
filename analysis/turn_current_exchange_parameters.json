@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A9f Fluxrelay turn/current exchange; NOT RUN",
+  "source_results": [
+    "analysis/results/sectional_drive_a9b.json",
+    "analysis/results/supplier_bridge_screen.json",
+    "analysis/results/selector_realization_screen.json"
+  ],
+  "baseline": {
+    "turns_per_cell": 4,
+    "rated_phase_current_a": 380.0,
+    "rated_mmf_a_turn": 1520.0,
+    "conductor_area_per_turn_mm2": 10.4,
+    "phase_resistance_nominal_ohm": 0.0023592276923076923,
+    "active_window_phase_inductance_h": 4.8115568374163385e-06,
+    "maximum_healthy_required_dc_link_v": 14.149322762821571,
+    "maximum_failed_cell_required_dc_link_v": 15.007623112182461,
+    "maximum_failed_cell_phase_current_a": 386.34652118192486,
+    "reference_noninverter_machine_energy_j": 870.8159873247603,
+    "qualification_noninverter_machine_energy_j": 1269.2343806914391,
+    "reference_sum_face_channel_current_squared_a2": 194268.78171293653,
+    "qualification_sum_face_channel_current_squared_a2": 283151.22877176007,
+    "shot_time_s": 0.1514456332038457,
+    "face_channels": 4,
+    "phases_per_face": 3,
+    "installed_abc_modules": 36,
+    "active_abc_modules_per_face": 3
+  },
+  "search": {
+    "turns_per_cell": [4,5,6,7,8,9,10,11,12,13],
+    "maximum_parallel_onsemi_modules_per_phase_per_local_bridge": 12,
+    "selection_rule": "Among candidates that pass every inherited electrical band, minimize installed supplier power-module mass; then minimize the maximum normalized demand on reference energy, healthy 10% DC-link-margin voltage, fault 48 V voltage and 400 A phase current; then choose fewer turns."
+  },
+  "supplier_module": {
+    "name": "onsemi NXV08H400XT1",
+    "source_url": "https://www.onsemi.com/download/data-sheet/pdf/nxv08h400xt1-d.pdf",
+    "combined_half_bridge_effective_phase_path_ohm_25c": 0.0006425,
+    "rds_characterization_current_a_per_internal_path": 160.0,
+    "module_mass_kg": 0.0236,
+    "internal_parallel_paths_when_combined": 2
+  },
+  "bands": {
+    "maximum_phase_current_a": 400.0,
+    "nominal_dc_link_v": 48.0,
+    "minimum_healthy_dc_link_margin_fraction": 0.10,
+    "maximum_failed_cell_required_dc_link_v": 48.0,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_qualification_source_energy_j": 1500.0
+  },
+  "scaling_rules": {
+    "current": "I = 1520 A-turn / N",
+    "conductor_area": "Area per turn = 10.4 mm2 * 4/N so total slot copper is unchanged",
+    "resistance": "Phase resistance scales as (N/4)^2",
+    "inductance": "Active-window phase inductance scales as (N/4)^2",
+    "field": "MMF is held at 1520 A-turn; field is treated as unchanged for this screen and must be re-solved after selection",
+    "machine_energy": "With fixed MMF and copper volume, ideal winding I2R, magnetic energy, cage force/loss and core loss are held at the A9b non-inverter values for this screen",
+    "voltage": "A9b healthy and failed-cell link demands scale linearly with N/4 because resistive/load and L di/dt voltage both scale with the turn exchange",
+    "local_bridge": "One three-phase bridge is installed at every ABC module; three modules per face are active. Supplier bridge conduction scales with phase-current squared."
+  }
+}
