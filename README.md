@@ -218,6 +218,8 @@ patentability.
 17. [`docs/FIGURE_INDEX.md`](docs/FIGURE_INDEX.md) — every visual, its source and evidence class.
 18. [`docs/PROVENANCE.md`](docs/PROVENANCE.md) — what is simulated, cross-checked and still absent.
 19. [`docs/HUMAN_ACTIONS.md`](docs/HUMAN_ACTIONS.md) — hardware, supplier and provider actions code cannot close.
+20. [`docs/LAB_TRANSFER.md`](docs/LAB_TRANSFER.md) — what I quarantine in the shared architecture
+    vault and what must pass before it can return.
 
 ## Reproduce
 

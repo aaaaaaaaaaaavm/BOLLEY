@@ -35,3 +35,8 @@ I do not reward an idea for being unusual. I reward it when changing the boundar
 requirement than it adds. Every wild branch therefore needs a one-sentence stop condition before I
 let it become CAD.
 
+I now put those branches in the shared
+[VOLLEY-lab](https://github.com/aaaaaaaaaaaavm/VOLLEY-lab) rather than letting them become an
+unannounced Bolley generation. [`LAB_TRANSFER.md`](LAB_TRANSFER.md) records the boundary. The first
+cross-program gates are the quadrant leakage bearing and a deployer-owned passive trim secondary;
+neither inherits a result merely because its principle came from a passing model here.
