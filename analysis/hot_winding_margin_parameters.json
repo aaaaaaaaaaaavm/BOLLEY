@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A9c hot-winding resistance ceiling; NOT RUN",
+  "source_results": [
+    "analysis/results/gen27_cage_circuit.json",
+    "analysis/results/sectional_drive_a9b.json"
+  ],
+  "controlled_corner": {
+    "cage_sheet_conductance_multiplier": 0.9,
+    "resistance_multiplier_low": 1.0,
+    "resistance_multiplier_high": 1.25,
+    "a7c_reference_energy_low_j": 839.74363610016,
+    "a7c_reference_energy_high_j": 893.4120991772224,
+    "a9b_reference_energy_j": 897.74844054099
+  },
+  "external_datum": {
+    "name": "IEC standard-copper resistance temperature coefficient at 20 C as reproduced by NIST Copper Wire Tables",
+    "temperature_coefficient_per_c": 0.00393,
+    "reference_temperature_c": 20.0,
+    "source_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook100.pdf",
+    "source_boundary": "The coefficient describes standard/good annealed copper. It does not establish this winding's manufactured resistance, joints, insulation build or pre-shot temperature."
+  },
+  "bands": {
+    "maximum_reference_source_energy_j": 900.0
+  },
+  "rules": {
+    "selector_overhead": "A9b source-energy increment over the A7c 1.25x controlling reference corner is held fixed.",
+    "resistance_interpolation": "A7c reference source energy is linear in the phase-resistance multiplier under its fixed current/force model; use the committed 1.00x and 1.25x corners to recover the exact slope.",
+    "temperature_conversion": "Convert the derived maximum R/R20 ratio with R/R20 = 1 + alpha20*(T-20 C). This is a pure-copper ceiling, not an operating-temperature requirement."
+  }
+}
