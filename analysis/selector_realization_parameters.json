@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A9e selector-realization lower bound; NOT RUN",
+  "source_results": [
+    "analysis/results/sectional_drive_a9b.json",
+    "analysis/results/supplier_bridge_screen.json"
+  ],
+  "fixed": {
+    "face_channels": 4,
+    "cells_per_face": 27,
+    "active_cells_per_face": 9,
+    "phases_per_face": 3,
+    "active_cells_per_phase": 3,
+    "installed_cell_positions": 108,
+    "abc_modules_per_face": 9,
+    "installed_abc_modules": 36,
+    "active_abc_modules_per_face": 3,
+    "reference_sum_face_channel_current_squared_a2": 194268.78171293653,
+    "shot_time_s": 0.1514456332038457,
+    "reference_noninverter_machine_energy_j": 870.8159873247603,
+    "maximum_reference_source_energy_j": 900.0
+  },
+  "series_selector_device": {
+    "name": "Infineon IPT015N10N5",
+    "source_url": "https://www.infineon.com/part/IPT015N10N5",
+    "rds_on_max_ohm_at_10v_25c": 0.0015,
+    "bidirectional_banks_per_cell_position": 2
+  },
+  "local_bridge_module": {
+    "name": "onsemi NXV08H400XT1",
+    "source_url": "https://www.onsemi.com/download/data-sheet/pdf/nxv08h400xt1-d.pdf",
+    "combined_half_bridge_effective_phase_path_ohm_25c": 0.0006425,
+    "module_mass_kg": 0.0236
+  },
+  "passing_a9d_shared_bridge_candidates": [
+    {"id":"onsemi_2","reference_remaining_loss_budget_j":0.8293710183461371},
+    {"id":"onsemi_3","reference_remaining_loss_budget_j":10.28091823731063},
+    {"id":"onsemi_4","reference_remaining_loss_budget_j":15.006691846792933},
+    {"id":"infineon_5","reference_remaining_loss_budget_j":2.7049698828099054},
+    {"id":"infineon_6","reference_remaining_loss_budget_j":7.11814368154819},
+    {"id":"infineon_7","reference_remaining_loss_budget_j":10.270410680647046},
+    {"id":"infineon_8","reference_remaining_loss_budget_j":12.634610929971132}
+  ]
+}
