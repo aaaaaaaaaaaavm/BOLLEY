@@ -1,0 +1,35 @@
+{
+  "a7c_1p25_equivalent_ideal_copper_temperature_c": 83.61323155216284,
+  "a7c_reference_energy_slope_j_per_resistance_multiplier": 214.67385230824993,
+  "a9_selector_source_overhead_j": 4.336341363767588,
+  "a9b_margin_to_900j_j": 2.251559459009968,
+  "back_substituted_reference_source_energy_j": 900.0,
+  "check_count": 4,
+  "check_pass_count": 4,
+  "checks": {
+    "a9b_is_above_a7c_hot_corner": true,
+    "back_substitution_hits_900j": true,
+    "positive_energy_slope": true,
+    "solved_multiplier_above_existing_1p25_corner": true
+  },
+  "disposition": "A9C_TARGET_DEFINED_P40_REMAINS_OPEN",
+  "evidence": "A9c DERIVED RESISTANCE/TEMPERATURE CEILING FROM COMMITTED MODEL OUTPUTS AND NIST COPPER DATUM",
+  "external_datum": {
+    "name": "IEC standard-copper resistance temperature coefficient at 20 C as reproduced by NIST Copper Wire Tables",
+    "reference_temperature_c": 20.0,
+    "source_boundary": "The coefficient describes standard/good annealed copper. It does not establish this winding's manufactured resistance, joints, insulation build or pre-shot temperature.",
+    "source_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook100.pdf",
+    "temperature_coefficient_per_c": 0.00393
+  },
+  "input_file": "analysis/hot_winding_margin_parameters.json",
+  "limits": [
+    "The temperature conversion assumes the model's 1.00 resistance state is the finished winding at 20 C.",
+    "Manufacturing tolerance, terminations, cable resistance and semiconductor loss can consume the derived margin before copper temperature does.",
+    "The NIST copper coefficient does not establish a manufactured winding state or hardware qualification."
+  ],
+  "maximum_equivalent_ideal_copper_temperature_c": 86.28200507403173,
+  "maximum_phase_resistance_multiplier": 1.2604882799409447,
+  "remaining_multiplier_above_a7c_1p25_corner": 0.0104882799409447,
+  "remaining_temperature_above_a7c_1p25_corner_c": 2.6687735218688857,
+  "screen_pass": true
+}
