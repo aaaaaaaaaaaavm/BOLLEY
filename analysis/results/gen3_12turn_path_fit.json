@@ -1,0 +1,71 @@
+{
+  "candidate_count": 81,
+  "candidate_width_range_mm": [
+    2.0,
+    2.8
+  ],
+  "candidate_width_step_mm": 0.01,
+  "disposition": "A5G_PASS_PROMOTE_SELECTED_12TURN_WINDING_TO_DETAILED_CAD",
+  "evidence": "A5g PATH-CORRECTED 12-TURN RECTANGULAR-WIRE ENVELOPE SCREEN",
+  "full_band_pass_count": 54,
+  "input_file": "cad/gen3_12turn_path_parameters.json",
+  "limits": [
+    "A5g solves one in-plane opening dimension analytically; it is not detailed conductor CAD.",
+    "Axis-aligned clearances are nominal and do not include manufacturing tolerance or thermal growth.",
+    "Supplier wire size, bend strain, terminals, lead exits, bridge placement, insulation life and vibration remain open."
+  ],
+  "screen_pass": true,
+  "selected_candidate": {
+    "bare_area_per_turn_mm2": 3.466666666666667,
+    "bare_cross_section_relative_error": 0.0,
+    "bare_thickness_mm": 1.5936227286879734,
+    "bare_width_mm": 2.31,
+    "checks": {
+      "bare_cross_section_identity": true,
+      "coil_to_fluxrelay": true,
+      "current_density": true,
+      "detailed_copper_volume": true,
+      "excitation": true,
+      "gross_slot_fill": true,
+      "interlayer_radial_clearance": true,
+      "mean_turn_length": true,
+      "neighbouring_core_axial_separation": true,
+      "same_cell_core_axial_separation": true,
+      "same_layer_axial_clearance": true,
+      "turns": true,
+      "upper_coil_to_back_yoke_clearance": true
+    },
+    "coil_radial_height_mm": 7.4399999999999995,
+    "copper_volume_relative_error": -2.220446049250313e-16,
+    "current_density_a_mm2": 36.53846153846154,
+    "detailed_copper_volume_per_cell_mm3": 4933.759999999999,
+    "failed_bands": [],
+    "fixed_inner_transverse_span_mm": 8.8,
+    "gross_insulated_conductor_envelope_area_per_coil_side_mm2": 52.48541240575408,
+    "gross_insulated_slot_fill_fraction": 0.2574707500895467,
+    "gross_ring_wall_mm": 7.054490914751893,
+    "insulated_overall_thickness_mm": 1.7636227286879733,
+    "insulated_overall_width_mm": 2.48,
+    "interlayer_radial_clearance_mm": 0.6850000000000005,
+    "mean_turn_length_mm": 118.6,
+    "mean_turn_length_relative_error": 0.0,
+    "minimum_core_axial_separation_mm": 6.870509085248106,
+    "minimum_radial_clearance_mm": 0.6850000000000005,
+    "neighbouring_core_axial_clearance_mm": 8.724999999999994,
+    "outer_axial_span_mm": 50.5,
+    "outer_transverse_span_mm": 22.908981829503787,
+    "pass": true,
+    "same_cell_core_axial_clearance_mm": 6.870509085248106,
+    "same_layer_axial_clearance_mm": 40.099999999999994,
+    "solved_inner_axial_span_mm": 36.39101817049621,
+    "total_bare_cross_section_per_coil_side_mm2": 41.6,
+    "turn_centreline_lengths_mm": [
+      97.43652725574431,
+      111.54550908524809,
+      125.65449091475189,
+      139.76347274425567
+    ],
+    "upper_coil_to_back_yoke_clearance_mm": 0.6850000000000005
+  },
+  "source_result_file": "analysis/results/turn_current_exchange.json"
+}
