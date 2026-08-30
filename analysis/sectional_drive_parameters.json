@@ -27,7 +27,7 @@
     "reference_payload_mass_kg": 4.0,
     "qualification_payload_mass_kg": 6.0,
     "interface_mass_kg": 0.371364383889362,
-    "gravity_m_s2": 9.80665
+    "gravity_m_s2": 9.81
   },
   "corners": {
     "cage_sheet_conductance_multiplier": [0.9, 1.0],
