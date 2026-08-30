@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A5h detailed 12-turn winding CAD gate; NOT RUN",
+  "controlled_parent": "A5g selected 2.31 x 1.5936227286879734 mm bare conductor and 36.39101817049621 x 8.8 mm inner winding opening",
+  "source_files": [
+    "cad/gen3_parameters.json",
+    "analysis/results/gen3_12turn_path_fit.json"
+  ],
+  "selected_winding": {
+    "turns_per_cell": 12,
+    "in_plane_turns_per_radial_layer": 4,
+    "radial_layers": 3,
+    "bare_width_mm": 2.31,
+    "bare_thickness_mm": 1.5936227286879734,
+    "insulated_overall_width_mm": 2.48,
+    "insulated_overall_thickness_mm": 1.7636227286879733,
+    "inner_axial_span_mm": 36.39101817049621,
+    "inner_transverse_span_mm": 8.8,
+    "lower_coil_start_above_payload_face_mm": 6.75,
+    "interlayer_radial_clearance_mm": 0.6850000000000005,
+    "target_mean_turn_length_mm": 118.6,
+    "target_copper_volume_per_cell_mm3": 4933.76
+  },
+  "cad_scope": {
+    "single_cell_indices": [0, 1],
+    "abc_module_cell_count": 3,
+    "full_face_cell_count": 27,
+    "face": "z+",
+    "representation": "maximum-insulation rectangular conductor envelopes; copper corner rounding remains analytical"
+  },
+  "bands": {
+    "required_turn_solid_count_per_cell": 12,
+    "required_full_face_turn_solid_count": 324,
+    "maximum_coil_core_intersection_mm3": 0.000001,
+    "maximum_adjacent_coil_intersection_mm3": 0.000001,
+    "maximum_same_layer_coil_intersection_mm3": 0.000001,
+    "minimum_coil_to_fluxrelay_radial_clearance_mm": 0.5,
+    "minimum_interlayer_radial_clearance_mm": 0.0,
+    "minimum_upper_coil_to_back_yoke_clearance_mm": 0.0,
+    "maximum_analytical_copper_volume_relative_error": 0.005,
+    "maximum_mean_turn_length_relative_error": 0.005
+  }
+}
