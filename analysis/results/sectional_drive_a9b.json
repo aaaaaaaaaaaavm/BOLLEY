@@ -1,0 +1,54 @@
+{
+  "band_count": 13,
+  "check_count": 5,
+  "check_pass_count": 5,
+  "checks": {
+    "all_unchanged_physical_bands_pass": true,
+    "coarse_fine_band_outcomes_match": true,
+    "controlling_nonforce_outputs_match_preserved_a9": true,
+    "negative_residuals_below_existing_floor": true,
+    "snapped_minimum_force_nonnegative": true
+  },
+  "coarse_band_pass_count": 13,
+  "controlling": {
+    "maximum_absolute_switching_exit_error_m_s": 0.0,
+    "maximum_failed_cell_recovery_current_a": 386.34652118192486,
+    "maximum_failed_cell_required_dc_link_v": 15.007623112182461,
+    "maximum_peak_dc_power_w": 11768.693387674215,
+    "maximum_phase_current_a": 364.25099335409493,
+    "maximum_qualification_source_energy_j": 1308.4890522592157,
+    "maximum_reference_source_energy_j": 897.74844054099,
+    "maximum_required_dc_link_v": 14.149322762821571,
+    "minimum_failed_cell_no_compensation_exit_velocity_m_s": 11.571913425525999
+  },
+  "disposition": "A9B_PASS_RETAIN_FLUXRELAY_FOR_SUPPLIER_AND_PACKAGING_CLOSURE",
+  "evidence": "A9b NUMERICAL RECLOSURE OF COMMITTED A9 USING THE EXISTING RESIDUAL FLOOR",
+  "fine_band_pass_count": 13,
+  "fine_bands": {
+    "failed_cell_axial_force": true,
+    "failed_cell_phase_current": true,
+    "failed_cell_required_dc_link": true,
+    "healthy_axial_force": true,
+    "healthy_longitudinal_acceleration": true,
+    "maximum_phase_current": true,
+    "peak_dc_power": true,
+    "qualification_exit_velocity": true,
+    "qualification_source_energy": true,
+    "reference_source_energy": true,
+    "reference_switching_exit_error": true,
+    "required_dc_link": true,
+    "unbalanced_normal_force": true
+  },
+  "fine_failed_bands": [],
+  "fine_raw_minimum_force_n": -1.4210854715202004e-14,
+  "fine_snapped_minimum_force_n": 0.0,
+  "limits": [
+    "A9 remains a preserved 11/13 execution; A9b does not rewrite it.",
+    "The 1e-9 residual floor predates A9 and is not a new acceptance tolerance.",
+    "Supplier switching loss, hot resistance, cables, 3D end fields, packaged mass and hardware force evidence remain outside this reclosure."
+  ],
+  "residual_floor_n": 1e-09,
+  "screen_pass": true,
+  "source_failure_record": "analysis/results/sectional_drive_a9_failure.json",
+  "source_solver": "analysis/sectional_drive.py"
+}
