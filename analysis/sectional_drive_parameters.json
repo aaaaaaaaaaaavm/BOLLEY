@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A9 selected Gen3 sectional-drive transient; NOT RUN",
+  "controlled_design": "Exact A8b/A6h/A7c/A5e selected Gen3 Fluxrelay point with time-domain sectional commutation",
+  "source_files": [
+    "cad/gen27_codesign_parameters.json",
+    "cad/gen27_cage_parameters.json",
+    "analysis/results/gen27_field.json",
+    "analysis/results/gen27_cage_circuit.json",
+    "analysis/results/force_allocation.json"
+  ],
+  "fixed": {
+    "total_cells_per_face": 27,
+    "cell_pitch_m": 0.0453,
+    "active_cage_length_m": 0.3186,
+    "installed_primary_length_m": 1.2231,
+    "face_channels": 4,
+    "phase_count": 3,
+    "turns_per_cell": 4,
+    "rated_phase_current_a": 380.0,
+    "conductor_area_per_turn_mm2": 10.4,
+    "active_window_cells": 9,
+    "powered_travel_m": 0.9,
+    "a6h_three_cell_phase_inductance_h": 0.00000481156,
+    "a7c_phase_resistance_nominal_ohm": 0.0023592276923076923,
+    "a7c_phase_resistance_hot_ohm": 0.0029490346153846153,
+    "reference_payload_mass_kg": 4.0,
+    "qualification_payload_mass_kg": 6.0,
+    "interface_mass_kg": 0.371364383889362,
+    "gravity_m_s2": 9.80665
+  },
+  "corners": {
+    "cage_sheet_conductance_multiplier": [0.9, 1.0],
+    "phase_resistance_multiplier": [1.0, 1.25]
+  },
+  "bands": {
+    "maximum_phase_current_a": 400.0,
+    "maximum_required_dc_link_v": 48.0,
+    "maximum_peak_dc_power_w": 15000.0,
+    "maximum_reference_source_energy_j": 900.0,
+    "maximum_qualification_source_energy_j": 1500.0,
+    "maximum_healthy_longitudinal_acceleration_g": 8.0,
+    "maximum_reference_switching_exit_error_m_s": 0.10,
+    "minimum_qualification_exit_velocity_m_s": 10.0,
+    "maximum_unbalanced_normal_force_n": 100.0,
+    "minimum_healthy_axial_force_n": 0.0,
+    "failed_cell_maximum_phase_current_a": 400.0,
+    "failed_cell_maximum_required_dc_link_v": 48.0,
+    "failed_cell_minimum_axial_force_n": 0.0
+  },
+  "required_reports": [
+    "two time-step resolutions with per-output differences",
+    "source/copper/magnetic/mechanical energy accounting residual",
+    "healthy first-cell, periodic handoff and final-cell traces",
+    "one failed-cell case per face channel",
+    "reference and qualification exit states for every declared corner"
+  ]
+}
