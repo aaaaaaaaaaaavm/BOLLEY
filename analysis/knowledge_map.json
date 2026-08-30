@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-31",
+  "purpose": "BOLLEY four-quadrant engineering knowledge map",
+  "evidence_rule": "Known means established only inside the cited evidence boundary. Model output is not hardware evidence.",
+  "quadrants": {
+    "I_known_known": [
+      {"id":"K1","statement":"The selected Gen2.7 Fluxrelay point passed A6h on all 13 declared nonlinear-field bands at 380 A.","source":"validation/A6h_gen27_fluxrelay.md","boundary":"Three-mesh 2D nonlinear magnetostatic model; no transient 3D or hardware evidence."},
+      {"id":"K2","statement":"The selected Fluxrelay cage/circuit point passed all 29 A7c bands in all four declared robustness corners.","source":"validation/A7c_gen27_cage_circuit.md","boundary":"Homogenized cage plus sectional circuit/CG model."},
+      {"id":"K3","statement":"The controlling A7c hot reference shot is 893.412 J, leaving 6.588 J below the unchanged 900 J requirement.","source":"analysis/results/gen27_cage_circuit.json","boundary":"Model margin only; supplier-backed hot resistance and switching losses remain open."},
+      {"id":"K4","statement":"A5e passed all 17 nominal CAD-fit bands for the exact selected Gen3 geometry.","source":"validation/A5e_gen3_cad.md","boundary":"Nominal solid geometry only; tolerance, thermal growth, vibration and runout remain open."},
+      {"id":"K5","statement":"A10 exposed the 12.0 m/s, 0.90 m and 8 g inconsistency; ADR-040 changed BOL-R-002 to 11.8 m/s.","source":"docs/adr/040-correct-reference-velocity.md","boundary":"Requirement correction, not a hardware result."},
+      {"id":"K6","statement":"A11 passed its eight executable ideal-gas/continuum leakage bands across the declared clearance and temperature grid.","source":"validation/A11_fluxpiston_flow.md","boundary":"No seal contact, friction, rarefaction, contamination, plume or valve transient evidence."},
+      {"id":"K7","statement":"A12 showed that the 121.36 g Fluxframe credit is material against sourced public 3U chassis masses, but awarded zero displaced-mass credit.","source":"validation/A12_fluxframe_mass.md","boundary":"Public mass-envelope arithmetic; no selected bus or coupled structure/thermal/electrical proof."}
+    ],
+    "II_unknown_known": [
+      {"id":"L1","question":"Which assumptions are reused across many analyses but justified only once?","action":"Build a dependency graph from requirements and parameter files to result artifacts and decisions."},
+      {"id":"L2","question":"Which committed result archives contain sensitivities that were never used in a decision?","action":"Mine candidate tables and robustness corners before scheduling new sweeps."},
+      {"id":"L3","question":"Which rejected architectures were strong on one metric that now controls a different subsystem?","action":"Search failed branches by metric, not architecture name, and route transferable principles through VOLLEY-lab."},
+      {"id":"L4","question":"Which launcher parts exist only because another launcher part exists?","action":"Create a function-to-part dependency ledger before the next packaged-mass closure."},
+      {"id":"L5","question":"Which BOLLEY assumptions are inherited from VOLLEY rather than required by physics, safety or a provider?","action":"Price each assumption and open a lab branch only when changing it can delete a controlling defect."},
+      {"id":"L6","question":"Which cross-repository results already answer a BOLLEY question under a different boundary?","action":"Use them to open target-specific gates; never inherit their performance numbers."}
+    ],
+    "III_known_unknowns": {
+      "compute_now": ["P2","P3","P4","P5","P8","P10","P14","P21","P25","P29","P30","P38","P39","P40","P41","P45","P46","P47","P48"],
+      "compute_then_hardware": ["P1","P6","P7","P9","P27","P44"],
+      "supplier_or_customer_evidence": ["P11","P13","P16","P43"],
+      "provider_or_external_decision": ["P12","P15","P19","P20"],
+      "deferred_or_historical_branch": ["P17","P18","P22","P23","P24","P26","P32","P33","P34","P35"],
+      "rule": "These lists classify the next action. OPEN_PROBLEMS.md remains authoritative for problem wording and status."
+    },
+    "IV_unknown_unknowns": [
+      {"id":"U1","branch":"VLAB-B001","hypothesis":"Co-design the spacecraft body, pressure interface, passive secondary, thermal path and stage guide as one temporary deployment machine.","route":"VOLLEY-lab"},
+      {"id":"U2","branch":"VLAB-X001","hypothesis":"Meter unavoidable gas leakage into restoring pressure films and use it as a bearing/control input.","route":"VOLLEY-lab"},
+      {"id":"U3","branch":"proposed VLAB-B002","hypothesis":"Relax BOL-R-007 and allow an active cooperative spacecraft interface whose deployment hardware is repurposed in orbit.","route":"VOLLEY-lab before any BOLLEY generation change"},
+      {"id":"U4","branch":"proposed VLAB-B003","hypothesis":"Replace one lumped Fluxpiston feed with distributed or staged pressure injection so source dynamics and centring are separated spatially.","route":"VOLLEY-lab before any BOLLEY generation change"},
+      {"id":"U5","branch":"existing branch register","hypothesis":"Vector release, opposed release, Fluxsleeve, shunted magnets, selected springs, carousel and burn-and-drop remain architecture experiments until their own gates exist.","route":"VOLLEY-lab"}
+    ]
+  },
+  "flow": [
+    "Quadrant IV becomes Quadrant III only after a source boundary and predeclared gate exist.",
+    "Quadrant III becomes Quadrant I after a run, measurement, supplier document or decision answers the stated question.",
+    "Quadrant II mining may create a new Quadrant III question without changing the controlled baseline.",
+    "A failed run still moves a question into Quadrant I because the failure and its boundary are knowledge."
+  ]
+}
