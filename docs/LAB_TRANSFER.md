@@ -22,10 +22,14 @@ less true.
 
 I send an idea when it changes a premise rather than corrects an error. Current examples are:
 
-- a quadrant leakage bearing that tries to turn P44's gas loss into lateral stiffness;
-- a deployer-owned Fluxrelay secondary that may remove permanent magnets from VOLLEY's trim stage;
-- a no-inherited-constraints bus/stage co-design in which Fluxframe and Fluxpiston become one
-  multifunctional spacecraft body;
+- `VLAB-B001`, a no-inherited-constraints bus/stage co-design in which Fluxframe and Fluxpiston
+  become one multifunctional spacecraft body;
+- `VLAB-B002`, a powered cooperative spacecraft interface that explicitly reopens BOL-R-007 without
+  changing the controlled requirement;
+- `VLAB-B003`, distributed or staged Fluxpiston feed architectures aimed at P48;
+- `VLAB-X001`, a quadrant leakage bearing that tries to turn P44's gas loss into lateral stiffness;
+- `VLAB-X002`, a deployer-owned Fluxrelay secondary that may remove permanent magnets from VOLLEY's
+  trim stage;
 - shunted magnets, Thomson repulsion, selected springs, Strainrail, a carousel, burn-and-drop and
   the unmodified four-finger fallback.
 
