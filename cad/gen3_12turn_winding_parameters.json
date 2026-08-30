@@ -13,6 +13,8 @@
     "ampere_turn_rms": 1520.0,
     "target_bare_copper_area_per_turn_mm2": 3.466666666666667,
     "target_total_bare_copper_area_per_coil_side_mm2": 41.6,
+    "target_a5e_mean_turn_length_mm": 118.6,
+    "target_a5e_copper_volume_per_cell_mm3": 4933.76,
     "maximum_current_density_a_mm2": 40.0
   },
   "winding_search": {
@@ -25,7 +27,7 @@
     "inner_axial_span_mm": 40.1,
     "inner_transverse_span_mm": 8.8,
     "minimum_coil_to_fluxrelay_radial_clearance_mm": 0.5,
-    "selection_rule": "Among candidates passing every hard band, minimize total gross insulated conductor-envelope area per coil side; then maximize the smaller of inter-layer and upper back-yoke radial clearance; then minimize gross ring-wall thickness; then choose the smaller nominal bare width."
+    "selection_rule": "Among candidates passing every hard band, minimize total gross insulated conductor-envelope area per coil side; then maximize the smaller of inter-layer and upper-back-yoke radial clearance; then minimize gross ring-wall thickness; then choose the smaller nominal bare width."
   },
   "rectangular_wire_screen": {
     "standard": "IEC 60317-0-2:2020 general requirements for enamelled rectangular copper winding wire",
@@ -52,13 +54,14 @@
     "available_slot_area_mm2": 407.7,
     "maximum_gross_slot_fill_fraction": 0.6,
     "maximum_nominal_solid_intersection_mm3": 0.000001,
-    "maximum_copper_area_relative_error": 0.005
+    "maximum_copper_volume_relative_error": 0.005
   },
   "bands": {
     "required_turns_per_cell": 12,
     "required_ampere_turn_rms": 1520.0,
     "maximum_current_density_a_mm2": 40.0,
-    "maximum_copper_area_relative_error": 0.005,
+    "maximum_bare_cross_section_relative_error": 1e-12,
+    "maximum_copper_volume_relative_error": 0.005,
     "maximum_gross_slot_fill_fraction": 0.6,
     "minimum_coil_to_fluxrelay_radial_clearance_mm": 0.5,
     "minimum_interlayer_radial_clearance_mm": 0.0,
