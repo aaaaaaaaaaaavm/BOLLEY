@@ -43,8 +43,6 @@ def solve_thickness(width_mm: float, target_area_mm2: float) -> float | None:
 
     solutions: list[float] = []
     k = 4.0 - math.pi
-
-    # t <= 1 mm, r=t/2.
     a = 0.25 * k
     discriminant = width_mm**2 - 4.0 * a * target_area_mm2
     if discriminant >= 0.0:
@@ -55,7 +53,6 @@ def solve_thickness(width_mm: float, target_area_mm2: float) -> float | None:
         ):
             if 0.0 < thickness <= 1.0:
                 solutions.append(thickness)
-
     for lower, upper, radius in (
         (1.0, 1.6, 0.5),
         (1.6, 2.24, 0.65),
@@ -64,10 +61,7 @@ def solve_thickness(width_mm: float, target_area_mm2: float) -> float | None:
         thickness = (target_area_mm2 + k * radius**2) / width_mm
         if lower < thickness <= upper:
             solutions.append(thickness)
-
-    if not solutions:
-        return None
-    return min(solutions)
+    return min(solutions) if solutions else None
 
 
 def candidate(width_mm: float, p: dict) -> dict | None:
@@ -76,7 +70,6 @@ def candidate(width_mm: float, p: dict) -> dict | None:
     wire = p["rectangular_wire_screen"]
     geometry = p["a5e_geometry"]
     bands = p["bands"]
-
     target_area = electrical["target_bare_copper_area_per_turn_mm2"]
     thickness = solve_thickness(width_mm, target_area)
     if thickness is None or thickness > width_mm:
@@ -84,9 +77,9 @@ def candidate(width_mm: float, p: dict) -> dict | None:
 
     radius = corner_radius(thickness)
     area = bare_area(width_mm, thickness)
-    insulated_width = width_mm + wire["maximum_increase_in_width_or_thickness_due_to_insulation_mm"]
-    insulated_thickness = thickness + wire["maximum_increase_in_width_or_thickness_due_to_insulation_mm"]
-
+    insulation = wire["maximum_increase_in_width_or_thickness_due_to_insulation_mm"]
+    insulated_width = width_mm + insulation
+    insulated_thickness = thickness + insulation
     in_plane_layers = search["in_plane_layers"]
     radial_layers = search["radial_layers"]
     ring_wall = in_plane_layers * insulated_thickness
@@ -104,23 +97,18 @@ def candidate(width_mm: float, p: dict) -> dict | None:
     upper_back_yoke_clearance = 0.5 * remaining_radial
     same_layer_axial_clearance = 2.0 * geometry["cell_pitch_mm"] - outer_axial
 
-    # The same-cell tooth is inside the frozen inner axial opening. The nearest neighbouring
-    # tooth starts one pitch away. Positive separation proves zero axis-aligned solid overlap
-    # without a BRep operation for this upstream screen.
-    same_cell_core_axial_clearance = 0.5 * (
-        search["inner_axial_span_mm"] - 22.65
-    )
+    same_cell_core_axial_clearance = 0.5 * (search["inner_axial_span_mm"] - 22.65)
     neighbouring_core_axial_clearance = (
-        geometry["cell_pitch_mm"]
-        - 0.5 * 22.65
-        - 0.5 * outer_axial
+        geometry["cell_pitch_mm"] - 0.5 * 22.65 - 0.5 * outer_axial
     )
-    coil_core_intersection = 0.0 if min(
-        same_cell_core_axial_clearance, neighbouring_core_axial_clearance
-    ) >= 0.0 else math.inf
-    adjacent_coil_intersection = 0.0 if min(
-        interlayer_clearance, same_layer_axial_clearance
-    ) >= 0.0 else math.inf
+    coil_core_intersection = (
+        0.0
+        if min(same_cell_core_axial_clearance, neighbouring_core_axial_clearance) >= 0.0
+        else math.inf
+    )
+    adjacent_coil_intersection = (
+        0.0 if min(interlayer_clearance, same_layer_axial_clearance) >= 0.0 else math.inf
+    )
 
     turn_lengths = [
         2.0
@@ -138,9 +126,7 @@ def candidate(width_mm: float, p: dict) -> dict | None:
     copper_volume_relative_error = copper_volume / target_volume - 1.0
     total_cross_section = electrical["turns_per_cell"] * area
     cross_section_relative_error = (
-        total_cross_section
-        / electrical["target_total_bare_copper_area_per_coil_side_mm2"]
-        - 1.0
+        total_cross_section / electrical["target_total_bare_copper_area_per_coil_side_mm2"] - 1.0
     )
     current_density = electrical["phase_current_rms_a"] / area
     gross_slot_fill = (
@@ -150,9 +136,7 @@ def candidate(width_mm: float, p: dict) -> dict | None:
         * insulated_thickness
         / geometry["available_slot_area_mm2"]
     )
-    gross_envelope_area = (
-        electrical["turns_per_cell"] * insulated_width * insulated_thickness
-    )
+    gross_envelope_area = electrical["turns_per_cell"] * insulated_width * insulated_thickness
 
     checks = {
         "turns": electrical["turns_per_cell"] == bands["required_turns_per_cell"],
@@ -214,6 +198,18 @@ def candidate(width_mm: float, p: dict) -> dict | None:
     }
 
 
+def rank_key(record: dict) -> tuple:
+    return (
+        record["gross_insulated_conductor_envelope_area_per_coil_side_mm2"],
+        -min(
+            record["interlayer_radial_clearance_mm"],
+            record["upper_coil_to_back_yoke_clearance_mm"],
+        ),
+        record["gross_ring_wall_mm"],
+        record["bare_width_mm"],
+    )
+
+
 def calculate() -> dict:
     p = load(INPUT)
     gen3 = load(GEN3)
@@ -225,10 +221,7 @@ def calculate() -> dict:
     if selected["turns_per_cell"] != electrical["turns_per_cell"]:
         raise SystemExit("A5f turn count no longer matches A9f")
     if not math.isclose(
-        selected["rated_phase_current_a"],
-        electrical["phase_current_rms_a"],
-        rel_tol=0.0,
-        abs_tol=1e-12,
+        selected["rated_phase_current_a"], electrical["phase_current_rms_a"], rel_tol=0.0, abs_tol=1e-12
     ):
         raise SystemExit("A5f phase current no longer matches A9f")
     if not math.isclose(
@@ -245,9 +238,7 @@ def calculate() -> dict:
     )
     candidates = []
     for index in range(steps + 1):
-        width = round(
-            search["bare_width_min_mm"] + index * search["bare_width_step_mm"], 10
-        )
+        width = round(search["bare_width_min_mm"] + index * search["bare_width_step_mm"], 10)
         record = candidate(width, p)
         if record is not None:
             candidates.append(record)
@@ -256,54 +247,27 @@ def calculate() -> dict:
     geometry_only = [
         record
         for record in candidates
-        if all(
-            passed
-            for name, passed in record["checks"].items()
-            if name != "detailed_copper_volume"
-        )
+        if all(passed for name, passed in record["checks"].items() if name != "detailed_copper_volume")
     ]
     closest_volume_geometry_candidate = min(
         geometry_only, key=lambda record: abs(record["copper_volume_relative_error"])
     )
-    minimum_envelope_geometry_candidate = min(
-        geometry_only,
-        key=lambda record: (
-            record["gross_insulated_conductor_envelope_area_per_coil_side_mm2"],
-            -min(
-                record["interlayer_radial_clearance_mm"],
-                record["upper_coil_to_back_yoke_clearance_mm"],
-            ),
-            record["gross_ring_wall_mm"],
-            record["bare_width_mm"],
-        ),
-    )
-    selected_candidate = None
-    if passing:
-        selected_candidate = min(
-            passing,
-            key=lambda record: (
-                record["gross_insulated_conductor_envelope_area_per_coil_side_mm2"],
-                -min(
-                    record["interlayer_radial_clearance_mm"],
-                    record["upper_coil_to_back_yoke_clearance_mm"],
-                ),
-                record["gross_ring_wall_mm"],
-                record["bare_width_mm"],
-            ),
-        )
+    minimum_envelope_geometry_candidate = min(geometry_only, key=rank_key)
+    selected_candidate = min(passing, key=rank_key) if passing else None
 
     return {
         "evidence": "A5f NOMINAL RECTANGULAR-WIRE ENVELOPE AND COPPER-PATH SCREEN",
         "input_file": str(INPUT.relative_to(ROOT)),
         "source_files": [str(GEN3.relative_to(ROOT)), str(A9F.relative_to(ROOT))],
         "candidate_count": len(candidates),
+        "candidate_width_range_mm": [candidates[0]["bare_width_mm"], candidates[-1]["bare_width_mm"]],
+        "candidate_width_step_mm": search["bare_width_step_mm"],
         "geometry_only_pass_count": len(geometry_only),
         "full_band_pass_count": len(passing),
         "screen_pass": bool(passing),
         "selected_candidate": selected_candidate,
         "closest_volume_geometry_candidate": closest_volume_geometry_candidate,
         "minimum_envelope_geometry_candidate": minimum_envelope_geometry_candidate,
-        "candidates": candidates,
         "disposition": (
             "A5F_PASS_PROMOTE_12TURN_POINT_TO_DETAILED_CAD_AND_PACKAGE_RECLOSURE"
             if passing
