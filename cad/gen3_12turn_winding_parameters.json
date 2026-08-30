@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "ASSUMPTION A5f 12-turn Gen3 winding-envelope gate; NOT RUN",
+  "controlled_parent": "A5e nominal Gen3 geometry plus A9f selected 12-turn/126.66666666666667 A electrical point",
+  "source_files": [
+    "cad/gen3_parameters.json",
+    "analysis/results/gen3_cad_fit.json",
+    "analysis/results/turn_current_exchange.json"
+  ],
+  "electrical": {
+    "turns_per_cell": 12,
+    "phase_current_rms_a": 126.66666666666667,
+    "ampere_turn_rms": 1520.0,
+    "target_bare_copper_area_per_turn_mm2": 3.466666666666667,
+    "target_total_bare_copper_area_per_coil_side_mm2": 41.6,
+    "maximum_current_density_a_mm2": 40.0
+  },
+  "winding_search": {
+    "topology": "four nested conductor envelopes through the in-plane ring wall by three radial conductor layers",
+    "bare_width_min_mm": 2.0,
+    "bare_width_max_mm": 2.8,
+    "bare_width_step_mm": 0.01,
+    "in_plane_layers": 4,
+    "radial_layers": 3,
+    "inner_axial_span_mm": 40.1,
+    "inner_transverse_span_mm": 8.8,
+    "minimum_coil_to_fluxrelay_radial_clearance_mm": 0.5,
+    "selection_rule": "Among candidates passing every hard band, minimize total gross insulated conductor-envelope area per coil side; then maximize the smaller of inter-layer and upper back-yoke radial clearance; then minimize gross ring-wall thickness; then choose the smaller nominal bare width."
+  },
+  "rectangular_wire_screen": {
+    "standard": "IEC 60317-0-2:2020 general requirements for enamelled rectangular copper winding wire",
+    "standard_url": "https://webstore.iec.ch/en/publication/63495",
+    "grade": 2,
+    "maximum_increase_in_width_or_thickness_due_to_insulation_mm": 0.17,
+    "corner_radius_rules": [
+      {"thickness_over_mm": 0.0, "thickness_up_to_mm": 1.0, "radius_rule": "0.5 times nominal thickness"},
+      {"thickness_over_mm": 1.0, "thickness_up_to_mm": 1.6, "radius_mm": 0.5},
+      {"thickness_over_mm": 1.6, "thickness_up_to_mm": 2.24, "radius_mm": 0.65},
+      {"thickness_over_mm": 2.24, "thickness_up_to_mm": 3.55, "radius_mm": 0.8}
+    ],
+    "supplier_capability_example": "G.K. Winding Wires states that rectangular enamelled winding wire can be made to specified dimensions.",
+    "supplier_capability_url": "https://gkwinding.com/products/rectangular-wires/",
+    "evidence_limit": "Neither source is a quotation or confirmation that the selected A5f size is available. Bare-conductor manufacturing tolerance, bend capability, lead forming and exact coating system remain supplier evidence."
+  },
+  "a5e_geometry": {
+    "payload_face_z_mm": 50.0,
+    "fluxrelay_projection_mm": 6.25,
+    "back_yoke_radial_start_above_face_mm": 23.0,
+    "cell_pitch_mm": 45.3,
+    "existing_inner_axial_span_mm": 40.1,
+    "existing_inner_transverse_span_mm": 8.8,
+    "available_slot_area_mm2": 407.7,
+    "maximum_gross_slot_fill_fraction": 0.6,
+    "maximum_nominal_solid_intersection_mm3": 0.000001,
+    "maximum_copper_area_relative_error": 0.005
+  },
+  "bands": {
+    "required_turns_per_cell": 12,
+    "required_ampere_turn_rms": 1520.0,
+    "maximum_current_density_a_mm2": 40.0,
+    "maximum_copper_area_relative_error": 0.005,
+    "maximum_gross_slot_fill_fraction": 0.6,
+    "minimum_coil_to_fluxrelay_radial_clearance_mm": 0.5,
+    "minimum_interlayer_radial_clearance_mm": 0.0,
+    "minimum_upper_coil_to_back_yoke_clearance_mm": 0.0,
+    "minimum_same_layer_axial_clearance_mm": 0.0,
+    "maximum_coil_core_intersection_mm3": 0.000001,
+    "maximum_adjacent_coil_intersection_mm3": 0.000001
+  }
+}
