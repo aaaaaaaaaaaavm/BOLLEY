@@ -1,0 +1,49 @@
+{
+  "check_count": 3,
+  "check_pass_count": 3,
+  "checks": {
+    "all_shared_selector_solutions_fit_by_construction": true,
+    "local_bridge_solution_fits_by_construction": true,
+    "positive_total_electronics_budget": true
+  },
+  "current_loss_factor_j_per_ohm": 88263.47597476606,
+  "disposition": "A9E_NO_SELECTOR_PROMOTED_SECTIONAL_PARTITION_REQUIRES_REDESIGN",
+  "evidence": "A9e SECTIONAL-SELECTOR TOPOLOGY AND 25 C SUPPLIER-CONDUCTION LOWER BOUND",
+  "input_file": "analysis/selector_realization_parameters.json",
+  "limits": [
+    "No part-count or mass pass band exists in this run; counts are outputs, not reasons silently converted into thresholds.",
+    "The shared-selector lower bound assumes three selected cell switches in series per phase and ideal current sharing in every parallel bank.",
+    "The local-bridge lower bound duplicates a complete three-phase bridge at every ABC module and counts only supplier module mass.",
+    "Switching loss, hot Rds(on), selector commutation, gate drive, busbar, capacitor, cable, cooling and package fit remain absent."
+  ],
+  "local_bridge_per_abc_module": {
+    "active_local_three_phase_bridges_during_shot": 12,
+    "active_onsemi_module_count_during_shot": 216,
+    "effective_three_active_module_phase_path_resistance_ohm": 0.00032125,
+    "energy_fit": true,
+    "installed_local_three_phase_bridges": 36,
+    "installed_onsemi_module_count_lower_bound": 648,
+    "interpretation": "The module mass is power modules only. Gate drives, PCB/bus, local capacitors, cooling and control are additional.",
+    "minimum_parallel_onsemi_modules_per_phase_per_local_bridge": 6,
+    "module_only_installed_mass_kg": 15.2928,
+    "reference_energy_left_for_switching_bus_and_gate_drive_j": 0.8293710183461336,
+    "reference_local_bridge_conduction_loss_j": 28.354641656893595,
+    "reference_source_energy_with_local_bridge_conduction_j": 899.1706289816539,
+    "supplier_module": "onsemi NXV08H400XT1"
+  },
+  "reference_total_electronics_loss_budget_j": 29.184012675239728,
+  "screen_pass": true,
+  "shared_bridge_plus_series_selector": {
+    "interpretation": "The count is the minimum installed MOSFET count for the selector alone under ideal sharing and 25 C Rds(on). Main-bridge devices are additional.",
+    "records": [
+      {"bridge_candidate":"onsemi_2","bridge_remaining_reference_loss_budget_j":0.8293710183461371,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":206928,"maximum_total_selector_phase_path_resistance_ohm":9.396537006805044e-06,"minimum_parallel_mosfets_per_bidirectional_bank":958,"realized_selector_conduction_loss_j_lower_bound":0.8291975822264036,"realized_selector_phase_path_resistance_ohm_lower_bound":9.394572025052194e-06},
+      {"bridge_candidate":"onsemi_3","bridge_remaining_reference_loss_budget_j":10.28091823731063,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":16848,"maximum_total_selector_phase_path_resistance_ohm":0.00011647987034013793,"minimum_parallel_mosfets_per_bidirectional_bank":78,"realized_selector_conduction_loss_j_lower_bound":10.184247227857623,"realized_selector_phase_path_resistance_ohm_lower_bound":0.0001153846153846154},
+      {"bridge_candidate":"onsemi_4","bridge_remaining_reference_loss_budget_j":15.006691846792933,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":11448,"maximum_total_selector_phase_path_resistance_ohm":0.000170021537006805,"minimum_parallel_mosfets_per_bidirectional_bank":53,"realized_selector_conduction_loss_j_lower_bound":14.988137429677256,"realized_selector_phase_path_resistance_ohm_lower_bound":0.000169811320754717},
+      {"bridge_candidate":"infineon_5","bridge_remaining_reference_loss_budget_j":2.7049698828099054,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":63504,"maximum_total_selector_phase_path_resistance_ohm":3.064653700680493e-05,"minimum_parallel_mosfets_per_bidirectional_bank":294,"realized_selector_conduction_loss_j_lower_bound":2.7019431420846756,"realized_selector_phase_path_resistance_ohm_lower_bound":3.061224489795919e-05},
+      {"bridge_candidate":"infineon_6","bridge_remaining_reference_loss_budget_j":7.11814368154819,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":24192,"maximum_total_selector_phase_path_resistance_ohm":8.064653700680472e-05,"minimum_parallel_mosfets_per_bidirectional_bank":112,"realized_selector_conduction_loss_j_lower_bound":7.0926007479722735,"realized_selector_phase_path_resistance_ohm_lower_bound":8.035714285714287e-05},
+      {"bridge_candidate":"infineon_7","bridge_remaining_reference_loss_budget_j":10.270410680647046,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":16848,"maximum_total_selector_phase_path_resistance_ohm":0.00011636082272109121,"minimum_parallel_mosfets_per_bidirectional_bank":78,"realized_selector_conduction_loss_j_lower_bound":10.184247227857623,"realized_selector_phase_path_resistance_ohm_lower_bound":0.0001153846153846154},
+      {"bridge_candidate":"infineon_8","bridge_remaining_reference_loss_budget_j":12.634610929971132,"energy_fit":true,"installed_selector_mosfet_count_lower_bound":13608,"maximum_total_selector_phase_path_resistance_ohm":0.00014314653700680543,"minimum_parallel_mosfets_per_bidirectional_bank":63,"realized_selector_conduction_loss_j_lower_bound":12.609067996395153,"realized_selector_phase_path_resistance_ohm_lower_bound":0.00014285714285714287}
+    ],
+    "supplier_device": "Infineon IPT015N10N5"
+  }
+}
