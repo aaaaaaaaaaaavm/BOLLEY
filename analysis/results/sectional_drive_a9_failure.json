@@ -1,0 +1,42 @@
+{
+  "evidence": "A9 EXECUTION RECORD FROM COMMITTED SECTIONAL-DRIVE MODEL",
+  "solver_commit": "1e6aa19426fe665a2f49fcb1ba2deaa649967e9f",
+  "input_correction_commit": "a5c52721d71c793570d9deb31de3f7695162db5e",
+  "coarse_samples_per_handoff": 100,
+  "fine_samples_per_handoff": 200,
+  "band_count": 13,
+  "fine_band_pass_count": 11,
+  "failed_bands": [
+    "healthy_axial_force",
+    "failed_cell_axial_force"
+  ],
+  "minimum_reported_qualification_channel_force_n": -1.4210854715202004e-14,
+  "existing_residual_floor_n": 1e-9,
+  "controlling": {
+    "maximum_reference_source_energy_j": 897.74844054099,
+    "maximum_qualification_source_energy_j": 1308.4890522592157,
+    "maximum_phase_current_a": 364.25099335409493,
+    "maximum_required_dc_link_v": 14.149322762821571,
+    "maximum_peak_dc_power_w": 11768.693387674215,
+    "maximum_failed_cell_recovery_current_a": 386.34652118192486,
+    "maximum_failed_cell_required_dc_link_v": 15.007623112182461,
+    "minimum_failed_cell_no_compensation_exit_velocity_m_s": 11.571913425525999,
+    "maximum_absolute_switching_exit_error_m_s": 0.0
+  },
+  "coarse_to_fine_deltas": {
+    "maximum_reference_source_energy_j": 0.00017833100218922482,
+    "maximum_qualification_source_energy_j": 0.0002599215476948302,
+    "maximum_phase_current_a": 0.0,
+    "maximum_required_dc_link_v": 2.20162269091162e-05,
+    "maximum_peak_dc_power_w": 0.0,
+    "maximum_failed_cell_recovery_current_a": 0.0,
+    "maximum_failed_cell_required_dc_link_v": 2.33517350149981e-05,
+    "minimum_failed_cell_no_compensation_exit_velocity_m_s": 0.0,
+    "maximum_absolute_switching_exit_error_m_s": 0.0
+  },
+  "interpretation": "The two failed Boolean bands come from a -1.4210854715202004e-14 N floating-point residual in an analytically nonnegative force allocation. common.py already declares a 1e-9 residual floor for should-be-zero constraint residuals. I preserve this execution before applying that existing convention in A9b.",
+  "limits": [
+    "This compact failure record preserves the controlling A9 output and failed bands; the committed A9 solver remains the complete executable record.",
+    "The electrical pass margins are model outputs and do not close supplier-backed switching loss, hot winding resistance, cable loss, SOA, packaging or hardware force evidence."
+  ]
+}
