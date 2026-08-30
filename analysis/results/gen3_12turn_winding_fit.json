@@ -1,0 +1,127 @@
+{
+  "candidate_count": 81,
+  "candidate_width_range_mm": [
+    2.0,
+    2.8
+  ],
+  "candidate_width_step_mm": 0.01,
+  "closest_volume_geometry_candidate": {
+    "adjacent_coil_intersection_mm3": 0.0,
+    "bare_area_per_turn_mm2": 3.466666666666667,
+    "bare_corner_radius_mm": 0.5,
+    "bare_cross_section_relative_error": 0.0,
+    "bare_thickness_mm": 1.4550468392368454,
+    "bare_width_mm": 2.53,
+    "checks": {
+      "adjacent_coil_intersection": true,
+      "bare_cross_section_identity": true,
+      "coil_core_intersection": true,
+      "coil_to_fluxrelay": true,
+      "current_density": true,
+      "detailed_copper_volume": false,
+      "excitation": true,
+      "gross_slot_fill": true,
+      "interlayer_radial_clearance": true,
+      "same_layer_axial_clearance": true,
+      "turns": true,
+      "upper_coil_to_back_yoke_clearance": true
+    },
+    "coil_core_intersection_mm3": 0.0,
+    "coil_radial_height_mm": 8.1,
+    "copper_volume_relative_error": 0.043851175613739635,
+    "current_density_a_mm2": 36.53846153846154,
+    "detailed_copper_volume_per_cell_mm3": 5150.111176196045,
+    "failed_bands": [
+      "detailed_copper_volume"
+    ],
+    "gross_insulated_conductor_envelope_area_per_coil_side_mm2": 52.65151759127379,
+    "gross_insulated_slot_fill_fraction": 0.25828559034228005,
+    "gross_ring_wall_mm": 6.500187356947381,
+    "insulated_overall_thickness_mm": 1.6250468392368453,
+    "insulated_overall_width_mm": 2.6999999999999997,
+    "interlayer_radial_clearance_mm": 0.025000000000000355,
+    "mean_turn_length_mm": 123.80074942778953,
+    "neighbouring_core_axial_clearance_mm": 7.424812643052611,
+    "outer_axial_span_mm": 53.100374713894766,
+    "outer_transverse_span_mm": 21.80037471389476,
+    "pass": false,
+    "same_cell_core_axial_clearance_mm": 8.725000000000001,
+    "same_layer_axial_clearance_mm": 37.49962528610523,
+    "total_bare_cross_section_per_coil_side_mm2": 41.6,
+    "turn_centreline_lengths_mm": [
+      104.30018735694739,
+      117.30056207084215,
+      130.3009367847369,
+      143.30131149863166
+    ],
+    "upper_coil_to_back_yoke_clearance_mm": 0.025000000000000355
+  },
+  "disposition": "A5F_FAIL_FIXED_INNER_SPANS_EXCEED_A5E_COPPER_VOLUME",
+  "evidence": "A5f NOMINAL RECTANGULAR-WIRE ENVELOPE AND COPPER-PATH SCREEN",
+  "full_band_pass_count": 0,
+  "geometry_only_pass_count": 54,
+  "input_file": "cad/gen3_12turn_winding_parameters.json",
+  "limits": [
+    "Axis-aligned positive separations establish zero nominal overlap for this upstream envelope screen; I do not export new STEP/STL from a rejected point.",
+    "A5f fixes the A5e inner axial and transverse spans. A later redesign may change them only behind a new declaration.",
+    "IEC insulation dimensions are a screening envelope, not supplier qualification or a winding-process specification.",
+    "Lead exits, terminals, impregnation, bend strain, bridge placement, hot resistance, switching loss, cooling and vibration remain absent."
+  ],
+  "minimum_envelope_geometry_candidate": {
+    "adjacent_coil_intersection_mm3": 0.0,
+    "bare_area_per_turn_mm2": 3.466666666666667,
+    "bare_corner_radius_mm": 0.5,
+    "bare_cross_section_relative_error": 0.0,
+    "bare_thickness_mm": 1.5936227286879734,
+    "bare_width_mm": 2.31,
+    "checks": {
+      "adjacent_coil_intersection": true,
+      "bare_cross_section_identity": true,
+      "coil_core_intersection": true,
+      "coil_to_fluxrelay": true,
+      "current_density": true,
+      "detailed_copper_volume": false,
+      "excitation": true,
+      "gross_slot_fill": true,
+      "interlayer_radial_clearance": true,
+      "same_layer_axial_clearance": true,
+      "turns": true,
+      "upper_coil_to_back_yoke_clearance": true
+    },
+    "coil_core_intersection_mm3": 0.0,
+    "coil_radial_height_mm": 7.4399999999999995,
+    "copper_volume_relative_error": 0.06254606795116002,
+    "current_density_a_mm2": 36.53846153846154,
+    "detailed_copper_volume_per_cell_mm3": 5242.347288214715,
+    "failed_bands": [
+      "detailed_copper_volume"
+    ],
+    "gross_insulated_conductor_envelope_area_per_coil_side_mm2": 52.48541240575408,
+    "gross_insulated_slot_fill_fraction": 0.2574707500895467,
+    "gross_ring_wall_mm": 7.054490914751893,
+    "insulated_overall_thickness_mm": 1.7636227286879733,
+    "insulated_overall_width_mm": 2.48,
+    "interlayer_radial_clearance_mm": 0.6850000000000005,
+    "mean_turn_length_mm": 126.01796365900758,
+    "neighbouring_core_axial_clearance_mm": 6.870509085248102,
+    "outer_axial_span_mm": 54.208981829503784,
+    "outer_transverse_span_mm": 22.908981829503787,
+    "pass": false,
+    "same_cell_core_axial_clearance_mm": 8.725000000000001,
+    "same_layer_axial_clearance_mm": 36.39101817049621,
+    "total_bare_cross_section_per_coil_side_mm2": 41.6,
+    "turn_centreline_lengths_mm": [
+      104.85449091475188,
+      118.96347274425568,
+      133.07245457375947,
+      147.18143640326326
+    ],
+    "upper_coil_to_back_yoke_clearance_mm": 0.6850000000000005
+  },
+  "screen_pass": false,
+  "selected_candidate": null,
+  "source_files": [
+    "cad/gen3_parameters.json",
+    "analysis/results/turn_current_exchange.json"
+  ]
+}
