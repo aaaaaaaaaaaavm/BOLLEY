@@ -4,6 +4,11 @@
 **Evidence class:** time-domain sectional circuit/force model  
 **Purpose:** I want to find out whether the selected Fluxrelay point still fits its existing electrical and departure-state limits once I stop treating the active window as prebiased and quasi-steady.
 
+> Pre-execution correction, 2026-08-31: my first controlled parameter file used 9.80665 m/s2 for
+> gravity. A7c actually used 9.81 m/s2. Before `analysis/sectional_drive.py` existed, I changed only
+> that inherited constant so A9 reproduces A7c's mechanical work exactly. No band, geometry,
+> electrical limit or fault condition changed. ADR-047 records the correction.
+
 ## Point I freeze
 
 I keep the exact selected A8b/A6h/A7c/A5e point:
