@@ -7,6 +7,7 @@ import hashlib
 import json
 import re
 import sys
+import zipfile
 from pathlib import Path
 
 
@@ -186,6 +187,8 @@ def build() -> dict:
         "evidence": "A5h DETAILED MAXIMUM-INSULATION CONDUCTOR-ENVELOPE CAD; nominal only",
         "parameter_file": str(PARAMETERS.relative_to(ROOT)),
         "parameter_sha256": sha256(PARAMETERS),
+        "source_sha256": {str(path.relative_to(ROOT)): sha256(path) for path in
+                          (PARAMETERS, GEN3, A5G, Path(__file__), CAD / "build_gen2.py")},
         "source_a5g": str(A5G.relative_to(ROOT)),
         "artifacts": artifacts,
         "fit_checks": {
@@ -209,10 +212,42 @@ def build() -> dict:
     return result
 
 
+def check() -> None:
+    manifest = load(MANIFEST)
+    expected = {str(path.relative_to(ROOT)) for path in
+                (PARAMETERS, GEN3, A5G, Path(__file__), CAD / "build_gen2.py")}
+    if set(manifest.get("source_sha256", {})) != expected:
+        raise SystemExit("A5h source inventory is incomplete; rebuild")
+    for relative, digest in manifest["source_sha256"].items():
+        if sha256(ROOT / relative) != digest:
+            raise SystemExit(f"A5h source changed: {relative}")
+    if set(manifest["artifacts"]) != set(PART_NAMES):
+        raise SystemExit("A5h requires all four declared CAD scopes")
+    for artifact in manifest["artifacts"].values():
+        for kind in ("step", "stl"):
+            record = artifact[kind]
+            path = ROOT / record["path"]
+            if path.is_file():
+                payload = path.read_bytes()
+            else:
+                archive = CAD / "exports" / "gen3_12turn" / f"Bolley_Gen3_{kind.upper()}.zip"
+                if not archive.is_file():
+                    raise SystemExit(f"A5h artifact and packaged master are missing: {path}")
+                with zipfile.ZipFile(archive) as handle:
+                    payload = handle.read(path.name)
+            if len(payload) != record["bytes"] or hashlib.sha256(payload).hexdigest() != record["sha256"]:
+                raise SystemExit(f"A5h artifact missing or changed: {path}")
+    print("A5h source and artifact hashes agree; nominal CAD only")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--build", action="store_true")
+    parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
+    if args.check:
+        check()
+        return
     if not args.build:
         raise SystemExit("use --build")
     result = build()

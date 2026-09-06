@@ -1,0 +1,34 @@
+{
+  "band_count": 10,
+  "band_pass_count": 10,
+  "checks": {
+    "coil_core": true,
+    "consecutive_cells": true,
+    "copper_volume": true,
+    "face_solids": true,
+    "fluxrelay_clearance": true,
+    "interlayer_clearance": true,
+    "mean_turn_length": true,
+    "same_layer": true,
+    "turn_solids": true,
+    "yoke_clearance": true
+  },
+  "evidence": "A5h nominal conductor-envelope CAD, not manufacturing or electrical qualification",
+  "fit_checks": {
+    "analytical_copper_volume_per_cell_mm3": 4933.759999999999,
+    "analytical_copper_volume_relative_error": -2.220446049250313e-16,
+    "coil_core_intersection_mm3": 0.0,
+    "coil_to_fluxrelay_radial_clearance_mm": 0.5,
+    "consecutive_cell_coil_intersection_mm3": 0.0,
+    "full_face_turn_solid_count": 324,
+    "interlayer_radial_clearance_mm": 0.6850000000000005,
+    "mean_turn_length_mm": 118.6,
+    "mean_turn_length_relative_error": 0.0,
+    "periodic_brep_cases_checked": 12,
+    "same_layer_coil_intersection_mm3": 0.0,
+    "turn_solid_count_per_cell": 12,
+    "upper_coil_to_back_yoke_clearance_mm": 0.6850000000000023
+  },
+  "screen_pass": true,
+  "source_manifest": "cad/BUILD_GEN3_12TURN.json"
+}

@@ -7,3 +7,7 @@ cad/step/gen1/
 cad/stl/gen1/
 cad/step/gen2/
 cad/stl/gen2/
+
+# Expanded A5h masters are preserved in deterministic download archives.
+/cad/step/gen3_12turn/
+/cad/stl/gen3_12turn/

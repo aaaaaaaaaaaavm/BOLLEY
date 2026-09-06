@@ -2,7 +2,7 @@
 
 Date frozen: 2026-08-31
 
-State: DECLARED, NOT RUN
+State: RUN 2026-09-06; 10/10 declared nominal-CAD bands pass
 
 ## Question
 
@@ -51,3 +51,9 @@ I do not require a four-face assembly render in A5h. Four-face rotation was alre
 ## Evidence boundary
 
 A5h is nominal CAD. It does not include manufacturing tolerance, thermal growth, enamel damage at bends, terminals, lead exits, impregnation, bridge mounting, cooling, switching loss or vibration. A pass does not replace A5e as the controlled full assembly until the downstream package and electrical gates also pass.
+
+## My execution, 2026-09-06
+
+I built the frozen point using CadQuery 2.5.2. [The evaluated result](../analysis/results/gen3_12turn_detailed_fit.json) records twelve turn solids per cell, 324 per face, zero intersection volume in the twelve periodic BRep checks, 0.5 mm Fluxrelay clearance, 0.685 mm interlayer/yoke clearance, 4933.76 mm3 analytical copper per cell and 118.6 mm mean turn length. The four declared scopes are preserved in deterministic [STEP](../cad/exports/gen3_12turn/Bolley_Gen3_STEP.zip) and [STL](../cad/exports/gen3_12turn/Bolley_Gen3_STL.zip) packages.
+
+I added source and artifact hash checks and regression cases that inject missed turn count, interference, clearance and turn-length failures. The original acceptance table above is unchanged. Manufacturing tolerance, terminations, thermal growth, switching loss and qualification remain outside this pass.

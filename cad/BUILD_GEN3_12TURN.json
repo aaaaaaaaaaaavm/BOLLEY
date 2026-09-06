@@ -1,0 +1,164 @@
+{
+  "artifacts": {
+    "Bolley_12Turn_ABC_Module_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          141.10000020000004,
+          22.908982029503825,
+          15.565000200000021
+        ],
+        "x": [
+          -13.92500010000001,
+          127.17500010000002
+        ],
+        "y": [
+          -23.599491014751912,
+          -0.6905089852480859
+        ],
+        "z": [
+          56.749999899999985,
+          72.3150001
+        ]
+      },
+      "solid_count": 36,
+      "step": {
+        "bytes": 1247331,
+        "path": "cad/step/gen3_12turn/Bolley_12Turn_ABC_Module_Gen3.step",
+        "sha256": "59c3952bd077c0cd47def0c6d8e12468c6e182502c2bf17726c73f88982c6e0f"
+      },
+      "stl": {
+        "bytes": 57684,
+        "path": "cad/stl/gen3_12turn/Bolley_12Turn_ABC_Module_Gen3.stl",
+        "sha256": "a75c2502d462f0c69ad7a5280591fc232b375484daad958896fe456806e90189"
+      },
+      "volume_mm3": 18674.309733967293
+    },
+    "Bolley_12Turn_Cell_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          50.500000200000024,
+          22.90898202950381,
+          7.440000200000014
+        ],
+        "x": [
+          -13.92500010000001,
+          36.57500010000001
+        ],
+        "y": [
+          -23.599491014751905,
+          -0.6905089852480953
+        ],
+        "z": [
+          56.74999989999999,
+          64.1900001
+        ]
+      },
+      "solid_count": 12,
+      "step": {
+        "bytes": 404563,
+        "path": "cad/step/gen3_12turn/Bolley_12Turn_Cell_Gen3.step",
+        "sha256": "a061cd25de386a94f0862b0526f589524aab9e0b86b21f65823120380a7aeded"
+      },
+      "stl": {
+        "bytes": 19284,
+        "path": "cad/stl/gen3_12turn/Bolley_12Turn_Cell_Gen3.stl",
+        "sha256": "dfc0ca860bc2a071d76b100c96adc4310f5cd6f783454566b5b5c2da525de686"
+      },
+      "volume_mm3": 6224.769911322437
+    },
+    "Bolley_12Turn_FullFace_CoreAndWinding_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          1228.3000002,
+          39.09949111475235,
+          30.00000020000045
+        ],
+        "x": [
+          -13.92500010000001,
+          1214.3750001
+        ],
+        "y": [
+          -23.59949101475212,
+          15.500000100000227
+        ],
+        "z": [
+          49.99999989999977,
+          80.00000010000022
+        ]
+      },
+      "solid_count": 513,
+      "step": {
+        "bytes": 15079690,
+        "path": "cad/step/gen3_12turn/Bolley_12Turn_FullFace_CoreAndWinding_Gen3.step",
+        "sha256": "c158f95e3db8802641703656ef6f4fafba2f7d2a079c040a368b84d16087e6ac"
+      },
+      "stl": {
+        "bytes": 631884,
+        "path": "cad/stl/gen3_12turn/Bolley_12Turn_FullFace_CoreAndWinding_Gen3.stl",
+        "sha256": "9f8df4b494c2eb5f119bce5043af25f70bc16603f5c2b2622c86735b167cf0fb"
+      },
+      "volume_mm3": 585167.9034057051
+    },
+    "Bolley_12Turn_FullFace_Winding_Gen3": {
+      "bounding_box_mm": {
+        "size": [
+          1228.3000002,
+          22.908982029504244,
+          15.565000200000433
+        ],
+        "x": [
+          -13.92500010000001,
+          1214.3750001
+        ],
+        "y": [
+          -23.59949101475212,
+          -0.6905089852478782
+        ],
+        "z": [
+          56.74999989999977,
+          72.3150001000002
+        ]
+      },
+      "solid_count": 324,
+      "step": {
+        "bytes": 11676208,
+        "path": "cad/step/gen3_12turn/Bolley_12Turn_FullFace_Winding_Gen3.step",
+        "sha256": "9176b3a8338aaa5558ef81ab30f5ab95239f54876e1e53455e166b51a65e6144"
+      },
+      "stl": {
+        "bytes": 518484,
+        "path": "cad/stl/gen3_12turn/Bolley_12Turn_FullFace_Winding_Gen3.stl",
+        "sha256": "3f59a604c3e04724e5ae24cadae6c2c41011eed9525ef33de11f014db2239990"
+      },
+      "volume_mm3": 168068.7876057049
+    }
+  },
+  "evidence": "A5h DETAILED MAXIMUM-INSULATION CONDUCTOR-ENVELOPE CAD; nominal only",
+  "fit_checks": {
+    "analytical_copper_volume_per_cell_mm3": 4933.759999999999,
+    "analytical_copper_volume_relative_error": -2.220446049250313e-16,
+    "coil_core_intersection_mm3": 0.0,
+    "coil_to_fluxrelay_radial_clearance_mm": 0.5,
+    "consecutive_cell_coil_intersection_mm3": 0.0,
+    "full_face_turn_solid_count": 324,
+    "interlayer_radial_clearance_mm": 0.6850000000000005,
+    "mean_turn_length_mm": 118.6,
+    "mean_turn_length_relative_error": 0.0,
+    "periodic_brep_cases_checked": 12,
+    "same_layer_coil_intersection_mm3": 0.0,
+    "turn_solid_count_per_cell": 12,
+    "upper_coil_to_back_yoke_clearance_mm": 0.6850000000000023
+  },
+  "parameter_file": "cad/gen3_12turn_detailed_parameters.json",
+  "parameter_sha256": "b2dc9f040b95f67cc539910bb96429967a349110145022d44dbfb4a74453402d",
+  "periodicity": "The z+ winding/core geometry repeats by translation every two cells; both winding parities and immediate/same-layer neighbours are checked with exact BRep intersections.",
+  "schema_version": 1,
+  "source_a5g": "analysis/results/gen3_12turn_path_fit.json",
+  "source_sha256": {
+    "analysis/results/gen3_12turn_path_fit.json": "0a721b355f1b719a0d547fa97d7fc16833e103a21311a18f16a9f943de91d1a0",
+    "cad/build_gen2.py": "df062d740c3343843d6fb2e925847e155b8a0010dda23ef0422dd10e11ad3833",
+    "cad/build_gen3_12turn.py": "4eead2383e11b2a8b84e7cddece6121e15737b5c9873bf2d599ae31975f75678",
+    "cad/gen3_12turn_detailed_parameters.json": "b2dc9f040b95f67cc539910bb96429967a349110145022d44dbfb4a74453402d",
+    "cad/gen3_parameters.json": "b91988026d05c5ad44d11ffb0c0a76261c14865329ce2baf6950563504407b99"
+  }
+}

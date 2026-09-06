@@ -1,0 +1,86 @@
+{
+  "build_manifest": "cad/BUILD_GEN3_12TURN.json",
+  "build_manifest_sha256": "90ea79e4b74653590ea7dd1a97224883d3e073c75941146a8052098bfd54b2f4",
+  "evidence": "DETERMINISTIC ARCHIVES OF CAD OUTPUT; not a manufacturing release",
+  "fixed_zip_timestamp": "2026-08-14T00:00:00",
+  "generation": "Gen3 A5h detailed 12-turn",
+  "packages": {
+    "step": {
+      "bytes": 4353427,
+      "member_count": 4,
+      "members": [
+        {
+          "archive_member": "Bolley_12Turn_ABC_Module_Gen3.step",
+          "bytes": 1247331,
+          "part": "Bolley_12Turn_ABC_Module_Gen3",
+          "sha256": "59c3952bd077c0cd47def0c6d8e12468c6e182502c2bf17726c73f88982c6e0f",
+          "source_path": "cad/step/gen3_12turn/Bolley_12Turn_ABC_Module_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_12Turn_Cell_Gen3.step",
+          "bytes": 404563,
+          "part": "Bolley_12Turn_Cell_Gen3",
+          "sha256": "a061cd25de386a94f0862b0526f589524aab9e0b86b21f65823120380a7aeded",
+          "source_path": "cad/step/gen3_12turn/Bolley_12Turn_Cell_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_12Turn_FullFace_CoreAndWinding_Gen3.step",
+          "bytes": 15079690,
+          "part": "Bolley_12Turn_FullFace_CoreAndWinding_Gen3",
+          "sha256": "c158f95e3db8802641703656ef6f4fafba2f7d2a079c040a368b84d16087e6ac",
+          "source_path": "cad/step/gen3_12turn/Bolley_12Turn_FullFace_CoreAndWinding_Gen3.step"
+        },
+        {
+          "archive_member": "Bolley_12Turn_FullFace_Winding_Gen3.step",
+          "bytes": 11676208,
+          "part": "Bolley_12Turn_FullFace_Winding_Gen3",
+          "sha256": "9176b3a8338aaa5558ef81ab30f5ab95239f54876e1e53455e166b51a65e6144",
+          "source_path": "cad/step/gen3_12turn/Bolley_12Turn_FullFace_Winding_Gen3.step"
+        }
+      ],
+      "path": "cad/exports/gen3_12turn/Bolley_Gen3_STEP.zip",
+      "sha256": "f8eeffd4c913d415b95976b50ddefe5eab46a80d960caac04e10c32e57d2cad4"
+    },
+    "stl": {
+      "bytes": 148399,
+      "member_count": 4,
+      "members": [
+        {
+          "archive_member": "Bolley_12Turn_ABC_Module_Gen3.stl",
+          "bytes": 57684,
+          "part": "Bolley_12Turn_ABC_Module_Gen3",
+          "sha256": "a75c2502d462f0c69ad7a5280591fc232b375484daad958896fe456806e90189",
+          "source_path": "cad/stl/gen3_12turn/Bolley_12Turn_ABC_Module_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_12Turn_Cell_Gen3.stl",
+          "bytes": 19284,
+          "part": "Bolley_12Turn_Cell_Gen3",
+          "sha256": "dfc0ca860bc2a071d76b100c96adc4310f5cd6f783454566b5b5c2da525de686",
+          "source_path": "cad/stl/gen3_12turn/Bolley_12Turn_Cell_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_12Turn_FullFace_CoreAndWinding_Gen3.stl",
+          "bytes": 631884,
+          "part": "Bolley_12Turn_FullFace_CoreAndWinding_Gen3",
+          "sha256": "9f8df4b494c2eb5f119bce5043af25f70bc16603f5c2b2622c86735b167cf0fb",
+          "source_path": "cad/stl/gen3_12turn/Bolley_12Turn_FullFace_CoreAndWinding_Gen3.stl"
+        },
+        {
+          "archive_member": "Bolley_12Turn_FullFace_Winding_Gen3.stl",
+          "bytes": 518484,
+          "part": "Bolley_12Turn_FullFace_Winding_Gen3",
+          "sha256": "3f59a604c3e04724e5ae24cadae6c2c41011eed9525ef33de11f014db2239990",
+          "source_path": "cad/stl/gen3_12turn/Bolley_12Turn_FullFace_Winding_Gen3.stl"
+        }
+      ],
+      "path": "cad/exports/gen3_12turn/Bolley_Gen3_STL.zip",
+      "sha256": "6c0171b02fcc8a7bfd745f5c01ac479ef6871c9e39dc2fc64ec9215d0ce60343"
+    }
+  },
+  "regeneration": [
+    "python cad/build_gen3_12turn.py --build",
+    "python tools/package_gen3_12turn.py --write"
+  ],
+  "schema_version": 1
+}

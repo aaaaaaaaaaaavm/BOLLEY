@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-06: my BSX audit and A5h execution
+
+I found that check_repo.py rejected every result added after A12, so the checker could not inspect A9 through A9f or A5f/A5g. I extended its declared stage sequence without accepting unknown or partial sets and wired the new evidence into the existing checks.
+
+I executed A5h from its frozen 2026-08-31 inputs and bands, added a result evaluator, and required source and artifact hashes for all four STEP/STL scopes. This is nominal conductor-envelope CAD, not winding manufacture, electrical closure or qualification. A5f's failed fixed-path result remains unchanged.
+
+
 I keep two more useful chronological records than a conventional software changelog:
 
 - [`HISTORY.md`](HISTORY.md) records the engineering lineage and corrections.

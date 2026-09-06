@@ -167,6 +167,20 @@ def main() -> None:
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS | A10_RESULTS | A11_RESULTS,
         CORE_RESULTS | A3A_RESULTS | A5A_RESULTS | A3B0_RESULTS | A5B_RESULTS | A3B1_RESULTS | A3C_RESULTS | A3D_RESULTS | A3E_RESULTS | A5C_RESULTS | A3F_RESULTS | A3G_RESULTS | A5D_RESULTS | A6_RESULTS | A6B_RESULTS | A6C_RESULTS | A6D_RESULTS | A6E_RESULTS | A6F_RESULTS | A7A_RESULTS | A6G_RESULTS | A7B_RESULTS | A8A_RESULTS | A8B_RESULTS | A6H_RESULTS | A7C_RESULTS | A5E_RESULTS | A10_RESULTS | A11_RESULTS | A12_RESULTS,
     )
+    # Later gates extend the frozen sequence; unknown or partial result sets still fail.
+    late_stages = [
+        {"sectional_drive_a9_failure.json"},
+        {"sectional_drive_a9b.json"},
+        {"hot_winding_margin.json"},
+        {"selector_realization_screen.json"},
+        {"supplier_bridge_screen.json"},
+        {"turn_current_exchange.json"},
+        {"gen3_12turn_winding_fit.json"},
+        {"gen3_12turn_path_fit.json"},
+        {"gen3_12turn_detailed_fit.json"},
+    ]
+    for stage_results in late_stages:
+        valid_sets += (valid_sets[-1] | stage_results,)
     if committed not in valid_sets:
         raise SystemExit(
             "partial result set: expected "
@@ -364,7 +378,24 @@ def main() -> None:
         run("tools/make_fluxframe_mass.py", "--check")
     elif (ROOT / "docs" / "FLUXFRAME_MASS.md").exists():
         raise SystemExit("docs/FLUXFRAME_MASS.md exists before the A12 result")
+    for result_name, script in (
+        ("sectional_drive_a9b.json", "sectional_drive_a9b.py"),
+        ("hot_winding_margin.json", "hot_winding_margin.py"),
+        ("selector_realization_screen.json", "selector_realization_screen.py"),
+        ("supplier_bridge_screen.json", "supplier_bridge_screen.py"),
+        ("turn_current_exchange.json", "turn_current_exchange.py"),
+        ("gen3_12turn_winding_fit.json", "gen3_12turn_winding_fit.py"),
+        ("gen3_12turn_path_fit.json", "gen3_12turn_path_fit.py"),
+        ("gen3_12turn_detailed_fit.json", "gen3_12turn_detailed_fit.py"),
+    ):
+        if result_name in committed:
+            run("analysis/" + script, "--check")
+    if "gen3_12turn_detailed_fit.json" in committed:
+        run("cad/build_gen3_12turn.py", "--check")
+        run("tools/package_gen3_12turn.py", "--check")
+        run("-m", "unittest", "discover", "-s", "tests", "-v")
     stage = (
+
         "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e/A10/A11/A12"
         if A12_RESULTS <= committed
         else "A1/A2/A3a/A5a/A3b0/A5b/A3b1/A3c/A3d/A3e/A5c/A3f/A3g/A5d/A6/A6b/A6c/A6d/A6e/A6f/A7a/A6g/A7b/A8a/A8b/A6h/A7c/A5e/A10/A11 with A12 declared"
@@ -425,7 +456,7 @@ def main() -> None:
         if A3A_RESULTS <= committed
         else "A1/A2 with A3a declared"
     )
-    print(f"OK: {stage} generated results and local links are current")
+    print(f"OK: {len(committed)} declared result files and local links are current; historical base {stage}")
 
 
 if __name__ == "__main__":

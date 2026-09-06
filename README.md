@@ -1,5 +1,7 @@
 # Bolley
 
+I completed the declared A5h nominal winding CAD gate on 2026-09-06: [result and limits](validation/A5h_gen3_12turn_detailed_cad.md). This does not close the electrical or packaged-system gates.
+
 [![Licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-blue.svg)](LICENSE)
 [![Reproducibility gates](https://github.com/aaaaaaaaaaaavm/BOLLEY/actions/workflows/gates.yml/badge.svg)](https://github.com/aaaaaaaaaaaavm/BOLLEY/actions/workflows/gates.yml)
 
