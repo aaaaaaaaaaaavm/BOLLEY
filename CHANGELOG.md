@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-14: expose the later drive and winding decisions
+
+I shortened the README around the controlled Fluxrelay assembly and the separately selected
+12-turn candidate. The former page remains accessible at its exact revision. I added a generated
+current review linked from the historical status page: A9b–A9f and A5f–A5h now carry source hashes,
+calculation verdicts, design dispositions and remaining limits together.
+
+The distinction matters at A9e: its screen_pass is true while its disposition rejects the selector
+arrangement. The review preserves that rejection and A5f's copper-volume failure. A5h remains a
+nominal-CAD result. No analysis, acceptance band or physical closure changes. The repository
+checker now rejects stale review surfaces.
+
 ## 2026-09-06: my BSX audit and A5h execution
 
 I found that check_repo.py rejected every result added after A12, so the checker could not inspect A9 through A9f or A5f/A5g. I extended its declared stage sequence without accepting unknown or partial sets and wired the new evidence into the existing checks.

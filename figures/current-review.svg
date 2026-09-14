@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="688" viewBox="0 0 1100 688" role="img" aria-labelledby="title desc">
+<title id="title">BOLLEY drive and winding evidence</title>
+<desc id="desc">Eight computational screens. A9e rejects its selector arrangement despite passing its screening checks. A5h closes nominal winding CAD only. No hardware evidence.</desc>
+<rect width="1100" height="688" rx="16" fill="#0d1b2a"/>
+<g font-family="Arial, sans-serif">
+<text x="32" y="43" font-size="15" fill="#7dd3fc">BOLLEY / FLUXRELAY</text>
+<text x="32" y="82" font-size="30" font-weight="bold" fill="#ffffff">The latest drive and winding evidence</text>
+<text x="32" y="111" font-size="16" fill="#cbd5e1">Calculation checks and design acceptance are separate verdicts.</text>
+<rect x="24" y="144" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="167" font-size="17" font-weight="bold" fill="#7dd3fc">A9b</text>
+<text x="110" y="167" font-size="17" fill="#ffffff">Sectional drive</text>
+<text x="810" y="167" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="187" font-size="14" fill="#cbd5e1">Model reclosure; supplier and package work remains</text>
+<rect x="24" y="204" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="227" font-size="17" font-weight="bold" fill="#7dd3fc">A9c</text>
+<text x="110" y="227" font-size="17" fill="#ffffff">Hot winding</text>
+<text x="810" y="227" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="247" font-size="14" fill="#cbd5e1">Resistance/temperature allowance; P40 remains open</text>
+<rect x="24" y="264" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="287" font-size="17" font-weight="bold" fill="#7dd3fc">A9d</text>
+<text x="110" y="287" font-size="17" fill="#ffffff">Supplier bridge</text>
+<text x="810" y="287" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="307" font-size="14" fill="#cbd5e1">Conduction lower bound; full electronics remain open</text>
+<rect x="24" y="324" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="347" font-size="17" font-weight="bold" fill="#fda4af">A9e</text>
+<text x="110" y="347" font-size="17" fill="#ffffff">Selector arrangement</text>
+<text x="810" y="347" font-size="13" font-weight="bold" fill="#fda4af">DESIGN REJECTED</text>
+<text x="110" y="367" font-size="14" fill="#cbd5e1">No selector promoted; electrical partition requires redesign</text>
+<rect x="24" y="384" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="407" font-size="17" font-weight="bold" fill="#7dd3fc">A9f</text>
+<text x="110" y="407" font-size="17" fill="#ffffff">12-turn candidate</text>
+<text x="810" y="407" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="427" font-size="14" fill="#cbd5e1">Selected for fresh field, switching and package checks</text>
+<rect x="24" y="444" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="467" font-size="17" font-weight="bold" fill="#fda4af">A5f</text>
+<text x="110" y="467" font-size="17" fill="#ffffff">First winding fit</text>
+<text x="810" y="467" font-size="13" font-weight="bold" fill="#fda4af">SCREEN FAILED</text>
+<text x="110" y="487" font-size="14" fill="#cbd5e1">Failed copper-volume gate; failure retained</text>
+<rect x="24" y="504" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="527" font-size="17" font-weight="bold" fill="#7dd3fc">A5g</text>
+<text x="110" y="527" font-size="17" fill="#ffffff">Corrected path</text>
+<text x="810" y="527" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="547" font-size="14" fill="#cbd5e1">Analytical path fit; detailed CAD follows</text>
+<rect x="24" y="564" width="1052" height="52" rx="7" fill="#172b40"/>
+<text x="40" y="587" font-size="17" font-weight="bold" fill="#7dd3fc">A5h</text>
+<text x="110" y="587" font-size="17" fill="#ffffff">Detailed winding CAD</text>
+<text x="810" y="587" font-size="13" font-weight="bold" fill="#7dd3fc">BOUNDED RESULT</text>
+<text x="110" y="607" font-size="14" fill="#cbd5e1">Nominal envelopes only; not a manufacturing release</text>
+<text x="32" y="657" font-size="15" fill="#fbbf24">MODEL / NOMINAL CAD ONLY  |  Physical performance and flight readiness remain unverified.</text>
+</g></svg>

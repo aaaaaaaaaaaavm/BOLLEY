@@ -1,5 +1,9 @@
 # Run status
 
+> Review routing, 2026-09-14: I retain the historical table below. The later A9b–A9f and
+> A5f–A5h sequence is generated from committed results in [CURRENT_REVIEW.md](../docs/CURRENT_REVIEW.md).
+> The new review separates calculation checks from design acceptance and preserves A5f's failure.
+
 | Run | State | Result |
 |---|---|---|
 | A10 | MODELLED | 7 PASS, 2 FAIL, 1 OPEN and 2 REPORT bands. I correct the inconsistent reference velocity and open finite Gen5/Gen6 gates; I do not select hardware. |

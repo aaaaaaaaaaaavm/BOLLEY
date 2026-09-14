@@ -124,6 +124,7 @@ def main() -> None:
 
     check_authored_voice()
     check_repository_surfaces()
+    run("tools/make_review_snapshot.py", "--check")
 
     for script in list((ROOT / "analysis").glob("*.py")) + list((ROOT / "tools").glob("*.py")):
         subprocess.run([sys.executable, "-m", "py_compile", str(script)], check=True)
