@@ -56,10 +56,13 @@ time.
 
 This table does not change a problem state. It says what kind of evidence can move it.
 
-The controlled Fluxrelay queue starts with P38, P40, P11 and P39. The selected point has 6.588 J
-of model margin. I need to know whether switching, real hot resistance and packaged electrical
-hardware consume that margin before I spend the same effort polishing secondary parts of the
-machine.
+The controlled Fluxrelay queue starts with P38, P40, P11 and P39. Each of the three configurations
+in play carries its own model margin below the same 900 J cap, and they are not a sequence: A7c
+leaves 6.588 J, A9c leaves the A9b configuration 2.252 J, and A9f's selected 12-turn point reports
+889.719 J under 25 C module conduction rather than a generic inverter efficiency. I need to know
+whether switching, real hot resistance and packaged electrical hardware consume the margin at the
+configuration I actually intend to build, before I spend the same effort polishing secondary parts
+of the machine.
 
 ## IV. What I do not know I do not know
 

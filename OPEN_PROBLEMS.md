@@ -15,7 +15,7 @@ measurement, supplier document or decision record. I do not treat confidence as 
 | P8 | Rail heating from hysteresis and eddy current is unknown. | Coupled loss/thermal model checked by instrumented coupon. | HIGH | OPEN |
 | P9 | No independent retention gate has been selected or sized. | Gate design passes ascent, no-fire and commanded-release tests. | HIGH | OPEN |
 | P10 | The four-channel force-allocation law assumes known payload CG and calibrated channel force. | CG declaration error and force-sensor uncertainty close inside the tip-off budget. | HIGH | MODELLED |
-| P11 | No capacitor, inverter, switch or cable has a supplier-backed pulse rating for this duty. | Quoted and datasheet-backed electrical BOM passes the shot. | HIGH | OPEN |
+| P11 | No capacitor, inverter, switch or cable has a supplier-backed pulse rating for this duty. A9d and A9f add one partial datum and no more: 25 C conduction resistance for the onsemi NXV08H400XT1 module A9f installs 108 of. Hot Rds(on), switching loss, gate drive, DC-link capacitance, busbar and cable stay unquoted. | Quoted and datasheet-backed electrical BOM passes the shot. | HIGH | OPEN |
 | P12 | The proposed comb-fin reaction interface has not been accepted by a dispenser or launch provider. | Written interface disposition or mission-specific waiver. | HIGH | OPEN |
 | P13 | The recurring-cost advantage is entirely unquoted. | Supplier quotations and integration labour model. | MEDIUM | OPEN |
 | P14 | Host recoil and campaign attitude restoration have not been re-derived without the sled return. | Host-specific momentum and cadence assessment. | MEDIUM | OPEN |
@@ -42,9 +42,9 @@ measurement, supplier document or decision record. I do not treat confidence as 
 | P35 | Gen2.3's stepped-thickness magnetic ribs have no structural load path or manufacturable encapsulation detail. | Gen2.3 CAD, coupon drawing and structural test article preserve the 1.12 mm rib and copper continuity. | HIGH | OPEN |
 | P36 | The 336 mm cage leaves the 900 mm stator during a claimed 900 mm full-force stroke, while A7b charges every series cell instead of only overlapped sections. | Axial overlap, sectional circuit and installed-length model close velocity, energy and primary-mass bands together. | CRITICAL | CLOSED |
 | P37 | A8b initially scaled A6g fields linearly from 375 to 380 A, leaving only 1.04% stationary-core peak margin. | Fresh A6h coarse/fine/alternate nonlinear meshes pass every field, peak and convergence band at the selected point. | CRITICAL | CLOSED |
-| P38 | The nine-cell active window has no switching handoff, force-ripple, fault or end-cell model. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | OPEN |
-| P39 | A5e confirms that my 15.908 kg active primary leaves only 92 g inside its material band while structure, cooling, wiring and power electronics remain excluded. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
-| P40 | A7c leaves only 6.588 J (0.732%) of model margin on the hot reference shot, and its 125% resistance corner is not supplier-backed. | A9 transient drive plus measured or supplier-bounded hot winding resistance retain positive margin below 900 J. | CRITICAL | OPEN |
+| P38 | A9, reclosed by A9b, models switching handoff, force ripple, fault and end-cell behaviour for ideal current tracking, and A9b states that as the only disposition its pass supports. That model runs at A9's 4-turn/380 A partition. A9f then selected a 12-turn/126.667 A partition, which has not been through the transient. | A sectional-drive transient closes force ripple, DC-link, current sharing, failed-cell and exit-end bands. | CRITICAL | MODELLED |
+| P39 | A5e confirms that my 15.908 kg active primary leaves only 92 g inside its material band while structure, cooling, wiring and power electronics remain excluded. A9f puts a floor under one of those four: 108 supplier modules at 2.5488 kg module-only, 27.7 times the whole 91.896 g remainder, before busbar, capacitors, gate drive, cooling, wiring or structure. | A packaged Gen3 mass ledger either closes a declared installed-system allocation or rejects the selected topology. | CRITICAL | OPEN |
+| P40 | A7c leaves only 6.588 J (0.732%) of model margin on the hot reference shot, and its 125% resistance corner is not supplier-backed. Two later configurations carry their own separate margins under their own loss models: A9c puts the A9b configuration 2.252 J below the same cap, 2.669 C above A7c's corner, and A9f's selected 12-turn point reports 889.719 J with 25 C module conduction in place of the generic 97% inverter loss. Three configurations, three margins; none of them supersedes another. | A9 transient drive plus measured or supplier-bounded hot winding resistance retain positive margin below 900 J. | CRITICAL | OPEN |
 | P41 | The premise I reversed is not the one that costs, and the pulse I retained is. | A sectional-drive energy architecture that either removes the shot-time pulse or shows a supplier-backed chain that survives it (P11, P38), priced against the 0.371 kg the interface asks of the spacecraft. | HIGH | OPEN |
 | P42 | BOL-R-002 asked for 12 m/s inside 0.90 m while BOL-R-004 capped nominal acceleration at 8 g; A10 found a ceiling of 11.8855 m/s. | ADR-040 changes BOL-R-002 to 11.8 m/s and preserves the load and package limits. | CRITICAL | CLOSED |
 | P43 | A12 shows that 121.36 g is 30.80–42.58% of public 3U chassis masses, but Fluxframe still has no bus-specific displaced-parts ledger. | One selected CubeSat frame/thermal/grounding configuration identifies every removed part and closes net mass, stiffness, thermal and electrical continuity. | HIGH | MODELLED |
@@ -60,6 +60,25 @@ measurement, supplier document or decision record. I do not treat confidence as 
 > instead — cold gas, 25–131 W, one bottle for twelve shots — and my own **P39**
 > already records that my 15.908 kg primary excludes structure, cooling, wiring and power
 > electronics. **P41 is that comparison written down as a defect rather than left as a note.**
+
+> **Reconciled against A9b–A9f and A5f–A5h on 2026-09-15.** I read the later run sheets back
+> against the rows above before choosing what to run next, because four of them still described
+> the state at A7c and A5e. P38 moves to `MODELLED`, which is the disposition A9b itself
+> authorises and no more: its words are that a pass "may move P38 to MODELLED only for the
+> ideal-current-tracking selector effects represented by A9". P11, P39 and P40 keep their states
+> and gain the numbers the later runs attached to them. No close condition is edited, no
+> acceptance band is touched, and A5f's copper-volume failure and A9e's selector rejection stay
+> exactly as they were recorded.
+>
+> The gap that decides what I run next is between A9 and A9f. A9's transient, and therefore
+> everything P38 now rests on, ran at 4 turns and 380 A. A9f exchanged turns against current at
+> fixed 1,520 A-turn MMF and selected 12 turns at 126.667 A, and A5h then drew that winding. The
+> mechanical and magnetic geometry is unchanged by that exchange, but phase resistance and
+> inductance scale with (N/4)², the link demand with N/4, and the bridge conduction with current
+> squared. A9f says so itself: a selected point "must return to nonlinear field and CAD/winding
+> checks because the turn packing and current distribution have changed". So the next
+> configuration I run is the A5h winding at A9f's partition, not A9's, and the A9c margin belongs
+> to neither.
 
 ## How I use the register
 

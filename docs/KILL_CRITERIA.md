@@ -42,7 +42,10 @@ I use this threshold to prevent a lower-force topology from quietly retaining VO
 multi-string bank problem through poor efficiency.
 
 **Status:** MODELLED, hardware open. My A7c controlling reference corner uses 893.412 J, leaving
-only 6.588 J of model margin. I still require transient-drive and measured efficiency evidence.
+only 6.588 J of model margin. A9f's separately selected 12-turn point reports 889.719 J against the
+same cap, but it replaces the generic 97% inverter loss with 25 C supplier module conduction, so it
+is a different accounting of the same threshold and not a later value of the A7c number. The
+threshold itself is unchanged. I still require transient-drive and measured efficiency evidence.
 
 ## 5. Tip-off
 

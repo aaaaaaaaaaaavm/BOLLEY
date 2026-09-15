@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-09-15: reconcile the register against A9b-A9f and A5f-A5h
+
+I read the later run sheets back against the defect register before choosing the next run
+configuration, because four rows still described the state at A7c and A5e.
+
+P38 moves from `OPEN` to `MODELLED`. That is the disposition A9b authorises in its own words, a
+pass "may move P38 to MODELLED only for the ideal-current-tracking selector effects represented by
+A9", and ADR-049 ties keeping it open to a failure that did not occur. The row now also records
+what the modelled state rests on: A9's transient ran at 4 turns and 380 A.
+
+P11, P39 and P40 keep their states and gain the numbers the later runs attached to them. P11 now
+names the single partial supplier datum that exists, 25 C conduction resistance for the onsemi
+NXV08H400XT1. P39 records that A9f puts 2.5488 kg of module-only mass against the 91.896 g A5e
+leaves in the material band, 27.7 times the whole remainder, and that is before busbar, capacitors,
+gate drive, cooling, wiring or structure. P40 now keeps three margins apart instead of reading them
+as one trend: 6.588 J at A7c, 2.252 J at A9c for the A9b configuration, and 889.719 J at A9f's
+selected point under a different loss model.
+
+The same three-margin correction goes into `docs/KNOWLEDGE_MAP.md`, `docs/ASSUMPTION_LEDGER.md` and
+`docs/KILL_CRITERIA.md`, each of which quoted 6.588 J as the live margin of the selected point. The
+kill threshold itself is unchanged.
+
+What this decides: the next configuration to run is the A5h winding at A9f's 12-turn, 126.667 A
+partition. A9's transient, and therefore everything P38 rests on, is at the old 4-turn partition.
+The exchange holds MMF at 1,520 A-turns and leaves the mechanical and magnetic geometry alone, but
+phase resistance and inductance scale with (N/4)^2, link demand with N/4, and bridge conduction with
+current squared, and A9f says a selected point "must return to nonlinear field and CAD/winding
+checks because the turn packing and current distribution have changed".
+
+No close condition edited, no acceptance band touched, no result recomputed. A5f's copper-volume
+failure and A9e's selector rejection stay as recorded.
+
 ## 2026-09-14: expose the later drive and winding decisions
 
 I shortened the README around the controlled Fluxrelay assembly and the separately selected

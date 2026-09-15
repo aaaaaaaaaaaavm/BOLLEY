@@ -47,9 +47,11 @@ directions. None is a design result.
 ## What this immediately changes
 
 The next controlled work is electrical closure. P38, P40, P11 and P39 sit on the same dependency
-chain: sectional switching changes energy and current; real hot resistance can consume the 6.588 J
-margin; the source and switches add mass and thermal load; that package decides whether the
-selected electromagnetic architecture remains worth carrying.
+chain: sectional switching changes energy and current; real hot resistance can consume the margin,
+which is 6.588 J at A7c and 2.252 J at A9c for the A9b configuration, and has not been recomputed
+for the 12-turn point A9f selected; the source and switches add mass and thermal load, and A9f's
+108 modules alone weigh 2.5488 kg against the 91.896 g A5e leaves in the material band; that
+package decides whether the selected electromagnetic architecture remains worth carrying.
 
 The first Unbound work attacks A-005 and A-007. A-005 asks whether the passive-only spacecraft
 interface is still a useful restriction once deployment hardware can keep an orbital function.
