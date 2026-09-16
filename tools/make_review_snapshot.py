@@ -19,6 +19,7 @@ ROWS = [
     ("A5f", "gen3_12turn_winding_fit.json", "A5f_gen3_12turn_winding.md", "First winding fit", "Failed copper-volume gate; failure retained"),
     ("A5g", "gen3_12turn_path_fit.json", "A5g_gen3_12turn_path.md", "Corrected path", "Analytical path fit; detailed CAD follows"),
     ("A5h", "gen3_12turn_detailed_fit.json", "A5h_gen3_12turn_detailed_cad.md", "Detailed winding CAD", "Nominal envelopes only; not a manufacturing release"),
+    ("A9g", "selected_winding_reclosure.json", "A9g_selected_winding_reclosure.md", "12-turn drive reclosure", "Six of sixteen assumed loss corners pass; hot switching remains open"),
 ]
 
 
@@ -68,6 +69,11 @@ def outputs():
         f"A9c's earlier configuration has {hot['a9b_margin_to_900j_j']:.3f} J remaining below its reference cap,",
         f"equivalent to only {hot['remaining_temperature_above_a7c_1p25_corner_c']:.3f} C beyond its inherited hot-winding corner under that model.",
         "That is not the margin of the later A9f candidate; the configurations must stay separate.", "",
+        "## Selected-partition reclosure", "",
+        "[A9g](SELECTED_WINDING_RECLOSURE.md) reruns the ideal-current handoff model at twelve turns.",
+        "It reproduces the current/voltage/energy scaling at two resolutions. The selected 25 C",
+        "conduction point leaves 10.280918 J below the reference cap; only six of sixteen assumed",
+        "conduction/additional-loss corners pass. This does not close the actual winding field or hot switching.", "",
         "## What I would close next", "",
         "1. Check RMS, peak, internal-path and package current definitions against the supplier data before crediting a device rating.",
         "2. Re-solve the field/current distribution for the actual A5h winding, including terminals and lead routing.",
@@ -86,10 +92,10 @@ def outputs():
     for run, filename, sheet, label, limit, data, disposition, digest in records:
         lines.append(f"| [{filename}](../analysis/results/{filename}) | `{digest}` |")
     markdown = "\n".join(lines) + "\n"
-    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="688" viewBox="0 0 1100 688" role="img" aria-labelledby="title desc">',
+    svg = ['<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="748" viewBox="0 0 1100 748" role="img" aria-labelledby="title desc">',
            '<title id="title">BOLLEY drive and winding evidence</title>',
-           '<desc id="desc">Eight computational screens. A9e rejects its selector arrangement despite passing its screening checks. A5h closes nominal winding CAD only. No hardware evidence.</desc>',
-           '<rect width="1100" height="688" rx="16" fill="#0d1b2a"/>',
+           '<desc id="desc">Nine computational screens. A9e rejects its selector arrangement despite passing its screening checks. A5h closes nominal winding CAD only. A9g exposes the remaining loss budget. No hardware evidence.</desc>',
+           '<rect width="1100" height="748" rx="16" fill="#0d1b2a"/>',
            '<g font-family="Arial, sans-serif">',
            '<text x="32" y="43" font-size="15" fill="#7dd3fc">BOLLEY / FLUXRELAY</text>',
            '<text x="32" y="82" font-size="30" font-weight="bold" fill="#ffffff">The latest drive and winding evidence</text>',
@@ -104,7 +110,7 @@ def outputs():
                 f'<text x="110" y="{y+23}" font-size="17" fill="#ffffff">{html.escape(label)}</text>',
                 f'<text x="810" y="{y+23}" font-size="13" font-weight="bold" fill="{colour}">{verdict}</text>',
                 f'<text x="110" y="{y+43}" font-size="14" fill="#cbd5e1">{html.escape(limit)}</text>']
-    svg += ['<text x="32" y="657" font-size="15" fill="#fbbf24">MODEL / NOMINAL CAD ONLY  |  Physical performance and flight readiness remain unverified.</text>', '</g></svg>']
+    svg += ['<text x="32" y="717" font-size="15" fill="#fbbf24">MODEL / NOMINAL CAD ONLY  |  Physical performance and flight readiness remain unverified.</text>', '</g></svg>']
     return {ROOT / "docs/CURRENT_REVIEW.md": markdown,
             ROOT / "figures/current-review.svg": "\n".join(svg) + "\n"}
 

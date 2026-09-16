@@ -3,13 +3,13 @@
 **What changes if the satellite carries a passive reaction interface?**
 
 I am developing a cooperative CubeSat deployer alongside [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY).
-VOLLEY keeps the payload mechanically and electrically unmodified. BOLLEY lets it carry a
+VOLLEY aims to keep the payload mechanically and electrically unmodified. BOLLEY lets it carry a
 passive magnetic/copper interface while the launcher retains the windings, electronics and stored
 energy. That trade removes the launch sled, its brake and its return stroke.
 
 **Computational design study. Nothing has been built, measured, qualified or flown.**
 
-[Latest evidence](docs/CURRENT_REVIEW.md) · [Requirements](REQUIREMENTS.md) ·
+[Project website](https://aaaaaaaaaaaavm.github.io/VOLLEY/bolley.html) · [Latest evidence](docs/CURRENT_REVIEW.md) · [Requirements](REQUIREMENTS.md) ·
 [Completion standard](docs/COMPLETION_STANDARD.md) · [Open problems](OPEN_PROBLEMS.md) ·
 [Shared prototype programme](https://github.com/aaaaaaaaaaaavm/VOLLEY/blob/main/docs/PROTOTYPE_READINESS.md)
 
@@ -29,6 +29,11 @@ with its own CAD gate; it does not silently replace this assembly or inherit a c
 | Primary material mass | 15.908 kg; structure, cooling, wiring and power electronics are additional |
 | Later electrical candidate | A9f selects 12 turns and approximately 126.667 A rated phase current |
 | Latest winding gate | A5h: 10/10 nominal-CAD bands pass; manufacturing and electrical closure remain open |
+| Selected drive reclosure | [A9g](docs/SELECTED_WINDING_RECLOSURE.md): 12-turn handoff envelope reproduces turn scaling; 6/16 assumed loss corners stay below the 900 J reference cap |
+
+I now have 10.280918 J of reference-shot margin at A9f's 25 C conduction point.
+A9g shows exactly how assumed hot conduction and additional losses consume it. That is a
+remaining loss budget, not a supplier-backed switching or thermal design.
 
 The initial 12 m/s target was inconsistent with 8 g over 0.90 m. A10 found the contradiction
 and ADR-040 changed the target to 11.8 m/s. The earlier requirement and failed result remain recorded.

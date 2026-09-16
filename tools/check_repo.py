@@ -179,6 +179,7 @@ def main() -> None:
         {"gen3_12turn_winding_fit.json"},
         {"gen3_12turn_path_fit.json"},
         {"gen3_12turn_detailed_fit.json"},
+        {"selected_winding_reclosure.json"},
     ]
     for stage_results in late_stages:
         valid_sets += (valid_sets[-1] | stage_results,)
@@ -385,6 +386,7 @@ def main() -> None:
         ("selector_realization_screen.json", "selector_realization_screen.py"),
         ("supplier_bridge_screen.json", "supplier_bridge_screen.py"),
         ("turn_current_exchange.json", "turn_current_exchange.py"),
+        ("selected_winding_reclosure.json", "selected_winding_reclosure.py"),
         ("gen3_12turn_winding_fit.json", "gen3_12turn_winding_fit.py"),
         ("gen3_12turn_path_fit.json", "gen3_12turn_path_fit.py"),
         ("gen3_12turn_detailed_fit.json", "gen3_12turn_detailed_fit.py"),

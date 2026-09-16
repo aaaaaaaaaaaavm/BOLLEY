@@ -17,6 +17,7 @@ Nothing here is hardware evidence.
 | [A5f](../validation/A5f_gen3_12turn_winding.md) | FAIL | `A5F_FAIL_FIXED_INNER_SPANS_EXCEED_A5E_COPPER_VOLUME` | Failed copper-volume gate; failure retained |
 | [A5g](../validation/A5g_gen3_12turn_path.md) | PASS | `A5G_PASS_PROMOTE_SELECTED_12TURN_WINDING_TO_DETAILED_CAD` | Analytical path fit; detailed CAD follows |
 | [A5h](../validation/A5h_gen3_12turn_detailed_cad.md) | PASS | `10/10 nominal-CAD bands` | Nominal envelopes only; not a manufacturing release |
+| [A9g](../validation/A9g_selected_winding_reclosure.md) | PASS | `BOUNDED_RECLOSURE_ONLY_HOT_SWITCHING_AND_FIELD_OPEN` | Six of sixteen assumed loss corners pass; hot switching remains open |
 
 ## The selected electrical screen
 
@@ -36,6 +37,13 @@ These A9f values use the declared scaling and supplier conduction assumptions. T
 A9c's earlier configuration has 2.252 J remaining below its reference cap,
 equivalent to only 2.669 C beyond its inherited hot-winding corner under that model.
 That is not the margin of the later A9f candidate; the configurations must stay separate.
+
+## Selected-partition reclosure
+
+[A9g](SELECTED_WINDING_RECLOSURE.md) reruns the ideal-current handoff model at twelve turns.
+It reproduces the current/voltage/energy scaling at two resolutions. The selected 25 C
+conduction point leaves 10.280918 J below the reference cap; only six of sixteen assumed
+conduction/additional-loss corners pass. This does not close the actual winding field or hot switching.
 
 ## What I would close next
 
@@ -65,3 +73,4 @@ full solver and CAD reconstruction remain distinct from artifact checks.
 | [gen3_12turn_winding_fit.json](../analysis/results/gen3_12turn_winding_fit.json) | `02e347838230732e90b35291ad581d8c777bae2cdfb3099aad87fda4c8237325` |
 | [gen3_12turn_path_fit.json](../analysis/results/gen3_12turn_path_fit.json) | `0a721b355f1b719a0d547fa97d7fc16833e103a21311a18f16a9f943de91d1a0` |
 | [gen3_12turn_detailed_fit.json](../analysis/results/gen3_12turn_detailed_fit.json) | `749d7f0b167a0e6d32d6cb3f0d5699ecca57c1ccbce801a1ea212a12a2cf59b7` |
+| [selected_winding_reclosure.json](../analysis/results/selected_winding_reclosure.json) | `dcf6422a359cc78f2199c951579837e9cc27eb590db8e6a6ca772160042e9e1d` |

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-16: selected winding reclosure and public review
+
+I declared A9g before execution, reran the 12-turn partition through the existing time-domain
+handoff model at two resolutions and checked the current, voltage and energy scaling independently.
+The local-bridge sensitivity retains all 16 assumed loss corners: six satisfy the reference cap.
+Only 10.280918 J remains at the 25 C conduction point. No supplier hot-switching claim follows.
+P11, P39 and P40 remain open; P38 keeps its previous bounded modelled disposition.
+The project now has a visual website linked from this README, with nominal CAD and direct evidence routes.
+
 ## 2026-09-15: reconcile the register against A9b-A9f and A5f-A5h
 
 I read the later run sheets back against the defect register before choosing the next run
