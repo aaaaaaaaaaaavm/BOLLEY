@@ -125,7 +125,7 @@ def render() -> None:
 
     records = [
         {
-            "path": str(path.relative_to(ROOT)),
+            "path": path.relative_to(ROOT).as_posix(),
             "title": title,
             "evidence": evidence,
             "bytes": path.stat().st_size,

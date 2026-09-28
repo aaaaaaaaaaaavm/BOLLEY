@@ -208,7 +208,7 @@ def calculate(input_path: Path = INPUT) -> dict:
 
     return {
         "evidence": "ANALYTICAL THIN-SHEET MODEL OUTPUT from ASSUMPTION geometry/material inputs",
-        "input_file": str(input_path.relative_to(ROOT)),
+        "input_file": input_path.relative_to(ROOT).as_posix(),
         "topology": "four passive aluminium fins per face between symmetric travelling-field stators",
         "geometry": {
             "channel_count": channels,

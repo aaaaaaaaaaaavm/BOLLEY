@@ -92,10 +92,10 @@ def calculate() -> dict:
     return {
         "evidence": "PARAMETRIC CAD MANIFEST AND EXACT NOMINAL SOLID INTERSECTION",
         "input_files": [
-            str(PARAMETERS.relative_to(ROOT)),
-            str(BUILD.relative_to(ROOT)),
-            str(RENDERS.relative_to(ROOT)),
-            str(STATOR_RESULT.relative_to(ROOT)),
+            PARAMETERS.relative_to(ROOT).as_posix(),
+            BUILD.relative_to(ROOT).as_posix(),
+            RENDERS.relative_to(ROOT).as_posix(),
+            STATOR_RESULT.relative_to(ROOT).as_posix(),
         ],
         "geometry": {
             "payload_envelope_mm": [

@@ -37,6 +37,10 @@ def load_parameters() -> dict:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    if path.suffix.lower() == ".json":
+        # Hash the canonical Git text on Windows as well as on Unix.
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n"))
+        return digest.hexdigest()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
@@ -275,12 +279,12 @@ def build() -> None:
         cq.exporters.export(shape, str(stl_path), tolerance=0.15, angularTolerance=0.2)
         record = shape_record(shape)
         record["step"] = {
-            "path": str(step_path.relative_to(ROOT)),
+            "path": step_path.relative_to(ROOT).as_posix(),
             "bytes": step_path.stat().st_size,
             "sha256": sha256(step_path),
         }
         record["stl"] = {
-            "path": str(stl_path.relative_to(ROOT)),
+            "path": stl_path.relative_to(ROOT).as_posix(),
             "bytes": stl_path.stat().st_size,
             "sha256": sha256(stl_path),
         }
@@ -289,7 +293,7 @@ def build() -> None:
         "schema_version": 1,
         "generation": p["generation"],
         "evidence": "PARAMETRIC CAD OUTPUT from ASSUMPTION geometry; no manufacturing release",
-        "parameter_file": str(PARAMETERS.relative_to(ROOT)),
+        "parameter_file": PARAMETERS.relative_to(ROOT).as_posix(),
         "parameter_sha256": sha256(PARAMETERS),
         "master_format": "STEP",
         "derived_format": "STL",
@@ -343,7 +347,7 @@ def check() -> None:
         )
         return
     if present_count != len(artifact_paths):
-        missing = [str(path.relative_to(ROOT)) for path in artifact_paths if not path.exists()]
+        missing = [path.relative_to(ROOT).as_posix() for path in artifact_paths if not path.exists()]
         raise SystemExit(f"partial Gen1 CAD export set; missing {missing}")
     for record in manifest["artifacts"].values():
         for kind in ("step", "stl"):

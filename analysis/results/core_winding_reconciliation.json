@@ -1,0 +1,109 @@
+{
+  "analytical_increment_mm3": 607.926,
+  "artifact_sha256": {
+    "cad/core_winding_reconciled_parameters.json": "8d20e38d1966eb25557054a0a3f9d2493279ccace07e6378bc6cd90d6070344c",
+    "cad/exports/core_reconciliation/Core_With_Haunch.step": "aef5e8885cbf1300783ad989fee762c3088f239cd644dfa265dc795eb76246c0",
+    "cad/exports/core_reconciliation/Lower_Transverse_Coupon.step": "a3a42afb7e4e5129d2e04c590122e4a19ae4be0f5fcc8d8e2cc4342b0b19ecd0",
+    "cad/exports/core_reconciliation/Upper_Transverse_Coupon.step": "ddbaf64d585a3b4833fa45616cea1951d93f1be578558e6cecf417b77a312d11"
+  },
+  "cadquery_version": "2.7.0",
+  "cases": [
+    {
+      "accepted": false,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.0
+      ],
+      "rise_mm": 0
+    },
+    {
+      "accepted": false,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.0
+      ],
+      "rise_mm": 0.5
+    },
+    {
+      "accepted": false,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.0870407617763244
+      ],
+      "rise_mm": 1
+    },
+    {
+      "accepted": false,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.3949687934776479
+      ],
+      "rise_mm": 1.5
+    },
+    {
+      "accepted": true,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.6561623843254586
+      ],
+      "rise_mm": 2
+    },
+    {
+      "accepted": true,
+      "clearance_mm": [
+        0.5499999999999998,
+        0.9914704588453842
+      ],
+      "rise_mm": 3
+    },
+    {
+      "accepted": true,
+      "clearance_mm": [
+        0.5499999999999998,
+        1.045
+      ],
+      "rise_mm": 4
+    }
+  ],
+  "core_volume_increment_mm3": 607.9260000000013,
+  "exact_clearance_mm": [
+    0.5499999999999998,
+    0.6561623843254586
+  ],
+  "intersection_mm3": [
+    0.0,
+    0.0
+  ],
+  "scope": "GEOMETRY_ONLY_NO_NEW_FIELD_ACCEPTANCE",
+  "selected": {
+    "accepted": true,
+    "clearance_mm": [
+      0.5499999999999998,
+      0.6561623843254586
+    ],
+    "rise_mm": 2
+  },
+  "source_sha256": {
+    "analysis/core_winding_reconciliation.py": "12e22575a3f49cb2a097bfd33caa5b3eaed095984fe12fd46d5df85d40b19d6a",
+    "analysis/gen2_field.py": "e266d46b59448a75d92e57b46805e57127a6788390ee692567b742c90d3ca3e7",
+    "cad/gen21_field_parameters.json": "91b82b81cc8ab23729dbbc6a23061f97845e76dc8f6d31b929e5f2d743bf094b",
+    "cad/gen22_field_parameters.json": "da4e78ef80a498091f3d72125671e892a40ebecc3d3f0aff1f6a520f2e4b0ccb",
+    "cad/gen23_field_parameters.json": "94f32cddb210bef44815462b5e82b79391b22863ca1cbcf89698505bffce5770",
+    "cad/gen24_field_parameters.json": "462fc30980060d61afa05a711dd332992ff339b6720c20d43e1e0d68a1e10ff5",
+    "cad/gen25_field_parameters.json": "fa81733c0c536aa283cd8182a4fbd828e4917ba11899165318eec122495a4734",
+    "cad/gen26_field_parameters.json": "82c3ef5d2ed5863fd6d46444b9d9be375a455a274af9c02934b146a79fdfc2b6",
+    "cad/gen27_field_parameters.json": "0bba1051662a3e0a4a4658bf883fe8dc12586e89635c3b62f1cc081f9eb28550",
+    "cad/gen3_12turn_detailed_parameters.json": "b2dc9f040b95f67cc539910bb96429967a349110145022d44dbfb4a74453402d",
+    "cad/gen3_parameters.json": "b91988026d05c5ad44d11ffb0c0a76261c14865329ce2baf6950563504407b99",
+    "validation/A6j_R2_winding_height.md": "28ebc03777c0986ad61da2fc3d3a5273bbf56657e82de5286f9eb06bd29fe1ca",
+    "validation/A6j_core_winding_reconciliation.md": "5273d49f23a6403a36b03f366ae582a8728c757e34e94e6b331105b3669e3005"
+  },
+  "study": "A6j-R2",
+  "verification": {
+    "clearance_agreement": true,
+    "core_increment": true,
+    "no_intersection": true,
+    "original_geometry_rejected": true,
+    "valid_solids": true
+  }
+}

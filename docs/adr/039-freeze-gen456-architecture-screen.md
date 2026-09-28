@@ -1,4 +1,4 @@
-# ADR-039: I freeze the Gen4-Gen6 premise screen
+# ADR-039: I freeze the Gen4-historical study premise screen
 
 - **Date:** 2026-08-28
 - **Status:** accepted as a pre-run declaration
@@ -13,7 +13,7 @@ would close Gen4 but would not answer whether Bolley's premise is still worth it
 ## Decision
 
 I retain Gen4 as the honest closure path for Fluxrelay. I define Gen5 Fluxframe as a net-mass
-architecture and Gen6 Fluxpiston as a bulk-energy architecture. I freeze A10 before writing its
+architecture and historical study Fluxpiston as a bulk-energy architecture. I freeze A10 before writing its
 calculator and require it to expose the 12 m/s / 0.90 m / 8 g consistency check first.
 
 ## Consequences

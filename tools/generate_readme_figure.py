@@ -59,7 +59,7 @@ def render() -> str:
     branches = [
         ("GEN4 · CLOSE THE MACHINE", "Keep Fluxrelay", "sectional switching · failed cells · packaged mass", "A9 and packaged closure remain open", CYAN),
         ("GEN5 · FLUXFRAME", "Make interface do bus work", f"needs {frame['required_displaced_mass_kg']:.5f} kg displaced mass", "credit withheld until a selected-bus ledger", VIOLET),
-        ("GEN6 · FLUXPISTON", "Move the pulse into gas", f"{pressure:.2f} kPa ideal reference mean pressure", "seal leakage, friction and transients open", AMBER),
+        ("LEGACY_STUDY · FLUXPISTON", "Move the pulse into gas", f"{pressure:.2f} kPa ideal reference mean pressure", "seal leakage, friction and transients open", AMBER),
     ]
     for i, (title, premise, metric, boundary, colour) in enumerate(branches):
         x, y = 548, 218 + i * 180

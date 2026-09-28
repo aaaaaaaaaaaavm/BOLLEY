@@ -49,7 +49,7 @@ def calculate() -> dict:
 
     return {
         "evidence": "A9c DERIVED RESISTANCE/TEMPERATURE CEILING FROM COMMITTED MODEL OUTPUTS AND NIST COPPER DATUM",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "a7c_reference_energy_slope_j_per_resistance_multiplier": slope,
         "a9_selector_source_overhead_j": selector_overhead,
         "a9b_margin_to_900j_j": limit - a9b_energy,

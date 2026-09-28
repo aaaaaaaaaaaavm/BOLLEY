@@ -1,0 +1,77 @@
+{
+  "study": "A6j-R1",
+  "cases": [
+    {
+      "rise_mm": 0,
+      "clearance_mm": [
+        0.2999999999999998,
+        0.0
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 0.5,
+      "clearance_mm": [
+        0.2999999999999998,
+        0.0
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 1,
+      "clearance_mm": [
+        0.2999999999999998,
+        0.24616862392568623
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 1.5,
+      "clearance_mm": [
+        0.2999999999999998,
+        0.5321115934909344
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 2,
+      "clearance_mm": [
+        0.2999999999999998,
+        0.765614432384413
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 3,
+      "clearance_mm": [
+        0.2999999999999998,
+        1.0282580865761577
+      ],
+      "accepted": false
+    },
+    {
+      "rise_mm": 4,
+      "clearance_mm": [
+        0.2999999999999998,
+        1.045
+      ],
+      "accepted": false
+    }
+  ],
+  "selected": null,
+  "disposition": "ALL_REJECTED_LOWER_COIL_CLEARANCE_0_30_MM",
+  "source_sha256": {
+    "analysis/core_winding_reconciliation.py": "f4aedea1869e6099da16418daf5a2b9fff593fab317cab6bfe5d6ebe93ce2514",
+    "analysis/gen2_field.py": "e266d46b59448a75d92e57b46805e57127a6788390ee692567b742c90d3ca3e7",
+    "cad/gen3_parameters.json": "b91988026d05c5ad44d11ffb0c0a76261c14865329ce2baf6950563504407b99",
+    "cad/gen3_12turn_detailed_parameters.json": "b2dc9f040b95f67cc539910bb96429967a349110145022d44dbfb4a74453402d",
+    "validation/A6j_core_winding_reconciliation.md": "5273d49f23a6403a36b03f366ae582a8728c757e34e94e6b331105b3669e3005",
+    "cad/gen27_field_parameters.json": "0bba1051662a3e0a4a4658bf883fe8dc12586e89635c3b62f1cc081f9eb28550",
+    "cad/gen26_field_parameters.json": "82c3ef5d2ed5863fd6d46444b9d9be375a455a274af9c02934b146a79fdfc2b6",
+    "cad/gen25_field_parameters.json": "fa81733c0c536aa283cd8182a4fbd828e4917ba11899165318eec122495a4734",
+    "cad/gen24_field_parameters.json": "462fc30980060d61afa05a711dd332992ff339b6720c20d43e1e0d68a1e10ff5",
+    "cad/gen23_field_parameters.json": "94f32cddb210bef44815462b5e82b79391b22863ca1cbcf89698505bffce5770",
+    "cad/gen22_field_parameters.json": "da4e78ef80a498091f3d72125671e892a40ebecc3d3f0aff1f6a520f2e4b0ccb",
+    "cad/gen21_field_parameters.json": "91b82b81cc8ab23729dbbc6a23061f97845e76dc8f6d31b929e5f2d743bf094b"
+  }
+}

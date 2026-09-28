@@ -99,7 +99,7 @@ def calculate() -> dict:
     }
     return {
         "evidence": "A9e SECTIONAL-SELECTOR TOPOLOGY AND 25 C SUPPLIER-CONDUCTION LOWER BOUND",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "current_loss_factor_j_per_ohm": current_loss_factor_j_per_ohm,
         "reference_total_electronics_loss_budget_j": total_electronics_budget,
         "shared_bridge_plus_series_selector": {

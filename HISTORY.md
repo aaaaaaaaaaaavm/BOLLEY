@@ -8,7 +8,7 @@ I reconstructed and promoted the completed A5e nominal CAD result, then used VOL
 requirement-attribution result to question the term Bolley actually removes. I froze A10 before its
 calculator existed. It exposed an inconsistent 12 m/s / 0.90 m / 8 g triplet, quantified the
 121.36 g Gen5 displaced-mass target and identified a low-pressure full-face piston plus short trim
-stage as the Gen6 direction. I corrected the reference duty to 11.8 m/s and promoted only the next
+stage as the historical study direction. I corrected the reference duty to 11.8 m/s and promoted only the next
 gates, not unbuilt machines.
 
 I then froze A11 before its calculator. One missing 8 g control value stopped the first execution

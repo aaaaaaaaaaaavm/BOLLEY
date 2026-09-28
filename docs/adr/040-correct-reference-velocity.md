@@ -23,7 +23,7 @@ requirement.
 ## Consequences
 
 - I close P42 as a requirement correction, not as a design pass.
-- Later Gen4, Gen5 and Gen6 comparisons use 11.8 m/s for the reference case.
+- Later Gen4, Gen5 and historical study comparisons use 11.8 m/s for the reference case.
 - Earlier frozen results remain historical evidence at their declared inputs.
 - I must propagate the 11.8 m/s target into A9 and any mission/orbit case before promotion.
 

@@ -257,8 +257,8 @@ def calculate() -> dict:
 
     return {
         "evidence": "A5f NOMINAL RECTANGULAR-WIRE ENVELOPE AND COPPER-PATH SCREEN",
-        "input_file": str(INPUT.relative_to(ROOT)),
-        "source_files": [str(GEN3.relative_to(ROOT)), str(A9F.relative_to(ROOT))],
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
+        "source_files": [GEN3.relative_to(ROOT).as_posix(), A9F.relative_to(ROOT).as_posix()],
         "candidate_count": len(candidates),
         "candidate_width_range_mm": [candidates[0]["bare_width_mm"], candidates[-1]["bare_width_mm"]],
         "candidate_width_step_mm": search["bare_width_step_mm"],

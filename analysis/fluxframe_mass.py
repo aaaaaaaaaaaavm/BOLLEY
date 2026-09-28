@@ -111,7 +111,7 @@ def calculate() -> dict:
     return {
         "schema": "bolley.fluxframe-mass.result/1",
         "evidence_class": "SOURCED_PUBLIC_MASS_ENVELOPE",
-        "controlled_input": str(INPUT.relative_to(ROOT)),
+        "controlled_input": INPUT.relative_to(ROOT).as_posix(),
         "required_displaced_mass_kg": required_credit,
         "comparators": records,
         "checks": checks,

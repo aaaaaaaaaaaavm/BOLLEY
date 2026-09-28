@@ -245,7 +245,7 @@ def calculate() -> dict:
     return {
         "schema": "bolley.fluxpiston-flow.result/1",
         "evidence_class": "IDEAL_GAS_PLUS_CHOKED_CLEARANCE_FLOW_SCREEN",
-        "controlled_input": str(INPUT.relative_to(ROOT)),
+        "controlled_input": INPUT.relative_to(ROOT).as_posix(),
         "case_summaries": case_summaries,
         "grid": records,
         "campaign": {

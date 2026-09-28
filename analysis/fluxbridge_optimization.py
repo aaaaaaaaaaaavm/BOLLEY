@@ -303,8 +303,8 @@ def calculate() -> dict:
     )
     return {
         "evidence": "A3g ROBUST CONSTRAINED ANALYTICAL DESIGN-SPACE SEARCH",
-        "base_input_file": str(BASE_INPUT.relative_to(ROOT)),
-        "search_input_file": str(SEARCH_INPUT.relative_to(ROOT)),
+        "base_input_file": BASE_INPUT.relative_to(ROOT).as_posix(),
+        "search_input_file": SEARCH_INPUT.relative_to(ROOT).as_posix(),
         "selection_rule": fixed["objective"],
         "candidate_count": len(candidate_records),
         "corners_per_candidate": len(robustness_corners),

@@ -20,5 +20,5 @@ temperature before writing the calculator.
 - I will know whether replenishing leakage is grams or hundreds of grams per shot.
 - I will size only an equivalent supply orifice and reservoir volume, not claim a valve or tank.
 - I keep contact friction, rarefied flow, thermal transients, contamination and plume impulse open.
-- I do not draw Gen6 CAD from a passing ideal-gas calculation.
+- I do not draw historical study CAD from a passing ideal-gas calculation.
 

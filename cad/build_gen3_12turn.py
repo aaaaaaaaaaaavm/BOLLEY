@@ -37,6 +37,9 @@ def load(path: Path) -> dict:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    if path.suffix.lower() == ".json":
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n"))
+        return digest.hexdigest()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
@@ -162,8 +165,8 @@ def build() -> dict:
         normalize_step_header(step_path)
         cq.exporters.export(shape, str(stl_path), tolerance=0.12, angularTolerance=0.2)
         item = shape_record(shape)
-        item["step"] = {"path": str(step_path.relative_to(ROOT)), "bytes": step_path.stat().st_size, "sha256": sha256(step_path)}
-        item["stl"] = {"path": str(stl_path.relative_to(ROOT)), "bytes": stl_path.stat().st_size, "sha256": sha256(stl_path)}
+        item["step"] = {"path": step_path.relative_to(ROOT).as_posix(), "bytes": step_path.stat().st_size, "sha256": sha256(step_path)}
+        item["stl"] = {"path": stl_path.relative_to(ROOT).as_posix(), "bytes": stl_path.stat().st_size, "sha256": sha256(stl_path)}
         artifacts[name] = item
 
     # Geometry repeats every two cells because only the lower/upper winding layer alternates.
@@ -185,11 +188,11 @@ def build() -> dict:
     result = {
         "schema_version": 1,
         "evidence": "A5h DETAILED MAXIMUM-INSULATION CONDUCTOR-ENVELOPE CAD; nominal only",
-        "parameter_file": str(PARAMETERS.relative_to(ROOT)),
+        "parameter_file": PARAMETERS.relative_to(ROOT).as_posix(),
         "parameter_sha256": sha256(PARAMETERS),
-        "source_sha256": {str(path.relative_to(ROOT)): sha256(path) for path in
+        "source_sha256": {path.relative_to(ROOT).as_posix(): sha256(path) for path in
                           (PARAMETERS, GEN3, A5G, Path(__file__), CAD / "build_gen2.py")},
-        "source_a5g": str(A5G.relative_to(ROOT)),
+        "source_a5g": A5G.relative_to(ROOT).as_posix(),
         "artifacts": artifacts,
         "fit_checks": {
             "turn_solid_count_per_cell": artifacts[PART_NAMES[0]]["solid_count"],
@@ -214,7 +217,7 @@ def build() -> dict:
 
 def check() -> None:
     manifest = load(MANIFEST)
-    expected = {str(path.relative_to(ROOT)) for path in
+    expected = {path.relative_to(ROOT).as_posix() for path in
                 (PARAMETERS, GEN3, A5G, Path(__file__), CAD / "build_gen2.py")}
     if set(manifest.get("source_sha256", {})) != expected:
         raise SystemExit("A5h source inventory is incomplete; rebuild")

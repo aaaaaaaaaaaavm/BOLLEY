@@ -65,12 +65,12 @@ full solver and CAD reconstruction remain distinct from artifact checks.
 
 | Source | SHA-256 |
 |---|---|
-| [sectional_drive_a9b.json](../analysis/results/sectional_drive_a9b.json) | `ca6a03cfb21ff5760d1764725571e9f57c9e9fdd4e0226cbc19284f9bed2b972` |
-| [hot_winding_margin.json](../analysis/results/hot_winding_margin.json) | `b79bd435a70a060a7ff8eb8afb4af39afd1cdf2c4e9eadc892a0d46d8caf20f1` |
-| [supplier_bridge_screen.json](../analysis/results/supplier_bridge_screen.json) | `f0065bf5d463e3ce56aaf3397242dd978fbbfdc808fd7a57e302b240e7eb26d0` |
-| [selector_realization_screen.json](../analysis/results/selector_realization_screen.json) | `19c96292498b91947fcaab70e926c8152ea512927bf4556c417c0c2dc89d5753` |
-| [turn_current_exchange.json](../analysis/results/turn_current_exchange.json) | `7e112a7a432771ae9ede17704f45f80275e3967f147564db9655cedae8ed35bd` |
-| [gen3_12turn_winding_fit.json](../analysis/results/gen3_12turn_winding_fit.json) | `02e347838230732e90b35291ad581d8c777bae2cdfb3099aad87fda4c8237325` |
-| [gen3_12turn_path_fit.json](../analysis/results/gen3_12turn_path_fit.json) | `0a721b355f1b719a0d547fa97d7fc16833e103a21311a18f16a9f943de91d1a0` |
-| [gen3_12turn_detailed_fit.json](../analysis/results/gen3_12turn_detailed_fit.json) | `749d7f0b167a0e6d32d6cb3f0d5699ecca57c1ccbce801a1ea212a12a2cf59b7` |
-| [selected_winding_reclosure.json](../analysis/results/selected_winding_reclosure.json) | `dcf6422a359cc78f2199c951579837e9cc27eb590db8e6a6ca772160042e9e1d` |
+| [sectional_drive_a9b.json](../analysis/results/sectional_drive_a9b.json) | `3c6b148d7253a9aa5a0b818457fede01ba415ec64c2daed3f83ce25a08c3e039` |
+| [hot_winding_margin.json](../analysis/results/hot_winding_margin.json) | `cb2cc352b87c40492550b5a4b7dbc36b30ae2287cb49319ad2552e9090e20fa1` |
+| [supplier_bridge_screen.json](../analysis/results/supplier_bridge_screen.json) | `262ce460c7d1d4f34583348cb97e0a27340c47bcfcf35f04a639c988a42dbced` |
+| [selector_realization_screen.json](../analysis/results/selector_realization_screen.json) | `d9104b77bf02371a92a33325050730560dea313ddf17836b8999470d7c4d681b` |
+| [turn_current_exchange.json](../analysis/results/turn_current_exchange.json) | `1f7ffdef6d243df410ce3105c57eac5a67b94b9e38ceea16522f3a4c57113afa` |
+| [gen3_12turn_winding_fit.json](../analysis/results/gen3_12turn_winding_fit.json) | `47071563ff780121df93f60e681b10804d851c5fc803e78be9cc133737016203` |
+| [gen3_12turn_path_fit.json](../analysis/results/gen3_12turn_path_fit.json) | `acec4ff5676548029850eab267052d3e3010814567c9c3283e0dbe6d2a6034fc` |
+| [gen3_12turn_detailed_fit.json](../analysis/results/gen3_12turn_detailed_fit.json) | `97372bbd548839fb808c40919811bbe526518a2425d0ff1d497ba6b0e6896962` |
+| [selected_winding_reclosure.json](../analysis/results/selected_winding_reclosure.json) | `ef748f521e0f44e4ef2b3df5e6455a28cb892c21e82cb8d3d3a51363289f9ed2` |

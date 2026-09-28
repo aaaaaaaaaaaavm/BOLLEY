@@ -33,6 +33,9 @@ def load(path: Path = PARAMETERS) -> dict:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    if path.suffix.lower() == ".json":
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n"))
+        return digest.hexdigest()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
@@ -348,7 +351,7 @@ def build() -> None:
         record = shape_record(shape)
         for kind, path in (("step", step_path), ("stl", stl_path)):
             record[kind] = {
-                "path": str(path.relative_to(ROOT)),
+                "path": path.relative_to(ROOT).as_posix(),
                 "bytes": path.stat().st_size,
                 "sha256": sha256(path),
             }
@@ -397,9 +400,9 @@ def build() -> None:
         "schema_version": 1,
         "generation": p["generation"],
         "evidence": "PARAMETRIC CAD OUTPUT from A3g-controlled ASSUMPTION geometry; no manufacturing release",
-        "parameter_file": str(PARAMETERS.relative_to(ROOT)),
+        "parameter_file": PARAMETERS.relative_to(ROOT).as_posix(),
         "parameter_sha256": sha256(PARAMETERS),
-        "a3g_result_file": str(A3G_RESULT.relative_to(ROOT)),
+        "a3g_result_file": A3G_RESULT.relative_to(ROOT).as_posix(),
         "a3g_result_sha256": sha256(A3G_RESULT),
         "master_format": "STEP",
         "derived_format": "STL",

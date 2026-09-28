@@ -319,7 +319,7 @@ def calculate() -> dict:
     preferences = control["preferences"]
     return {
         "evidence": "A7c SELECTED-POINT POST-FIELD HOMOGENIZED CAGE + LUMPED SECTIONAL CIRCUIT/CG SHOT MODEL",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "source_files": control["source_files"],
         "selected_candidate_id": selected["candidate_id"],
         "field_trace": {
@@ -410,7 +410,9 @@ def package_points(result: dict) -> tuple[bytes, int]:
                     ]
                 )
                 record_count += 1
-    payload = gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0)
+    payload = bytearray(gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0))
+    payload[9] = 3  # Match the committed, platform-independent gzip header.
+    payload = bytes(payload)
     return payload, record_count
 
 
@@ -422,7 +424,7 @@ def main() -> None:
     result = calculate()
     points, point_count = package_points(result)
     result["cg_point_artifact"] = {
-        "path": str(POINTS_OUTPUT.relative_to(ROOT)),
+        "path": POINTS_OUTPUT.relative_to(ROOT).as_posix(),
         "compression": "deterministic gzip CSV, mtime=0",
         "record_count": point_count,
         "bytes": len(points),

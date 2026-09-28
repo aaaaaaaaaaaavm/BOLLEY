@@ -12,7 +12,7 @@ VOLLEY and BOLLEY. It contains hypotheses that are not yet allowed to change eit
 - the rejected buried return, comb, shared-pole and Fluxfoil winding geometries;
 - the Gen2 field iterations that led to Fluxrelay;
 - the A6h/A7c/A5e Gen3 controlled baseline;
-- Fluxframe and Fluxpiston as the current named Gen5 and Gen6 questions;
+- Fluxframe and Fluxpiston as the current named Gen5 and historical study questions;
 - every open problem and the evidence boundary attached to it.
 
 Those items explain Bolley. Moving them would make the present design look cleaner and the record

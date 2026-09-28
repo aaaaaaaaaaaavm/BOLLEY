@@ -208,7 +208,7 @@ def render() -> None:
 
     records = [
         {
-            "path": str(figure_path.relative_to(ROOT)),
+            "path": figure_path.relative_to(ROOT).as_posix(),
             "title": title,
             "evidence": evidence,
             "bytes": figure_path.stat().st_size,

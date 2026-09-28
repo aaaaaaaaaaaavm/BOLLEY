@@ -139,7 +139,7 @@ def calculate() -> dict:
     return {
         "evidence": "A5e PARAMETRIC GEN3 CAD + EXACT NOMINAL SOLID INTERSECTION + ARCHIVE MANIFEST",
         "input_files": [
-            str(path.relative_to(ROOT))
+            path.relative_to(ROOT).as_posix()
             for path in (PARAMETERS, BUILD, RENDERS, PACKAGE, A8B, A6H, A7C)
         ],
         "selected_candidate_id": selected["candidate_id"],

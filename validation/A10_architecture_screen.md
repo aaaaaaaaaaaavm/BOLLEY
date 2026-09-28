@@ -1,4 +1,4 @@
-# A10, my Gen4-Gen6 architecture screen
+# A10, my Gen4-historical study architecture screen
 
 **State: RUN. My immutable bands produced 7 PASS, 2 FAIL, 1 OPEN and 2 REPORT results.**
 
@@ -17,11 +17,11 @@ The calculation script and result do not exist in this declaration commit.
 | 2 | Gen5 displaced-mass threshold | I report the exact bus mass Fluxframe must replace to meet 0.25 kg net added mass | I will not award an unevidenced multifunctional mass credit |
 | 3 | Fluxpiston reference pressure | Required mean pressure is at most 50 kPa over a 0.01 m2 effective face | The full-face piston does not buy the expected low-pressure regime |
 | 4 | Fluxpiston qualification pressure | Required mean pressure is at most 50 kPa for 6 kg at 10 m/s | The qualification case needs a materially different pressure architecture |
-| 5 | Longitudinal force | Both pressure cases remain at or below 8 g nominal acceleration | Gen6 solves energy by violating my load requirement |
+| 5 | Longitudinal force | Both pressure cases remain at or below 8 g nominal acceleration | historical study solves energy by violating my load requirement |
 | 6 | Short electromagnetic trim energy | +/-0.25 m/s at either target needs at most 25 J of kinetic-energy correction | The “trim-only” motor is still a bulk launcher in disguise |
-| 7 | First interface-mass allocation | Pressure cup plus short passive trim secondary is at most 0.25 kg | Gen6 immediately misses the preference before seals, fasteners or structure are added |
-| 8 | Spacecraft passivity | No spacecraft power, software, permanent magnet, pyrotechnic or pressure vessel is required | Gen6 leaves Bolley's premise |
-| 9 | No outgoing launcher mover | No launcher propulsion member follows the payload into orbit | Gen6 recreates the capture problem |
+| 7 | First interface-mass allocation | Pressure cup plus short passive trim secondary is at most 0.25 kg | historical study immediately misses the preference before seals, fasteners or structure are added |
+| 8 | Spacecraft passivity | No spacecraft power, software, permanent magnet, pyrotechnic or pressure vessel is required | historical study leaves Bolley's premise |
+| 9 | No outgoing launcher mover | No launcher propulsion member follows the payload into orbit | historical study recreates the capture problem |
 | 10 | Seal evidence | I report sealing/leakage as OPEN rather than infer it from ideal pressure work | An ideal gas calculation is being mistaken for a pressure mechanism |
 | 11 | Burn-and-drop timing | I report the thrust-arc time at 0.10, 0.25 and 0.50 m/s2 without calling it free | The mission-level comparator is hidden from the mechanism trade |
 | 12 | Strainrail specific energy | Required stored energy is at most 350 J/kg of current interface mass | The passive structural store uses material-limit arithmetic rather than a buildable margin |
@@ -29,7 +29,7 @@ The calculation script and result do not exist in this declaration commit.
 ## Disposition rule
 
 I will not select a winner by counting passes. A concept can advance only if it changes the
-controlling requirement and its failures open finite, testable next gates. Gen6 may advance as an
+controlling requirement and its failures open finite, testable next gates. historical study may advance as an
 architecture candidate with band 10 intentionally OPEN; it may not be described as closed until a
 leakage/contact model and then a test exist.
 

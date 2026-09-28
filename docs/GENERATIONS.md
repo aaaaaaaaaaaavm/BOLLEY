@@ -8,7 +8,7 @@ render or a renamed winding is not a new generation.
 | Gen3, Fluxrelay | Can my cooperative passive cage and sectional primary close field, circuit and nominal geometry together? | Five-lane magnetic/copper cage; 27-cell four-face primary | A6h, A7c and A5e pass as models; no hardware exists |
 | Gen4, controlled Fluxrelay | Can the selected machine switch, tolerate a failed cell, fit its structure/cooling/electronics and retain its narrow energy margin? | Gen3 hardware plus explicit sectional commutation and packaged launcher | A9 transient, tolerance, structure, thermal and packaged-mass gates remain open |
 | Gen5, Fluxframe | Can the spacecraft-side hardware earn its mass by replacing structure, thermal spreading, grounding and guidance hardware rather than being an added cage? | I co-design the passive electromagnetic lanes as a multifunctional side-frame | A12 shows the public mass envelope is large enough to investigate; I still grant zero credit until a bus-specific ledger and coupled models exist |
-| Gen6, Fluxpiston | Can I delete the pulse chain by making the cooperative interface the pressure piston, while a short electromagnetic section performs only trim, centring and exit shaping? | Low-pressure stage tube + passive aft pressure cup/seal land + short Fluxrelay/null-flux trim | A10 and A11 bound ideal work and controlled leakage; contact, gas transient, 6-DOF exit and host integration remain kill gates |
+| historical study, Fluxpiston | Can I delete the pulse chain by making the cooperative interface the pressure piston, while a short electromagnetic section performs only trim, centring and exit shaping? | Low-pressure stage tube + passive aft pressure cup/seal land + short Fluxrelay/null-flux trim | A10 and A11 bound ideal work and controlled leakage; contact, gas transient, 6-DOF exit and host integration remain kill gates |
 
 ## Why Gen5 is not “lighter Fluxrelay”
 
@@ -24,7 +24,7 @@ I do not award the credits because multifunctional structures exist in the liter
 work only to justify the design question. A particular CubeSat must show which rail, frame, heat
 spreader, ground strap or shield is actually removed.
 
-## Why Gen6 is not “VOLLEY copied into Bolley”
+## Why historical study is not “VOLLEY copied into Bolley”
 
 VOLLEY puts a small piston in a long stage tube because its payload must remain unmodified. Bolley
 already permits a passive spacecraft interface. I can therefore ask the opposite question: can the
@@ -43,7 +43,7 @@ I keep a short electromagnetic section only if it earns at least one of four job
 4. I shape the final force decay so the exit does not manufacture tip-off.
 
 If measured sealing makes the gas shot precise enough, I delete the trim section. If the seal or
-rear-face load fails, Gen6 stops even if its ideal energy arithmetic is beautiful.
+rear-face load fails, historical study stops even if its ideal energy arithmetic is beautiful.
 
 ## Mission-level off-ramp
 

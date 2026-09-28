@@ -130,7 +130,7 @@ def calculate() -> dict:
     infineon_pass = [record for record in infineon_records if record["pass"]]
     return {
         "evidence": "A9d SUPPLIER-DATASHEET 25 C BRIDGE-CONDUCTION LOWER BOUND",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "shot_time_s": duration,
         "reference_noninverter_machine_energy_j": reference_noninverter,
         "qualification_noninverter_machine_energy_j": qualification_noninverter,
