@@ -51,7 +51,7 @@
     {
       "id": 7,
       "limit": 0.25,
-      "name": "First Gen6 interface mass allocation",
+      "name": "First LegacyStudy interface mass allocation",
       "note": "Assumptions only; this excludes seal, capture, fasteners and structure.",
       "status": "PASS",
       "value": 0.2
@@ -135,7 +135,7 @@
     "burn_and_drop": "RETAIN_AS_MISSION_LEVEL_COMPARATOR",
     "gen4": "RETAIN_FOR_A9_AND_PACKAGED_CLOSURE",
     "gen5": "PROMOTE_ONLY_TO_BUS_SPECIFIC_NET_MASS_GATE",
-    "gen6": "PROMOTE_ONLY_TO_SEAL_PRESSURE_TRANSIENT_AND_TRIM_AUTHORITY_GATES",
+    "legacy_study": "PROMOTE_ONLY_TO_SEAL_PRESSURE_TRANSIENT_AND_TRIM_AUTHORITY_GATES",
     "requirements": "REJECT_INCONSISTENT_TRIPLET_AND_CORRECT_BY_ADR",
     "strainrail": "REJECT_AT_CURRENT_MASS_AND_SPECIFIC_ENERGY_BAND"
   },

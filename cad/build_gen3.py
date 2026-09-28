@@ -38,6 +38,9 @@ def load(path: Path = PARAMETERS) -> dict:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    if path.suffix.lower() == ".json":
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n"))
+        return digest.hexdigest()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
@@ -295,7 +298,7 @@ def build() -> None:
         record = shape_record(shape)
         for kind, path in (("step", step_path), ("stl", stl_path)):
             record[kind] = {
-                "path": str(path.relative_to(ROOT)),
+                "path": path.relative_to(ROOT).as_posix(),
                 "bytes": path.stat().st_size,
                 "sha256": sha256(path),
             }
@@ -356,10 +359,10 @@ def build() -> None:
         "schema_version": 1,
         "generation": p["generation"],
         "evidence": "PARAMETRIC CAD OUTPUT from the A6h/A7c-passing selected point; no manufacturing release",
-        "parameter_file": str(PARAMETERS.relative_to(ROOT)),
+        "parameter_file": PARAMETERS.relative_to(ROOT).as_posix(),
         "parameter_sha256": sha256(PARAMETERS),
         "source_results": {
-            str(path.relative_to(ROOT)): sha256(path)
+            path.relative_to(ROOT).as_posix(): sha256(path)
             for path in (A8B_RESULT, A6H_RESULT, A7C_RESULT)
         },
         "selected_candidate_id": selected["candidate_id"],
@@ -386,7 +389,7 @@ def check() -> None:
     if manifest["parameter_sha256"] != sha256(PARAMETERS):
         raise SystemExit("cad/BUILD_GEN3.json is stale relative to cad/gen3_parameters.json")
     for path in (A8B_RESULT, A6H_RESULT, A7C_RESULT):
-        key = str(path.relative_to(ROOT))
+        key = path.relative_to(ROOT).as_posix()
         if manifest["source_results"].get(key) != sha256(path):
             raise SystemExit(f"cad/BUILD_GEN3.json is stale relative to {key}")
     if set(manifest["artifacts"]) != set(PART_NAMES):

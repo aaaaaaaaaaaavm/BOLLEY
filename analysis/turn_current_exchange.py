@@ -148,7 +148,7 @@ def calculate() -> dict:
 
     return {
         "evidence": "A9f FIXED-MMF TURN/CURRENT EXCHANGE WITH 25 C SUPPLIER LOCAL-BRIDGE CONDUCTION",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "healthy_voltage_limit_with_inherited_10pct_margin_v": healthy_voltage_limit_with_margin,
         "candidate_count": len(candidates),
         "feasible_candidate_count": len(feasible),

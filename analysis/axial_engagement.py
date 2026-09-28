@@ -240,7 +240,7 @@ def calculate() -> tuple[dict, dict[str, list[dict]]]:
     }
     result = {
         "evidence": "A8a AXIAL OVERLAP + CURRENT-LIMITED KINEMATIC AUDIT",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "source_files": control["source_files"],
         "as_drawn_rated": as_drawn_rated_summary,
         "as_drawn_limited_boost": as_drawn_boost_summary,
@@ -320,7 +320,9 @@ def package_points(profiles: dict[str, list[dict]]) -> tuple[bytes, int]:
                 ],
             ]
         )
-    payload = gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0)
+    payload = bytearray(gzip.compress(stream.getvalue().encode("utf-8"), compresslevel=9, mtime=0))
+    payload[9] = 3  # Match the committed, platform-independent gzip header.
+    payload = bytes(payload)
     return payload, row_count
 
 
@@ -332,7 +334,7 @@ def main() -> None:
     result, profiles = calculate()
     points, point_count = package_points(profiles)
     result["profile_artifact"] = {
-        "path": str(POINTS_OUTPUT.relative_to(ROOT)),
+        "path": POINTS_OUTPUT.relative_to(ROOT).as_posix(),
         "compression": "deterministic gzip CSV, mtime=0",
         "record_count": point_count,
         "bytes": len(points),

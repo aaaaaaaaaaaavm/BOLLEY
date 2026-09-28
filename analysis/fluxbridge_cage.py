@@ -532,7 +532,7 @@ def calculate() -> dict:
     failed = [name for name, passed in bands.items() if not passed]
     return {
         "evidence": "A3f HOMOGENIZED PASSIVE-CAGE + LUMPED MAGNETIC/CIRCUIT MODEL OUTPUT",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "topology": architecture["topology"],
         "interface": {
             "active_area_per_channel_m2": active_area_per_channel,

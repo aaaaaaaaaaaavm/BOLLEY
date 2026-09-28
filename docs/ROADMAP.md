@@ -26,7 +26,7 @@ no CAD beauty work in place of those gates.
 **Exit:** one bus-specific Fluxframe closes net mass and does not degrade any function it claims to
 replace. Until then Gen5 is a threshold, not a machine.
 
-## Gen6 workstream — delete the pulse before I draw the machine
+## historical study workstream — delete the pulse before I draw the machine
 
 - I model a 0.01 m2 full-face pressure interface, reservoir/valve transient and 9 L swept tube.
 - I model leakage and contact around the roughly 400 mm moving perimeter across tolerance and
@@ -36,7 +36,7 @@ replace. Until then Gen5 is a threshold, not a machine.
 - I close the aft-face structural load path and gas-release contamination/plume boundary.
 - I size a short passive trim secondary only after the gas dispersion is known.
 - I compare differential/null-flux centring against ordinary guide contact.
-- I run six-degree-of-freedom exit dynamics before any full Gen6 CAD.
+- I run six-degree-of-freedom exit dynamics before any full historical study CAD.
 
 **Exit:** a predeclared pressure/seal/trim point meets 11.8 m/s and 10 m/s cases without a payload
 pressure vessel or a launcher member leaving with the satellite. A seal coupon remains mandatory.

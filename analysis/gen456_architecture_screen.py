@@ -1,4 +1,4 @@
-"""Bolley A10: architecture-independent Gen4-Gen6 premise screen."""
+"""Bolley A10: architecture-independent Gen4-LegacyStudy premise screen."""
 
 from __future__ import annotations
 
@@ -177,7 +177,7 @@ def calculate() -> dict:
         ),
         band(
             7,
-            "First Gen6 interface mass allocation",
+            "First LegacyStudy interface mass allocation",
             first_interface_allocation,
             control["interface_mass_preference_kg"],
             "PASS"
@@ -238,7 +238,7 @@ def calculate() -> dict:
     return {
         "schema": "bolley.gen456.architecture-screen.result/1",
         "evidence_class": "FIRST_ORDER_ARCHITECTURE_SCREEN",
-        "controlled_input": str(INPUT.relative_to(ROOT)),
+        "controlled_input": INPUT.relative_to(ROOT).as_posix(),
         "kinematic_consistency": {
             "maximum_velocity_at_8g_over_0p9m_m_s": maximum_velocity,
             "acceleration_required_for_12m_s_g": required_acceleration_for_12 / gravity,
@@ -272,7 +272,7 @@ def calculate() -> dict:
             "requirements": "REJECT_INCONSISTENT_TRIPLET_AND_CORRECT_BY_ADR",
             "gen4": "RETAIN_FOR_A9_AND_PACKAGED_CLOSURE",
             "gen5": "PROMOTE_ONLY_TO_BUS_SPECIFIC_NET_MASS_GATE",
-            "gen6": "PROMOTE_ONLY_TO_SEAL_PRESSURE_TRANSIENT_AND_TRIM_AUTHORITY_GATES",
+            "legacy_study": "PROMOTE_ONLY_TO_SEAL_PRESSURE_TRANSIENT_AND_TRIM_AUTHORITY_GATES",
             "strainrail": "REJECT_AT_CURRENT_MASS_AND_SPECIFIC_ENERGY_BAND",
             "burn_and_drop": "RETAIN_AS_MISSION_LEVEL_COMPARATOR",
         },

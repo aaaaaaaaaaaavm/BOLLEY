@@ -22,6 +22,9 @@ def sha256_bytes(payload: bytes) -> str:
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
+    if path.suffix.lower() == ".json":
+        digest.update(path.read_bytes().replace(b"\r\n", b"\n"))
+        return digest.hexdigest()
     with path.open("rb") as handle:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
@@ -48,14 +51,14 @@ def build_archive(kind: str, manifest: dict) -> dict:
             records.append(
                 {
                     "part": part_name,
-                    "source_path": str(source.relative_to(ROOT)),
+                    "source_path": source.relative_to(ROOT).as_posix(),
                     "archive_member": member,
                     "bytes": len(payload),
                     "sha256": sha256_bytes(payload),
                 }
             )
     return {
-        "path": str(archive.relative_to(ROOT)),
+        "path": archive.relative_to(ROOT).as_posix(),
         "bytes": archive.stat().st_size,
         "sha256": sha256(archive),
         "member_count": len(records),
@@ -73,7 +76,7 @@ def write() -> None:
         "schema_version": 1,
         "generation": "Gen2",
         "evidence": "DETERMINISTIC ARCHIVES OF CAD OUTPUT; not a manufacturing release",
-        "build_manifest": str(BUILD.relative_to(ROOT)),
+        "build_manifest": BUILD.relative_to(ROOT).as_posix(),
         "build_manifest_sha256": sha256(BUILD),
         "fixed_zip_timestamp": "2026-08-13T00:00:00",
         "packages": packages,

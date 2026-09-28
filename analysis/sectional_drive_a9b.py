@@ -93,7 +93,7 @@ def calculate() -> dict:
     return {
         "evidence": "A9b NUMERICAL RECLOSURE OF COMMITTED A9 USING THE EXISTING RESIDUAL FLOOR",
         "source_solver": "analysis/sectional_drive.py",
-        "source_failure_record": str(A9_FAILURE.relative_to(ROOT)),
+        "source_failure_record": A9_FAILURE.relative_to(ROOT).as_posix(),
         "residual_floor_n": RESIDUAL_FLOOR,
         "fine_raw_minimum_force_n": raw_minimum,
         "fine_snapped_minimum_force_n": snapped_minimum,

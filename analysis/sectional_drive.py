@@ -482,8 +482,8 @@ def calculate() -> dict:
             "A9 IDEAL-CURRENT-TRACKING TIME-DOMAIN SECTIONAL SELECTOR ENVELOPE; "
             "nonregenerative incoming-cell magnetic charge is added to A7c"
         ),
-        "input_file": str(INPUT.relative_to(ROOT)),
-        "source_result_file": str(A7C_RESULT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
+        "source_result_file": A7C_RESULT.relative_to(ROOT).as_posix(),
         "model": {
             "handoff_law": (
                 "One cell transfers with I_out=I*cos(theta), I_in=I*sin(theta) "

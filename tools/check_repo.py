@@ -99,7 +99,9 @@ def check_repository_surfaces() -> None:
     missing = [path for path in required if not (ROOT / path).exists()]
     if missing:
         raise SystemExit(f"missing repository surfaces: {missing}")
-    licence_digest = hashlib.sha256((ROOT / "LICENSE").read_bytes()).hexdigest()
+    # Git stores the canonical LF text; Windows may check it out with CRLF.
+    licence_bytes = (ROOT / "LICENSE").read_bytes().replace(b"\r\n", b"\n")
+    licence_digest = hashlib.sha256(licence_bytes).hexdigest()
     expected_cc_by_40 = "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
     if licence_digest != expected_cc_by_40:
         raise SystemExit("LICENSE is not the frozen CC BY 4.0 legal text")
@@ -180,6 +182,8 @@ def main() -> None:
         {"gen3_12turn_path_fit.json"},
         {"gen3_12turn_detailed_fit.json"},
         {"selected_winding_reclosure.json"},
+        {"core_winding_reconciliation.json"},
+        {"reconciled_wire_field.json"},
     ]
     for stage_results in late_stages:
         valid_sets += (valid_sets[-1] | stage_results,)

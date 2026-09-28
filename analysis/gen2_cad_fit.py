@@ -119,11 +119,11 @@ def calculate() -> dict:
     return {
         "evidence": "A5d PARAMETRIC CAD + EXACT NOMINAL SOLID INTERSECTION + ARCHIVE MANIFEST",
         "input_files": [
-            str(PARAMETERS.relative_to(ROOT)),
-            str(BUILD.relative_to(ROOT)),
-            str(RENDERS.relative_to(ROOT)),
-            str(PACKAGE.relative_to(ROOT)),
-            str(A3G.relative_to(ROOT)),
+            PARAMETERS.relative_to(ROOT).as_posix(),
+            BUILD.relative_to(ROOT).as_posix(),
+            RENDERS.relative_to(ROOT).as_posix(),
+            PACKAGE.relative_to(ROOT).as_posix(),
+            A3G.relative_to(ROOT).as_posix(),
         ],
         "selected_a3g_candidate_id": a3g["selected_candidate_id"],
         "geometry": {

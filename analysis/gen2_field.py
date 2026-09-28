@@ -710,7 +710,7 @@ def calculate() -> tuple[dict, dict[str, MeshSolution]]:
     failed = [name for name, passed in bands.items() if not passed]
     result = {
         "evidence": f"{GATE_LABEL} INDEPENDENTLY MESHED 2D NONLINEAR RMS-EQUIVALENT MAGNETOSTATIC FEA",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "formulation": p["solver"]["formulation"],
         "mesh_results": {name: solution.metrics for name, solution in solutions.items()},
         "convergence": convergence,
@@ -834,7 +834,7 @@ def render_figures(result: dict, solutions: dict[str, MeshSolution]) -> None:
     for path, title, evidence in figures:
         records.append(
             {
-                "path": str(path.relative_to(ROOT)),
+                "path": path.relative_to(ROOT).as_posix(),
                 "title": title,
                 "evidence": evidence,
                 "bytes": path.stat().st_size,

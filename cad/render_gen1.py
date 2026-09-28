@@ -93,7 +93,7 @@ def generate() -> None:
         render_scene(items, bounds, view, title, note, path)
         records.append(
             {
-                "path": str(path.relative_to(ROOT)),
+                "path": path.relative_to(ROOT).as_posix(),
                 "bytes": path.stat().st_size,
                 "sha256": sha256(path),
                 "evidence": evidence,

@@ -1,5 +1,7 @@
 # BOLLEY
 
+> **Programme correction, 2026-09-28:** VOLLEY's Gen6 is in development; its independent spring-cell bank is withdrawn as the selected architecture. BOLLEY remains a separate cooperative-payload study. The later [wire-resolved field screen](docs/RECONCILED_WIRE_FIELD.md) rejects the exact proposed powered coupon: the lower placement fails slot flux balance, and the upper placement fails the stationary-core field band. Earlier nominal winding and electrical passes do not override that disposition. Nothing here is a measured hardware result.
+
 **What changes if the satellite carries a passive reaction interface?**
 
 I am developing a cooperative CubeSat deployer alongside [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY).

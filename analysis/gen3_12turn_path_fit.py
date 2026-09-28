@@ -176,8 +176,8 @@ def calculate() -> dict:
     selected = min(passing, key=selection_key) if passing else None
     return {
         "evidence": "A5g PATH-CORRECTED 12-TURN RECTANGULAR-WIRE ENVELOPE SCREEN",
-        "input_file": str(INPUT.relative_to(ROOT)),
-        "source_result_file": str(A9F.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
+        "source_result_file": A9F.relative_to(ROOT).as_posix(),
         "candidate_count": len(candidates),
         "candidate_width_range_mm": [candidates[0]["bare_width_mm"], candidates[-1]["bare_width_mm"]],
         "candidate_width_step_mm": search["bare_width_step_mm"],

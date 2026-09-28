@@ -72,7 +72,7 @@ temperature through the shot; the next physical article must measure leakage and
 representative perimeter coupon.
 
 See my immutable [A11 run sheet](../validation/A11_fluxpiston_flow.md) and
-[Gen6 definition](GENERATIONS.md).
+[LegacyStudy definition](GENERATIONS.md).
 """
 
 

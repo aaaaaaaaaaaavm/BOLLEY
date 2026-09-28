@@ -595,7 +595,7 @@ def calculate() -> dict:
     preferences = control["preferences"]
     return {
         "evidence": "A8b COUPLED AXIAL / SECTIONAL-WINDING / CAGE-CIRCUIT DESIGN-SPACE SEARCH",
-        "input_file": str(INPUT.relative_to(ROOT)),
+        "input_file": INPUT.relative_to(ROOT).as_posix(),
         "source_files": control["source_files"],
         "selection_rule": fixed["selection_rule"],
         "candidate_count": len(candidate_records),
@@ -639,9 +639,11 @@ def package(result: dict) -> tuple[dict, bytes]:
     raw = (
         json.dumps(candidates, separators=(",", ":"), sort_keys=True) + "\n"
     ).encode("utf-8")
-    compressed = gzip.compress(raw, compresslevel=9, mtime=0)
+    compressed = bytearray(gzip.compress(raw, compresslevel=9, mtime=0))
+    compressed[9] = 3  # Match the committed, platform-independent gzip header.
+    compressed = bytes(compressed)
     summary["candidate_artifact"] = {
-        "path": str(CANDIDATES_OUTPUT.relative_to(ROOT)),
+        "path": CANDIDATES_OUTPUT.relative_to(ROOT).as_posix(),
         "compression": "deterministic gzip JSON, mtime=0",
         "record_count": len(candidates),
         "uncompressed_bytes": len(raw),
