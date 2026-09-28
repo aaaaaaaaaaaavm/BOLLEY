@@ -73,4 +73,4 @@ full solver and CAD reconstruction remain distinct from artifact checks.
 | [gen3_12turn_winding_fit.json](../analysis/results/gen3_12turn_winding_fit.json) | `02e347838230732e90b35291ad581d8c777bae2cdfb3099aad87fda4c8237325` |
 | [gen3_12turn_path_fit.json](../analysis/results/gen3_12turn_path_fit.json) | `0a721b355f1b719a0d547fa97d7fc16833e103a21311a18f16a9f943de91d1a0` |
 | [gen3_12turn_detailed_fit.json](../analysis/results/gen3_12turn_detailed_fit.json) | `749d7f0b167a0e6d32d6cb3f0d5699ecca57c1ccbce801a1ea212a12a2cf59b7` |
-| [selected_winding_reclosure.json](../analysis/results/selected_winding_reclosure.json) | `dcf6422a359cc78f2199c951579837e9cc27eb590db8e6a6ca772160042e9e1d` |
+| [selected_winding_reclosure.json](../analysis/results/selected_winding_reclosure.json) | `27afda1d10d2ca6d7deebc6254b9a8bdfd8d22567fcdf2568641397ad55573f1` |
