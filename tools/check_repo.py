@@ -180,6 +180,8 @@ def main() -> None:
         {"gen3_12turn_path_fit.json"},
         {"gen3_12turn_detailed_fit.json"},
         {"selected_winding_reclosure.json"},
+        {"core_winding_reconciliation.json"},
+        {"reconciled_wire_field.json"},
     ]
     for stage_results in late_stages:
         valid_sets += (valid_sets[-1] | stage_results,)
@@ -393,6 +395,10 @@ def main() -> None:
     ):
         if result_name in committed:
             run("analysis/" + script, "--check")
+    if "core_winding_reconciliation.json" in committed:
+        run("analysis/core_winding_reconciliation.py", "--check")
+    if "reconciled_wire_field.json" in committed:
+        run("analysis/reconciled_wire_field.py", "--check")
     if "gen3_12turn_detailed_fit.json" in committed:
         run("cad/build_gen3_12turn.py", "--check")
         run("tools/package_gen3_12turn.py", "--check")

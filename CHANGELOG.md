@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-09-17: current field decision visualization
+
+Added a data-derived A6k failure graphic to the local website ahead of the older
+nominal machine presentation. Both lower slot imbalance and upper core-field
+failures are visible against their original limits. No new field computation,
+physical pass or powered-coupon promotion is claimed.
+
+
+## Local continuation: common core and actual-wire field
+
+I retain A6j-R1's failed yoke-only geometry. Separately frozen A6j-R2 raises both
+windings 0.25 mm and the yoke/outer legs 2 mm while retaining the 4 mm haunch.
+Analytical clearance and exact CAD solids agree; three transverse coupon STEP
+references and one common parameter file are generated. A6k is a fresh nonlinear
+actual-wire field evaluation of that geometry, with unchanged physical bands.
+Its own report controls promotion; geometry alone does not release a powered
+coupon. No GitHub publication or old field-pass transfer is implied.
+
 ## 2026-09-16: selected winding reclosure and public review
 
 I declared A9g before execution, reran the 12-turn partition through the existing time-domain

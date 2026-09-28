@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="345.6pt" viewBox="0 0 792 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-17T19:32:36.266438</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 345.6 
+L 792 345.6 
+L 792 0 
+L 0 0 
+z
+" style="fill: #101e2b"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 99 269.568 
+L 360.191489 269.568 
+L 360.191489 93.312 
+L 99 93.312 
+z
+" style="fill: #101e2b"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 99 261.556364 
+L 338.975793 261.556364 
+L 338.975793 101.323636 
+L 99 101.323636 
+z
+" clip-path="url(#pabe7766d3d)" style="fill: #ed8d7a"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m1c33935c37" d="M 0 0 
+L 0 3.5 
+" style="stroke: #ccdce5; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m1c33935c37" x="99" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="99" y="284.166437" transform="rotate(-0 99 284.166437)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m1c33935c37" x="162.705241" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="162.705241" y="284.166437" transform="rotate(-0 162.705241 284.166437)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m1c33935c37" x="226.410483" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="226.410483" y="284.166437" transform="rotate(-0 226.410483 284.166437)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m1c33935c37" x="290.115724" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="290.115724" y="284.166437" transform="rotate(-0 290.115724 284.166437)">1.5</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m1c33935c37" x="353.820965" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="353.820965" y="284.166437" transform="rotate(-0 353.820965 284.166437)">2.0</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="229.595745" y="297.844562" transform="rotate(-0 229.595745 297.844562)">Worst sampled value / acceptance limit</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="line2d_6">
+    <path d="M 226.410483 269.568 
+L 226.410483 93.312 
+" clip-path="url(#pabe7766d3d)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #e5eef3; stroke-width: 1.5"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 99 269.568 
+L 360.191489 269.568 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ed8d7a" x="109.44766" y="123.27552" transform="rotate(-0 109.44766 123.27552)">0.094174 / 0.05</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="229.595745" y="87.312" transform="rotate(-0 229.595745 87.312)">Lower winding / slot imbalance</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_5">
+    <path d="M 451.608511 269.568 
+L 712.8 269.568 
+L 712.8 93.312 
+L 451.608511 93.312 
+z
+" style="fill: #101e2b"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 451.608511 261.556364 
+L 584.224618 261.556364 
+L 584.224618 101.323636 
+L 451.608511 101.323636 
+z
+" clip-path="url(#p482990f77b)" style="fill: #ed8d7a"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_6">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m1c33935c37" x="451.608511" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="451.608511" y="284.166437" transform="rotate(-0 451.608511 284.166437)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m1c33935c37" x="515.313752" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="515.313752" y="284.166437" transform="rotate(-0 515.313752 284.166437)">0.5</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m1c33935c37" x="579.018993" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="579.018993" y="284.166437" transform="rotate(-0 579.018993 284.166437)">1.0</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m1c33935c37" x="642.724235" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="642.724235" y="284.166437" transform="rotate(-0 642.724235 284.166437)">1.5</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m1c33935c37" x="706.429476" y="269.568" style="fill: #ccdce5; stroke: #ccdce5; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="706.429476" y="284.166437" transform="rotate(-0 706.429476 284.166437)">2.0</text>
+     </g>
+    </g>
+    <g id="text_14">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ccdce5" x="582.204255" y="297.844562" transform="rotate(-0 582.204255 297.844562)">Worst sampled value / acceptance limit</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4"/>
+   <g id="line2d_12">
+    <path d="M 579.018993 269.568 
+L 579.018993 93.312 
+" clip-path="url(#p482990f77b)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #e5eef3; stroke-width: 1.5"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 451.608511 269.568 
+L 712.8 269.568 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ed8d7a" x="462.05617" y="123.27552" transform="rotate(-0 462.05617 123.27552)">1.613329 / 1.55</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="582.204255" y="87.312" transform="rotate(-0 582.204255 87.312)">Upper winding / core field</text>
+   </g>
+  </g>
+  <g id="text_17">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ffffff" x="35.64" y="34.56" transform="rotate(-0 35.64 34.56)">The geometry fits. The magnetic candidate fails.</text>
+  </g>
+  <g id="text_18">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #ccdce5" x="35.64" y="326.592" transform="rotate(-0 35.64 326.592)">A6k stored results · All three meshes counted · Numerical convergence is not physical acceptance.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pabe7766d3d">
+   <rect x="99" y="93.312" width="261.191489" height="176.256"/>
+  </clipPath>
+  <clipPath id="p482990f77b">
+   <rect x="451.608511" y="93.312" width="261.191489" height="176.256"/>
+  </clipPath>
+ </defs>
+</svg>

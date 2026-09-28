@@ -1,5 +1,13 @@
 # BOLLEY
 
+**Current local work:** [Common core/winding geometry](docs/CORE_WINDING_RECONCILIATION.md)
+and [fresh actual-wire field](docs/RECONCILED_WIRE_FIELD.md). The yoke-only attempt
+is retained as a failed screen. New STEP files are transverse coupon references;
+all six fresh meshes pass numerical checks, but lower slot-field balance and
+upper core-field limits fail. Powered-coupon promotion is rejected; full windings,
+terminals and hot drive remain open.
+
+
 **What changes if the satellite carries a passive reaction interface?**
 
 I am developing a cooperative CubeSat deployer alongside [VOLLEY](https://github.com/aaaaaaaaaaaavm/VOLLEY).

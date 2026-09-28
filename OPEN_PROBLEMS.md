@@ -1,5 +1,10 @@
 # Open problems
 
+I retain the [A6j geometry revisions](docs/CORE_WINDING_RECONCILIATION.md) and
+[A6k actual-wire field verdict](docs/RECONCILED_WIRE_FIELD.md). Geometry clearance
+and magnetic acceptance are separate gates. No OPEN item is closed by the CAD
+coupon references or by an earlier configuration's field result.
+
 I use this as my live defect and evidence register. I close an item only with a linked result,
 measurement, supplier document or decision record. I do not treat confidence as closure.
 
