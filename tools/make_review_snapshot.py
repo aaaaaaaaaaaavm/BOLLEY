@@ -27,7 +27,7 @@ def outputs():
     records = []
     for run, filename, sheet, label, limit in ROWS:
         path = ROOT / "analysis/results" / filename
-        raw = path.read_bytes()
+        raw = path.read_bytes().replace(b"\r\n", b"\n")
         data = json.loads(raw)
         if type(data.get("screen_pass")) is not bool:
             raise ValueError(f"{run}: missing boolean screen_pass")
