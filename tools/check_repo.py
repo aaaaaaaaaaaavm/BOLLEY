@@ -65,20 +65,6 @@ def check_links() -> None:
                 raise SystemExit(f"broken local link in {document.relative_to(ROOT)}: {target}")
 
 
-def check_authored_voice() -> None:
-    """Keep the engineering narrative in the author's first-person voice."""
-    first_person = re.compile(r"\b(?:I|my|me|mine)\b")
-    missing = []
-    for document in ROOT.rglob("*.md"):
-        if not first_person.search(document.read_text(encoding="utf-8")):
-            missing.append(document.relative_to(ROOT))
-    if missing:
-        raise SystemExit(
-            "Markdown files missing the authored first-person voice: "
-            + ", ".join(str(path) for path in missing)
-        )
-
-
 def check_repository_surfaces() -> None:
     required = [
         "LICENSE",
@@ -124,7 +110,7 @@ def main() -> None:
     if present:
         raise SystemExit(f"paper-production paths are outside repository scope: {present}")
 
-    check_authored_voice()
+    # Document voice is an editorial choice, not a numerical integrity criterion.
     check_repository_surfaces()
     run("tools/make_review_snapshot.py", "--check")
 

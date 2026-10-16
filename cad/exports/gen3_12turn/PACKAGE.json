@@ -1,6 +1,6 @@
 {
   "build_manifest": "cad/BUILD_GEN3_12TURN.json",
-  "build_manifest_sha256": "90ea79e4b74653590ea7dd1a97224883d3e073c75941146a8052098bfd54b2f4",
+  "build_manifest_sha256": "8993cf17ecce7c9ae404f1d062934e2eb9b5bb205ae01ff242ef511109fa5ab3",
   "evidence": "DETERMINISTIC ARCHIVES OF CAD OUTPUT; not a manufacturing release",
   "fixed_zip_timestamp": "2026-08-14T00:00:00",
   "generation": "Gen3 A5h detailed 12-turn",

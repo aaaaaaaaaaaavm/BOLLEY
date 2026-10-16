@@ -1,5 +1,9 @@
 # Changelog
 
+## 16 October 2026 — repository integrity gate
+
+Remove the blanket first-person prose requirement from the integrity checker. Formal policies and technical records may use impersonal language. Numerical, source, CAD, figure, result-set and link checks remain mandatory. Rebuild the A5h winding CAD with pinned CadQuery 2.5.2; STEP/STL archive bytes and fit results reproduce the prior geometry, while source and package provenance now identify the current builders.
+
 ## 2026-09-16: selected winding reclosure and public review
 
 I declared A9g before execution, reran the 12-turn partition through the existing time-domain
